@@ -21,8 +21,9 @@ Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic r
     $ snapcraft version
     snapcraft 7.1.3
 
+.. note::
 
-⚠ Note: As the gadget snap also provides a means to provision static snap configuration for the seeded snaps in an image, you may need to require multiple gadget snaps for different models. It’s also possible to use a single gadget for multiple devices if there are no configuration differences. If you do this, please be aware that you'll need to ensure that the models in the Serial Vault use the same API KEY.
+    As the gadget snap also provides a means to provision static snap configuration for the seeded snaps in an image, you may need to require multiple gadget snaps for different models. It’s also possible to use a single gadget for multiple devices if there are no configuration differences. If you do this, please be aware that you'll need to ensure that the models in the Serial Vault use the same API KEY.
 
 .. code::
 
@@ -43,7 +44,9 @@ Build the snap, using the model API Key generated during the Serial Vault setup 
     ...
     Snapped <CUSTOMER-STORE-PREFIX>-pc_22-0.1_amd64.snap
 
-⚠ Note: The sample “product_serial” is loosely generated (`date -Is`) in this gadget. In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See Section 5.1.1 for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
+.. note::
+
+    The sample “product_serial” is loosely generated (`date -Is`) in this gadget. In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See Section 5.1.1 for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
 
 Now register the snap name in your Base Snap Store and push the initial revision:
 
@@ -67,12 +70,15 @@ If you need to disable confinement, please consider using devmode, but note that
 Please check the errors and some hints below:
   - (NEEDS REVIEW) type 'gadget' not allowed
 
+.. note::
 
-⚠ Note: The Brand Account must be a Publisher in the Manage Users and their roles for registering and publishing the gadget snap.
+    The Brand Account must be a Publisher in the Manage Users and their roles for registering and publishing the gadget snap.
 
 Log into the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the Reviewer role on the <CUSTOMER-DEVICEVIEW-NAME> store), access the reviews page and Approve the gadget revision. All gadget uploads require manual review.
 
-⚠ Note: One other important capability of the Reviewer role is the ability to grant "self-serve" interface connections for snaps published in the Brand Store. See Self-serve Snap Interfaces for more details.
+.. note::
+
+    One other important capability of the Reviewer role is the ability to grant "self-serve" interface connections for snaps published in the Brand Store. See Self-serve Snap Interfaces for more details.
 
 Once the revision is approved, use snapcraft to release it in the stable channel:
 
@@ -89,7 +95,6 @@ Once the revision is approved, use snapcraft to release it in the stable channel
                      beta       ^          ^
                      edge       ^          ^
     The 'stable' channel is now open.
-
 
 The gadget snap is now available for installation from the <CUSTOMER-STORE-NAME> store, and for inclusion in images.
 
@@ -183,8 +188,9 @@ Once a valid model key is available, create and sign the model assertion for you
 
     $ snap sign -k model <CUSTOMER-MODEL-NAME>-model.json > <CUSTOMER-MODEL-NAME>-model.assert
 
+.. note::
 
-⚠ Note: The timestamp for model assertion MUST be after the date of the model signing key being registered by snapcraft.
+    The timestamp for model assertion MUST be after the date of the model signing key being registered by snapcraft.
 
 Log in to the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the Admin role on the <CUSTOMER-DEVICEVIEW-NAME> store), access the View and manage snaps page. Use the “Include snap” dialog to ensure that all snaps listed in the model assertion but published in the Global store (like pc-kernel in this case) get included in your private store. The core, core18, core20, core22 and snapd packages are included automatically and cannot be removed.
 
@@ -210,8 +216,13 @@ Set up authentication for downloading snaps from the <CUSTOMER-DEVICEVIEW-NAME> 
 
 This exported login is not encrypted. Do not commit it to version control!
 
-⚠ Note: Exported credentials have a default expiration of 12 months, so (a) treat them with care, and (b) note that they may need to be refreshed sometime in the future.
-5.4. Creating the image
+.. note::
+
+    Exported credentials have a default expiration of 12 months, so (a) treat them with care, and (b) note that they may need to be refreshed sometime in the future.
+
+Creating the image
+------------------
+
 This section describes the details of Ubuntu Core image building against the <CUSTOMER-DEVICEVIEW-NAME> store.
 
 Ensure a Linux build environment (Ubuntu 22.04 or later) and tool for building images are available:
@@ -226,25 +237,31 @@ Ubuntu Core image is built in the one line instruction by using the above develo
 
     $ UBUNTU_STORE_AUTH=$(cat store.auth) ubuntu-image snap <CUSTOMER-MODEL-NAME>-model.assert
 
+.. note ::
 
-⚠ Note: It's also possible to test your gadget snap without releasing it to the store. If you do this, you'll need to copy the .snap file to the directory you're running ubuntu-image in, ensure that your model assertion removes the snap-id and channel for the gadget snap, and use the `--snap=` ubuntu-image command-line option to instruct ubuntu-image to use the local snap.
+    It's also possible to test your gadget snap without releasing it to the store. If you do this, you'll need to copy the .snap file to the directory you're running ubuntu-image in, ensure that your model assertion removes the snap-id and channel for the gadget snap, and use the `--snap=` ubuntu-image command-line option to instruct ubuntu-image to use the local snap.
 
 Launching and verifying the image
 ---------------------------------
 
 To launch and test your newly generated Ubuntu Core image, follow the steps here: Ubuntu Core: Testing with QEMU. Once the image is booted and installed, login and then verify if the seeded snaps are installed, the <CUSTOMER-MODEL-NAME>  model is correct and a serial assertion was obtained:
-Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-48-generic x86_64)
 
-The programs included with the Ubuntu system are free software;
+.. code::
+
+    Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-48-generic x86_64)
+
+    The programs included with the Ubuntu system are free software;
 the exact distribution terms for each program are described in the
 individual files in /usr/share/doc/*/copyright.
 
-Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+.. code::
+
+    Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
 applicable law.
 
- * Ubuntu Core:     https://www.ubuntu.com/core
- * Community:       https://forum.snapcraft.io
- * Snaps:           https://snapcraft.io
+     * Ubuntu Core:     https://www.ubuntu.com/core
+     * Community:       https://forum.snapcraft.io
+     * Snaps:           https://snapcraft.io
 
 This Ubuntu Core 22 machine is a tiny, transactional edition of Ubuntu,
 designed for appliances, firmware and fixed-function VMs.
@@ -285,6 +302,6 @@ Please see 'snap --help' for app installation and updates.
     revision: 1
     brand-id: <CUSTOMER-BRAND-ACCOUNT-ID>
     model: <CUSTOMER-MODEL-NAME>
-    ...
+    ...7
 
 .. Comment to force newline after codeblock at end of file
