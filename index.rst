@@ -18,4 +18,5 @@ More information is available in the `reStructuredText style guide`_.
    :maxdepth: 2
 
    ReadMe <readme>
+   Architecture <architecture>
    Create an Ubuntu Core image <build-ubuntu-core>
