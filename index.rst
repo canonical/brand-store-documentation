@@ -1,24 +1,23 @@
-Starter pack
-============
+Canonical Brand Store
+=====================
 
-This starter pack contains the files you need to quickly set up your Sphinx documentation.
 
-Before you start, see the information about `Read the Docs at Canonical`_ and the instructions for `How to publish documentation on Read the Docs`_.
+The Brand Store is a marketplace engine for software.
 
-Then, to start setting up your docs, check the :doc:`ReadMe <readme>` for instructions.
-The `Example product documentation`_ shows how to set up a Diátaxis structure in Sphinx.
+It provides a platform for publishers to release and distribute software
+artefacts and for consumers to discover, deploy and update them, including in
+environments with limited or no network and compatibility with any
+Linux-based OS or device. The Brand Store also offers the possibility to publish
+customers' private snaps.
 
-For quick help on reST or MyST syntax, see the :file:`doc-cheat-sheet.rst.txt` or :file:`doc-cheat-sheet-myst.md.txt` files in the repository.
-(Open the files in your text editor; the rendered output is not very useful.)
-
-More information is available in the `reStructuredText style guide`_.
 
 .. toctree::
    :hidden:
    :maxdepth: 2
 
-   ReadMe <readme>
+   Create an Ubuntu Core image <build-ubuntu-core>
+   accounts
    Architecture <architecture>
    Serial Vault <serial-vault>
-   Create an Ubuntu Core image <build-ubuntu-core>
    Snapd interface connections <snap-confinement-snapd-connection>
+   ReadMe <readme>

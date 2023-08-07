@@ -15,7 +15,7 @@ import datetime
 ############################################################
 
 # Product name
-project = 'Documentation starter pack'
+html_title = full_title = project = 'Canonical Brand Store'
 author = 'Canonical Group Ltd'
 
 # Uncomment if your product uses release numbers
