@@ -3,7 +3,9 @@
 Brand Store Documentation
 =========================
 
-Forked off the `Canonical Sphinx Docs Starter Pack <https://github.com/canonical/sphinx-docs-starter-pack>`_
+* Forked off the `Canonical Sphinx Docs Starter Pack <https://github.com/canonical/sphinx-docs-starter-pack>`_
+* Hosted at https://canonical-canonical-brand-store.readthedocs-hosted.com
+* Managed at https://readthedocs.com/projects/canonical-canonical-brand-store/
 
 Getting started
 ---------------
