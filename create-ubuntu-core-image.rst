@@ -1,6 +1,9 @@
 How to create an Ubuntu Core image
 ==================================
 
+.. TODO: add images from https://docs.google.com/document/d/11z7iKogO7FDouJBfYgh9hROK41xDeaPy0ruS2_flyL0/edit
+.. TODO: update code blocks that are actually terminal blocks, see https://canonical-documentation-with-sphinx-and-readthedocscom.readthedocs-hosted.com/style-guide/#terminal-output
+
 To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
 Creating the gadget snap
@@ -10,9 +13,9 @@ The first step in building an Ubuntu Core image that can communicate with your s
 
 To build a custom gadget snap, we start by forking a suitable candidate from the `Canonical supported gadgets <https://snapcraft.io/docs/gadget-snap#heading--setup>`_ and follow these `instructions <https://docs.snapcraft.io/the-gadget-snap/696>`_.
 
-For this particular case, validating the initial store setup, let's fork the pc-amd64-gadget. This gadget enables the device to request store credentials from the Serial Vault, as configured above.
+For this particular case, validating the initial store setup, let's fork the ``pc-amd64-gadget``. This gadget enables the device to request store credentials from the Serial Vault, as configured above.
 
-Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic release (Ubuntu 22.04) using snapcraft 7.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself.
+Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic release (Ubuntu 22.04) using ``snapcraft`` 7.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself.
 
 .. code::
 
@@ -35,7 +38,7 @@ Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic r
     $ cd <CUSTOMER-STORE-PREFIX>
 
 
-Update the "name" field in the snapcraft.yaml to "<CUSTOMER-STORE-PREFIX>-pc". Feel free to also adjust the "version", "summary" and "description" to be more meaningful in your context.
+Update the "name" field in the ``snapcraft.yaml`` to "<CUSTOMER-STORE-PREFIX>-pc". Feel free to also adjust the "version", "summary" and "description" to be more meaningful in your context.
 
 Build the snap, using the model **API Key** generated during the Serial Vault setup above:
 
@@ -47,7 +50,9 @@ Build the snap, using the model **API Key** generated during the Serial Vault se
 
 .. note::
 
-    The sample “product_serial” is loosely generated (`date -Is`) in this gadget. In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See Section 5.1.1 for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
+    The sample “product_serial” is loosely generated (``date -Is``) in this gadget. In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See Section 5.1.1 for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
+
+.. TODO: Fix reference to Section 5.1.1. ("Using dmidecode to read system serial number")
 
 Now register the snap name in your Base Snap Store and push the initial revision:
 
@@ -74,13 +79,13 @@ Now register the snap name in your Base Snap Store and push the initial revision
 
 .. note::
 
-    The Brand Account must be a **Publisher** in the `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/CUSTOMER-STORE-ID/permissions/>`__ for registering and publishing the gadget snap.
+    The Brand Account must be a **Publisher** in the `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/CUSTOMER-STORE-ID/permissions/>`_ for registering and publishing the gadget snap.
 
-Log into the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the **Reviewer** role on the <CUSTOMER-DEVICEVIEW-NAME> store), access the reviews page and **Approve** the gadget revision. All gadget uploads require manual review.
+Log into the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the **Reviewer** role on the <CUSTOMER-DEVICEVIEW-NAME> store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/CUSTOMER-STORE-ID/>`_ and **Approve** the gadget revision. All gadget uploads require manual review.
 
 .. note::
 
-    One other important capability of the Reviewer role is the ability to grant "self-serve" interface connections for snaps published in the Brand Store. See Self-serve Snap Interfaces for more details.
+    One other important capability of the Reviewer role is the ability to grant "self-serve" interface connections for snaps published in the Brand Store. See `Self-serve Snap Interfaces <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_ for more details.
 
 Once the revision is approved, use snapcraft to release it in the stable channel:
 
@@ -101,9 +106,9 @@ Once the revision is approved, use snapcraft to release it in the stable channel
 The gadget snap is now available for installation from the <CUSTOMER-STORE-NAME> store, and for inclusion in images.
 
 Using dmidecode to read system serial number
---------------------------------------------
+********************************************
 
-One possible approach to populating the serial number (vs. using the date command as described above) is to use the dmidecode tool to read the system serial number from the DMI table. In order to do this, you would need to add dmidecode to that gadget's snapcraft.yaml file as a stage-package:
+One possible approach to populating the serial number (vs. using the ``date`` command as described above) is to use the ``dmidecode`` tool to read the system serial number from the DMI table. In order to do this, you would need to add ``dmidecode`` to that gadget's ``snapcraft.yaml`` file as a ``stage-package``:
 
 .. code::
 
@@ -113,7 +118,7 @@ One possible approach to populating the serial number (vs. using the date comman
         - dmidecode
     ...
 
-You also will need to plug the snapd hardware-observe interface to allow dmidecode access to access the correct file(s) in sysfs.
+You also will need to plug the snapd ``hardware-observe`` interface to allow ``dmidecode`` access to access the correct file(s) in sysfs.
 
 .. code::
 
@@ -134,7 +139,7 @@ The actual command to read the serial number will also need to be updated in the
 Creating the model assertion
 ----------------------------
 
-One final step before you can build a custom Ubuntu Core image is creation of a signed model assertion, which provides image related metadata which ubuntu-image uses to customize the image. In order to sign the model assertion, a brand model key must be created and registered using the brand account. For details on how to create and register a model key, please refer to `Sign a model assertion <https://ubuntu.com/core/docs/sign-model-assertion>`_.
+One final step before you can build a custom Ubuntu Core image is creation of a signed model assertion, which provides image related metadata which ubuntu-image uses to customise the image. In order to sign the model assertion, a brand model key must be created and registered using the brand account. For details on how to create and register a model key, please refer to `Sign a model assertion <https://ubuntu.com/core/docs/sign-model-assertion>`_.
 
 Once a valid model key is available, create and sign the model assertion for your test Ubuntu Core image:
 
@@ -205,9 +210,9 @@ Access the snap page https://dashboard.snapcraft.io/snaps/SNAPNAME to get the sn
 Switching to a developer account
 --------------------------------
 
-Now that the model has been signed by the Brand Account, there is no need to continue to use such powerful credentials. We recommend switching to a developer account to seed images.
+Now that the model has been signed by the *Brand Account*, there is no need to continue to use such powerful credentials. We recommend switching to a developer account to seed images.
 
-The account used must have the Viewer role on the <CUSTOMER-DEVICEVIEW-NAME> store. Log in to the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the Admin role on the <CUSTOMER-DEVICEVIEW-NAME> store), go to `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/%3CCUSTOMER-DEVICEVIEW-ID%3E/permissions/>`__ to add a developer account and then set it as Viewer. You may also give <CUSTOMER-ADMIN-EMAIL> the Viewer role.
+The account used must have the **Viewer** role on the <CUSTOMER-DEVICEVIEW-NAME> store. Log in to the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the Admin role on the <CUSTOMER-DEVICEVIEW-NAME> store), go to `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/CUSTOMER-DEVICEVIEW-ID/permissions/>`_ to add a developer account and then set it as **Viewer**. You may also give <CUSTOMER-ADMIN-EMAIL> the **Viewer** role.
 
 Set up authentication for downloading snaps from the <CUSTOMER-DEVICEVIEW-NAME> store:
 
@@ -236,6 +241,7 @@ Ensure a Linux build environment (Ubuntu 22.04 or later) and tool for building i
 .. code ::
 
     $ sudo snap install ubuntu-image --classic
+    ...
 
 Ubuntu Core image is built in the one line instruction by using the above developer account credential:
 
@@ -246,12 +252,12 @@ Ubuntu Core image is built in the one line instruction by using the above develo
 
 .. note ::
 
-    It's also possible to test your gadget snap without releasing it to the store. If you do this, you'll need to copy the .snap file to the directory you're running ubuntu-image in, ensure that your model assertion removes the snap-id and channel for the gadget snap, and use the `--snap=` ubuntu-image command-line option to instruct ubuntu-image to use the local snap.
+    It's also possible to test your gadget snap without releasing it to the store. If you do this, you'll need to copy the .snap file to the directory you're running ubuntu-image in, ensure that your model assertion removes the snap-id and channel for the gadget snap, and use the ``--snap=ubuntu-image`` command-line option to instruct ``ubuntu-image`` to use the local snap.
 
 Launching and verifying the image
 ---------------------------------
 
-To launch and test your newly generated Ubuntu Core image, follow the steps here: Ubuntu Core: Testing with QEMU. Once the image is booted and installed, login and then verify if the seeded snaps are installed, the <CUSTOMER-MODEL-NAME>  model is correct and a serial assertion was obtained:
+To launch and test your newly generated Ubuntu Core image, follow the steps here: `Ubuntu Core: Testing with QEMU <https://ubuntu.com/core/docs/testing-with-qemu>`_. Once the image is booted and installed, login and then verify if the seeded snaps are installed, the <CUSTOMER-MODEL-NAME> ``model`` is correct and a serial assertion was obtained:
 
 .. code::
 
