@@ -18,3 +18,5 @@ customers' private snaps.
    ReadMe <readme>
    Architecture <architecture>
    Create an Ubuntu Core image <build-ubuntu-core>
+   accounts
+   
