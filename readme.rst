@@ -1,63 +1,7 @@
-Documentation starter pack
-==========================
+Brand Store Documentation
+=========================
 
-See the `Sphinx and Read the Docs <https://canonical-documentation-with-sphinx-and-readthedocscom.readthedocs-hosted.com/>`_ guide for instructions on how to get started with Sphinx documentation.
-
-Then go through the following sections to use this starter pack to set up your docs repository.
-
-Set up your documentation repository
-------------------------------------
-
-You can either create a standalone documentation project based on this repository or include the files from this repository in a dedicated documentation folder in an existing code repository.
-
-**Note:** We're planning to provide the contents of this repository as an installable package in the future, but currently, you need to copy and update the required files manually.
-
-Standalone documentation repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To create a standalone documentation repository, clone this starter pack
-repository, `update the configuration <#configure-the-documentation>`_, and
-then commit all files to the documentation repository.
-
-You don't need to move any files, and you don't need to do any special
-configuration on Read the Docs.
-
-Here is one way to do this for newly-created fictional docs repository
-``canonical/alpha-docs``:
-
-.. code-block:: none
-
-   git clone git@github.com:canonical/sphinx-docs-starter-pack alpha-docs
-   cd alpha-docs
-   rm -rf .git
-   git init
-   git branch -m main
-   UPDATE THE CONFIGURATION AND BUILD THE DOCS
-   git add -A
-   git commit -m "Import sphinx-docs-starter-pack"
-   git remote add upstream git@github.com:canonical/alpha-docs
-   git push -f upstream main
-
-Documentation in a code repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To add documentation to an existing code repository:
-
-#. create a directory called ``docs`` at the root of the code repository
-#. populate the above directory with the contents of the starter pack
-   repository (with the exception of the ``.git`` directory)
-#. copy the file(s) located in the ``docs/.github/workflows`` directory into
-   the code repository's ``.github/workflows`` directory
-#. in the above workflow file(s), set the values of the ``working-directory``
-   and ``workdir`` fields to ``docs``
-#. in file ``docs/.readthedocs.yaml`` set the following:
-
-   * ``configuration: docs/conf.py``
-   * ``requirements: docs/.sphinx/requirements.txt``
-
-**Note:** When configuring RTD itself for your project, the setting **Path for
-.readthedocs.yaml** (under **Advanced Settings**) will need to be given the
-value of "docs/.readthedocs.yaml".
+Forked off the `Canonical Sphinx Docs Starter Pack <https://github.com/canonical/sphinx-docs-starter-pack>`_
 
 Getting started
 ---------------
