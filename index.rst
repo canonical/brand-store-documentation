@@ -19,3 +19,5 @@ More information is available in the `reStructuredText style guide`_.
 
    ReadMe <readme>
    Create an Ubuntu Core image <build-ubuntu-core>
+   accounts
+   
