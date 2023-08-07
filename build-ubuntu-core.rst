@@ -24,7 +24,7 @@ Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic r
 
 .. note::
 
-    As the gadget snap also provides a means to provision static snap configuration for the seeded snaps in an image, you may need to require multiple gadget snaps for different models. It’s also possible to use a single gadget for multiple devices if there are no configuration differences. If you do this, please be aware that you'll need to ensure that the models in the Serial Vault use the same API KEY.
+    As the gadget snap also provides a means to provision static snap configuration for the seeded snaps in an image, you may need to require multiple gadget snaps for different models. It’s also possible to use a single gadget for multiple devices if there are no configuration differences. If you do this, please be aware that you'll need to ensure that the models in the Serial Vault use the same **API KEY**.
 
 .. code::
 
@@ -37,7 +37,7 @@ Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic r
 
 Update the "name" field in the snapcraft.yaml to "<CUSTOMER-STORE-PREFIX>-pc". Feel free to also adjust the "version", "summary" and "description" to be more meaningful in your context.
 
-Build the snap, using the model API Key generated during the Serial Vault setup above:
+Build the snap, using the model **API Key** generated during the Serial Vault setup above:
 
 .. code::
 
@@ -74,9 +74,9 @@ Now register the snap name in your Base Snap Store and push the initial revision
 
 .. note::
 
-    The Brand Account must be a Publisher in the Manage Users and their roles for registering and publishing the gadget snap.
+    The Brand Account must be a **Publisher** in the `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/CUSTOMER-STORE-ID/permissions/>`_ for registering and publishing the gadget snap.
 
-Log into the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the Reviewer role on the <CUSTOMER-DEVICEVIEW-NAME> store), access the reviews page and Approve the gadget revision. All gadget uploads require manual review.
+Log into the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the **Reviewer** role on the <CUSTOMER-DEVICEVIEW-NAME> store), access the reviews page and **Approve** the gadget revision. All gadget uploads require manual review.
 
 .. note::
 
