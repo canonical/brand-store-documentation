@@ -8,7 +8,7 @@ Creating the gadget snap
 
 The first step in building an Ubuntu Core image that can communicate with your store is to build a gadget snap. Gadget snaps do many things, but for our purposes here, the important functionality is generating a serial number and using that serial number, along with a pre-shared API key, to get credentials to talk to the store. You can also use the gadget snap to set default configuration values for application snaps, and auto-connect some interfaces.
 
-To build a custom gadget snap, we start by forking a suitable candidate from the Canonical supported gadgets and follow these instructions.
+To build a custom gadget snap, we start by forking a suitable candidate from the `Canonical supported gadgets <https://snapcraft.io/docs/gadget-snap#heading--setup>`_ and follow these `instructions <https://docs.snapcraft.io/the-gadget-snap/696>`_.
 
 For this particular case, validating the initial store setup, let's fork the pc-amd64-gadget. This gadget enables the device to request store credentials from the Serial Vault, as configured above.
 
@@ -17,6 +17,7 @@ Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic r
 .. code::
 
     $ sudo snap install snapcraft --classic --channel=7.x/stable
+    ...
 
     $ snapcraft version
     snapcraft 7.1.3
@@ -64,11 +65,12 @@ Now register the snap name in your Base Snap Store and push the initial revision
 
     $ snapcraft push <CUSTOMER-STORE-PREFIX>-pc_22-0.1_amd64.snap
 
-The Store automatic review failed.
-A human will soon review your snap, but if you can't wait please write in the snapcraft forum asking for the manual review explicitly.
-If you need to disable confinement, please consider using devmode, but note that devmode revision will only be allowed to be released in edge and beta channels.
-Please check the errors and some hints below:
-  - (NEEDS REVIEW) type 'gadget' not allowed
+    The Store automatic review failed.
+    A human will soon review your snap, but if you can't wait please write in the snapcraft forum asking for the manual review explicitly.
+
+    If you need to disable confinement, please consider using devmode, but note that devmode revision will only be allowed to be released in edge and beta channels.
+    Please check the errors and some hints below:
+      - (NEEDS REVIEW) type 'gadget' not allowed
 
 .. note::
 
@@ -109,6 +111,7 @@ One possible approach to populating the serial number (vs. using the date comman
       plugin: nil
       stage-packages:
         - dmidecode
+    ...
 
 You also will need to plug the snapd hardware-observe interface to allow dmidecode access to access the correct file(s) in sysfs.
 
@@ -117,18 +120,21 @@ You also will need to plug the snapd hardware-observe interface to allow dmideco
     hooks:
       prepare-device:
         plugs: [hardware-observe]
+    ...
 
 The actual command to read the serial number will also need to be updated in the prepare-device part:
 
 .. code::
 
     prepare-device:
+    ...
           product_serial=\$(dmidecode -s system-serial-number)
+    ...
 
 Creating the model assertion
 ----------------------------
 
-One final step before you can build a custom Ubuntu Core image is creation of a signed model assertion, which provides image related metadata which ubuntu-image uses to customize the image. In order to sign the model assertion, a brand model key must be created and registered using the brand account. For details on how to create and register a model key, please refer to Sign a model assertion.
+One final step before you can build a custom Ubuntu Core image is creation of a signed model assertion, which provides image related metadata which ubuntu-image uses to customize the image. In order to sign the model assertion, a brand model key must be created and registered using the brand account. For details on how to create and register a model key, please refer to `Sign a model assertion <https://ubuntu.com/core/docs/sign-model-assertion>`_.
 
 Once a valid model key is available, create and sign the model assertion for your test Ubuntu Core image:
 
@@ -192,7 +198,7 @@ Once a valid model key is available, create and sign the model assertion for you
 
     The timestamp for model assertion MUST be after the date of the model signing key being registered by snapcraft.
 
-Log in to the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the Admin role on the <CUSTOMER-DEVICEVIEW-NAME> store), access the View and manage snaps page. Use the “Include snap” dialog to ensure that all snaps listed in the model assertion but published in the Global store (like pc-kernel in this case) get included in your private store. The core, core18, core20, core22 and snapd packages are included automatically and cannot be removed.
+Log in to the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the Admin role on the <CUSTOMER-DEVICEVIEW-NAME> store), access the `View and manage snaps <https://snapcraft.io/admin>`_ page. Use the “Include snap” dialog to ensure that all snaps listed in the model assertion but published in the Global store (like pc-kernel in this case) get included in your private store. The core, core18, core20, core22 and snapd packages are included automatically and cannot be removed.
 
 Access the snap page https://dashboard.snapcraft.io/snaps/SNAPNAME to get the snap-id and fill the fields <CUSTOMER-SNAP-IDS> and <CUSTOMER-REQUIRED-SNAPS>.
 
@@ -201,7 +207,7 @@ Switching to a developer account
 
 Now that the model has been signed by the Brand Account, there is no need to continue to use such powerful credentials. We recommend switching to a developer account to seed images.
 
-The account used must have the Viewer role on the <CUSTOMER-DEVICEVIEW-NAME> store. Log in to the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the Admin role on the <CUSTOMER-DEVICEVIEW-NAME> store), go to Manage Users and their roles to add a developer account and then set it as Viewer. You may also give <CUSTOMER-ADMIN-EMAIL> the Viewer role.
+The account used must have the Viewer role on the <CUSTOMER-DEVICEVIEW-NAME> store. Log in to the web dashboard as <CUSTOMER-ADMIN-EMAIL> (because it has the Admin role on the <CUSTOMER-DEVICEVIEW-NAME> store), go to `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/%3CCUSTOMER-DEVICEVIEW-ID%3E/permissions/>`_ to add a developer account and then set it as Viewer. You may also give <CUSTOMER-ADMIN-EMAIL> the Viewer role.
 
 Set up authentication for downloading snaps from the <CUSTOMER-DEVICEVIEW-NAME> store:
 
@@ -213,8 +219,8 @@ Set up authentication for downloading snaps from the <CUSTOMER-DEVICEVIEW-NAME> 
 
     $ snapcraft export-login --acls package_access store.auth
     Enter your Ubuntu One e-mail address and password.
-
-This exported login is not encrypted. Do not commit it to version control!
+    ...
+    This exported login is not encrypted. Do not commit it to version control!
 
 .. note::
 
@@ -236,6 +242,7 @@ Ubuntu Core image is built in the one line instruction by using the above develo
 .. code ::
 
     $ UBUNTU_STORE_AUTH=$(cat store.auth) ubuntu-image snap <CUSTOMER-MODEL-NAME>-model.assert
+    ...
 
 .. note ::
 
@@ -251,29 +258,25 @@ To launch and test your newly generated Ubuntu Core image, follow the steps here
     Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-48-generic x86_64)
 
     The programs included with the Ubuntu system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-.. code::
+    the exact distribution terms for each program are described in the
+    individual files in /usr/share/doc/*/copyright.
 
     Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
-applicable law.
+    applicable law.
 
      * Ubuntu Core:     https://www.ubuntu.com/core
      * Community:       https://forum.snapcraft.io
      * Snaps:           https://snapcraft.io
 
-This Ubuntu Core 22 machine is a tiny, transactional edition of Ubuntu,
-designed for appliances, firmware and fixed-function VMs.
+    This Ubuntu Core 22 machine is a tiny, transactional edition of Ubuntu,
+    designed for appliances, firmware and fixed-function VMs.
 
-If all the software you care about is available as snaps, you are in
-the right place. If not, you will be more comfortable with classic
-deb-based Ubuntu Server or Desktop, where you can mix snaps with
-traditional debs. It's a brave new world here in Ubuntu Core!
+    If all the software you care about is available as snaps, you are in
+    the right place. If not, you will be more comfortable with classic
+    deb-based Ubuntu Server or Desktop, where you can mix snaps with
+    traditional debs. It's a brave new world here in Ubuntu Core!
 
-Please see 'snap --help' for app installation and updates.
-
-.. code::
+    Please see 'snap --help' for app installation and updates.
 
     <Ubuntu SSO user name>@localhost:~$ snap list
     Name       Version        Rev    Tracking       Publisher   Notes
@@ -302,6 +305,6 @@ Please see 'snap --help' for app installation and updates.
     revision: 1
     brand-id: <CUSTOMER-BRAND-ACCOUNT-ID>
     model: <CUSTOMER-MODEL-NAME>
-    ...7
+    ...
 
 .. Comment to force newline after codeblock at end of file
