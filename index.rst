@@ -19,4 +19,5 @@ More information is available in the `reStructuredText style guide`_.
 
    ReadMe <readme>
    Architecture <architecture>
+   Serial Vault <serial-vault>
    Create an Ubuntu Core image <build-ubuntu-core>
