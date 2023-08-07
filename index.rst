@@ -15,9 +15,8 @@ customers' private snaps.
    :hidden:
    :maxdepth: 2
 
-   Create an Ubuntu Core image <build-ubuntu-core>
-   accounts
    Architecture <architecture>
+   accounts
    Serial Vault <serial-vault>
+   Create an Ubuntu Core image <build-ubuntu-core>
    Snapd interface connections <snap-confinement-snapd-connection>
-   ReadMe <readme>
