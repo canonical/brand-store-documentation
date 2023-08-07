@@ -1,3 +1,5 @@
+:orphan:
+
 Brand Store Documentation
 =========================
 
