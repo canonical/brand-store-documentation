@@ -1,5 +1,5 @@
-How to create an Ubuntu Core image
-==================================
+How to create an Ubuntu Core 22 image
+=====================================
 
 .. TODO: add images from https://docs.google.com/document/d/11z7iKogO7FDouJBfYgh9hROK41xDeaPy0ruS2_flyL0/edit
 .. TODO: update code blocks that are actually terminal blocks, see https://canonical-documentation-with-sphinx-and-readthedocscom.readthedocs-hosted.com/style-guide/#terminal-output
