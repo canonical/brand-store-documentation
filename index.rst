@@ -18,5 +18,5 @@ customers' private snaps.
    Architecture <architecture>
    accounts
    Serial Vault <serial-vault>
-   Create an Ubuntu Core image <create-ubuntu-core-image>
+   Create an Ubuntu Core 22 image <create-ubuntu-core-22-image>
    Snapd interface connections <snap-confinement-snapd-connection>
