@@ -88,6 +88,10 @@ redirects = {}
 linkcheck_ignore = [
     'http://127.0.0.1:8000',
     'https://readthedocs.com/projects/canonical-canonical-brand-store/',
+    'https://dashboard.snapcraft.io/dev/store/<CUSTOMER-DEVICEVIEW-ID>/permissions/',
+    'https://dashboard.snapcraft.io/dev/store/<CUSTOMER-DEVICEVIEW-ID>/packages/',
+    'https://dashboard.snapcraft.io/dev/store/<CUSTOMER-STORE-ID>/permissions/',
+    'https://dashboard.snapcraft.io/reviewer/<CUSTOMER-STORE-ID>/',
 ]
 
 ############################################################
