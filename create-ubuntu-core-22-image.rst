@@ -76,7 +76,7 @@ Now register the snap name in your Base Snap Store and push the initial revision
 
 .. note::
 
-    The Brand Account must be a **Publisher** in the `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/\<CUSTOMER-STORE-ID\>/permissions/>`_ for registering and publishing the gadget snap.
+    The Brand Account must be a **Publisher** under "Manage Users and their roles" to register and publish the gadget snap.
 
 Log into the web dashboard as ``<CUSTOMER-ADMIN-EMAIL>`` (because it has the **Reviewer** role on the ``<CUSTOMER-DEVICEVIEW-NAME>`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/\<CUSTOMER-STORE-ID\>/>`_ and **Approve** the gadget revision. All gadget uploads require manual review.
 
@@ -211,7 +211,7 @@ Switching to a developer account
 
 Now that the model has been signed by the *Brand Account*, there is no need to continue to use such powerful credentials. We recommend switching to a developer account to seed images.
 
-The account used must have the **Viewer** role on the ``<CUSTOMER-DEVICEVIEW-NAME>`` store. Log in to the web dashboard as ``<CUSTOMER-ADMIN-EMAIL>`` (because it has the Admin role on the ``<CUSTOMER-DEVICEVIEW-NAME>`` store), go to `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/\<CUSTOMER-DEVICEVIEW-ID\>/permissions/>`_ to add a developer account and then set it as **Viewer**. You may also give ``<CUSTOMER-ADMIN-EMAIL>`` the **Viewer** role.
+The account used must have the **Viewer** role on the ``<CUSTOMER-DEVICEVIEW-NAME>`` store. Log in to the web dashboard as ``<CUSTOMER-ADMIN-EMAIL>`` (because it has the Admin role on the ``<CUSTOMER-DEVICEVIEW-NAME>`` store), go to "Manage Users and their roles" to add a developer account and then set it as **Viewer**. You may also give ``<CUSTOMER-ADMIN-EMAIL>`` the **Viewer** role.
 
 Set up authentication for downloading snaps from the ``<CUSTOMER-DEVICEVIEW-NAME>`` store:
 
