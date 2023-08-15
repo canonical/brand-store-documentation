@@ -62,7 +62,7 @@ Now register the snap name in the target store and push the initial revision:
 
 .. note:: 
     
-    The Brand account must be a **Publisher** in the `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/\<CUSTOMER-STORE-ID\>/permissions/>`__ for registering and publishing the gadget snap.
+    The Brand account must be a **Publisher** under "Manage Users and their roles" to register and publish the gadget snap.
 
 Logged in as the **Store Administrator** (benefiting of its **Reviewer** permission in this setup), access the `reviews page <https://dashboard.snapcraft.io/reviewer/\<CUSTOMER-STORE-ID\>/>`__ and **Approve** the gadget revision. All gadget uploads require manual review. 
 
@@ -136,7 +136,7 @@ Now register the snap name in the target store and push the initial revision:
 
 .. note::
     
-    The Brand account must be a **Publisher** in the `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/\<CUSTOMER-STORE-ID\>/permissions/>`__ for registering and publishing the gadget snap.
+    The Brand account must be a **Publisher** under "Manage Users and their roles" to register and publish the gadget snap.
 
 Logged in as the **Store Administrator** (benefiting of its **Reviewer** permission in this setup), access the `reviews page <https://dashboard.snapcraft.io/reviewer/\<CUSTOMER-STORE-ID\>/>`__ and **Approve** the gadget revision. All gadget uploads require manual review. 
 
@@ -244,7 +244,7 @@ The next steps will take you through the building of an image. The image build p
 
 Note that once the model is signed by the *Brand account*, there is no need to continue to use such powerful credentials. We recommend not added “Viewer” permissions to the Brand Account, and switching to a developer account to seed images. 
 
-The only requirement is having **Store Viewer** permission on the ``<CUSTOMER-DEVICEVIEW-NAME>`` store. Go to `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/\<CUSTOMER-DEVICEVIEW-ID\>/permissions/>`__ to add a developer account and then set it as **Viewer**.
+The only requirement is having **Store Viewer** permission on the ``<CUSTOMER-DEVICEVIEW-NAME>`` store. Go to "Manage Users and their roles" to add a developer account and then set it as **Viewer**.
 
 Setup authentication for downloading snaps from the ``<CUSTOMER-DEVICEVIEW-NAME>`` store:
 
