@@ -1,4 +1,8 @@
 import datetime
+import os
+import sys
+
+sys.path.append(os.path.abspath("./_ext"))
 
 # Custom configuration for the Sphinx documentation builder.
 # All configuration specific to your project should be done in this file.
@@ -63,7 +67,10 @@ html_context = {
 
     # Change to an empty value if your GitHub repo doesn't have issues enabled.
     # This will disable the feedback button and the issue link in the footer.
-    'github_issues': 'enabled'
+    'github_issues': 'enabled',
+
+    'CUSTOMER_STORE_ID': 'acme-store',
+    'CUSTOMER_ADMIN_EMAIL': 'example@example.com'
 }
 
 # If your project is on documentation.ubuntu.com, specify the project
@@ -102,7 +109,7 @@ linkcheck_ignore = [
 ## Use them to extend the default functionality.
 
 # Add extensions
-custom_extensions = []
+custom_extensions = ['rstjinja']
 
 # Add files or directories that should be excluded from processing.
 custom_excludes = []

@@ -75,7 +75,7 @@ Now register the snap name in your Base Snap Store and push the initial revision
 
     The Brand Account must be a **Publisher** under "Manage Users and their roles" to register and publish the gadget snap.
 
-Log into the web dashboard as ``<CUSTOMER-ADMIN-EMAIL>`` (because it has the **Reviewer** role on the ``<CUSTOMER-DEVICEVIEW-NAME>`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/\<CUSTOMER-STORE-ID\>/>`_ and **Approve** the gadget revision. All gadget uploads require manual review.
+Log into the web dashboard as ``{{ CUSTOMER_ADMIN_EMAIL }}`` (because it has the **Reviewer** role on the ``<CUSTOMER-DEVICEVIEW-NAME>`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID }}/>`_ and **Approve** the gadget revision. All gadget uploads require manual review.
 
 .. note::
 
