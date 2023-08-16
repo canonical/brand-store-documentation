@@ -99,6 +99,7 @@ linkcheck_ignore = [
     'https://dashboard.snapcraft.io/dev/store/<CUSTOMER-DEVICEVIEW-ID>/packages/',
     'https://dashboard.snapcraft.io/dev/store/<CUSTOMER-STORE-ID>/permissions/',
     'https://dashboard.snapcraft.io/reviewer/<CUSTOMER-STORE-ID>/',
+    'https://dashboard.snapcraft.io/reviewer/\{\{CUSTOMER_STORE_ID\}\}/',
 ]
 
 ############################################################
