@@ -315,5 +315,3 @@ To launch and test your newly generated Ubuntu Core image, follow the steps here
     brand-id: <CUSTOMER-BRAND-ACCOUNT-ID>
     model: <CUSTOMER-MODEL-NAME>
     ...
-
-.. Comment to force newline after codeblock at end of file
