@@ -1,9 +1,6 @@
 How to create an Ubuntu Core 22 image
 =====================================
 
-.. TODO: add images from https://docs.google.com/document/d/11z7iKogO7FDouJBfYgh9hROK41xDeaPy0ruS2_flyL0/edit
-.. TODO: update code blocks that are actually terminal blocks, see https://canonical-documentation-with-sphinx-and-readthedocscom.readthedocs-hosted.com/style-guide/#terminal-output
-
 To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
 Creating the gadget snap
@@ -204,7 +201,11 @@ Once a valid model key is available, create and sign the model assertion for you
 
 Log in to the web dashboard as ``<CUSTOMER-ADMIN-EMAIL>`` (because it has the Admin role on the ``<CUSTOMER-DEVICEVIEW-NAME>`` store), access the `View and manage snaps <https://snapcraft.io/admin>`_ page. Use the “Include snap” dialog to ensure that all snaps listed in the model assertion but published in the Global store (like pc-kernel in this case) get included in your private store. The core, core18, core20, core22 and snapd packages are included automatically and cannot be removed.
 
+.. image:: /images/core-22-add-snap.png
+
 Access the snap page https://dashboard.snapcraft.io/snaps/SNAPNAME to get the snap-id and fill the fields ``<CUSTOMER-SNAP-IDS>`` and ``<CUSTOMER-REQUIRED-SNAPS>``.
+
+.. image:: /images/core-22-snap-id.png
 
 Switching to a developer account
 --------------------------------
