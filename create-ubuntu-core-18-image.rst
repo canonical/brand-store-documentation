@@ -8,7 +8,7 @@ Creating the gadget snap
 
 For building a custom gadget snap for production systems start by forking a suitable candidate from the `Canonical supported gadgets <https://snapcraft.io/docs/gadget-snap#heading--setup>`__ and follow these `instructions <https://docs.snapcraft.io/the-gadget-snap/696>`__.
 
-For this particular case, validating the initial store setup, let's fork the pc-amd64-gadget. This gadget enables the device to request store credentials from the Serial Vault, as configured above:
+For this particular case, validating the initial store setup, let's fork the ``pc-amd64-gadget``. This gadget enables the device to request store credentials from the Serial Vault, as configured above:
 
 Creating a gadget snap for Ubuntu Core image
 ********************************************
@@ -21,7 +21,7 @@ Creating a gadget snap for Ubuntu Core image
     :input: git clone -b <CUSTOMER-UBUNTU-CORE-VERSION> https://git.launchpad.net/~lyoncore-team/lyoncore-snaps/+git/pc-amd64-gadget <CUSTOMER-STORE-PREFIX>gadget
     :input: cd <CUSTOMER-STORE-PREFIX>gadget
 
-Update "name" field in the snapcraft.yaml to ""``<CUSTOMER-STORE-PREFIX>gadget``". Feel free to also adjust the "version", "summary" and "description" to be more meaningful in your context. Update "<volume name>:" field in gadget.yaml from "pc:" to "``<CUSTOMER-MODEL-NAME>:``".
+Update "name" field in the snapcraft.yaml to ""``<CUSTOMER-STORE-PREFIX>gadget``". Feel free to also adjust the "version", "summary" and "description" to be more meaningful in your context. Update "<volume name>:" field in ``gadget.yaml`` from "pc:" to "``<CUSTOMER-MODEL-NAME>:``".
 
 Build the snap informing the model **API Key** generated during the Serial Vault setup above:
 
@@ -35,7 +35,7 @@ Build the snap informing the model **API Key** generated during the Serial Vault
 
 .. note::
     
-    The sample “product_serial” is loosely generated (`date -Is`) in this gadget. In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability.
+    The sample “product_serial” is loosely generated (``date -Is``) in this gadget. In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability.
 
 Now register the snap name in the target store and push the initial revision:
 
@@ -96,7 +96,7 @@ Creating a gadget snap for Ubuntu Classic image
     <CUSTOMER-STORE-PREFIX>gadget-classic
     :input: cd <CUSTOMER-STORE-PREFIX>gadget-classic
 
-Update "name" field in the snapcraft.yaml to "``<CUSTOMER-STORE-PREFIX>gadget-classic``" and “base” field in the snapcraft.yaml to “core18”. Feel free to also adjust the "version", "summary" and "description" to be more meaningful in your context. Update "<volume name>:" field in gadget.yaml from "pc:" to "``<CUSTOMER-MODEL-NAME>:``".
+Update "name" field in the snapcraft.yaml to "``<CUSTOMER-STORE-PREFIX>gadget-classic``" and “base” field in the snapcraft.yaml to “core18”. Feel free to also adjust the "version", "summary" and "description" to be more meaningful in your context. Update "<volume name>:" field in ``gadget.yaml`` from "pc:" to "``<CUSTOMER-MODEL-NAME>:``".
 
 Build the snap informing the model **API Key** generated during the Serial Vault setup above:
 
@@ -326,13 +326,12 @@ The system will boot then become ready to configure. The device will display the
     Remote access was enabled via authentication with the SSO user <Ubuntu SSO user name>
     Public SSH keys were added to the device for remote access.
 
-
 Once setup is done, you can login with SSH into Ubuntu Core, using the following command:
 
 .. terminal::
     :input: ssh -p 8022 <Ubuntu SSO user name>@localhost
 
-User name is the Ubuntu SSO user name, shown to you at the end of the account configuration step. Login and then verify if the seeded snaps are installed, the <CUSTOMER-MODEL-NAME> model is correct and a serial assertion was obtained:
+User name is the Ubuntu SSO user name, shown to you at the end of the account configuration step. Login and then verify if the seeded snaps are installed, the <CUSTOMER-MODEL-NAME> ``model`` is correct and a ``serial`` assertion was obtained:
 
 .. code:: text
 
@@ -407,7 +406,7 @@ Ensure tools for mounting and launching images are available:
 
     ...
 
-Create a user.img partition with basic cloud-init configuration for launching an image:
+Create a ``user.img`` partition with basic ``cloud-init`` configuration for launching an image:
 
 .. terminal::
     :input: cat << EOF > user-data
@@ -444,7 +443,7 @@ Mount the image so it can be modified 'in-place':
     sudo kpartx -a /dev/nbd0 && sleep 1 && \
     sudo mount /dev/mapper/nbd0p1 /tmp/img
 
-Seed the required snaps for the ` ``<CUSTOMER-MODEL-NAME>`` ` model, and optionally extra ones, into the image mounted in /tmp/img:
+Seed the required snaps for the ` ``<CUSTOMER-MODEL-NAME>`` ` model, and optionally extra ones, into the image mounted in ``/tmp/img``:
 
 .. terminal::
     :input: sudo \
@@ -487,7 +486,7 @@ The snap seeding process and cloud-init configuration take a few minutes. Wait u
 
     [  OK  ] Reached target Cloud-init target.
 
-Login as "ubuntu" using the password defined in the cloud-init configuration above. Verify the seeded snaps are installed, the ``<CUSTOMER-MODEL-NAME>`` model is correct and a serial assertion was obtained:
+Login as "ubuntu" using the password defined in the ``cloud-init`` configuration above. Verify the seeded snaps are installed, the ``<CUSTOMER-MODEL-NAME>`` ``model`` is correct and a ``serial`` assertion was obtained:
 
 .. code::
 
