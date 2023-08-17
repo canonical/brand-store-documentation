@@ -308,7 +308,7 @@ Setup authentication for downloading snaps from the ``<CUSTOMER-DEVICEVIEW-NAME>
     This exported login is not encrypted. Do not commit it to version control!
 
 Creating an Ubuntu Core image
-_____________________________
+-----------------------------
 
 This section describes the details of Ubuntu Core image building against the ``<CUSTOMER-DEVICEVIEW-NAME>`` store.
 
