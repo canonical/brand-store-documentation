@@ -23,30 +23,30 @@ Your store has been provisioned with the following data:
      - Base Store
      - Device view Store
    * - Store Name
-     - ``<CUSTOMER-STORE-NAME>``
-     - ``<CUSTOMER-DEVICEVIEW-NAME>``
+     - ``{{CUSTOMER_STORE_NAME}}``
+     - ``{{CUSTOMER_DEVICEVIEW_NAME}}``
    * - Store ID
-     - ``<CUSTOMER-STORE-ID>``
-     - ``<CUSTOMER-DEVICEVIEW-ID>``
+     - ``{{CUSTOMER_STORE_ID}}``
+     - ``{{CUSTOMER_DEVICEVIEW_ID}}``
    * - Admin(s)
-     - ``<CUSTOMER-ADMIN-EMAIL>``
-     - ``<CUSTOMER-ADMIN-EMAIL>``
+     - ``{{CUSTOMER_ADMIN_EMAIL}}``
+     - ``{{CUSTOMER_ADMIN_EMAIL}}``
    * - Publisher(s)
-     - ``<CUSTOMER-BRAND-EMAIL>``
+     - ``{{CUSTOMER_BRAND_EMAIL}}``
      - (none)
    * - Reviewer(s)
-     - ``<CUSTOMER-ADMIN-EMAIL>``
+     - ``{{CUSTOMER_ADMIN_EMAIL}}``
      - (none)
    * - Viewer(s)
-     - ``<CUSTOMER-VIEWER-EMAIL>``
-     - ``<CUSTOMER-VIEWER-EMAIL>``
+     - ``{{CUSTOMER_VIEWER_EMAIL}}``
+     - ``{{CUSTOMER_VIEWER_EMAIL}}``
 
 The Admin role can be used to grant these roles to other accounts, as well.
 
 Brand Account
 ----------------- 
 
-Account: ``<CUSTOMER-BRAND-EMAIL>`` (account-id: ``<CUSTOMER-BRAND-ACCOUNT-ID>``)
+Account: ``{{CUSTOMER_BRAND_EMAIL}}`` (account-id: ``{{CUSTOMER_BRAND_ACCOUNT_ID}}``)
 
 The Brand account was set for your Brand Stores at the time of store creation.  The Brand account defines the Brand scope of authority, and it must be used for certain functions.
 
@@ -62,4 +62,3 @@ The Brand account:
 .. note::
   
   Use of the Brand account and its credentials should be strictly limited. Canonical recommends that the Brand account not be assigned any roles that are not strictly needed. The Brand account will need the **Publisher** role, but do not make the Brand account a store **Administrator**, **Reviewer**, or **Viewer**.  
-
