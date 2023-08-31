@@ -8,14 +8,14 @@ There are several Snap Store instances that will be relevant to you. To understa
 - `Snap Store vs Brand Store <https://ubuntu.com/core/services/guide/snap-store-vs-iot-app-store>`_
 - `Base Stores and Device View Stores <https://ubuntu.com/core/services/guide/base-stores-and-device-view-stores>`_
 
-Your Base Snap Store is:  ``<CUSTOMER-STORE-NAME>`` (``<CUSTOMER-STORE-ID>``)
+Your Base Snap Store is:  ``{{CUSTOMER_STORE_NAME}}`` (``{{CUSTOMER_STORE_ID}}``)
 
-Your Device View Snap Store is: ``<CUSTOMER-DEVICEVIEW-NAME>`` (``<CUSTOMER-DEVICEVIEW-ID>``) 
+Your Device View Snap Store is: ``{{CUSTOMER_DEVICEVIEW_NAME}}`` (``{{CUSTOMER_DEVICEVIEW_ID}}``)
 
 Your Device View Store is configured:
 
-- to automatically include all snaps from ``<STORES-WITH-WHOLESALE-INCLUSION>``
-- to include a specific set of snaps from ``<STORES-WITH-CURATED-INCLUSION>``
+- to automatically include all snaps from ``{{STORES_WITH_WHOLESALE_INCLUSION}}``
+- to include a specific set of snaps from ``{{STORES_WITH_CURATED_INCLUSION}}``
 
 All stores (including your Device View Snap Store) always include the snapd snap, as well as the LTS-versioned Core snaps (i.e. core18, core20, core22).
 
