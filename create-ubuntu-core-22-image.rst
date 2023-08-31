@@ -257,7 +257,7 @@ Ubuntu Core image is built in the one line instruction by using the above develo
 Launching and verifying the image
 ---------------------------------
 
-To launch and test your newly generated Ubuntu Core image, follow the steps here: `Ubuntu Core: Testing with QEMU <https://ubuntu.com/core/docs/testing-with-qemu>`_. Once the image is booted and installed, login and then verify if the seeded snaps are installed, the ``{{CUSTOMER_MODEL_NAME}}`` ``model`` is correct and a serial assertion was obtained:
+To launch and test your newly generated Ubuntu Core image, follow the steps here: `Ubuntu Core: Testing with QEMU <https://ubuntu.com/core/docs/testing-with-qemu>`_. Once the image is booted and installed, you can log in. You should see the following welcome text:
 
 .. code:: text
 
@@ -283,6 +283,8 @@ To launch and test your newly generated Ubuntu Core image, follow the steps here
     traditional debs. It's a brave new world here in Ubuntu Core!
 
     Please see 'snap --help' for app installation and updates.
+
+Now verify that the seeded snaps are installed, the ``{{CUSTOMER_MODEL_NAME}}`` ``model`` is correct and a serial assertion was obtained:
 
 .. terminal::
     :user: {{UBUNTU_SSO_USER_NAME}}
