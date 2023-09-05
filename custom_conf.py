@@ -1,4 +1,5 @@
 import datetime
+import json
 import os
 import sys
 
@@ -68,31 +69,6 @@ html_context = {
     # Change to an empty value if your GitHub repo doesn't have issues enabled.
     # This will disable the feedback button and the issue link in the footer.
     'github_issues': 'enabled',
-
-    # list all escape values
-    'API_KEY_FROM_SERIAL_VAULT': 'NULL',
-    'CUSTOMER_ADMIN_ACCOUNT_ID': 'NULL',
-    'CUSTOMER_ADMIN_EMAIL': 'NULL',
-    'CUSTOMER_BRAND_ACCOUNT_ID': 'NULL',
-    'CUSTOMER_BRAND_EMAIL': 'NULL',
-    'CUSTOMER_DEVICEVIEW_ALIAS': 'NULL',
-    'CUSTOMER_DEVICEVIEW_ID': 'NULL',
-    'CUSTOMER_DEVICEVIEW_NAME': 'NULL',
-    'CUSTOMER_MODEL_NAME': 'NULL',
-    'CUSTOMER_NAME': 'NULL',
-    'CUSTOMER_REQUIRED_SNAPS': 'NULL',
-    'CUSTOMER_SNAP_IDS': 'NULL',
-    'CUSTOMER_STORE_ID': 'NULL',
-    'CUSTOMER_STORE_NAME': 'NULL',
-    'CUSTOMER_STORE_PREFIX': 'NULL',
-    'CUSTOMER_UBUNTU_CORE_VERSION': 'NULL',
-    'CUSTOMER_VIEWER_ACCOUNT_ID': 'NULL',
-    'CUSTOMER_VIEWER_EMAIL': 'NULL',
-    'PREPARED_BY': 'NULL',
-    'PREPARED_ON': 'NULL',
-    'STORES_WITH_CURATED_INCLUSION': 'NULL',
-    'STORES_WITH_WHOLESALE_INCLUSION': 'NULL',
-    'UBUNTU_SSO_USER_NAME': 'NULL',
 }
 
 # If your project is on documentation.ubuntu.com, specify the project
@@ -155,3 +131,41 @@ disable_feedback_button = False
 ############################################################
 
 ## Add any configuration that is not covered by the common conf.py file.
+
+# Default values for template variables, used when no TEMPLATE_FILENAME is specified.
+template_values = {
+    'API_KEY_FROM_SERIAL_VAULT': 'NULL',
+    'CUSTOMER_ADMIN_ACCOUNT_ID': 'NULL',
+    'CUSTOMER_ADMIN_EMAIL': 'NULL',
+    'CUSTOMER_BRAND_ACCOUNT_ID': 'NULL',
+    'CUSTOMER_BRAND_EMAIL': 'NULL',
+    'CUSTOMER_DEVICEVIEW_ALIAS': 'NULL',
+    'CUSTOMER_DEVICEVIEW_ID': 'NULL',
+    'CUSTOMER_DEVICEVIEW_NAME': 'NULL',
+    'CUSTOMER_MODEL_NAME': 'NULL',
+    'CUSTOMER_NAME': 'NULL',
+    'CUSTOMER_REQUIRED_SNAPS': 'NULL',
+    'CUSTOMER_SNAP_IDS': 'NULL',
+    'CUSTOMER_STORE_ID': 'NULL',
+    'CUSTOMER_STORE_NAME': 'NULL',
+    'CUSTOMER_STORE_PREFIX': 'NULL',
+    'CUSTOMER_UBUNTU_CORE_VERSION': 'NULL',
+    'CUSTOMER_VIEWER_ACCOUNT_ID': 'NULL',
+    'CUSTOMER_VIEWER_EMAIL': 'NULL',
+    'PREPARED_BY': 'NULL',
+    'PREPARED_ON': 'NULL',
+    'STORES_WITH_CURATED_INCLUSION': 'NULL',
+    'STORES_WITH_WHOLESALE_INCLUSION': 'NULL',
+    'UBUNTU_SSO_USER_NAME': 'NULL',
+}
+
+try:
+    with open(os.environ['TEMPLATE_FILENAME']) as template_file:
+        template_values = json.load(template_file)
+except:
+    # Fallback to the defaults
+    pass
+
+# Merge the template values with the HTML context so the documentation can use
+# template variables.
+html_context = {**html_context, **template_values}
