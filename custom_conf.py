@@ -160,6 +160,7 @@ template_values = {
 }
 
 try:
+    print(os.environ)
     with open(os.environ['TEMPLATE_FILENAME']) as template_file:
         print("ENVIRONMENT VARIABLE LOADED", os.environ['TEMPLATE_FILENAME'])
         template_values = json.load(template_file)
