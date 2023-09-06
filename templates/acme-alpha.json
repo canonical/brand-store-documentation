@@ -12,7 +12,7 @@
     "CUSTOMER_REQUIRED_SNAPS": "required",
     "CUSTOMER_SNAP_IDS": "alpha-snap",
     "CUSTOMER_STORE_ID": "acme-store",
-    "CUSTOMER_STORE_NAME": "Alpha 1",
+    "CUSTOMER_STORE_NAME": "Alpha 2",
     "CUSTOMER_STORE_PREFIX": "acme",
     "CUSTOMER_UBUNTU_CORE_VERSION": "22",
     "CUSTOMER_VIEWER_ACCOUNT_ID": "acme-viewer",
