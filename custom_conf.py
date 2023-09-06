@@ -160,14 +160,10 @@ template_values = {
 }
 
 try:
-    print(os.environ)
     with open(os.environ['TEMPLATE_FILENAME']) as template_file:
-        print("ENVIRONMENT VARIABLE LOADED", os.environ['TEMPLATE_FILENAME'])
         template_values = json.load(template_file)
-        print("FOUND TEMPLATE FILE")
 except:
     # Fallback to the defaults
-    print("SOMETHING WENT WRONG")
     pass
 
 # Merge the template values with the HTML context so the documentation can use
