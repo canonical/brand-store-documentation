@@ -104,7 +104,7 @@ linkcheck_ignore = [
 ## Use them to extend the default functionality.
 
 # Add extensions
-custom_extensions = ['rstjinja']
+custom_extensions = ['rstjinja', 'custom-terminal-output']
 
 # Add files or directories that should be excluded from processing.
 custom_excludes = []
@@ -169,3 +169,19 @@ except:
 # Merge the template values with the HTML context so the documentation can use
 # template variables.
 html_context = {**html_context, **template_values}
+
+latex_elements = {
+    'preamble': r'''
+\usepackage{tcolorbox}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\definecolor{yellowgreen}{RGB}{154, 205, 50}
+\definecolor{fancygrey}{RGB}{242, 242, 242}
+\newtcolorbox{sphinxclassterminal}[1][]{%
+  colback=fancygrey,
+  %fontupper=\color{white},
+  #1}
+\newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
+''',
+    "sphinxsetup": 'verbatimwithframe=false, pre_border-radius=0pt, verbatimvisiblespace=\\phantom{}, verbatimcontinued=\\phantom{}',
+}
