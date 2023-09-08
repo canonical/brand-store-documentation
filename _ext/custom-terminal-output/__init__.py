@@ -47,11 +47,10 @@ class TerminalOutput(SphinxDirective):
         prompt_container.append(prompt)
 
         inpline.append(prompt_container)
-
         inp = nodes.literal(text=command)
         inp["classes"].append("command")
         inpline.append(inp)
-        inpline.append(nodes.paragraph())
+        # inpline.append(nodes.paragraph())
         return inpline
 
     def run(self):
@@ -76,7 +75,10 @@ class TerminalOutput(SphinxDirective):
         # Add the original prompt and input
 
         out.append(self.input_line(prompt_text, command))
-
+        # breakpoint()
+        only_input = all((line.startswith(":input: ") for line in self.content))
+        if only_input:
+            out.append(nodes.paragraph())
         # Go through the content and append all lines as output
         # except for the ones that start with ":input: " - those get
         # a prompt
@@ -90,7 +92,8 @@ class TerminalOutput(SphinxDirective):
                 out.append(self.input_line(prompt_text, blob[0][8:]))
             else:
                 out.append(nodes.literal_block(text='\n'.join(blob)))
-
+            if only_input:
+                out.append(nodes.paragraph())
         return [out]
 
 
