@@ -240,7 +240,7 @@ Terms that should not be checked by the spelling checker: :spellexception:`Purpo
 
 A terminal view with input and output:
 
-.. terminal::
+.. term::
    :input: command
    :user: root
    :host: vampyr

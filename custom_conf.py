@@ -104,7 +104,7 @@ linkcheck_ignore = [
 ## Use them to extend the default functionality.
 
 # Add extensions
-custom_extensions = ['rstjinja', 'custom-terminal-output']
+custom_extensions = ['rstjinja', 'better-term']
 
 # Add files or directories that should be excluded from processing.
 custom_excludes = []
