@@ -187,3 +187,22 @@ details summary {
     color: var(--color-version-popup);
     font-weight: bolder;
 }
+
+/* This can possibly be upstreamed to https://github.com/canonical/lxd-sphinx-extensions/tree/main */
+.terminal > p {
+    display: none;
+}
+
+/* Make terminal output the same color as the rest of the terminal */
+.terminal > .highlight-text > .highlight {
+    background: #202020;
+}
+
+/* Disable the copy button on the terminal output */
+.terminal > .highlight-text > .highlight > .copybtn {
+    display: none;
+}
+
+div[class*=" highlight-"], div[class^="highlight-"] {
+    margin: 0;
+}
