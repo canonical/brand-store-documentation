@@ -57,7 +57,7 @@ html_context = {
     'discourse': 'https://discourse.ubuntu.com',
 
     # Change to the GitHub info for your project
-    'github_url': 'https://github.com/canonical/starter-pack',
+    'github_url': 'https://github.com/canonical/brand-store-documentation',
 
     # Change to the branch for this version of the documentation
     'github_version': 'main',
