@@ -173,15 +173,10 @@ html_context = {**html_context, **template_values}
 latex_elements = {
     'preamble': r'''
 \usepackage{tcolorbox}
-\usepackage{fancyvrb}
-\usepackage{fvextra}
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
-\definecolor{fancygrey}{RGB}{242, 242, 242}
-\newtcolorbox{sphinxclassterminal}[1][]{%
-  colback=fancygrey,
-  %fontupper=\color{white},
-  #1}
 \newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
+\tcbset{colback=black, fontupper=\color{white}}
+\newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{tcolorbox}}{\end{tcolorbox}}
 ''',
     "sphinxsetup": 'verbatimwithframe=false, pre_border-radius=0pt, verbatimvisiblespace=\\phantom{}, verbatimcontinued=\\phantom{}',
 }
