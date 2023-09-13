@@ -16,7 +16,7 @@ These instructions assume that you have the proper permissions under the GitHub 
 #. Change the "Repository URL" to ``git@github.com:canonical/brand-store-documentation.git`` and click "Save".
 #. Click on "Environment Variables", click on "Add Environment Variable"; fill in "Name" with ``TEMPLATE_FILENAME``, value with ``templates/<template-filename>``, and click "Save".
 
-   - The template filename can really be anything unique, but ideally is of the form ``company-brand.json``. For example, the example Acme company has a brand named Alpha and so the template filename is ``acme-alpha.json``.
+   - The template filename can really be anything unique, but ideally is of the form ``company-brand.yaml``. For example, the example Acme company has a brand named Alpha and so the template filename is ``acme-alpha.yaml``.
 
 #. Click on "SSH Keys", click the displayed key, and add the public key to the https://github.com/canonical/brand-store-documentation GitHub repository; the key only requires Read permissions.
 #. Click on "Integrations", click on "GitHub incoming webhook", click "Resync webhook"
