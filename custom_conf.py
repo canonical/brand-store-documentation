@@ -171,7 +171,11 @@ except:
 html_context = {**html_context, **template_values}
 
 latex_elements = {
+    'pointsize': '11pt',
     'preamble': r'''
+\usepackage{charter}
+\usepackage[defaultsans]{lato}
+\usepackage{inconsolata}
 \usepackage{tcolorbox}
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
 \newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
