@@ -1,10 +1,11 @@
 import datetime
-import json
+import logging
 import os
 import sys
+import yaml
 
 sys.path.append(os.path.abspath("./_ext"))
-
+logger = logging.getLogger()
 # Custom configuration for the Sphinx documentation builder.
 # All configuration specific to your project should be done in this file.
 #
@@ -107,7 +108,7 @@ linkcheck_ignore = [
 custom_extensions = ['rstjinja', 'better-term']
 
 # Add files or directories that should be excluded from processing.
-custom_excludes = []
+custom_excludes = ['WORKFLOW.rst']
 
 # Add CSS files (located in .sphinx/_static/)
 custom_html_css_files = []
@@ -132,36 +133,15 @@ disable_feedback_button = False
 
 ## Add any configuration that is not covered by the common conf.py file.
 
-# Default values for template variables, used when no TEMPLATE_FILENAME is specified.
-template_values = {
-    'API_KEY_FROM_SERIAL_VAULT': 'NULL',
-    'CUSTOMER_ADMIN_ACCOUNT_ID': 'NULL',
-    'CUSTOMER_ADMIN_EMAIL': 'NULL',
-    'CUSTOMER_BRAND_ACCOUNT_ID': 'NULL',
-    'CUSTOMER_BRAND_EMAIL': 'NULL',
-    'CUSTOMER_DEVICEVIEW_ALIAS': 'NULL',
-    'CUSTOMER_DEVICEVIEW_ID': 'NULL',
-    'CUSTOMER_DEVICEVIEW_NAME': 'NULL',
-    'CUSTOMER_MODEL_NAME': 'NULL',
-    'CUSTOMER_NAME': 'NULL',
-    'CUSTOMER_REQUIRED_SNAPS': 'NULL',
-    'CUSTOMER_SNAP_IDS': 'NULL',
-    'CUSTOMER_STORE_ID': 'NULL',
-    'CUSTOMER_STORE_NAME': 'NULL',
-    'CUSTOMER_STORE_PREFIX': 'NULL',
-    'CUSTOMER_UBUNTU_CORE_VERSION': 'NULL',
-    'CUSTOMER_VIEWER_ACCOUNT_ID': 'NULL',
-    'CUSTOMER_VIEWER_EMAIL': 'NULL',
-    'PREPARED_BY': 'NULL',
-    'PREPARED_ON': 'NULL',
-    'STORES_WITH_CURATED_INCLUSION': 'NULL',
-    'STORES_WITH_WHOLESALE_INCLUSION': 'NULL',
-    'UBUNTU_SSO_USER_NAME': 'NULL',
-}
+# Load default values for template variables, used when no TEMPLATE_FILENAME is
+# specified.
+template_values = {}
+with open("templates/TEMPLATE.yaml") as template_file:
+    template_values = yaml.safe_load(template_file)
 
 try:
     with open(os.environ['TEMPLATE_FILENAME']) as template_file:
-        template_values = json.load(template_file)
+        template_values = yaml.safe_load(template_file)
 except:
     # Fallback to the defaults
     pass
