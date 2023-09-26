@@ -156,11 +156,11 @@ latex_elements = {
 \usepackage{charter}
 \usepackage[defaultsans]{lato}
 \usepackage{inconsolata}
-\usepackage{tcolorbox}
+\usepackage[most]{tcolorbox}
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
 \newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
 \tcbset{colback=black, fontupper=\color{white}}
-\newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{tcolorbox}}{\end{tcolorbox}}
+\newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{tcolorbox}[enhanced, breakable, fontupper=\color{white}, use color stack=true]}{\end{tcolorbox}}
 ''',
     "sphinxsetup": 'verbatimwithframe=false, pre_border-radius=0pt, verbatimvisiblespace=\\phantom{}, verbatimcontinued=\\phantom{}',
 }
