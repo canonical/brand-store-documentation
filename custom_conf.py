@@ -157,11 +157,29 @@ latex_elements = {
 \usepackage[defaultsans]{lato}
 \usepackage{inconsolata}
 \usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\graphicspath{ {../../images/} }
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
 \newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
 \tcbset{colback=black, fontupper=\color{white}}
 \newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{tcolorbox}[breakable, use color stack=true]}{\end{tcolorbox}}
+\newcommand{\dimtorightedge}{%
+  \dimexpr\paperwidth-1in-\hoffset-\oddsidemargin\relax}
+\newcommand{\dimtotop}{%
+  \dimexpr\height-1in-\voffset-\topmargin-\headheight-\headsep\relax}
 ''',
     'sphinxsetup': 'verbatimwithframe=false, pre_border-radius=0pt, verbatimvisiblespace=\\phantom{}, verbatimcontinued=\\phantom{}',
-    'extraclassoptions': 'openany,oneside'
+    'extraclassoptions': 'openany,oneside',
+    'maketitle': r'''
+\begin{titlepage}
+\begin{flushleft}
+        \hbox
+        {%
+            \makebox[\dimtorightedge]{}%
+            \makebox[0pt][r]
+            {\raisebox{0pt}[\dimtotop]{\includegraphics[width=\paperwidth]{title-page-header}}}%
+        }
+\end{flushleft}
+\end{titlepage}
+''',
 }
