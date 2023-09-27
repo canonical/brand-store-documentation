@@ -150,6 +150,7 @@ except:
 # template variables.
 html_context = {**html_context, **template_values}
 
+# This whole thing is a hack and a half, but it works.
 latex_elements = {
     'pointsize': '11pt',
     'preamble': r'''
@@ -157,9 +158,21 @@ latex_elements = {
 \usepackage[defaultsans]{lato}
 \usepackage{inconsolata}
 \usepackage[most]{tcolorbox}
+\usepackage{tabto}
+\usepackage{ifthen}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \usepackage{graphicx}
 \graphicspath{ {../../images/} }
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
+\definecolor{title}{RGB}{76, 17, 48}
+\definecolor{subtitle}{RGB}{116, 27, 71}
+\definecolor{label}{RGB}{119, 41, 100}
+\makeatletter
+\fancypagestyle{normal}{
+    \fancyhf{}
+}
+\makeatother
 \newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
 \tcbset{colback=black, fontupper=\color{white}}
 \newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{tcolorbox}[breakable, use color stack=true]}{\end{tcolorbox}}
@@ -180,6 +193,17 @@ latex_elements = {
             {\raisebox{0pt}[\dimtotop]{\includegraphics[width=\paperwidth]{title-page-header}}}%
         }
 \end{flushleft}
+\Huge \textcolor{title}{''' + template_values['CUSTOMER_NAME'] + r''' Onboarding Guide}
+
+\Large \textcolor{subtitle}{\textit{Brand Store and Image Build Quick-Start Guide}}
+
+\vfill
+
+\textcolor{label}{Prepared by:} \tabto{8em} ''' + template_values['PREPARED_BY'] + r'''
+
+\textcolor{label}{Prepared on:} \tabto{8em} ''' + template_values['PREPARED_ON'] + r'''
+
+\textcolor{label}{Version:} \tabto{8em} 1.9
 \end{titlepage}
 ''',
 }
