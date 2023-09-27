@@ -154,6 +154,16 @@ html_context = {**html_context, **template_values}
 latex_elements = {
     'pointsize': '11pt',
     'preamble': r'''
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{normal}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
 \usepackage{charter}
 \usepackage[defaultsans]{lato}
 \usepackage{inconsolata}
@@ -161,18 +171,12 @@ latex_elements = {
 \usepackage{tabto}
 \usepackage{ifthen}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
 \usepackage{graphicx}
 \graphicspath{ {../../images/} }
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
 \definecolor{title}{RGB}{76, 17, 48}
 \definecolor{subtitle}{RGB}{116, 27, 71}
 \definecolor{label}{RGB}{119, 41, 100}
-\makeatletter
-\fancypagestyle{normal}{
-    \fancyhf{}
-}
-\makeatother
 \newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
 \tcbset{colback=black, fontupper=\color{white}}
 \newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{tcolorbox}[breakable, use color stack=true]}{\end{tcolorbox}}
