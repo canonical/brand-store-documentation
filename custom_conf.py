@@ -150,23 +150,71 @@ except:
 # template variables.
 html_context = {**html_context, **template_values}
 
+latex_engine = 'xelatex'
+# This whole thing is a hack and a half, but it works.
 latex_elements = {
     'pointsize': '11pt',
     'preamble': r'''
-\usepackage{charter}
-\usepackage[defaultsans]{lato}
-\usepackage{inconsolata}
+%\usepackage{charter}
+%\usepackage[defaultsans]{lato}
+%\usepackage{inconsolata}
+\setmainfont[Path = ../../fonts/, UprightFont = *-R, ItalicFont=*-RI]{Ubuntu}
+\setmonofont[Path = ../../fonts/, UprightFont = *-R]{UbuntuMono}
 \usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable}
+\usepackage{tabto}
+\usepackage{ifthen}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
 \usepackage{graphicx}
+\usepackage[
+    firstpage=true,
+    contents={
+        \includegraphics[width=1cm]{title-page-footer}
+    },
+    placement=bottom,
+    position={current page.south east},
+    anchor={},
+    nodeanchor={south east}
+]{background}
 \graphicspath{ {../../images/} }
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
+\definecolor{title}{RGB}{76, 17, 48}
+\definecolor{subtitle}{RGB}{116, 27, 71}
+\definecolor{label}{RGB}{119, 41, 100}
+\definecolor{copyright}{RGB}{174, 167, 159}
+\makeatletter
+\def\tcb@finalize@environment{%
+  \color{.}% hack for xelatex
+  \tcb@layer@dec%
+}
+\makeatother
 \newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
 \tcbset{colback=black, fontupper=\color{white}}
-\newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{tcolorbox}[breakable, use color stack=true]}{\end{tcolorbox}}
+\newtcolorbox{termbox}{breakable, colupper=white}
+\newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{termbox}}{\end{termbox}}
 \newcommand{\dimtorightedge}{%
   \dimexpr\paperwidth-1in-\hoffset-\oddsidemargin\relax}
 \newcommand{\dimtotop}{%
   \dimexpr\height-1in-\voffset-\topmargin-\headheight-\headsep\relax}
+\newtoggle{tpage}
+\AtBeginEnvironment{titlepage}{\global\toggletrue{tpage}}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{normal}{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{titlepage}{%
+    \fancyhf{}
+    \fancyfoot[L]{\footnotesize \textcolor{copyright}{© 2023 Canonical Ltd. All rights reserved. \newline Confidential and proprietary, do not share without permission.}}
+    %\fancyfoot[R]{\includegraphics[width=5cm]{title-page-footer}}
+}
+\newcommand\sphinxbackoftitlepage{\thispagestyle{titlepage}}
 ''',
     'sphinxsetup': 'verbatimwithframe=false, pre_border-radius=0pt, verbatimvisiblespace=\\phantom{}, verbatimcontinued=\\phantom{}',
     'extraclassoptions': 'openany,oneside',
@@ -180,6 +228,28 @@ latex_elements = {
             {\raisebox{0pt}[\dimtotop]{\includegraphics[width=\paperwidth]{title-page-header}}}%
         }
 \end{flushleft}
+\Huge \textcolor{title}{''' + template_values['CUSTOMER_NAME'] + r''' Onboarding Guide}
+
+\Large \textcolor{subtitle}{\textit{Brand Store and Image Build Quick-Start Guide}}
+
+\vfill
+
+\textcolor{label}{Prepared by:} \tabto{8em} ''' + template_values['PREPARED_BY'] + r'''
+
+\textcolor{label}{Prepared on:} \tabto{8em} ''' + template_values['PREPARED_ON'] + r'''
+
+\textcolor{label}{Version:} \tabto{8em} 1.9
+
+\vfill
+
+\thispagestyle{titlepage}
 \end{titlepage}
+\AddToHook{shipout/background}{
+      \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south west] at (current page.south west) {
+        \includegraphics[width=16cm]{normal-page-footer}
+      };
+      \end{tikzpicture}
+    }
 ''',
 }
