@@ -184,7 +184,7 @@ latex_elements = {
 \makeatother
 \newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
 \tcbset{enhanced jigsaw, colback=black, fontupper=\color{white}}
-\newtcolorbox{termbox}{breakable, colupper=white, halign=left}
+\newtcolorbox{termbox}{breakable, colupper=white, halign=flush left, oversize}
 \newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{termbox}}{\end{termbox}}
 \newcommand{\dimtorightedge}{%
   \dimexpr\paperwidth-1in-\hoffset-\oddsidemargin\relax}
