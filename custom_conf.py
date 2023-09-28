@@ -167,11 +167,22 @@ latex_elements = {
 \usepackage{etoolbox}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
+\usepackage[
+    firstpage=true,
+    contents={
+        \includegraphics[width=1cm]{title-page-footer}
+    },
+    placement=bottom,
+    position={current page.south east},
+    anchor={},
+    nodeanchor={south east}
+]{background}
 \graphicspath{ {../../images/} }
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
 \definecolor{title}{RGB}{76, 17, 48}
 \definecolor{subtitle}{RGB}{116, 27, 71}
 \definecolor{label}{RGB}{119, 41, 100}
+\definecolor{copyright}{RGB}{174, 167, 159}
 \makeatletter
 \def\tcb@finalize@environment{%
   \color{.}% hack for xelatex
@@ -190,16 +201,20 @@ latex_elements = {
 \AtBeginEnvironment{titlepage}{\global\toggletrue{tpage}}
 \fancypagestyle{plain}{
     \fancyhf{}
-    \fancyfoot[L]{\ifthenelse{\value{page}=1}{© 2023 Canonical Ltd. All rights reserved.}{}}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
 \fancypagestyle{normal}{
     \fancyhf{}
-    \fancyfoot[L]{\ifthenelse{\value{page}=1}{© 2023 Canonical Ltd. All rights reserved.}{}}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
+\fancypagestyle{titlepage}{%
+    \fancyhf{}
+    \fancyfoot[L]{\footnotesize \textcolor{copyright}{© 2023 Canonical Ltd. All rights reserved. \newline Confidential and proprietary, do not share without permission.}}
+    %\fancyfoot[R]{\includegraphics[width=5cm]{title-page-footer}}
+}
+\newcommand\sphinxbackoftitlepage{\thispagestyle{titlepage}}
 ''',
     'sphinxsetup': 'verbatimwithframe=false, pre_border-radius=0pt, verbatimvisiblespace=\\phantom{}, verbatimcontinued=\\phantom{}',
     'extraclassoptions': 'openany,oneside',
@@ -224,6 +239,17 @@ latex_elements = {
 \textcolor{label}{Prepared on:} \tabto{8em} ''' + template_values['PREPARED_ON'] + r'''
 
 \textcolor{label}{Version:} \tabto{8em} 1.9
+
+\vfill
+
+\thispagestyle{titlepage}
 \end{titlepage}
+\AddToHook{shipout/background}{
+      \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south west] at (current page.south west) {
+        \includegraphics[width=16cm]{normal-page-footer}
+      };
+      \end{tikzpicture}
+    }
 ''',
 }
