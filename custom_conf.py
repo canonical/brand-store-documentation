@@ -154,29 +154,22 @@ latex_engine = 'xelatex'
 # This whole thing is a hack and a half, but it works.
 latex_elements = {
     'pointsize': '11pt',
+    'fncychap': '',
     'preamble': r'''
 %\usepackage{charter}
 %\usepackage[defaultsans]{lato}
 %\usepackage{inconsolata}
-\setmainfont[Path = ../../fonts/, UprightFont = *-R, ItalicFont=*-RI]{Ubuntu}
+\setmainfont[Path = ../../fonts/, UprightFont = *-R, BoldFont = *-B, ItalicFont=*-RI]{Ubuntu}
 \setmonofont[Path = ../../fonts/, UprightFont = *-R]{UbuntuMono}
 \usepackage[most]{tcolorbox}
 \tcbuselibrary{breakable}
+\usepackage{lastpage}
 \usepackage{tabto}
 \usepackage{ifthen}
 \usepackage{etoolbox}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
-\usepackage[
-    firstpage=true,
-    contents={
-        \includegraphics[width=1cm]{title-page-footer}
-    },
-    placement=bottom,
-    position={current page.south east},
-    anchor={},
-    nodeanchor={south east}
-]{background}
+\usepackage{titlesec}
 \graphicspath{ {../../images/} }
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
 \definecolor{title}{RGB}{76, 17, 48}
@@ -201,20 +194,29 @@ latex_elements = {
 \AtBeginEnvironment{titlepage}{\global\toggletrue{tpage}}
 \fancypagestyle{plain}{
     \fancyhf{}
+    \fancyfoot[R]{\thepage\ of \pageref*{LastPage}}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
 \fancypagestyle{normal}{
     \fancyhf{}
+    \fancyfoot[R]{\thepage\ of \pageref*{LastPage}}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
 \fancypagestyle{titlepage}{%
     \fancyhf{}
     \fancyfoot[L]{\footnotesize \textcolor{copyright}{© 2023 Canonical Ltd. All rights reserved. \newline Confidential and proprietary, do not share without permission.}}
-    %\fancyfoot[R]{\includegraphics[width=5cm]{title-page-footer}}
 }
 \newcommand\sphinxbackoftitlepage{\thispagestyle{titlepage}}
+\titleformat{\chapter}[block]{\Huge \color{title} \bfseries\filright}{\thechapter .}{1.5ex}{}
+\titlespacing{\chapter}{0pt}{0pt}{0pt}
+\titleformat{\section}[block]{\huge \bfseries\filright}{\thesection .}{1.5ex}{} 
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titleformat{\subsection}[block]{\Large \bfseries\filright}{\thesubsection .}{1.5ex}{} 
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\setcounter{tocdepth}{1}
+\renewcommand\pagenumbering[1]{}
 ''',
     'sphinxsetup': 'verbatimwithframe=false, pre_border-radius=0pt, verbatimvisiblespace=\\phantom{}, verbatimcontinued=\\phantom{}',
     'extraclassoptions': 'openany,oneside',
@@ -242,12 +244,25 @@ latex_elements = {
 
 \vfill
 
+\AddToHook{shipout/background}{
+    \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south east, inner sep=0] at (current page.south east) {
+    \includegraphics[width=3.46in]{title-page-footer}
+    };
+    \end{tikzpicture}
+}
 \thispagestyle{titlepage}
 \end{titlepage}
+\RemoveFromHook{shipout/background}
 \AddToHook{shipout/background}{
       \begin{tikzpicture}[remember picture,overlay]
-      \node[anchor=south west] at (current page.south west) {
-        \includegraphics[width=16cm]{normal-page-footer}
+      \node[anchor=south west, align=left, inner sep=0] at (current page.south west) {
+        \includegraphics[width=6.72in]{normal-page-footer}
+      };
+      \end{tikzpicture}
+      \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=north east, opacity=0.5] at (current page.north east) {
+        \includegraphics[width=4cm]{normal-page-header}
       };
       \end{tikzpicture}
     }
