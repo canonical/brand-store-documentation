@@ -150,26 +150,21 @@ except:
 # template variables.
 html_context = {**html_context, **template_values}
 
+latex_engine = 'xelatex'
 # This whole thing is a hack and a half, but it works.
 latex_elements = {
     'pointsize': '11pt',
     'preamble': r'''
-\fancypagestyle{plain}{
-    \fancyhf{}
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0pt}
-}
-\fancypagestyle{normal}{
-    \fancyhf{}
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0pt}
-}
-\usepackage{charter}
-\usepackage[defaultsans]{lato}
-\usepackage{inconsolata}
+%\usepackage{charter}
+%\usepackage[defaultsans]{lato}
+%\usepackage{inconsolata}
+\setmainfont[Path = ../../fonts/, UprightFont = *-R, ItalicFont=*-RI]{Ubuntu}
+\setmonofont[Path = ../../fonts/, UprightFont = *-R]{UbuntuMono}
 \usepackage[most]{tcolorbox}
+\tcbuselibrary{breakable}
 \usepackage{tabto}
 \usepackage{ifthen}
+\usepackage{etoolbox}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \graphicspath{ {../../images/} }
@@ -177,13 +172,34 @@ latex_elements = {
 \definecolor{title}{RGB}{76, 17, 48}
 \definecolor{subtitle}{RGB}{116, 27, 71}
 \definecolor{label}{RGB}{119, 41, 100}
+\makeatletter
+\def\tcb@finalize@environment{%
+  \color{.}% hack for xelatex
+  \tcb@layer@dec%
+}
+\makeatother
 \newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
 \tcbset{colback=black, fontupper=\color{white}}
-\newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{tcolorbox}[breakable, use color stack=true]}{\end{tcolorbox}}
+\newtcolorbox{termbox}{breakable, colupper=white}
+\newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{termbox}}{\end{termbox}}
 \newcommand{\dimtorightedge}{%
   \dimexpr\paperwidth-1in-\hoffset-\oddsidemargin\relax}
 \newcommand{\dimtotop}{%
   \dimexpr\height-1in-\voffset-\topmargin-\headheight-\headsep\relax}
+\newtoggle{tpage}
+\AtBeginEnvironment{titlepage}{\global\toggletrue{tpage}}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[L]{\ifthenelse{\value{page}=1}{© 2023 Canonical Ltd. All rights reserved.}{}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{normal}{
+    \fancyhf{}
+    \fancyfoot[L]{\ifthenelse{\value{page}=1}{© 2023 Canonical Ltd. All rights reserved.}{}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
 ''',
     'sphinxsetup': 'verbatimwithframe=false, pre_border-radius=0pt, verbatimvisiblespace=\\phantom{}, verbatimcontinued=\\phantom{}',
     'extraclassoptions': 'openany,oneside',
