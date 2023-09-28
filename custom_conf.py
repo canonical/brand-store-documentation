@@ -261,7 +261,7 @@ latex_elements = {
       };
       \end{tikzpicture}
       \begin{tikzpicture}[remember picture,overlay]
-      \node[anchor=north east, opacity=0.5] at (current page.north east) {
+      \node[anchor=north east, opacity=0.5, inner sep=35] at (current page.north east) {
         \includegraphics[width=4cm]{normal-page-header}
       };
       \end{tikzpicture}
