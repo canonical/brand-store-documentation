@@ -23,23 +23,23 @@ Your store has been provisioned with the following data:
      - Base Store
      - Device view Store
    * - Store Name
-     - ``{{CUSTOMER_STORE_NAME}}``
-     - ``{{CUSTOMER_DEVICEVIEW_NAME}}``
+     - {{CUSTOMER_STORE_NAME}}
+     - {{CUSTOMER_DEVICEVIEW_NAME}}
    * - Store ID
-     - ``{{CUSTOMER_STORE_ID}}``
-     - ``{{CUSTOMER_DEVICEVIEW_ID}}``
+     - {{CUSTOMER_STORE_ID}}
+     - {{CUSTOMER_DEVICEVIEW_ID}}
    * - Admin(s)
-     - ``{{CUSTOMER_ADMIN_EMAIL}}``
-     - ``{{CUSTOMER_ADMIN_EMAIL}}``
+     - {{CUSTOMER_ADMIN_EMAIL}}
+     - {{CUSTOMER_ADMIN_EMAIL}}
    * - Publisher(s)
-     - ``{{CUSTOMER_BRAND_EMAIL}}``
+     - {{CUSTOMER_BRAND_EMAIL}}
      - (none)
    * - Reviewer(s)
-     - ``{{CUSTOMER_ADMIN_EMAIL}}``
+     - {{CUSTOMER_ADMIN_EMAIL}}
      - (none)
    * - Viewer(s)
-     - ``{{CUSTOMER_VIEWER_EMAIL}}``
-     - ``{{CUSTOMER_VIEWER_EMAIL}}``
+     - {{CUSTOMER_VIEWER_EMAIL}}
+     - {{CUSTOMER_VIEWER_EMAIL}}
 
 The Admin role can be used to grant these roles to other accounts, as well.
 
