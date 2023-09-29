@@ -170,6 +170,7 @@ latex_elements = {
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{titlesec}
+\usepackage{fontspec}
 \graphicspath{ {../../images/} }
 \definecolor{yellowgreen}{RGB}{154, 205, 50}
 \definecolor{title}{RGB}{76, 17, 48}
@@ -182,10 +183,10 @@ latex_elements = {
   \tcb@layer@dec%
 }
 \makeatother
-\newenvironment{sphinxclassprompt}{\color{yellowgreen}}{}
-\tcbset{colback=black, fontupper=\color{white}}
-\newtcolorbox{termbox}{breakable, colupper=white}
-\newenvironment{sphinxclassterminal}{\color{white}\sphinxsetup{VerbatimColor={black}}\begin{termbox}}{\end{termbox}}
+\newenvironment{sphinxclassprompt}{\color{yellowgreen}\setmonofont[Color = 9ACD32, Path = ../../fonts/, UprightFont = *-R]{UbuntuMono}}{}
+\tcbset{enhanced jigsaw, colback=black, fontupper=\color{white}}
+\newtcolorbox{termbox}{use color stack, breakable, colupper=white, halign=flush left}
+\newenvironment{sphinxclassterminal}{\setmonofont[Color = white, Path = ../../fonts/, UprightFont = *-R]{UbuntuMono}\sphinxsetup{VerbatimColor={black}}\begin{termbox}}{\end{termbox}}
 \newcommand{\dimtorightedge}{%
   \dimexpr\paperwidth-1in-\hoffset-\oddsidemargin\relax}
 \newcommand{\dimtotop}{%
