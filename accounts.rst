@@ -18,7 +18,7 @@ Your store has been provisioned with the following data:
    :widths: 20 40 40
    :header-rows: 1
    :stub-columns: 1
-  
+
    * -
      - Base Store
      - Device view Store
