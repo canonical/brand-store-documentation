@@ -1,5 +1,5 @@
-Snap confinement & snapd interface connections
-==============================================
+About Snap confinement & snapd interface connections
+====================================================
 
 Snaps declare plugs for specific snapd `interfaces <https://snapcraft.io/docs/supported-interfaces>`_ in order to gain access to hardware, shared system resources, and other system interfaces that are normally off-limits to strictly confined snaps. These plugs must be connected to corresponding slots defined by core or application snaps. There are four ways that these interface connections can happen:
 

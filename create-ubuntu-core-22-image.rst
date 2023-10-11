@@ -1,7 +1,9 @@
-How to create an Ubuntu Core 22 image
-=====================================
+Tutorial: Create an Ubuntu Core 22 image
+========================================
 
-To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
+This guide will help you become familiar with the tools, processes and workflows of your brand store. It will also help validate that you can access your store.
+
+In this tutorial, we'll be creating and booting an Ubuntu Core image on amd64.
 
 Creating the gadget snap
 ------------------------
