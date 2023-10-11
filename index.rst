@@ -16,14 +16,12 @@ If you are not yet familiar with Brand Store workflows, start with our tutorial:
 
    Tutorial <create-ubuntu-core-22-image>
 
-If you need configuration values specific to *your* brand store, look them up in our reference guides:
+If you need account IDs and other configuration values specific to *your* brand store, look them up in our reference guides:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   Architecture <architecture>
-   accounts
-   Serial Vault <serial-vault>
+   Configuration values <configuration-values>
 
 If you need a deeper understanding of Snap confinement, read our explanation:
 
