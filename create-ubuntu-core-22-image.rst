@@ -42,7 +42,7 @@ Update the "name" field in the ``snapcraft.yaml`` to "``{{CUSTOMER_STORE_PREFIX}
 Build the snap, using the model **API Key** generated during the Serial Vault setup above:
 
 .. term::
-    :input: MODEL_APIKEY={{API_KEY_FROM_SERIAL_VAULT}} sudo snapcraft --destructive-mode
+    :input: MODEL_APIKEY=<GENERATED-API-KEY> sudo snapcraft --destructive-mode
 
     ...
     Snapped {{CUSTOMER_STORE_PREFIX}}-pc_22-0.1_amd64.snap
