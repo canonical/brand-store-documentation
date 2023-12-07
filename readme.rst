@@ -3,9 +3,29 @@
 Brand Store Documentation
 =========================
 
-* Forked off the `Canonical Sphinx Docs Starter Pack <https://github.com/canonical/sphinx-docs-starter-pack>`_
-* Hosted at https://canonical-canonical-brand-store.readthedocs-hosted.com
-* Managed at https://readthedocs.com/projects/canonical-canonical-brand-store/
+Forked off the `Canonical Sphinx Docs Starter Pack <https://github.com/canonical/sphinx-docs-starter-pack>`_.
+
+.. list-table:: Active RTD projects
+    :header-rows: 1
+
+    * - Store
+      - Admin link
+      - Docs link
+    * - Template
+      - `Admin <https://readthedocs.com/projects/canonical-canonical-brand-store/>`_
+      - `Docs <https://canonical-canonical-brand-store.readthedocs-hosted.com/en/latest/>`_
+    * - Acme: Alpha
+      - `Admin <https://readthedocs.com/projects/canonical-brand-store-acme-alpha/>`_
+      - `Docs <https://canonical-brand-store-acme-alpha.readthedocs-hosted.com/en/latest/>`_
+    * - Canonical: Alliances Demo
+      - `Admin <https://readthedocs.com/projects/canonical-canonical-alliances-demo-brand-store/>`_
+      - `Docs <https://canonical-canonical-alliances-demo-brand-store.readthedocs-hosted.com/en/latest/>`_
+
+For more brand store details see:
+  * Store management for super-admins
+  * Brand Store Customers
+  * Admin dashboard
+  * ...these links are only available to brand store admins
 
 Getting started
 ---------------
