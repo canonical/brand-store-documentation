@@ -93,8 +93,11 @@ redirects = {}
 
 linkcheck_ignore = [
     'http://127.0.0.1:8000',
-    'https://readthedocs.com/projects/canonical-canonical-brand-store/',
     'https://dashboard.snapcraft.io/reviewer/{{CUSTOMER_STORE_ID}}/',
+    'https://readthedocs.com/projects/*',
+    'https://canonical-canonical-brand-store.readthedocs-hosted.com/*',
+    'https://canonical-brand-store-acme-alpha.readthedocs-hosted.com/*',
+    'https://canonical-canonical-alliances-demo-brand-store.readthedocs-hosted.com/*'
 ]
 
 ############################################################
@@ -108,7 +111,7 @@ linkcheck_ignore = [
 custom_extensions = ['rstjinja', 'better-term']
 
 # Add files or directories that should be excluded from processing.
-custom_excludes = ['WORKFLOW.rst']
+custom_excludes = ['README.rst', 'WORKFLOW.rst']
 
 # Add CSS files (located in .sphinx/_static/)
 custom_html_css_files = []
