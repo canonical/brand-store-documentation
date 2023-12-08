@@ -138,16 +138,17 @@ disable_feedback_button = False
 
 # Load default values for template variables, used when no TEMPLATE_FILENAME is
 # specified.
-template_values = {}
 with open("templates/TEMPLATE.yaml") as template_file:
     template_values = yaml.safe_load(template_file)
 
+template_path = os.environ.get('TEMPLATE_FILENAME')
 try:
-    with open(os.environ['TEMPLATE_FILENAME']) as template_file:
+    with open(template_path) as template_file:
         template_values = yaml.safe_load(template_file)
-except:
-    # Fallback to the defaults
-    pass
+except FileNotFoundError:
+    logger.error(f"Template {template_path} not found")
+    # Then fall back to the defaults
+
 
 # Merge the template values with the HTML context so the documentation can use
 # template variables.
