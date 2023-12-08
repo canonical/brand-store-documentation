@@ -54,4 +54,6 @@ To create a new documentation page, create a new ``*.rst`` document in the root 
 Adding a new template variable
 ==============================
 
-New template variables can be created by adding the variable and its default value to ``templates/TEMPLATE.yaml``. For example, to add a ``CUSTOMER_TITLE`` variable to a page, first add a new line to ``TEMPLATE.yaml``: ``CUSTOMER_TITLE: "NULL"``. Then, add a new line to any templates corresponding to Brand Stores that require the new variable with the desired value (for example, ``CUSTOMER_TITLE: "Dr."``). The variable can then be used in the corresponding document like any other variable (by wrapping the variable in ``{{}}``)
+New template variables can be created by adding the variable and its default value to ``templates/TEMPLATE.yaml``. For example, to add a ``CUSTOMER_TITLE`` variable to a page, first add a new line to ``TEMPLATE.yaml``: ``CUSTOMER_TITLE: "NULL"``.
+
+Then, add a new line to any templates corresponding to Brand Stores that require the new variable with the desired value (for example, ``CUSTOMER_TITLE: "Dr."``). The variable can then be used in the corresponding document like any other variable (by wrapping the variable in ``{{}}``)

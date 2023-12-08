@@ -108,7 +108,7 @@ linkcheck_ignore = [
 custom_extensions = ['rstjinja', 'better-term']
 
 # Add files or directories that should be excluded from processing.
-custom_excludes = ['WORKFLOW.rst']
+custom_excludes = ['README.rst', 'WORKFLOW.rst']
 
 # Add CSS files (located in .sphinx/_static/)
 custom_html_css_files = []
