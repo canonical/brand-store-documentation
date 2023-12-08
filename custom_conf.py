@@ -141,7 +141,7 @@ disable_feedback_button = False
 with open("templates/TEMPLATE.yaml") as template_file:
     template_values = yaml.safe_load(template_file)
 
-template_path = os.environ.get('TEMPLATE_FILENAME')
+template_path = os.environ.get("TEMPLATE_FILENAME", "NONE")
 try:
     with open(template_path) as template_file:
         template_values = yaml.safe_load(template_file)
