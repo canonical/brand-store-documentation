@@ -26,3 +26,13 @@ For more brand store details see:
 - Brand Store Customers
 - Admin dashboard
 - ...these links are only available to brand store admins
+
+Historical links
+----------------
+
+Legacy templates were created in Google Docs. Links are provided here for reference:
+
+- `Brand Store Onboarding for UC18 <https://docs.google.com/document/d/1H5wYHwwLqIc-IxSiLG-uAqJJ4lQdAT9PtF8oxsQ7tc4/edit>`_
+- `Brand Store Onboarding for UC20 <https://docs.google.com/document/d/1hVYJ2Yv1D0PyvyEwuw5yzb7xwkcjvMJxzJQZEk1q72M/edit>`_
+- `Brand Store Onboarding for UC22 <https://docs.google.com/document/d/11z7iKogO7FDouJBfYgh9hROK41xDeaPy0ruS2_flyL0/edit>`_
+- `Snap Store Proxy Onboarding <https://docs.google.com/document/d/1wZAp0-Evqmbi6VTgzye7VmoAQEKoYT2E-qfIR_N-Tso/edit>`_
