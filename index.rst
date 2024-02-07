@@ -29,3 +29,10 @@ If you need a deeper understanding of Snap confinement, read our explanation:
    :maxdepth: 1
 
    About Snap confinement <snap-confinement-snapd-connection>
+
+If you would like to understand how you can control updates on your devices, please read:
+
+.. toctree::
+   :maxdepth: 1
+
+   Controlling updates <controlling-updates>
