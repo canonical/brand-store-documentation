@@ -36,6 +36,7 @@ redirections
 reST
 reStructuredText
 RTD
+runtime
 SHA
 snapcore
 snapcraft
