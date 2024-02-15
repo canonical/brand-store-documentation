@@ -9,4 +9,4 @@ One important consideration when deploying devices running Ubuntu Core is determ
 
 .. note::
 
-While Refresh Control is still supported, Validation Sets provide a more comprehensive approach to controlling updates, and in particular can guarantee that only specific combinations of snap revisions can be installed together.
+   While Refresh Control is still supported, Validation Sets provide a more comprehensive approach to controlling updates, and in particular can guarantee that only specific combinations of snap revisions can be installed together.
