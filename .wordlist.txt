@@ -41,6 +41,7 @@ snapcore
 snapcraft
 snapd
 Snapd
+snapd's
 SNAPNAME
 SSO
 sudo
@@ -52,5 +53,12 @@ txt
 ubuntu
 UI
 Unmount
+vandine
 whoami
 yaml
+fMIdJMbRZ
+zxGYfCKn
+fzDSfDAJd
+sG
+tRN
+uF
