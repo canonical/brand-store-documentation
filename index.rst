@@ -2,13 +2,19 @@ Canonical Brand Store
 =====================
 
 
-The Brand Store is a marketplace engine for software specific to a single customer.
+A Brand Store is a dedicated, private Snap Store which facilitates the publication of private snaps and curation of public snaps for Ubuntu
+Core devices associated with the Brand Store.   
 
-Your Brand Store controls software distribution and delivery to any number of machines, along with automatic updates to ensure your
-applications are always up-to-date. This allows you to have control over the list of snaps associated devices have access to.
+A Brand Store permits the use of hardware / privileged snapd interfaces, and the hosting of gadget and kernel snaps, in addition to providing a
+Brand Store namespace for snap registration. It can function in offline environments, and allows full control over snaps available to
+devices associated with the store.
 
-Brand Stores supports a range of use cases, from IoT devices in the field to cloud and desktop machines, for IoT companies, ODMs & OEMs,
-silicon vendors and others.
+A Brand Store provides an optimised, private, and secure distribution mechanism for software distribution via snap packages. This includes
+an extensive permission model which provides control over the confinement rules governing snaps published in the Brand Store.
+
+
+The use cases for a Brand Store are broad, from IoT devices in the field to cloud and desktop machines. This includes IoT companies, ODMs &
+OEMs, silicon vendors and others.
 
 This documentation provides links to some key pages, and provides information on some key concepts and processes specific to your Brand Store.
 For general use of the Brand Store, see the `main documentation source <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
@@ -39,7 +45,6 @@ In this documentation
       Discussion and clarification of key topics, like `Snap confinement <snap-confinement-snapd-connection>`_.
 
 
-
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -47,10 +52,10 @@ In this documentation
    Tutorial <create-ubuntu-core-22-image>
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
 
-   Reference <configuration-values>
+   How-to <controlling-updates>
 
 .. toctree::
    :maxdepth: 1
@@ -59,10 +64,12 @@ In this documentation
    Explanation <snap-confinement-snapd-connection>
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
 
-   Controlling updates <controlling-updates>
+   Reference <configuration-values>
+
+For additional support, please submit a `support ticket <https://portal.support.canonical.com>`_.
 
 .. Required (?) homepage sections:
    code of conduct

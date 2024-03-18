@@ -24,7 +24,10 @@ All stores (including your Device View Snap Store) always include the snapd snap
 
 .. note::
 
-   If and when your organisation decides to create additional models, please ensure that you first request and use a new Device View Store for each new model. This can be done by opening a support ticket via your support portal. Using a single Device View Store per model allows for better isolation between your various models and ensures that potential changes to the inclusion rules for one model don't impact other models which may already be in use in production.
+   If and when your organisation decides to create additional models, please ensure that you first request and use a new Device View Store
+   for each new model. This can be done by opening a support ticket via your support portal. Using a single Device View Store per model
+   allows for better isolation between your various models and ensures that potential changes to the inclusion rules for one model don't
+   impact other models which may already be in use in production.
 
 Accounts and roles
 ------------------
