@@ -3,7 +3,7 @@ window.onload = function() {
     link.classList.add("muted-link");
     link.classList.add("github-issue-link");
     link.text = "Give feedback";
-    link.href = "mailto:brand-store-feedback@lists.canonical.com";
+    link.href = "mailto:snap-store-docs-feedback@lists.canonical.com";
     link.target = "_blank";
 
     const div = document.createElement("div");
