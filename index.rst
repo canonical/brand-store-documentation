@@ -40,7 +40,7 @@ In this documentation
 
    .. grid-item:: :doc:`Explanation <snap-confinement-snapd-connection>`
 
-      Discussion and clarification of key topics, like `Snap confinement <snap-confinement-snapd-connection>`_.
+      Discussion and clarification of key topics, like :doc:`Snap confinement <snap-confinement-snapd-connection>`.
 
 
 .. toctree::
