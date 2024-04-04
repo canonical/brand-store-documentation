@@ -69,7 +69,7 @@ html_context = {
 
     # Change to an empty value if your GitHub repo doesn't have issues enabled.
     # This will disable the feedback button and the issue link in the footer.
-    'github_issues': 'enabled',
+    'github_issues': '',
 }
 
 # If your project is on documentation.ubuntu.com, specify the project
