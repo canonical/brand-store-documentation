@@ -12,12 +12,10 @@ devices associated with the store.
 A Brand Store provides an optimised, private, and secure distribution mechanism for software distribution via snap packages. This includes
 an extensive permission model which provides control over the confinement rules governing snaps published in the Brand Store.
 
-
 The use cases for a Brand Store are broad, from IoT devices in the field to cloud and desktop machines. This includes IoT companies, ODMs &
 OEMs, silicon vendors and others.
 
 This documentation provides links to some key pages, and provides information on some key concepts and processes specific to your Brand Store.
-For general use of the Brand Store, see the `main documentation source <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
 
 
 In this documentation
@@ -69,11 +67,10 @@ In this documentation
 
    Reference <configuration-values>
 
-For additional support, please submit a `support ticket <https://portal.support.canonical.com>`_.
+.. note:: For general use of the Brand Store, see the `main documentation source <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
 
-.. Required (?) homepage sections:
-   code of conduct
-   how to get help and support
-   how to participate
-   who owns the project/how the project is managed
+Having trouble? We would like to help!
+--------------------------------------
+
+* Please submit a `support ticket <https://portal.support.canonical.com>`_ for additional support.
 
