@@ -91,6 +91,8 @@ redirects = {}
 
 # Links to ignore when checking links
 
+# Anchor links currently fail linkcheck until solved - See !72
+
 linkcheck_ignore = [
     'http://127.0.0.1:8000',
     'https://dashboard.snapcraft.io/reviewer/{{CUSTOMER_STORE_ID}}/',

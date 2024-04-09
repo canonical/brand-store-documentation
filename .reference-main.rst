@@ -4,10 +4,10 @@
     Ensure this document is removed from `custom_excludes` in `custom_conf.py` before use.
 
 ..
-    Explanation
-    ===========
+    Reference
+    =========
 
-    These explanation oriented documents discuss and clarify key topics relating to the Brand Store.
+    These Reference documents detail configuration values and other supporting information about the Brand Store.
 
     .. toctree::
        :maxdepth: 2
