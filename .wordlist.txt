@@ -22,6 +22,7 @@ json
 KVM
 kvm
 localhost
+lifecycle
 LTS
 Makefile
 MyST
