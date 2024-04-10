@@ -101,7 +101,7 @@ linkcheck_ignore = [
     'https://canonical-brand-store-acme-alpha.readthedocs-hosted.com/*',
     'https://canonical-canonical-alliances-demo-brand-store.readthedocs-hosted.com/*',
     'https://ubuntu.com/core/docs/gadget-snaps#heading--gadget',
-    'https://ubuntu.com/core/services/guide/signing-keys#heading--key-roles'
+    'https://ubuntu.com/core/services/guide/signing-keys#heading--key-roles',
     'https://portal.support.canonical.com'
 ]
 
