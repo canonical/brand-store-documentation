@@ -91,13 +91,17 @@ redirects = {}
 
 # Links to ignore when checking links
 
+# Anchor links currently fail linkcheck until solved - See !72
+
 linkcheck_ignore = [
     'http://127.0.0.1:8000',
     'https://dashboard.snapcraft.io/reviewer/{{CUSTOMER_STORE_ID}}/',
     'https://readthedocs.com/projects/*',
     'https://canonical-canonical-brand-store.readthedocs-hosted.com/*',
     'https://canonical-brand-store-acme-alpha.readthedocs-hosted.com/*',
-    'https://canonical-canonical-alliances-demo-brand-store.readthedocs-hosted.com/*'
+    'https://canonical-canonical-alliances-demo-brand-store.readthedocs-hosted.com/*',
+    'https://ubuntu.com/core/docs/gadget-snaps#heading--gadget',
+    'https://portal.support.canonical.com'
 ]
 
 ############################################################
@@ -111,7 +115,7 @@ linkcheck_ignore = [
 custom_extensions = ['rstjinja', 'better-term']
 
 # Add files or directories that should be excluded from processing.
-custom_excludes = ['README.rst', 'WORKFLOW.rst']
+custom_excludes = ['README.rst', 'WORKFLOW.rst', '.explanation-main.rst', '.how-to-main.rst', '.reference-main.rst', '.tutorial-main.rst']
 
 # Add CSS files (located in .sphinx/_static/)
 custom_html_css_files = []

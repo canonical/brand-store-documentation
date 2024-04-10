@@ -1,16 +1,17 @@
 Tutorial: Create an Ubuntu Core 22 image
 ========================================
 
-This guide will help you become familiar with the tools, processes and workflows of your brand store. It will also help validate that you can access your store.
+To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
-In this tutorial, we'll be creating and booting an Ubuntu Core image on amd64.
+If you have not yet configured your Brand Store, see the :doc:`Configuration values <configuration-values>` section of this documentation.
 
 Creating the gadget snap
 ------------------------
 
 The first step in building an Ubuntu Core image that can communicate with your store is to build a gadget snap. Gadget snaps do many things, but for our purposes here, the important functionality is generating a serial number and using that serial number, along with a pre-shared API key, to get credentials to talk to the store. You can also use the gadget snap to set default configuration values for application snaps, and auto-connect some interfaces.
 
-To build a custom gadget snap, we start by forking a suitable candidate from the `Canonical supported gadgets <https://snapcraft.io/docs/the-gadget-snap>`_ and follow these `instructions <https://docs.snapcraft.io/the-gadget-snap/696>`_.
+To build a custom gadget snap, we start by forking a suitable candidate from the `Canonical supported gadgets <https://snapcraft.io/docs/the-gadget-snap>`_
+and follow these `instructions <https://docs.snapcraft.io/the-gadget-snap/696>`_.
 
 For this particular case, validating the initial store setup, let's fork the ``pc-amd64-gadget``. This gadget enables the device to request store credentials from the Serial Vault, as configured above.
 
@@ -26,7 +27,7 @@ Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic r
 
 .. note::
 
-    As the gadget snap also provides a means to provision static snap configuration for the seeded snaps in an image, you may need to require multiple gadget snaps for different models. It’s also possible to use a single gadget for multiple devices if there are no configuration differences. If you do this, please be aware that you'll need to ensure that the models in the Serial Vault use the same **API KEY**.
+    As the gadget snap also provides a means to provision static snap configuration for the seeded snaps in an image, you may need to require multiple gadget snaps for different models. Please see the `gadget specification <https://ubuntu.com/core/docs/gadget-snaps#heading--gadget>`_ for more details on how to provide default snap and/or system configuration for you models. It's also possible to use a single gadget for multiple devices if there are no configuration differences. If you do this, please be aware that you'll need to ensure that the models in the Serial Vault use the same **API KEY**.
 
 .. term::
     :scroll:
@@ -36,6 +37,7 @@ Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic r
     :input: git clone -b {{CUSTOMER_UBUNTU_CORE_VERSION}} https://github.com/snapcore/pc-gadget {{CUSTOMER_STORE_PREFIX}}
     :input: cd {{CUSTOMER_STORE_PREFIX}}
 
+.. ISSUE IN DOCUMENT:  https://docs.google.com/document/d/11z7iKogO7FDouJBfYgh9hROK41xDeaPy0ruS2_flyL0/edit?disco=AAAAxWHTvf4
 
 Update the "name" field in the ``snapcraft.yaml`` to "``{{CUSTOMER_STORE_PREFIX}}``-pc". Feel free to also adjust the "version", "summary" and "description" to be more meaningful in your context.
 

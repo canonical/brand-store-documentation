@@ -1,6 +1,7 @@
 amd
 APIKEY
-customized
+curation
+customised
 DEVICEVIEW
 devmode
 Diátaxis
@@ -16,6 +17,7 @@ img
 init
 installable
 io
+IoT
 json
 KVM
 kvm
@@ -23,6 +25,9 @@ localhost
 LTS
 Makefile
 MyST
+namespace
+ODMs
+OEMs
 ok
 pc
 Permalink

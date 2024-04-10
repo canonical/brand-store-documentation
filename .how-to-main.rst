@@ -1,0 +1,19 @@
+..  This page is intended to serve as the main navigation page for How-to guides. See https://diataxis.fr/how-to-guides/ for more
+    information, or contact secondskoll (or the TA team) on Mattermost. 
+
+    Ensure this document is removed from `custom_excludes` in `custom_conf.py` before use.
+
+..
+    How-to guides
+    =============
+
+    These guides cover key operations and common tasks and problems in the Brand Store.
+
+    .. toctree::
+       :maxdepth: 2
+       :hidden:
+
+       controlling-updates
+
+    ..  You may want to add a brief explanation of any main How-to guide, and direct them towards specific ones, depending on the relevance
+        they have for users.
