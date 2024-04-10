@@ -38,7 +38,7 @@ In this documentation
 
       Important information for store configuration.
 
-   .. grid-item:: :doc:`Explanation <snap-confinement-snapd-connection>`
+   .. grid-item:: :doc:`Explanation <explanation-main>`
 
       Discussion and clarification of key topics, like :doc:`Snap confinement <snap-confinement-snapd-connection>`.
 
@@ -59,7 +59,7 @@ In this documentation
    :maxdepth: 1
    :hidden:
 
-   Explanation <snap-confinement-snapd-connection>
+   Explanation <explanation-main>
 
 .. toctree::
    :maxdepth: 2
