@@ -14,7 +14,7 @@ Secrets required for a functioning Brand Store
   
   - Used to sign `assertions <https://ubuntu.com/core/docs/reference/assertions>`_, which are digitally signed documents used for authentication and authorisation throughout the snap ecosystem.
   - It is **recommended** to use a separate signing key for each type of assertion.
-  - It is **strongly recommended** to use `role-scoped keys <https://ubuntu.com/core/services/guide/signing-keys#heading--key-roles>`_, which are limited to signing only specific assertion types and optionally only specific models.
+  - It is **recommended** to use `role-scoped keys <https://ubuntu.com/core/services/guide/signing-keys#heading--key-roles>`_, which are limited to signing only specific assertion types and optionally only specific models.
 - Other account credentials
   
   - Allows the use of roles to delegate control over various aspects of the snap lifecycle to specific Ubuntu One SSO accounts. For example, an account with the Reviewer role has the ability to review new snap uploads before they can be published, but does not have the ability to publish snaps. Each SSO account can have multiple roles associated with it.
