@@ -101,6 +101,7 @@ linkcheck_ignore = [
     'https://canonical-brand-store-acme-alpha.readthedocs-hosted.com/*',
     'https://canonical-canonical-alliances-demo-brand-store.readthedocs-hosted.com/*',
     'https://ubuntu.com/core/docs/gadget-snaps#heading--gadget',
+    'https://ubuntu.com/core/services/guide/signing-keys#heading--key-roles',
     'https://portal.support.canonical.com'
 ]
 
@@ -115,7 +116,7 @@ linkcheck_ignore = [
 custom_extensions = ['rstjinja', 'better-term']
 
 # Add files or directories that should be excluded from processing.
-custom_excludes = ['README.rst', 'WORKFLOW.rst', '.explanation-main.rst', '.how-to-main.rst', '.reference-main.rst', '.tutorial-main.rst']
+custom_excludes = ['README.rst', 'WORKFLOW.rst', '.how-to-main.rst', '.reference-main.rst', '.tutorial-main.rst']
 
 # Add CSS files (located in .sphinx/_static/)
 custom_html_css_files = []
