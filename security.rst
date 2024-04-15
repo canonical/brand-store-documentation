@@ -1,7 +1,7 @@
-Brand Store Security
+Brand Store security
 ====================
 
-Brand Stores are designed to allow the secure distribution of software defined as snaps. To facilitate this distribution, a Brand Store requires a few key pieces of information which are stored in different locations depending on the intended use of the information. This document exists to outline the various secrets which must be carefully handled to secure a Brand Store, where those secrets live, and how they must be handled.
+Brand Stores are designed to ensure the secure distribution of software defined as snaps. To facilitate this distribution, a Brand Store requires a few key pieces of information which are stored in different locations depending on the intended use of the information. This document exists to outline the various secrets which must be carefully handled to secure a Brand Store, where those secrets live, and how they must be handled.
 
 Secrets required for a functioning Brand Store
 ----------------------------------------------
@@ -17,7 +17,7 @@ Secrets required for a functioning Brand Store
   - It is **recommended** to use `role-scoped keys <https://ubuntu.com/core/services/guide/signing-keys#heading--key-roles>`_, which are limited to signing only specific assertion types and optionally only specific models.
 - Other account credentials
   
-  - Allows the use of roles to delegate control over various aspects of the snap lifecycle to specific Ubuntu One SSO accounts. For example, an account with the Reviewer role has the ability to review new snap uploads before they can be published, but does not have the ability to publish snaps. Each SSO account can have multiple roles associated with it.
+  - Provides the use of roles to delegate control over various aspects of the snap lifecycle to specific Ubuntu One SSO accounts. For example, an account with the Reviewer role can review new snap uploads before they are eligible for publishing, but does not have the ability to publish snaps. Each SSO account can have multiple roles associated with it.
 
 Location of secrets
 -------------------
