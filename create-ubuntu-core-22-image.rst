@@ -1,4 +1,4 @@
-Tutorial: Create an Ubuntu Core images
+Tutorial: Create an Ubuntu Core image
 ======================================
 
 To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
