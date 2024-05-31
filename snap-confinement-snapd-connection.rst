@@ -1,9 +1,10 @@
 About Snap confinement & snapd interface connections
 ====================================================
 
-Snaps declare plugs for specific snapd `interfaces <https://snapcraft.io/docs/supported-interfaces>`_ in order to gain access to hardware, shared system resources, and other system interfaces that are normally off-limits to strictly confined snaps. These plugs must be connected to corresponding slots defined by core or application snaps. There are four ways that these interface connections can happen:
+Snaps declare plugs for specific snapd `interfaces <https://snapcraft.io/docs/supported-interfaces>`_ in order to gain access to hardware, shared system resources, and other system interfaces that are normally off-limits to strictly confined snaps. These plugs must be connected to corresponding slots defined by core or application snaps. There are three ways that these interface connections can happen:
 
 1. Some interfaces such as network, simply auto-connect (i.e. there's no action necessary to trigger auto-connection).
+
 #. Some interfaces are classified as "`self-serve <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_". These interfaces can be auto-connected by an account with the **Reviewer** role using the store's snap dashboard page.
 
    .. note::

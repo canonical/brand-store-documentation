@@ -17,6 +17,10 @@ OEMs, silicon vendors and others.
 
 This documentation provides links to some key pages, and provides information on some key concepts and processes specific to your Brand Store.
 
+.. important::
+
+   **To see the configuration values for your store**, see the :doc:`Reference <configuration-values>` section.
+
 
 In this documentation
 ---------------------

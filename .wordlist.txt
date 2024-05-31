@@ -8,6 +8,7 @@ Diátaxis
 DMI
 dmidecode
 EOF
+ESM
 favicon
 github
 gpg
