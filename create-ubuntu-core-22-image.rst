@@ -1,5 +1,5 @@
-Tutorial: Create an Ubuntu Core 22 image
-========================================
+Tutorial: Create an Ubuntu Core image
+======================================
 
 To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
@@ -27,7 +27,7 @@ Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic r
 
 .. note::
 
-    As the gadget snap also provides a means to provision static snap configuration for the seeded snaps in an image, you may need to require multiple gadget snaps for different models. Please see the `gadget specification <https://ubuntu.com/core/docs/gadget-snaps#heading--gadget>`_ for more details on how to provide default snap and/or system configuration for you models. It's also possible to use a single gadget for multiple devices if there are no configuration differences. If you do this, please be aware that you'll need to ensure that the models in the Serial Vault use the same **API KEY**.
+    As the gadget snap also provides a means to provision static snap configuration for the seeded snaps in an image, you may need to require multiple gadget snaps for different models. Please see the `gadget specification <https://ubuntu.com/core/docs/gadget-snaps#heading--gadget>`_ for more details on how to provide default snap and/or system configuration for your models. It's also possible to use a single gadget for multiple devices if there are no configuration differences. If you do this, please be aware that you'll need to ensure that the models in the Serial Vault use the same **API KEY**.
 
 .. term::
     :scroll:
@@ -77,7 +77,7 @@ Now register the snap name in your Base Snap Store and push the initial revision
 
 .. note::
 
-    The Brand Account must be a **Publisher** under "Manage Users and their roles" to register and publish the gadget snap.
+    The Brand Account must be a **Publisher** under `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/>`_ to register and publish the gadget snap.
 
 Log into the web dashboard as ``{{ CUSTOMER_ADMIN_EMAIL }}`` (because it has the **Reviewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID }}/>`_ and **Approve** the gadget revision. All gadget uploads require manual review.
 
@@ -118,7 +118,11 @@ One possible approach to populating the serial number (vs. using the ``date`` co
         - dmidecode
     ...
 
-You also will need to plug the snapd ``hardware-observe`` interface to allow ``dmidecode`` access to access the correct file(s) in sysfs.
+Also, in ``snapcraft.yaml``, you will need to plug the snapd ``hardware-observe`` interface to allow ``dmidecode`` access to access the correct file(s) in sysfs.
+
+.. note::
+
+    ``hardware-observe`` is a "self-serve interface"; see `Self-serve Snap Interfaces <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_ for more details.
 
 .. code:: yaml
 
@@ -127,7 +131,7 @@ You also will need to plug the snapd ``hardware-observe`` interface to allow ``d
         plugs: [hardware-observe]
     ...
 
-The actual command to read the serial number will also need to be updated in the prepare-device part:
+The actual command to read the serial number will also need to be updated in the snap/hooks/prepare-device file:
 
 .. code:: yaml
 
@@ -135,6 +139,8 @@ The actual command to read the serial number will also need to be updated in the
     ...
           product_serial=\$(dmidecode -s system-serial-number)
     ...
+
+Finally, to let the hardware-observe interface automatically connect on first boot, you'll need to go to the `dashboard <https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/>`_, click on the “Review capabilities” link, and set the radio button next to hardware-observe to “Enabled”. For more information on auto-connecting interfaces, see section 6 in this document. 
 
 Creating the model assertion
 ----------------------------
@@ -214,7 +220,7 @@ Access the snap page https://dashboard.snapcraft.io/snaps/SNAPNAME to get the sn
 Switching to a developer account
 --------------------------------
 
-Now that the model has been signed by the *Brand Account*, there is no need to continue to use such powerful credentials. We recommend switching to a developer account to seed images.
+Now that the model has been signed by the **Brand Account**, there is no need to continue to use such powerful credentials. We recommend switching to a developer account to seed images.
 
 The account used must have the **Viewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store. Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the Admin role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), go to "Manage Users and their roles" to add a developer account and then set it as **Viewer**. You may also give ``{{CUSTOMER_ADMIN_EMAIL}}`` the **Viewer** role.
 
@@ -261,9 +267,11 @@ Ubuntu Core image is built in the one line instruction by using the above develo
 Launching and verifying the image
 ---------------------------------
 
-To launch and test your newly generated Ubuntu Core image, follow the steps here: `Ubuntu Core: Testing with QEMU <https://ubuntu.com/core/docs/testing-with-qemu>`_. Once the image is booted and installed, you can log in. You should see the following welcome text:
+To launch and test your newly generated Ubuntu Core image, follow the steps here: `Ubuntu Core: Testing with QEMU <https://ubuntu.com/core/docs/testing-with-qemu>`_. Once the image is booted and installed, you can log in then verify if the seeded snaps are installed, the {{CUSTOMER_MODEL_NAME}}  model is correct and a serial assertion was obtained:
 
-.. code:: text
+.. term::
+    :user: {{UBUNTU_SSO_USER_NAME}}
+    :host: ubuntu
 
     Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-48-generic x86_64)
 
@@ -274,9 +282,9 @@ To launch and test your newly generated Ubuntu Core image, follow the steps here
     Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
     applicable law.
 
-     * Ubuntu Core:     https://www.ubuntu.com/core
-     * Community:       https://forum.snapcraft.io
-     * Snaps:           https://snapcraft.io
+    * Ubuntu Core:     https://www.ubuntu.com/core
+    * Community:       https://forum.snapcraft.io
+    * Snaps:           https://snapcraft.io
 
     This Ubuntu Core 22 machine is a tiny, transactional edition of Ubuntu,
     designed for appliances, firmware and fixed-function VMs.
@@ -288,17 +296,14 @@ To launch and test your newly generated Ubuntu Core image, follow the steps here
 
     Please see 'snap --help' for app installation and updates.
 
-Now verify that the seeded snaps are installed, the ``{{CUSTOMER_MODEL_NAME}}`` ``model`` is correct and a serial assertion was obtained:
+    …
 
-.. term::
-    :user: {{UBUNTU_SSO_USER_NAME}}
-    :host: ubuntu
     :input: snap list
 
     Name       Version        Rev    Tracking       Publisher   Notes
-    {{CUSTOMER_STORE_PREFIX}}-pc    22-0.1 1     stable  {{CUSTOMER_BRAND_ACCOUNT_ID}}  gadget
+    <CUSTOMER-STORE-PREFIX>-pc    22-0.1 1     stable  <CUSTOMER-BRAND-ACCOUNT-ID>  gadget
     core22     20220706       275    stable         canonical✓  base
-    {{CUSTOMER_REQUIRED_SNAPS}}
+    <CUSTOMER-REQUIRED-SNAPS>
     pc-kernel  5.15.0-48.54.2 1105   22/stable      canonical✓  kernel
     snapd      2.57.1         16778  stable         canonical✓  snapd
 
@@ -309,16 +314,16 @@ Now verify that the seeded snaps are installed, the ``{{CUSTOMER_MODEL_NAME}}`` 
 
     :input: snap model --assertion
     type: model
-    authority-id: {{CUSTOMER_BRAND_ACCOUNT_ID}}
+    authority-id: <CUSTOMER-BRAND-ACCOUNT-ID>
     series: 16
-    brand-id: {{CUSTOMER_BRAND_ACCOUNT_ID}}
-    model: {{CUSTOMER_MODEL_NAME}}
-    ...
+    brand-id: <CUSTOMER-BRAND-ACCOUNT-ID>
+    model: <CUSTOMER-MODEL-NAME>
+    ... 
 
     :input: snap model --serial --assertion
     type: serial
-    authority-id: {{CUSTOMER_BRAND_ACCOUNT_ID}}
+    authority-id: <CUSTOMER-BRAND-ACCOUNT-ID>
     revision: 1
-    brand-id: {{CUSTOMER_BRAND_ACCOUNT_ID}}
-    model: {{CUSTOMER_MODEL_NAME}}
+    brand-id: <CUSTOMER-BRAND-ACCOUNT-ID>
+    model: <CUSTOMER-MODEL-NAME>
     ...

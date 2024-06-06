@@ -91,6 +91,26 @@ The Brand account:
 
   Use of the Brand account and its credentials should be strictly limited. Canonical recommends that the Brand account not be assigned any roles that are not strictly needed. The Brand account will need the **Publisher** role, but do not make the Brand account a store **Administrator**, **Reviewer**, or **Viewer**.
 
+
+Ubuntu Pro & Support Portal Account
+-----------------------------------
+
+An Ubuntu Pro account and Support Portal access are also included with your Brand Store. Both are accessed using the SSO account associated with the following email address:
+
+    {{CUSTOMER_PRO_EMAIL}}
+
+
+Ubuntu Pro Dashboard
+++++++++++++++++++++
+
+Brand Store customers are provided an Ubuntu Pro account to enable access to ESM updates during snap builds. This is accomplished by adding your Pro token to CI/CD systems used to build your snaps. This token can be accessed by signing into the `Ubuntu Pro Dashboard <http://ubuntu.com/pro/dashboard>`_ using the account mentioned at the beginning of this section.
+
+Support Portal
+++++++++++++++
+
+Brand Store customers are also provided access to our Support Portal which can be used to create support cases, including snap interface connection requests. The support portal can be accessed by signing into the `Support Portal Dashboard <https://support-portal.canonical.com/dashboard>`_ using the account mentioned at the beginning of this section. 
+
+
 Serial Vault
 ------------
 
@@ -99,6 +119,10 @@ To get started with the `Serial Vault <https://serial-vault-admin.canonical.com/
 - `Serial Vault Overview <https://ubuntu.com/core/services/guide/serial-vault-overview>`_
 - `Signing Keys <https://ubuntu.com/core/services/guide/signing-keys>`_
 - `Device Model and Identity <https://ubuntu.com/core/services/guide/device-model-and-identity>`_
+
+.. note::
+
+    Please be sure to review the signing keys sub-section on key roles. Use of key roles is a best practice which helps to limit the scope of what type of assertions each key can be used to sign. This is meant to limit your exposure if a key were to be compromised. Use of key roles also means that you **must no longer register your keys** using ``snapcraft register-key``. This will now be handled by the Snap Store admins as part of the key role assignment. And finally, please note that key roles can only be assigned to new keys, they cannot be added to keys at a later time.
 
 The ``{{CUSTOMER_ADMIN_EMAIL}}`` account was also added to the Serial Vault, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Brand Store, as described below. To configure your serial vault, follow the instructions at the links below, using ``{{CUSTOMER_MODEL_NAME}}`` as the model name, ``{{CUSTOMER_BRAND_EMAIL}}`` as the brand email, and ``{{CUSTOMER_BRAND_ACCOUNT_ID}}`` as the brand ID:
 

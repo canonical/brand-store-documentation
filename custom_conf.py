@@ -102,7 +102,10 @@ linkcheck_ignore = [
     'https://canonical-canonical-alliances-demo-brand-store.readthedocs-hosted.com/*',
     'https://ubuntu.com/core/docs/gadget-snaps#heading--gadget',
     'https://ubuntu.com/core/services/guide/signing-keys#heading--key-roles',
-    'https://portal.support.canonical.com'
+    'https://portal.support.canonical.com',
+    'https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/',
+    'https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/'
+    
 ]
 
 ############################################################
