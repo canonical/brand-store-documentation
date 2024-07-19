@@ -3,7 +3,11 @@ Tutorial: Create an Ubuntu Core image
 
 To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
-If you have not yet configured your Brand Store, see the :doc:`Configuration values <configuration-values>` section of this documentation.
+:doc:`Configuration values <configuration-values>` contains information relating to the specific configuration of your Brand Store.
+
+.. important::
+
+    Make sure you have configured Serial Vault before proceeding with this tutorial. See :doc:`how-to-configure-serial-vault`.
 
 Creating the gadget snap
 ------------------------
@@ -103,50 +107,12 @@ Once the revision is approved, use snapcraft to release it in the stable channel
 
 The gadget snap is now available for installation from the ``{{CUSTOMER_STORE_NAME}}`` store, and for inclusion in images.
 
-.. _dmidecode:
-
-Using dmidecode to read system serial number
-********************************************
-
-One possible approach to populating the serial number (vs. using the ``date`` command as described above) is to use the ``dmidecode`` tool to read the system serial number from the DMI table. In order to do this, you would need to add ``dmidecode`` to that gadget's ``snapcraft.yaml`` file as a ``stage-package``:
-
-.. code:: yaml
-
-    prepare-device:
-      plugin: nil
-      stage-packages:
-        - dmidecode
-    ...
-
-Also, in ``snapcraft.yaml``, you will need to plug the snapd ``hardware-observe`` interface to allow ``dmidecode`` access to access the correct file(s) in sysfs.
-
-.. note::
-
-    ``hardware-observe`` is a "self-serve interface"; see `Self-serve Snap Interfaces <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_ for more details.
-
-.. code:: yaml
-
-    hooks:
-      prepare-device:
-        plugs: [hardware-observe]
-    ...
-
-The actual command to read the serial number will also need to be updated in the snap/hooks/prepare-device file:
-
-.. code:: yaml
-
-    prepare-device:
-    ...
-          product_serial=\$(dmidecode -s system-serial-number)
-    ...
-
-Finally, to let the hardware-observe interface automatically connect on first boot, you'll need to go to the `dashboard <https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/>`_, click on the “Review capabilities” link, and set the radio button next to hardware-observe to “Enabled”. For more information on auto-connecting interfaces, see section 6 in this document. 
-
 Creating the model assertion
 ----------------------------
 
 One final step before you can build a custom Ubuntu Core image is creation of a signed model assertion, which provides image related metadata which ubuntu-image uses to customise the image. In order to sign the model assertion, a brand model key must be created and registered using the brand account. For details on how to create and register a model key, please refer to `Sign a model assertion <https://ubuntu.com/core/docs/sign-model-assertion>`_.
 
+Example model assertions can be found `here <https://github.com/snapcore/models>`_. This tutorial provides an example model assertion below.
 Once a valid model key is available, create and sign the model assertion for your test Ubuntu Core image:
 
 .. term::
@@ -186,6 +152,12 @@ Once a valid model key is available, create and sign the model assertion for you
           "id": "PMrrV4ml8uWuEUDBT8dSGnKUYbevVhc4",
           "name": "snapd",
           "type": "snapd"
+        },
+        {
+          "name": "console-conf",
+          "type": "app",
+          "default-channel": "24/edge",
+          "id": "ASctKBEHzVt3f1pbZLoekCvcigRjtuqw"
         },
         {
           "default-channel": "latest/stable",

@@ -57,7 +57,7 @@ In this documentation
    :maxdepth: 1
    :hidden:
 
-   How-to <controlling-updates>
+   How-to <how-to-main>
 
 .. toctree::
    :maxdepth: 1
