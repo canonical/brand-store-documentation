@@ -1,13 +1,19 @@
 Tutorial: Create an Ubuntu Core image
 ======================================
 
-To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
+.. only:: latex
 
-:doc:`Configuration values <configuration-values>` contains information relating to the specific configuration of your Brand Store.
+    .. important:: For initial provisioning and setup of your Brand Store, make sure you are familiar with :doc:`configuration-values`.
+
+.. only:: html
+
+    .. note:: :doc:`configuration-values` contains information relating to the specific configuration of your Brand Store.
+
+To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
 .. important::
 
-    Make sure you have configured Serial Vault before proceeding with this tutorial. See :doc:`how-to-configure-serial-vault`.
+    Ensure the Serial Vault is set up before proceeding with this tutorial. See :doc:`how-to-configure-serial-vault`.
 
 Creating the gadget snap
 ------------------------
@@ -19,15 +25,17 @@ and follow these `instructions <https://docs.snapcraft.io/the-gadget-snap/696>`_
 
 For this particular case, validating the initial store setup, let's fork the ``pc-amd64-gadget``. This gadget enables the device to request store credentials from the Serial Vault, as configured above.
 
-Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic release (Ubuntu 22.04) using ``snapcraft`` 7.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself.
+.. important::
+    
+    Gadget snaps for Ubuntu Core 24 must be built on the corresponding LTS classic release (Ubuntu 24.04) using ``snapcraft`` 8.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself.
 
 .. term::
-    :input: sudo snap install snapcraft --classic --channel=7.x/stable
+    :input: sudo snap install snapcraft -classic --channel=8.x/stable
     
     ...
 
     :input: snapcraft version
-    snapcraft 7.1.3
+    snapcraft 8.3.1
 
 .. note::
 
@@ -47,11 +55,13 @@ Update the "name" field in the ``snapcraft.yaml`` to "``{{CUSTOMER_STORE_PREFIX}
 
 Build the snap, using the model **API Key** generated during the Serial Vault setup above:
 
+.. Following input works with or without --destructive-mode
+
 .. term::
     :input: MODEL_APIKEY=<GENERATED-API-KEY> sudo snapcraft --destructive-mode
 
     ...
-    Snapped {{CUSTOMER_STORE_PREFIX}}-pc_22-0.1_amd64.snap
+    Snapped {{CUSTOMER_STORE_PREFIX}}-pc_24-0.1_amd64.snap
 
 .. note::
 
@@ -71,7 +81,7 @@ Now register the snap name in your Base Snap Store and push the initial revision
     Registering {{CUSTOMER_STORE_PREFIX}}-pc.
     Congrats! You are now the publisher of '{{CUSTOMER_STORE_PREFIX}}-pc'.
 
-    :input: snapcraft push {{CUSTOMER_STORE_PREFIX}}-pc_22-0.1_amd64.snap
+    :input: snapcraft push {{CUSTOMER_STORE_PREFIX}}-pc_24-0.1_amd64.snap
     The Store automatic review failed.
     A human will soon review your snap, but if you can't wait please write in the snapcraft forum asking for the manual review explicitly.
 
@@ -99,7 +109,7 @@ Once the revision is approved, use snapcraft to release it in the stable channel
 
     :input: snapcraft release {{CUSTOMER_STORE_PREFIX}}-pc 1 stable
     Track    Arch    Channel    Version    Revision
-    latest   all     stable     22-0.1     1
+    latest   all     stable     24-0.1     1
                      candidate  ^          ^
                      beta       ^          ^
                      edge       ^          ^
@@ -136,7 +146,7 @@ Once a valid model key is available, create and sign the model assertion for you
           "type": "gadget"
         },
         {
-          "default-channel": "22/stable",
+          "default-channel": "24/stable",
           "id": "pYVQrBcKmBa0mZ4CCN7ExT6jH8rY1hza",
           "name": "pc-kernel",
           "type": "kernel"
@@ -144,7 +154,7 @@ Once a valid model key is available, create and sign the model assertion for you
         {
           "default-channel": "latest/stable",
           "id": "amcUKQILKXHHTlmSa7NMdnXSx02dNeeT",
-          "name": "core22",
+          "name": "core24",
           "type": "base"
         },
         {
@@ -157,7 +167,8 @@ Once a valid model key is available, create and sign the model assertion for you
           "name": "console-conf",
           "type": "app",
           "default-channel": "24/edge",
-          "id": "ASctKBEHzVt3f1pbZLoekCvcigRjtuqw"
+          "id": "ASctKBEHzVt3f1pbZLoekCvcigRjtuqw",
+          "presence": "optional"
         },
         {
           "default-channel": "latest/stable",
@@ -218,7 +229,7 @@ Creating the image
 
 This section describes the details of Ubuntu Core image building against the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store.
 
-Ensure a Linux build environment (Ubuntu 22.04 or later) and tool for building images are available:
+Ensure a Linux build environment (Ubuntu 24.04 or later) and tool for building images are available:
 
 .. term::
     :input: sudo snap install ubuntu-image --classic
@@ -240,6 +251,8 @@ Launching and verifying the image
 ---------------------------------
 
 To launch and test your newly generated Ubuntu Core image, follow the steps here: `Ubuntu Core: Testing with QEMU <https://ubuntu.com/core/docs/testing-with-qemu>`_. Once the image is booted and installed, you can log in then verify if the seeded snaps are installed, the {{CUSTOMER_MODEL_NAME}}  model is correct and a serial assertion was obtained:
+
+.. note:: The following shows the expected output for a UC22 image.
 
 .. term::
     :user: {{UBUNTU_SSO_USER_NAME}}

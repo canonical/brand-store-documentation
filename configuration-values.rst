@@ -1,5 +1,8 @@
-Brand store configuration values
-================================
+Brand store configuration
+=========================
+
+When using your Brand Store, your main resource will be the documentation found at https://ubuntu.com/core/services/guide/iot-app-store-intro.
+This section provides links to some key pages in the documentation, as well as information specific to your Brand Store.
 
 Store Architecture
 ------------------
@@ -20,7 +23,7 @@ Your Device View Store is configured:
 - to automatically include all snaps from ``{{STORES_WITH_WHOLESALE_INCLUSION}}``
 - to include a specific set of snaps from ``{{STORES_WITH_CURATED_INCLUSION}}``
 
-All stores (including your Device View Snap Store) always include the snapd snap, as well as the LTS-versioned Core snaps (i.e. core18, core20, core22).
+All stores (including your Device View Snap Store) always include the snapd snap, as well as the LTS-versioned Core snaps (i.e. core18, core20, core22, core24).
 
 .. note::
 
