@@ -1,7 +1,7 @@
 Brand store configuration
 =========================
 
-When using your Brand Store, your main resource will be the documentation found at https://ubuntu.com/core/services/guide/iot-app-store-intro.
+When using your Brand Store, your main resource will be the documentation found `here <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
 This section provides links to some key pages in the documentation, as well as information specific to your Brand Store.
 
 Store Architecture

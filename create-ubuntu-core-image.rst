@@ -252,7 +252,7 @@ Launching and verifying the image
 
 To launch and test your newly generated Ubuntu Core image, follow the steps here: `Ubuntu Core: Testing with QEMU <https://ubuntu.com/core/docs/testing-with-qemu>`_. Once the image is booted and installed, you can log in then verify if the seeded snaps are installed, the {{CUSTOMER_MODEL_NAME}}  model is correct and a serial assertion was obtained:
 
-.. note:: The following shows the expected output for a UC22 image.
+.. note:: The following shows the expected output for a Ubuntu Core 22 image.
 
 .. term::
     :user: {{UBUNTU_SSO_USER_NAME}}
