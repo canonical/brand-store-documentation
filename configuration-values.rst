@@ -1,5 +1,8 @@
-Brand store configuration values
-================================
+Brand store configuration
+=========================
+
+When using your Brand Store, your main resource will be the documentation found `here <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
+This section provides links to some key pages in the documentation, as well as information specific to your Brand Store.
 
 Store Architecture
 ------------------
@@ -20,7 +23,7 @@ Your Device View Store is configured:
 - to automatically include all snaps from ``{{STORES_WITH_WHOLESALE_INCLUSION}}``
 - to include a specific set of snaps from ``{{STORES_WITH_CURATED_INCLUSION}}``
 
-All stores (including your Device View Snap Store) always include the snapd snap, as well as the LTS-versioned Core snaps (i.e. core18, core20, core22).
+All stores (including your Device View Snap Store) always include the snapd snap, as well as the LTS-versioned Core snaps (i.e. core18, core20, core22, core24).
 
 .. note::
 
@@ -114,6 +117,8 @@ Brand Store customers are also provided access to our Support Portal which can b
 Serial Vault
 ------------
 
+The ``{{CUSTOMER_ADMIN_EMAIL}}`` account was also added to Serial Vault, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Brand Store, as described in :doc:`how-to-configure-serial-vault`. 
+
 To get started with the `Serial Vault <https://serial-vault-admin.canonical.com/>`_ (SV admin account required), read the following pages. You can click the next button in the bottom right corner to move from one to the next.
 
 - `Serial Vault Overview <https://ubuntu.com/core/services/guide/serial-vault-overview>`_
@@ -124,11 +129,4 @@ To get started with the `Serial Vault <https://serial-vault-admin.canonical.com/
 
     Please be sure to review the signing keys sub-section on key roles. Use of key roles is a best practice which helps to limit the scope of what type of assertions each key can be used to sign. This is meant to limit your exposure if a key were to be compromised. Use of key roles also means that you **must no longer register your keys** using ``snapcraft register-key``. This will now be handled by the Snap Store admins as part of the key role assignment. And finally, please note that key roles can only be assigned to new keys, they cannot be added to keys at a later time.
 
-The ``{{CUSTOMER_ADMIN_EMAIL}}`` account was also added to the Serial Vault, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Brand Store, as described below. To configure your serial vault, follow the instructions at the links below, using ``{{CUSTOMER_MODEL_NAME}}`` as the model name, ``{{CUSTOMER_BRAND_EMAIL}}`` as the brand email, and ``{{CUSTOMER_BRAND_ACCOUNT_ID}}`` as the brand ID:
-
-- `Environment Setup <https://ubuntu.com/core/services/guide/environment-setup>`_
-- `Generate a Serial Signing Key <https://ubuntu.com/core/services/guide/generate-a-serial-signing-key>`_
-- `Import a Serial Signing Key <https://ubuntu.com/core/services/guide/import-a-serial-signing-key>`_
-- `Register a New Device Model Name <https://ubuntu.com/core/services/guide/register-a-new-device-model-name>`_
-- `Generate a Model Signing Key <https://ubuntu.com/core/services/guide/generate-a-model-signing-key>`_
-- `Check the Signing Log <https://ubuntu.com/core/services/guide/check-the-signing-log>`_
+To configure Serial Vault, see :doc:`how-to-configure-serial-vault`.

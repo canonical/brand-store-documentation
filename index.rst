@@ -1,7 +1,6 @@
 Canonical Brand Store
 =====================
 
-
 A Brand Store is a dedicated, private Snap Store which facilitates the publication of private snaps and curation of public snaps for Ubuntu
 Core devices associated with the Brand Store.   
 
@@ -21,15 +20,13 @@ This documentation provides links to some key pages, and provides information on
 
    **To see the configuration values for your store**, see the :doc:`Reference <configuration-values>` section.
 
-
-In this documentation
----------------------
+.. rubric:: :h2:`In this documentation`
 
 .. grid:: 1 1 2 2
    
-   .. grid-item:: :doc:`Tutorial <create-ubuntu-core-22-image>`
+   .. grid-item:: :doc:`Tutorial <create-ubuntu-core-image>`
 
-      Create an Ubuntu Core 22 image to better understand how to build snaps for use within your Brand Store environment.
+      Create an Ubuntu Core 24 image to better understand how to build snaps for use within your Brand Store environment.
 
    .. grid-item:: :doc:`How-to guides <controlling-updates>`
 
@@ -46,24 +43,19 @@ In this documentation
 
       Discussion and clarification of key topics, like :doc:`Snap confinement <snap-confinement-snapd-connection>`.
 
+.. note:: For general use of the Brand Store, see the `main documentation source <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   Tutorial <create-ubuntu-core-22-image>
+   Tutorial <create-ubuntu-core-image>
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
 
-   How-to <controlling-updates>
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   Explanation <explanation-main>
+   How-to <how-to-main>
 
 .. toctree::
    :maxdepth: 2
@@ -71,7 +63,11 @@ In this documentation
 
    Reference <configuration-values>
 
-.. note:: For general use of the Brand Store, see the `main documentation source <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   Explanation <explanation-main>
 
 Having trouble? We would like to help!
 --------------------------------------

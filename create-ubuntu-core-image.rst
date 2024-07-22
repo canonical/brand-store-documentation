@@ -1,9 +1,19 @@
 Tutorial: Create an Ubuntu Core image
 ======================================
 
+.. only:: latex
+
+    .. important:: For initial provisioning and setup of your Brand Store, make sure you are familiar with :doc:`configuration-values`.
+
+.. only:: html
+
+    .. note:: :doc:`configuration-values` contains information relating to the specific configuration of your Brand Store.
+
 To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
-If you have not yet configured your Brand Store, see the :doc:`Configuration values <configuration-values>` section of this documentation.
+.. important::
+
+    Ensure the Serial Vault is set up before proceeding with this tutorial. See :doc:`how-to-configure-serial-vault`.
 
 Creating the gadget snap
 ------------------------
@@ -15,15 +25,17 @@ and follow these `instructions <https://docs.snapcraft.io/the-gadget-snap/696>`_
 
 For this particular case, validating the initial store setup, let's fork the ``pc-amd64-gadget``. This gadget enables the device to request store credentials from the Serial Vault, as configured above.
 
-Gadget snaps for Ubuntu Core 22 must be built on the corresponding LTS classic release (Ubuntu 22.04) using ``snapcraft`` 7.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself.
+.. important::
+    
+    Gadget snaps for Ubuntu Core 24 must be built on the corresponding LTS classic release (Ubuntu 24.04) using ``snapcraft`` 8.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself.
 
 .. term::
-    :input: sudo snap install snapcraft --classic --channel=7.x/stable
+    :input: sudo snap install snapcraft -classic --channel=8.x/stable
     
     ...
 
     :input: snapcraft version
-    snapcraft 7.1.3
+    snapcraft 8.3.1
 
 .. note::
 
@@ -43,11 +55,13 @@ Update the "name" field in the ``snapcraft.yaml`` to "``{{CUSTOMER_STORE_PREFIX}
 
 Build the snap, using the model **API Key** generated during the Serial Vault setup above:
 
+.. Following input works with or without --destructive-mode
+
 .. term::
     :input: MODEL_APIKEY=<GENERATED-API-KEY> sudo snapcraft --destructive-mode
 
     ...
-    Snapped {{CUSTOMER_STORE_PREFIX}}-pc_22-0.1_amd64.snap
+    Snapped {{CUSTOMER_STORE_PREFIX}}-pc_24-0.1_amd64.snap
 
 .. note::
 
@@ -67,7 +81,7 @@ Now register the snap name in your Base Snap Store and push the initial revision
     Registering {{CUSTOMER_STORE_PREFIX}}-pc.
     Congrats! You are now the publisher of '{{CUSTOMER_STORE_PREFIX}}-pc'.
 
-    :input: snapcraft push {{CUSTOMER_STORE_PREFIX}}-pc_22-0.1_amd64.snap
+    :input: snapcraft push {{CUSTOMER_STORE_PREFIX}}-pc_24-0.1_amd64.snap
     The Store automatic review failed.
     A human will soon review your snap, but if you can't wait please write in the snapcraft forum asking for the manual review explicitly.
 
@@ -95,7 +109,7 @@ Once the revision is approved, use snapcraft to release it in the stable channel
 
     :input: snapcraft release {{CUSTOMER_STORE_PREFIX}}-pc 1 stable
     Track    Arch    Channel    Version    Revision
-    latest   all     stable     22-0.1     1
+    latest   all     stable     24-0.1     1
                      candidate  ^          ^
                      beta       ^          ^
                      edge       ^          ^
@@ -103,50 +117,12 @@ Once the revision is approved, use snapcraft to release it in the stable channel
 
 The gadget snap is now available for installation from the ``{{CUSTOMER_STORE_NAME}}`` store, and for inclusion in images.
 
-.. _dmidecode:
-
-Using dmidecode to read system serial number
-********************************************
-
-One possible approach to populating the serial number (vs. using the ``date`` command as described above) is to use the ``dmidecode`` tool to read the system serial number from the DMI table. In order to do this, you would need to add ``dmidecode`` to that gadget's ``snapcraft.yaml`` file as a ``stage-package``:
-
-.. code:: yaml
-
-    prepare-device:
-      plugin: nil
-      stage-packages:
-        - dmidecode
-    ...
-
-Also, in ``snapcraft.yaml``, you will need to plug the snapd ``hardware-observe`` interface to allow ``dmidecode`` access to access the correct file(s) in sysfs.
-
-.. note::
-
-    ``hardware-observe`` is a "self-serve interface"; see `Self-serve Snap Interfaces <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_ for more details.
-
-.. code:: yaml
-
-    hooks:
-      prepare-device:
-        plugs: [hardware-observe]
-    ...
-
-The actual command to read the serial number will also need to be updated in the snap/hooks/prepare-device file:
-
-.. code:: yaml
-
-    prepare-device:
-    ...
-          product_serial=\$(dmidecode -s system-serial-number)
-    ...
-
-Finally, to let the hardware-observe interface automatically connect on first boot, you'll need to go to the `dashboard <https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/>`_, click on the “Review capabilities” link, and set the radio button next to hardware-observe to “Enabled”. For more information on auto-connecting interfaces, see section 6 in this document. 
-
 Creating the model assertion
 ----------------------------
 
 One final step before you can build a custom Ubuntu Core image is creation of a signed model assertion, which provides image related metadata which ubuntu-image uses to customise the image. In order to sign the model assertion, a brand model key must be created and registered using the brand account. For details on how to create and register a model key, please refer to `Sign a model assertion <https://ubuntu.com/core/docs/sign-model-assertion>`_.
 
+Example model assertions can be found `here <https://github.com/snapcore/models>`_. This tutorial provides an example model assertion below.
 Once a valid model key is available, create and sign the model assertion for your test Ubuntu Core image:
 
 .. term::
@@ -170,7 +146,7 @@ Once a valid model key is available, create and sign the model assertion for you
           "type": "gadget"
         },
         {
-          "default-channel": "22/stable",
+          "default-channel": "24/stable",
           "id": "pYVQrBcKmBa0mZ4CCN7ExT6jH8rY1hza",
           "name": "pc-kernel",
           "type": "kernel"
@@ -178,7 +154,7 @@ Once a valid model key is available, create and sign the model assertion for you
         {
           "default-channel": "latest/stable",
           "id": "amcUKQILKXHHTlmSa7NMdnXSx02dNeeT",
-          "name": "core22",
+          "name": "core24",
           "type": "base"
         },
         {
@@ -186,6 +162,13 @@ Once a valid model key is available, create and sign the model assertion for you
           "id": "PMrrV4ml8uWuEUDBT8dSGnKUYbevVhc4",
           "name": "snapd",
           "type": "snapd"
+        },
+        {
+          "name": "console-conf",
+          "type": "app",
+          "default-channel": "24/edge",
+          "id": "ASctKBEHzVt3f1pbZLoekCvcigRjtuqw",
+          "presence": "optional"
         },
         {
           "default-channel": "latest/stable",
@@ -246,7 +229,7 @@ Creating the image
 
 This section describes the details of Ubuntu Core image building against the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store.
 
-Ensure a Linux build environment (Ubuntu 22.04 or later) and tool for building images are available:
+Ensure a Linux build environment (Ubuntu 24.04 or later) and tool for building images are available:
 
 .. term::
     :input: sudo snap install ubuntu-image --classic
@@ -268,6 +251,8 @@ Launching and verifying the image
 ---------------------------------
 
 To launch and test your newly generated Ubuntu Core image, follow the steps here: `Ubuntu Core: Testing with QEMU <https://ubuntu.com/core/docs/testing-with-qemu>`_. Once the image is booted and installed, you can log in then verify if the seeded snaps are installed, the {{CUSTOMER_MODEL_NAME}}  model is correct and a serial assertion was obtained:
+
+.. note:: The following shows the expected output for a Ubuntu Core 22 image.
 
 .. term::
     :user: {{UBUNTU_SSO_USER_NAME}}
