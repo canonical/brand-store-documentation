@@ -1,6 +1,7 @@
 import datetime
 import logging
 import os
+from os import environ
 import sys
 import yaml
 
@@ -152,9 +153,14 @@ with open("templates/TEMPLATE.yaml") as template_file:
     template_values = yaml.safe_load(template_file)
 
 template_path = os.environ.get("TEMPLATE_FILENAME", "NONE")
+if environ['TEMPLATE'] != "NONE":
+    print("Template provided")
+    template_path = environ['TEMPLATE']
 try:
     with open(template_path) as template_file:
         template_values = yaml.safe_load(template_file)
+        print("template path accepted")
+        print(template_values)
 except FileNotFoundError:
     logger.error(f"Template {template_path} not found")
     # Then fall back to the defaults

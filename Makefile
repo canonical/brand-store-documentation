@@ -8,6 +8,7 @@ SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
 BUILDDIR      = _build
 VENV          = .sphinx/venv/bin/activate
+TEMPLATE      = NONE
 
 
 # Put it first so that "make" without argument is like "make help".
@@ -30,10 +31,10 @@ install:
                 "* check inclusive language: make woke \n" \
 		"--------------------------------------------------------------- \n"
 run:
-	. $(VENV); sphinx-autobuild -c . -b dirhtml "$(SOURCEDIR)" "$(BUILDDIR)"
+	. $(VENV); export TEMPLATE=$(TEMPLATE) &&  sphinx-autobuild -c . -b dirhtml "$(SOURCEDIR)" "$(BUILDDIR)"
 
 html:
-	. $(VENV); $(SPHINXBUILD) -c . -b dirhtml "$(SOURCEDIR)" "$(BUILDDIR)" -w .sphinx/warnings.txt
+	. $(VENV); export TEMPLATE=$(TEMPLATE) && $(SPHINXBUILD) -c . -b dirhtml "$(SOURCEDIR)" "$(BUILDDIR)" -w .sphinx/warnings.txt
 
 epub:
 	. $(VENV); $(SPHINXBUILD) -c . -b epub "$(SOURCEDIR)" "$(BUILDDIR)" -w .sphinx/warnings.txt
@@ -79,7 +80,7 @@ pdf-prep-force:
 	apt-get install --no-install-recommends -y latexmk fonts-freefont-otf fonts-ibm-plex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-font-utils texlive-lang-cjk texlive-xetex plantuml xindy tex-gyre dvipng \
 
 pdf: pdf-prep
-	@. $(VENV); sphinx-build -M latexpdf "$(SOURCEDIR)" "_build" $(SPHINXOPTS)
+	@. $(VENV); export TEMPLATE=$(TEMPLATE) && sphinx-build -M latexpdf "$(SOURCEDIR)" "_build" $(SPHINXOPTS)
 	@. $(VENV); rm ./_build/latex/front-page-light.pdf || true
 	@. $(VENV); rm ./_build/latex/normal-page-footer.pdf || true
 	@. $(VENV); find ./_build/latex -name "*.pdf" -exec mv -t ./ {} +
