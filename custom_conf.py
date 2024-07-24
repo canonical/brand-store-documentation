@@ -153,8 +153,14 @@ with open("templates/TEMPLATE.yaml") as template_file:
     template_values = yaml.safe_load(template_file)
 
 template_path = os.environ.get("TEMPLATE_FILENAME", "NONE")
-if environ['TEMPLATE'] != "NONE":
-    template_path = environ['TEMPLATE']
+
+try:
+    if environ['TEMPLATE'] != "NONE":
+        template_path = environ['TEMPLATE']
+except LookupError:
+    print("No template variable set. Assuming RTD build.")
+    pass
+
 try:
     with open(template_path) as template_file:
         template_values = yaml.safe_load(template_file)
