@@ -52,7 +52,7 @@ spelling: html
 	. $(VENV) ; python3 -m pyspelling -c .sphinx/spellingcheck.yaml
 
 linkcheck:
-	. $(VENV) ; $(SPHINXBUILD) -c . -b linkcheck  "$(SOURCEDIR)" "$(BUILDDIR)"
+	. $(VENV) ; export TEMPLATE=$(TEMPLATE) && $(SPHINXBUILD) -c . -b linkcheck  "$(SOURCEDIR)" "$(BUILDDIR)"
 
 woke:
 	type woke >/dev/null 2>&1 || { snap install woke; exit 1; }
