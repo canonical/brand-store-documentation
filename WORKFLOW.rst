@@ -1,6 +1,20 @@
 Workflow
 ********
 
+Generating documentation locally
+================================
+
+Documentation can be generated locally using the template files. Simply set the ``TEMPLATE`` variable when calling ``make``. For example, to create a PDF of the ``acme-alpha`` template use the following command:
+
+.. code-block:: none
+
+    make pdf TEMPLATE="templates/acme-alpha.yaml"
+
+.. note::
+
+    Local generation of PDF files requires some system packages. You will be prompted to use ``make pdf-prep-force`` to install the required packages if they are not found on your system.
+
+
 For new customers
 =================
 
