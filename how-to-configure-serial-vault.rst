@@ -1,5 +1,7 @@
 Configure Serial Vault
-======================
+----------------------
+
+.. configure-serial-vault-start
 
 To configure your serial vault, follow the instructions at the links below, using ``{{CUSTOMER_MODEL_NAME}}`` as the model name, ``{{CUSTOMER_BRAND_EMAIL}}`` as the brand email, and ``{{CUSTOMER_BRAND_ACCOUNT_ID}}`` as the brand ID:
 

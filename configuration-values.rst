@@ -1,7 +1,7 @@
 Brand store configuration
 =========================
 
-When using your Brand Store, your main resource will be the documentation found `here <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
+When using your Brand Store, your main resource will be the documentation found in the `IoT App Store documentation <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
 This section provides links to some key pages in the documentation, as well as information specific to your Brand Store.
 
 Store Architecture
@@ -104,12 +104,12 @@ An Ubuntu Pro account and Support Portal access are also included with your Bran
 
 
 Ubuntu Pro Dashboard
-++++++++++++++++++++
+********************
 
 Brand Store customers are provided an Ubuntu Pro account to enable access to ESM updates during snap builds. This is accomplished by adding your Pro token to CI/CD systems used to build your snaps. This token can be accessed by signing into the `Ubuntu Pro Dashboard <http://ubuntu.com/pro/dashboard>`_ using the account mentioned at the beginning of this section.
 
 Support Portal
-++++++++++++++
+**************
 
 Brand Store customers are also provided access to our Support Portal which can be used to create support cases, including snap interface connection requests. The support portal can be accessed by signing into the `Support Portal Dashboard <https://support-portal.canonical.com/dashboard>`_ using the account mentioned at the beginning of this section. 
 

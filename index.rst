@@ -26,11 +26,11 @@ This documentation provides links to some key pages, and provides information on
    
    .. grid-item:: :doc:`Tutorial <create-ubuntu-core-image>`
 
-      Create an Ubuntu Core 24 image to better understand how to build snaps for use within your Brand Store environment.
+      To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
-   .. grid-item:: :doc:`How-to guides <controlling-updates>`
+   .. grid-item:: :doc:`How-to guides <how-to-main>`
 
-      How to control updates on your devices.
+      Step-by-step guides covering key operations and common tasks.
 
 .. grid:: 1 1 2 2
    :reverse:

@@ -12,7 +12,7 @@ Documentation can be generated locally using the template files. Simply set the 
 
 .. note::
 
-    Local generation of PDF files requires some system packages. You will be prompted to use ``make pdf-prep-force`` to install the required packages if they are not found on your system.
+    Local generation of PDF files requires some system packages. You will be prompted to use ``sudo make pdf-prep-force`` to install the required packages if they are not found on your system.
 
 
 For new customers
@@ -41,7 +41,8 @@ Field Engineering
 
 These instructions assume that you have the proper permissions under the GitHub project.
 
-1. Fill in the values in ``templates/<template-filename>`` with the correct values for the brand that is being created.
+1. Create a copy of ``templates/TEMPLATE.yaml`` and rename it to create a file for a specific customer.
+#. Replace the values in the template file with the correct values for the brand that is being created.
 
 Updating existing documentation
 ===============================

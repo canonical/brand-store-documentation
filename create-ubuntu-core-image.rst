@@ -1,5 +1,5 @@
-Tutorial: Create an Ubuntu Core image
-======================================
+Create an Ubuntu Core image
+===========================
 
 .. only:: latex
 
@@ -63,9 +63,15 @@ Build the snap, using the model **API Key** generated during the Serial Vault se
     ...
     Snapped {{CUSTOMER_STORE_PREFIX}}-pc_24-0.1_amd64.snap
 
-.. note::
+.. only:: html
 
-    The sample “product_serial” is loosely generated (``date -Is``) in this gadget. In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See :ref:`dmidecode` for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
+    .. note::
+
+        The sample “product_serial” is loosely generated (``date -Is``) in this gadget. In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See :doc:`how-to-dmidecode-to-read-system-sn` for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
+
+.. only:: pdf
+
+    .. include:: how-to-dmidecode-to-read-system-sn.rst
 
 Now register the snap name in your Base Snap Store and push the initial revision:
 
@@ -93,7 +99,7 @@ Now register the snap name in your Base Snap Store and push the initial revision
 
     The Brand Account must be a **Publisher** under `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/>`_ to register and publish the gadget snap.
 
-Log into the web dashboard as ``{{ CUSTOMER_ADMIN_EMAIL }}`` (because it has the **Reviewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID }}/>`_ and **Approve** the gadget revision. All gadget uploads require manual review.
+Log into the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the **Reviewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID }}/>`_ and **Approve** the gadget revision. All gadget uploads require manual review.
 
 .. note::
 
@@ -141,7 +147,7 @@ Once a valid model key is available, create and sign the model assertion for you
       "snaps": [
         {
           "default-channel": "latest/stable",
-          "id": "{{CUSTOMER_SNAP_IDS}}",
+          "id": "<CUSTOMER_SNAP_IDS>",
           "name": "{{CUSTOMER_STORE_PREFIX}}-pc",
           "type": "gadget"
         },
@@ -166,14 +172,14 @@ Once a valid model key is available, create and sign the model assertion for you
         {
           "name": "console-conf",
           "type": "app",
-          "default-channel": "24/edge",
+          "default-channel": "24/stable",
           "id": "ASctKBEHzVt3f1pbZLoekCvcigRjtuqw",
           "presence": "optional"
         },
         {
           "default-channel": "latest/stable",
-          "id": "{{CUSTOMER_SNAP_IDS}}",
-          "name": "{{CUSTOMER_REQUIRED_SNAPS}}",
+          "id": "<CUSTOMER_SNAP_IDS>",
+          "name": "<CUSTOMER_REQUIRED_SNAPS>",
           "type": "app"
         }
       ],
@@ -196,7 +202,7 @@ Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the 
 
 .. image:: /.sphinx/images/core-22-add-snap.png
 
-Access the snap page https://dashboard.snapcraft.io/snaps/SNAPNAME to get the snap-id and fill the fields ``{{CUSTOMER_SNAP_IDS}}`` and ``{{CUSTOMER_REQUIRED_SNAPS}}``.
+Access the snap page https://dashboard.snapcraft.io/snaps/SNAPNAME to get the snap-id and fill the fields ``<CUSTOMER_SNAP_IDS>`` and ``<CUSTOMER_REQUIRED_SNAPS>``.
 
 .. image:: /.sphinx/images/core-22-snap-id.png
 
@@ -236,7 +242,12 @@ Ensure a Linux build environment (Ubuntu 24.04 or later) and tool for building i
     
     ...
 
-Ubuntu Core image is built in the one line instruction by using the above developer account credential:
+In order for ubuntu-image to able to access snaps from your private store, you need to provide your developer credentials using one of the following environment variables:
+
+* ``UBUNTU_STORE_AUTH`` - this must be set to the actual contents of the file (e.g. store.auth) containing your exported developer credentials.
+* ``UBUNTU_STORE_AUTH_DATA_FILENAME`` - this must be set to the path of the file containing your exported developer credentials.
+
+The Ubuntu Core image is built in the one line instruction by using the above developer account credential:
 
 .. term::
     :input: UBUNTU_STORE_AUTH=$(cat store.auth) ubuntu-image snap {{CUSTOMER_MODEL_NAME}}-model.assert
@@ -256,9 +267,7 @@ To launch and test your newly generated Ubuntu Core image, follow the steps here
 
 .. term::
     :user: {{UBUNTU_SSO_USER_NAME}}
-    :host: ubuntu
-
-    Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-48-generic x86_64)
+    :host: ubuntu_core_24
 
     The programs included with the Ubuntu system are free software;
     the exact distribution terms for each program are described in the
@@ -267,48 +276,54 @@ To launch and test your newly generated Ubuntu Core image, follow the steps here
     Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
     applicable law.
 
-    * Ubuntu Core:     https://www.ubuntu.com/core
-    * Community:       https://forum.snapcraft.io
-    * Snaps:           https://snapcraft.io
+    Welcome to Ubuntu Core 24
 
-    This Ubuntu Core 22 machine is a tiny, transactional edition of Ubuntu,
-    designed for appliances, firmware and fixed-function VMs.
+    * Documentation: https://ubuntu.com/core/docs
 
-    If all the software you care about is available as snaps, you are in
-    the right place. If not, you will be more comfortable with classic
-    deb-based Ubuntu Server or Desktop, where you can mix snaps with
-    traditional debs. It's a brave new world here in Ubuntu Core!
+    This is a pre-built Ubuntu Core image. Pre-built images are ideal for
+    exploration as you develop your own custom Ubuntu Core image.
 
-    Please see 'snap --help' for app installation and updates.
+    To learn how to create your custom Ubuntu Core image, see our guide:
 
-    …
+    * Getting Started: https://ubuntu.com/core/docs/get-started
+
+    In this image, why not create an IoT web-kiosk. First, connect a 
+    screen, then run: 
+
+    snap install ubuntu-frame wpe-webkit-mir-kiosk
+    snap set wpe-webkit-mir-kiosk url=https://ubuntu.com/core
+
+    For more ideas, visit:
+
+    * First steps: https://ubuntu.com/core/docs/first-steps
+
 
     :input: snap list
 
-    Name       Version        Rev    Tracking       Publisher   Notes
-    <CUSTOMER-STORE-PREFIX>-pc    22-0.1 1     stable  <CUSTOMER-BRAND-ACCOUNT-ID>  gadget
-    core22     20220706       275    stable         canonical✓  base
-    <CUSTOMER-REQUIRED-SNAPS>
-    pc-kernel  5.15.0-48.54.2 1105   22/stable      canonical✓  kernel
-    snapd      2.57.1         16778  stable         canonical✓  snapd
+    Name                    Version                          Rev    Tracking       Publisher    Notes
+    console-conf            24.04.1+git45g5f9fae19+gd81a15d  40     24/stable      canonical✓   -
+    core24                  20240528                         423    latest/stable  canonical✓   base
+    pc-kernel               6.8.0-40.40                      1938   24/stable      canonical✓   kernel
+    snapd                   2.63                             21759  latest/stable  canonical✓   snapd
+
 
     :input: snap changes
     ID   Status  Spawn               Ready               Summary
-    1    Done    today at 07:15 UTC  today at 07:16 UTC  Initialize system state
-    2    Done    today at 07:16 UTC  today at 07:16 UTC  Initialize device
+    1    Done    today at 02:48 UTC  today at 02:48 UTC  Initialize system state
+
 
     :input: snap model --assertion
     type: model
-    authority-id: <CUSTOMER-BRAND-ACCOUNT-ID>
+    authority-id: {{CUSTOMER_BRAND_ACCOUNT_ID}}
     series: 16
-    brand-id: <CUSTOMER-BRAND-ACCOUNT-ID>
-    model: <CUSTOMER-MODEL-NAME>
+    brand-id: {{CUSTOMER_BRAND_ACCOUNT_ID}}
+    model: {{CUSTOMER_MODEL_NAME}}
     ... 
 
     :input: snap model --serial --assertion
     type: serial
-    authority-id: <CUSTOMER-BRAND-ACCOUNT-ID>
+    authority-id: {{CUSTOMER_BRAND_ACCOUNT_ID}}
     revision: 1
-    brand-id: <CUSTOMER-BRAND-ACCOUNT-ID>
-    model: <CUSTOMER-MODEL-NAME>
+    brand-id: {{CUSTOMER_BRAND_ACCOUNT_ID}}
+    model: {{CUSTOMER_MODEL_NAME}}
     ...
