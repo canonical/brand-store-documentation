@@ -1,6 +1,8 @@
 Brand Store Documentation
 =========================
 
+Use `make pdf TEMPLATE=templates/acme-alpha.yaml` to create the onboarding PDF for a specific templated customer.
+
 Forked off the `Canonical Sphinx Docs Starter Pack <https://github.com/canonical/sphinx-docs-starter-pack>`_. See that project for general instructions.
 
 See ``WORKFLOW.rst`` for instructions on adding or updating a domain for a specific brand store.
