@@ -1,10 +1,10 @@
 Using dmidecode to read system serial number
 --------------------------------------------
 
-One possible approach to populating the serial number (vs. using the ``date`` command as described above) is to use the ``dmidecode`` tool to read the system serial number from the DMI table. In order to do this, you would need to add ``dmidecode`` to that gadget's ``snapcraft.yaml`` file as a ``stage-package``:
+One possible approach to populating the serial number (vs. using the ``date`` command) is to use the ``dmidecode`` tool to read the system serial number from the DMI table. In order to do this, you would need to add ``dmidecode`` to that gadget's ``snapcraft.yaml`` file as a ``stage-package``:
 
 .. code:: yaml
-    
+
     parts:
       prepare-device:
         plugin: nil
@@ -33,4 +33,4 @@ The actual command to read the serial number will also need to be updated in the
           product_serial=\$(dmidecode -s system-serial-number)
     ...
 
-Finally, to let the hardware-observe interface automatically connect on first boot, you'll need to go to the `dashboard <https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/>`_, click on the “Review capabilities” link, and set the radio button next to hardware-observe to “Enabled”. For more information on auto-connecting interfaces, see :doc:`snap-confinement-snapd-connection`. 
+Finally, to let the hardware-observe interface automatically connect on first boot, you'll need to go to the `dashboard <https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/>`_, click on the “Review capabilities” link, and set the radio button next to hardware-observe to “Enabled”.
