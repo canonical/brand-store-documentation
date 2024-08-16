@@ -94,9 +94,9 @@ The Brand account:
 
   Use of the Brand account and its credentials should be strictly limited. Canonical recommends that the Brand account not be assigned any roles that are not strictly needed. The Brand account will need the **Publisher** role, but do not make the Brand account a store **Administrator**, **Reviewer**, or **Viewer**.
 
-.. note::
+.. important::
 
-    Keys can also be generated with `hardware securoty modules <https://github.com/canonical/hsm-assertion-signing-reference>`.
+    It is recommended to generate keys using `hardware security modules <https://github.com/canonical/hsm-assertion-signing-reference>`_.
 
 
 Ubuntu Pro & Support Portal Account
