@@ -105,7 +105,8 @@ linkcheck_ignore = [
     'https://ubuntu.com/core/services/guide/signing-keys#heading--key-roles',
     'https://portal.support.canonical.com',
     'https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/',
-    'https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/'
+    'https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/',
+    'https://github.com/canonical/hsm-assertion-signing-reference'
     
 ]
 
