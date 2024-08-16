@@ -11,7 +11,7 @@ Snaps declare plugs for specific snapd `interfaces <https://snapcraft.io/docs/su
 
       The **Reviewer** can only do this if they are not the **Publisher** of or a **Collaborator** on the snap in question.
 
-#. A store support portal ticket can be created to request auto-connection for super-privileged interfaces (e.g. snapd-control or system-files). Please work with your Field Enginer when you create your first such ticket, so as to ensure you provide all the required details. At minimum, you should ensure that you provide:
+#. A store support portal ticket can be created to request auto-connection for super-privileged interfaces (e.g. snapd-control or system-files). Please work with your Field Engineer when you create your first such ticket, so as to ensure you provide all the required details. At minimum, you should ensure that you provide:
 
    - snap name and snap ID
    - interface being requested
