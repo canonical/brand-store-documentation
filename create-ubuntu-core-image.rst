@@ -9,7 +9,7 @@ To validate that the store was provisioned correctly, and that you are able to a
 
 .. note::
 
-    You may need to initilise LXD with `lxd init --auto` before proceeding with some of the following steps.
+    You may need to initialise LXD with `lxd init --auto` before proceeding with some of the following steps.
 
 Creating the gadget snap
 ------------------------
