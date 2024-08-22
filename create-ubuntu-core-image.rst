@@ -7,6 +7,9 @@ Create an Ubuntu Core image
 
 To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
+.. note::
+
+    You may need to initilise LXD with `lxd init --auto` before proceeding with some of the following steps.
 
 Creating the gadget snap
 ------------------------
@@ -20,7 +23,7 @@ For this particular case, validating the initial store setup, let's use the ``pc
 
 .. important::
     
-    Gadget snaps for Ubuntu Core 24 should be built on the corresponding LTS classic release (Ubuntu 24.04) using ``snapcraft`` 8.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself. 
+    Gadget snaps for Ubuntu Core 24 should be built on the corresponding LTS classic release (Ubuntu 24.04) using ``snapcraft`` 8.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself.
 
 .. term::
     :input: sudo snap install snapcraft --classic --channel=8.x/stable
