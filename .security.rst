@@ -42,7 +42,7 @@ How secrets are handled
 By Canonical
 ************
 
-- Canonical retains enxrypted signing keys in the `Serial Vault overview <https://ubuntu.com/core/services/guide/serial-vault-overview>`_ for signiging specific assertions. The private keys cannot be accessed once generated or uploaded to the Serial Vault.
+- Canonical retains encrypted signing keys in the `Serial Vault overview <https://ubuntu.com/core/services/guide/serial-vault-overview>`_ for signing specific assertions. The private keys cannot be accessed once generated or uploaded to the Serial Vault.
 
 By you
 ******

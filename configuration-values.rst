@@ -96,7 +96,7 @@ The Brand account:
 
 .. important::
 
-    It is recommended to generate keys using `hardware security modules <https://github.com/canonical/hsm-assertion-signing-reference>`_.
+    It is recommended to generate keys using hardware security modules.
 
 
 Ubuntu Pro & Support Portal Account
