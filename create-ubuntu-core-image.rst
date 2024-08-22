@@ -13,7 +13,7 @@ Creating the gadget snap
 
 The first step in building an Ubuntu Core image that can communicate with your store is to build a gadget snap. Gadget snaps do many things, but for our purposes here, the important functionality is generating a serial number and using that serial number, along with a pre-shared API key, to get credentials to talk to the store. You can also use the gadget snap to set default configuration values for application snaps.
 
-To build a custom gadget snap, we start by selecting a suitable suitable candidate from the `Canonical supported gadgets <https://snapcraft.io/docs/the-gadget-snap>`_
+To build a custom gadget snap, we start by selecting a suitable candidate from the `Canonical supported gadgets <https://snapcraft.io/docs/the-gadget-snap>`_
 and see follow the `instructions on gadget building <https://ubuntu.com/core/docs/gadget-building>`_.
 
 For this particular case, validating the initial store setup, let's use the ``pc-amd64-gadget``. This gadget enables the device to request store credentials from the Serial Vault, as configured above.
