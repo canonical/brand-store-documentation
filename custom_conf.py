@@ -105,7 +105,8 @@ linkcheck_ignore = [
     'https://ubuntu.com/core/services/guide/signing-keys#heading--key-roles',
     'https://portal.support.canonical.com',
     'https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/',
-    'https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/'
+    'https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/',
+    'https://github.com/canonical/hsm-assertion-signing-reference'
     
 ]
 
@@ -177,6 +178,8 @@ rst_prolog = """
 # Merge the template values with the HTML context so the documentation can use
 # template variables.
 html_context = {**html_context, **template_values}
+
+latex_documents = [  ('pdf-index', 'UC24_Onboarding_Guide.tex', u'UC24 Onboarding Guide', u'Canonical', 'manual'),]
 
 latex_additional_files = [
     ".sphinx/fonts/Ubuntu-B.ttf",
@@ -256,11 +259,11 @@ latex_elements = {
     \fancyfoot[L]{\footnotesize \textcolor{copyright}{© 2024 Canonical Ltd. All rights reserved. Confidential and proprietary, do not share without permission.}}
 }
 \newcommand\sphinxbackoftitlepage{\thispagestyle{titlepage}}
-\titleformat{\chapter}[block]{\Huge \color{title} \bfseries\filright}{\thechapter .}{1.5ex}{}
+\titleformat{\chapter}[block]{\Huge \color{title} \bfseries\filright}{\thechapter}{1.5ex}{}
 \titlespacing{\chapter}{0pt}{0pt}{0pt}
-\titleformat{\section}[block]{\huge \bfseries\filright}{\thesection .}{1.5ex}{} 
+\titleformat{\section}[block]{\huge \bfseries\filright}{\thesection}{1.5ex}{} 
 \titlespacing{\section}{0pt}{0pt}{0pt}
-\titleformat{\subsection}[block]{\Large \bfseries\filright}{\thesubsection .}{1.5ex}{} 
+\titleformat{\subsection}[block]{\Large \bfseries\filright}{\thesubsection}{1.5ex}{} 
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
 \setcounter{tocdepth}{1}
 \renewcommand\pagenumbering[1]{}
@@ -288,8 +291,6 @@ latex_elements = {
 \textcolor{label}{Prepared by:} \tabto{8em} ''' + template_values['PREPARED_BY'] + r'''
 
 \textcolor{label}{Prepared on:} \tabto{8em} ''' + template_values['PREPARED_ON'] + r'''
-
-\textcolor{label}{Version:} \tabto{8em} 2.0
 
 \vfill
 

@@ -1,7 +1,7 @@
 Brand store configuration
 =========================
 
-When using your Brand Store, your main resource will be the documentation found `here <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
+When using your Brand Store, your main resource will be the documentation found in the `IoT App Store documentation <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
 This section provides links to some key pages in the documentation, as well as information specific to your Brand Store.
 
 Store Architecture
@@ -79,11 +79,11 @@ Brand Account
 
 Account: ``{{CUSTOMER_BRAND_EMAIL}}`` (account-id: ``{{CUSTOMER_BRAND_ACCOUNT_ID}}``)
 
-The Brand account was set for your Brand Stores at the time of store creation.  The Brand account defines the Brand scope of authority, and it must be used for certain functions.
+The Brand account was set up for your Brand Stores at the time of store creation.  The Brand account defines the Brand scope of authority, and it must be used for certain functions.
 
 The Brand account:
 
-- Generates, registers and holds the signing keys for the Brand infrastructure.
+- Uses Serial Vault to generate or register signing keys for use with Brand infrastructure.
 - Signs Model assertions used to build images that point at Brand Stores.
 - Signs System-User assertions used to trigger user-account creation on Brand devices.
 - Publishes any gadget snaps in the store. Kernel and gadget snap names must be owned by the Brand account or by Canonical. Typically, Canonical owns kernels, and the Brand account owns gadget snaps. To do this, the Brand account must be given the **Publisher** role in the Base store.
@@ -93,6 +93,10 @@ The Brand account:
 .. note::
 
   Use of the Brand account and its credentials should be strictly limited. Canonical recommends that the Brand account not be assigned any roles that are not strictly needed. The Brand account will need the **Publisher** role, but do not make the Brand account a store **Administrator**, **Reviewer**, or **Viewer**.
+
+.. important::
+
+    It is recommended to generate keys using hardware security modules.
 
 
 Ubuntu Pro & Support Portal Account
@@ -104,29 +108,21 @@ An Ubuntu Pro account and Support Portal access are also included with your Bran
 
 
 Ubuntu Pro Dashboard
-++++++++++++++++++++
+********************
 
-Brand Store customers are provided an Ubuntu Pro account to enable access to ESM updates during snap builds. This is accomplished by adding your Pro token to CI/CD systems used to build your snaps. This token can be accessed by signing into the `Ubuntu Pro Dashboard <http://ubuntu.com/pro/dashboard>`_ using the account mentioned at the beginning of this section.
+Brand Store customers are provided an Ubuntu Pro account to enable access to ESM updates during snap builds (enabled by use of the `SNAPCRAFT_UA_TOKEN`). This is accomplished by adding your Pro token to CI/CD systems used to build your snaps. This token can be accessed by signing into the `Ubuntu Pro Dashboard <http://ubuntu.com/pro/dashboard>`_ using the account mentioned at the beginning of this section.
 
 Support Portal
-++++++++++++++
+**************
 
-Brand Store customers are also provided access to our Support Portal which can be used to create support cases, including snap interface connection requests. The support portal can be accessed by signing into the `Support Portal Dashboard <https://support-portal.canonical.com/dashboard>`_ using the account mentioned at the beginning of this section. 
+Brand Store customers are also provided access to our Support Portal which can be used to create support cases, including `requests for super privileged interface connections <https://snapcraft.io/docs/super-privileged-interfaces>`_. The support portal can be accessed by signing into the `Support Portal Dashboard <https://support-portal.canonical.com/dashboard>`_ using the account mentioned at the beginning of this section. 
 
 
 Serial Vault
 ------------
 
-The ``{{CUSTOMER_ADMIN_EMAIL}}`` account was also added to Serial Vault, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Brand Store, as described in :doc:`how-to-configure-serial-vault`. 
+Serial Vault has been provisioned with an account for ``{{CUSTOMER_ADMIN_EMAIL}}``, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Brand Store, as described in :doc:`how-to-configure-serial-vault`. 
 
-To get started with the `Serial Vault <https://serial-vault-admin.canonical.com/>`_ (SV admin account required), read the following pages. You can click the next button in the bottom right corner to move from one to the next.
-
-- `Serial Vault Overview <https://ubuntu.com/core/services/guide/serial-vault-overview>`_
-- `Signing Keys <https://ubuntu.com/core/services/guide/signing-keys>`_
-- `Device Model and Identity <https://ubuntu.com/core/services/guide/device-model-and-identity>`_
-
-.. note::
-
-    Please be sure to review the signing keys sub-section on key roles. Use of key roles is a best practice which helps to limit the scope of what type of assertions each key can be used to sign. This is meant to limit your exposure if a key were to be compromised. Use of key roles also means that you **must no longer register your keys** using ``snapcraft register-key``. This will now be handled by the Snap Store admins as part of the key role assignment. And finally, please note that key roles can only be assigned to new keys, they cannot be added to keys at a later time.
-
-To configure Serial Vault, see :doc:`how-to-configure-serial-vault`.
+.. only:: html
+    
+    To configure Serial Vault, see :doc:`how-to-configure-serial-vault`.

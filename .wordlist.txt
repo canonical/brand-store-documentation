@@ -16,6 +16,7 @@ gpio
 https
 img
 init
+initialise
 installable
 io
 IoT
@@ -25,6 +26,8 @@ kvm
 localhost
 lifecycle
 LTS
+lxd
+LXD
 Makefile
 MyST
 namespace
@@ -70,3 +73,6 @@ fzDSfDAJd
 sG
 tRN
 uF
+Engineer
+UA
+auth
