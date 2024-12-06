@@ -95,7 +95,7 @@ Now register the snap name in your Base Snap Store and push the initial revision
 
     The Brand Account must be a **Publisher** under `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/>`_ to register and publish the gadget snap. However, as previously mentioned, once the gadget snap has been registered, publishing the snap should be left to collaborators. Also please ensure that when registering your gadget snap, you set the visibility of your gadget snap to Public. This only affects visibility of the snap to authorized devices and/or developers, it does not make the snap visible to the outside world. You can check the visibility of your snaps at https://snapcraft.io/snaps. 
 
-Log into the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the **Reviewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID }}/>`_ and **Approve** the gadget revision. All gadget uploads require manual review.
+Log into the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the **Reviewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID }}/>`_ and **Approve** the gadget revision.
 
 .. note::
 
