@@ -7,7 +7,7 @@
     Reference
     =========
 
-    These Reference documents detail configuration values and other supporting information about the Brand Store.
+    These Reference documents detail configuration values and other supporting information about the Dedicated Snap Store.
 
     .. toctree::
        :maxdepth: 2

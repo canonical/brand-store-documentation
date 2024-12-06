@@ -22,7 +22,7 @@ logger = logging.getLogger()
 ############################################################
 
 # Product name
-html_title = full_title = project = 'Canonical Brand Store'
+html_title = full_title = project = 'Canonical Dedicated Snap Store'
 author = 'Canonical Group Ltd'
 
 # Uncomment if your product uses release numbers
@@ -284,7 +284,7 @@ latex_elements = {
 
 \Huge \textcolor{title}{''' + template_values['CUSTOMER_NAME'] + r''' Onboarding Guide}
 
-\Large \textcolor{subtitle}{\textit{Brand Store and Image Build Quick-Start Guide}}
+\Large \textcolor{subtitle}{\textit{Dedicated Snap Store and Image Build Quick-Start Guide}}
 
 \vfill
 

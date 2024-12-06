@@ -17,6 +17,6 @@ Click **Save** to complete the upload.
 
 ## Backing up and protecting keys
 
-The signing keys that have been generated are an essential part of verifying the authenticity of a device at the Brand Store. So these keys need to be protected and backed up. They are stored by default in ```~/.snap/gnupg``` on the current machine.
+The signing keys that have been generated are an essential part of verifying the authenticity of a device at the Dedicated Snap Store. So these keys need to be protected and backed up. They are stored by default in ```~/.snap/gnupg``` on the current machine.
 
-Whilst the Serial Vault does hold the private key (encrypted in the database), it does not provide a mechanism to download a signing key. The Brand Store only has the public part of the key. So it is important to ensure that the generated keys are backed up.
+Whilst the Serial Vault does hold the private key (encrypted in the database), it does not provide a mechanism to download a signing key. The Dedicated Snap Store only has the public part of the key. So it is important to ensure that the generated keys are backed up.

@@ -18,7 +18,7 @@ Documentation can be generated locally using the template files. Simply set the 
 For new customers
 =================
 
-Setting up the Brand Store documentation for a new customer involves the Store team creating and configuring a new project on ReadTheDocs and Field Engineering filling in a template containing customer-specific values.
+Setting up the Dedicated Snap Store documentation for a new customer involves the Store team creating and configuring a new project on ReadTheDocs and Field Engineering filling in a template containing customer-specific values.
 
 Store Team
 ----------
@@ -47,7 +47,7 @@ These instructions assume that you have the proper permissions under the GitHub 
 Updating existing documentation
 ===============================
 
-Updating existing documentation for Brand Store customers requires editing the reStructuredText source code in the GitHub repository and then downloading the generated PDF from ReadTheDocs. It is assumed that only Field Engineering will be making documentation updates, and so documentation for the Store team is not explicitly provided. If necessary, a Store team member can follow the Field Engineering steps listed below.
+Updating existing documentation for Dedicated Snap Store customers requires editing the reStructuredText source code in the GitHub repository and then downloading the generated PDF from ReadTheDocs. It is assumed that only Field Engineering will be making documentation updates, and so documentation for the Store team is not explicitly provided. If necessary, a Store team member can follow the Field Engineering steps listed below.
 
 Field Engineering
 -----------------
@@ -59,7 +59,7 @@ Field Engineering
 #. Wait for the documentation to rebuild.
 #. Go to the generated PDF document located at ``https://canonical-<readthedocs-project-name>.readthedocs-hosted.com/_/downloads/en/latest/pdf/`` and download the PDF.
 
-   - Downloading the generated PDFs is currently a manual process which must be done for each brand store customer when the documentation is updated.
+   - Downloading the generated PDFs is currently a manual process which must be done for each Dedicated Snap Store customer when the documentation is updated.
 
 Creating a new documentation page
 =================================
@@ -71,4 +71,4 @@ Adding a new template variable
 
 New template variables can be created by adding the variable and its default value to ``templates/TEMPLATE.yaml``. For example, to add a ``CUSTOMER_TITLE`` variable to a page, first add a new line to ``TEMPLATE.yaml``: ``CUSTOMER_TITLE: "NULL"``.
 
-Then, add a new line to any templates corresponding to Brand Stores that require the new variable with the desired value (for example, ``CUSTOMER_TITLE: "Dr."``). The variable can then be used in the corresponding document like any other variable (by wrapping the variable in ``{{}}``)
+Then, add a new line to any templates corresponding to Dedicated Snap Stores that require the new variable with the desired value (for example, ``CUSTOMER_TITLE: "Dr."``). The variable can then be used in the corresponding document like any other variable (by wrapping the variable in ``{{}}``)

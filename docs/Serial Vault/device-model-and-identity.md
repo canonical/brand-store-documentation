@@ -12,10 +12,10 @@ Every device is provisioned using an Ubuntu Core image that includes a signed mo
 
 * brand-id: the ID of the Brand
 * model: the model name of the device
-* store: the ID of the Brand Store
-* sign-key-sha3-384: the key ID of the signing key (must be registered with the Brand Store)
+* store: the ID of the Dedicated Snap Store
+* sign-key-sha3-384: the key ID of the signing key (must be registered with the Dedicated Snap Store)
 
-An essential part of a device's identity is its serial number. This and that is recorded in the [serial assertion](https://ubuntu.com/core/docs/reference/assertions/serial), rather than the model assertion. The serial and model assertions are used to authenticate the device with the Brand Store. [The connecting new devices page](https://ubuntu.com/core/services/guide/connecting-devices) provides an overview of the onboarding process.
+An essential part of a device's identity is its serial number. This and that is recorded in the [serial assertion](https://ubuntu.com/core/docs/reference/assertions/serial), rather than the model assertion. The serial and model assertions are used to authenticate the device with the Dedicated Snap Store. [The connecting new devices page](https://ubuntu.com/core/services/guide/connecting-devices) provides an overview of the onboarding process.
 
 The serial assertion is not a part of the device image, as the serial number will differ from one device to another. Each device retrieves its serial assertion from the Serial Vault. For the Serial Vault to recognize a device as valid, it needs to have a model entity defined for the device. 
 

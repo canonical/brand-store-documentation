@@ -4,7 +4,7 @@
 Explanation
 ===========
 
-The following explanation oriented topics discuss and clarify key topics relating to the Brand Store.
+The following explanation oriented topics discuss and clarify key topics relating to the Dedicated Snap Store.
 
 .. toctree::
    :maxdepth: 2

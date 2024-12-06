@@ -1,8 +1,8 @@
-Brand store configuration
+Dedicated Snap Store configuration
 =========================
 
-When using your Brand Store, your main resource will be the documentation found in the `IoT App Store documentation <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
-This section provides links to some key pages in the documentation, as well as information specific to your Brand Store.
+When using your Dedicated Snap Store, your main resource will be the documentation found in the `IoT App Store documentation <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
+This section provides links to some key pages in the documentation, as well as information specific to your Dedicated Snap Store.
 
 Store architecture
 ------------------
@@ -11,7 +11,7 @@ A Snap Store is a repository for hosting and publishing snaps so that they can b
 
 There are several Snap Store instances that will be relevant to you. To understand these instances, and the relationship between them, please read:
 
-- `Snap Store vs Brand Store <https://ubuntu.com/core/services/guide/snap-store-vs-iot-app-store>`_
+- `Snap Store vs Dedicated Snap Store <https://ubuntu.com/core/services/guide/snap-store-vs-iot-app-store>`_
 - `Base Stores and Device View Stores <https://ubuntu.com/core/services/guide/base-stores-and-device-view-stores>`_
 
 Your Base Snap Store is:  ``{{CUSTOMER_STORE_NAME}}`` (``{{CUSTOMER_STORE_ID}}``)
@@ -79,12 +79,12 @@ Brand account
 
 Account: ``{{CUSTOMER_BRAND_EMAIL}}`` (account-id: ``{{CUSTOMER_BRAND_ACCOUNT_ID}}``)
 
-The Brand account was set up for your Brand Stores at the time of store creation.  The Brand account defines the Brand scope of authority, and it must be used for certain functions.
+The Brand account was set up for your Dedicated Snap Stores at the time of store creation.  The Brand account defines the Brand scope of authority, and it must be used for certain functions.
 
 The Brand account:
 
 - Uses Serial Vault to generate or register signing keys for use with Brand infrastructure.
-- Signs Model assertions used to build images that point at Brand Stores.
+- Signs Model assertions used to build images that point at Dedicated Snap Stores.
 - Signs System-User assertions used to trigger user-account creation on Brand devices.
 - Publishes any gadget snaps in the store. Kernel and gadget snap names must be owned by the Brand account or by Canonical. Typically, Canonical owns kernels, and the Brand account owns gadget snaps. To do this, the Brand account must be given the **Publisher** role in the Base store.
 
@@ -92,7 +92,7 @@ The Brand account:
 
 .. note::
 
-  Use of the Brand account and its credentials should be strictly limited. Canonical recommends that the Brand account not be assigned any roles that are not strictly needed. The Brand account will need the **Publisher** role, but do not make the Brand account a store **Administrator**, **Reviewer**, or **Viewer**.
+  Use of the Brand account and its credentials should be strictly limited. Canonical recommends that the Brand account not be assigned any roles that are not strictly needed. The Brand account will need the **Publisher** role, but do not make the Brand account a store **Administrator**, **Reviewer**, or **Viewer**. After registering snap names, the Brand account may make other developer accounts **Collaborators** on these snaps. These accounts then may upload future revisions of these snaps. Using collaborators instead of the Brand account to publish snaps is encouraged, as this further reduces use of the Brand account. 
 
 .. important::
 
@@ -114,7 +114,7 @@ Ubuntu Core relies on a number of signed documents called `assertions <https://s
 Ubuntu Pro & Support Portal account
 -----------------------------------
 
-An Ubuntu Pro account and Support Portal access are also included with your Brand Store. Both are accessed using the SSO account associated with the following email address:
+An Ubuntu Pro account and Support Portal access are also included with your Dedicated Snap Store. Both are accessed using the SSO account associated with the following email address:
 
     {{CUSTOMER_PRO_EMAIL}}
 
@@ -122,18 +122,18 @@ An Ubuntu Pro account and Support Portal access are also included with your Bran
 Ubuntu Pro Dashboard
 ********************
 
-Brand Store customers are provided an Ubuntu Pro account to enable access to ESM updates during snap builds (enabled by use of the `SNAPCRAFT_UA_TOKEN`). This is accomplished by adding your Pro token to CI/CD systems used to build your snaps. This token can be accessed by signing into the `Ubuntu Pro Dashboard <http://ubuntu.com/pro/dashboard>`_ using the account mentioned at the beginning of this section.
+Dedicated Snap Store customers are provided an Ubuntu Pro account to enable access to ESM updates during snap builds (enabled by use of the `SNAPCRAFT_UA_TOKEN`). This is accomplished by adding your Pro token to CI/CD systems used to build your snaps. This token can be accessed by signing into the `Ubuntu Pro Dashboard <http://ubuntu.com/pro/dashboard>`_ using the account mentioned at the beginning of this section.
 
 Support Portal
 **************
 
-Brand Store customers are also provided access to our Support Portal which can be used to create support cases, including `requests for super privileged interface connections <https://snapcraft.io/docs/super-privileged-interfaces>`_. The support portal can be accessed by signing into the `Support Portal Dashboard <https://support-portal.canonical.com/dashboard>`_ using the account mentioned at the beginning of this section. 
+Dedicated Snap Store customers are also provided access to our Support Portal which can be used to create support cases, including `requests for super privileged interface connections <https://snapcraft.io/docs/super-privileged-interfaces>`_. The support portal can be accessed by signing into the `Support Portal Dashboard <https://support-portal.canonical.com/dashboard>`_ using the account mentioned at the beginning of this section. 
 
 
 Serial Vault
 ------------
 
-Serial Vault has been provisioned with an account for ``{{CUSTOMER_ADMIN_EMAIL}}``, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Brand Store, as described in :doc:`how-to-configure-serial-vault`. 
+Serial Vault has been provisioned with an account for ``{{CUSTOMER_ADMIN_EMAIL}}``, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Dedicated Snap Store, as described in :doc:`how-to-configure-serial-vault`. 
 
 .. only:: html
     

@@ -1,7 +1,7 @@
 (signing-keys)=
 # Signing keys
 
-The Serial Vault provides encrypted storage for signing keys intended for use with a Brand Store. Signing keys can be generated locally and uploaded, and users with Admin permissions can generate keys from within the Serial Vault. A signing key needs to be registered with the Brand store so it can be used to verify the signature of serial assertions. The Serial Vault holds the private key, whereas the Brand Store holds only the public key as an account-key assertion.
+The Serial Vault provides encrypted storage for signing keys intended for use with a Dedicated Snap Store. Signing keys can be generated locally and uploaded, and users with Admin permissions can generate keys from within the Serial Vault. A signing key needs to be registered with the Dedicated Snap Store so it can be used to verify the signature of serial assertions. The Serial Vault holds the private key, whereas the Dedicated Snap Store holds only the public key as an account-key assertion.
 
 [note type="important" status="Info"]
 The private key of any key pair generated within the Serial Vault cannot be downloaded for local use.  If you wish to sign both model and serial assertions with the same key, ensure the key is generated locally and then uploaded to the Serial Vault.
@@ -10,7 +10,7 @@ The private key of any key pair generated within the Serial Vault cannot be down
 The steps needed with local key generation and registration are:
 
 1. Generating the key(s)
-2. Registering the key with the Brand Store
+2. Registering the key with the Dedicated Snap Store
     * See [Register a signing key with limited roles](#heading--key-roles) on constraining a key for only certain assertion types
 3. Exporting the key as ASCII-armored
 4. Uploading the ASCII-armored key file to the Serial Vault
@@ -27,7 +27,7 @@ Signing keys that are to be uploaded to the Serial Vault need to be passwordless
 
 <h2 id='heading--key-roles'>Register a signing key with limited roles</h2>
 
-Role-scoped keys are signing keys that are limited to be able to sign only specific assertion types. These limitations can be set when first registering the key with the Brand Store. For example, a key can be registered for only signing serial assertions, and can be further constrained to the serial assertions for only certain models. This improves security as it limits the potential impact of a leaked key.
+Role-scoped keys are signing keys that are limited to be able to sign only specific assertion types. These limitations can be set when first registering the key with the Dedicated Snap Store. For example, a key can be registered for only signing serial assertions, and can be further constrained to the serial assertions for only certain models. This improves security as it limits the potential impact of a leaked key.
 
 Customers currently cannot register a role-scoped signing key themselves. They must raise a support request as documented below.
 
@@ -45,7 +45,7 @@ If role-scoped keys are in use, it is recommended to limit the roles of all avai
 
 <h3 id='heading--role-scoped-key-instructions'>Procedure for requesting a role-scoped key</h3>
 
-To register a role-scoped key, raise a support request with the Brand Store with the following details:
+To register a role-scoped key, raise a support request with the Dedicated Snap Store with the following details:
 
 * Account ID of the brand account to which the key would be registered
 * Name for the key
