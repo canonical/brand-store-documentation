@@ -143,7 +143,7 @@ Please contact customersuccess@canonical.com to request a Landscape SaaS account
 Self-hosted Landscape 
 *********************
 
-Alternatively, Landscape Server can run on-premises or in public clouds. The Landscape Server quickstart installation guide is the fastest way to get started, but other installation options for Landscape Server are available in the Landscape documentation. 
+Alternatively, Landscape Server can run on-premises or in public clouds. The `Landscape Server quickstart <https://ubuntu.com/landscape/docs/quickstart-deployment>`_ installation guide is the fastest way to get started, but other installation options for Landscape Server are available in the Landscape documentation. 
 
 Serial Vault
 ------------
