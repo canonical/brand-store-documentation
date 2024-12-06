@@ -4,7 +4,7 @@ Brand store configuration
 When using your Brand Store, your main resource will be the documentation found in the `IoT App Store documentation <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
 This section provides links to some key pages in the documentation, as well as information specific to your Brand Store.
 
-Store Architecture
+Store architecture
 ------------------
 
 A Snap Store is a repository for hosting and publishing snaps so that they can be consumed by snapd-enabled devices.
@@ -74,7 +74,7 @@ Your store has been provisioned with the following data:
 
 The Admin role can be used to grant these roles to other accounts, as well.
 
-Brand Account
+Brand account
 -------------
 
 Account: ``{{CUSTOMER_BRAND_EMAIL}}`` (account-id: ``{{CUSTOMER_BRAND_ACCOUNT_ID}}``)
@@ -98,8 +98,20 @@ The Brand account:
 
     It is recommended to generate keys using hardware security modules.
 
+Brand keys
+**********
 
-Ubuntu Pro & Support Portal Account
+Ubuntu Core relies on a number of signed documents called `assertions <https://snapcraft.io/docs/assertions>`_, of which there are multiple types. Some of these assertions are signed by Canonical, and some must be signed by keys controlled by the Brand Account. This section discusses some best practices that you are strongly suggested to follow.
+
+1. Please be sure to review the `signing keys sub-section <https://ubuntu.com/core/services/guide/signing-keys>`_ on key roles. Use of key roles is a best practice which helps to limit the type of assertions each key can be used to sign. This is meant to limit your exposure if a key were to be compromised. Use of key roles also means that you must no longer register your keys using snapcraft register-key. This will now be handled by the Snap Store admins as part of the key role assignment. And finally, please note that key roles can only be assigned to new keys, they cannot be added to keys after registration.
+
+2. Limit access to brand keys. It's strongly advised that you consider using a PKI system or key vault to protect your brand keys, and limit access to them. Hardware cryptotokens are another possibility, although they may be more challenging to use than PKI systems in practice.
+
+3. For signing Serial assertions, please use the Serial Vault's "generate key" facility instead of creating a local key and importing it.
+
+
+
+Ubuntu Pro & Support Portal account
 -----------------------------------
 
 An Ubuntu Pro account and Support Portal access are also included with your Brand Store. Both are accessed using the SSO account associated with the following email address:
