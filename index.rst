@@ -1,5 +1,5 @@
 Canonical Dedicated Snap Store
-=====================
+==============================
 
 A Dedicated Snap Store is a dedicated, private Snap Store which facilitates the publication of private snaps and curation of public snaps for Ubuntu
 Core devices associated with the Dedicated Snap Store.   
