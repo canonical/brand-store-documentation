@@ -194,7 +194,7 @@ Once a valid model key is available, create and sign the model assertion for you
 
     The timestamp for model assertion MUST be after the date of the model signing key being registered.
 
-Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the Admin role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `View and manage snaps <https://snapcraft.io/admin>`_ page. Use the “Include snap” dialog to ensure that all snaps listed in the model assertion but published in the Global store (like pc-kernel in this case) get included in your Dedicated Snap Store. The core, core18, core20, core22, core24 and snapd packages are included automatically and cannot be removed.
+Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the Admin role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `View and manage snaps <https://snapcraft.io/admin>`_ page. Use the “Include snap” dialog to ensure that all snaps listed in the model assertion but published in the Global Snap Store (like pc-kernel in this case) get included in your Dedicated Snap Store. The core, core18, core20, core22, core24 and snapd snaps are included automatically and cannot be removed.
 
 .. image:: /.sphinx/images/core-22-add-snap.png
 

@@ -16,6 +16,8 @@ Snaps declare plugs for specific snapd `interfaces <https://snapcraft.io/docs/su
    - snap name and snap ID
    - interface being requested
    - a brief explanation why the interface is needed and its intended usage
+  
+   If the interface slot being plugged is provided via the gadget snap, please include the name and snap ID of the gadget snap as well. 
 
 .. note::
 
