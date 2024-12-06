@@ -129,6 +129,21 @@ Support Portal
 
 Dedicated Snap Store customers are also provided access to our Support Portal which can be used to create support cases, including `requests for super privileged interface connections <https://snapcraft.io/docs/super-privileged-interfaces>`_. The support portal can be accessed by signing into the `Support Portal Dashboard <https://support-portal.canonical.com/dashboard>`_ using the account mentioned at the beginning of this section. 
 
+Landscape
+---------
+
+Landscape is a new feature in Ubuntu Core 24. It enables customers to manage a fleet of devices, control updates, trigger remote snap installs, and other more advanced fleet management features. 
+
+ 
+Landscape is made available to Ubuntu Core customers through a software-as-a-service (SaaS) model, hosted and managed by Canonical. 
+
+ 
+Please contact customersuccess@canonical.com to request a Landscape SaaS account. 
+
+Self-hosted Landscape 
+*********************
+
+Alternatively, Landscape Server can run on-premises or in public clouds. The Landscape Server quickstart installation guide is the fastest way to get started, but other installation options for Landscape Server are available in the Landscape documentation. 
 
 Serial Vault
 ------------
