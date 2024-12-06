@@ -1,7 +1,5 @@
-:orphan:
-
-DRAFT: Dedicated Snap Store security
-====================================
+Dedicated Snap Store security
+=============================
 
 Dedicated Snap Stores are designed to ensure the secure distribution of software defined as snaps. To facilitate this distribution, a Dedicated Snap Store requires a few key pieces of information which are stored in different locations depending on the intended use of the information. This document exists to outline the various secrets which must be carefully handled to secure a Dedicated Snap Store, where those secrets live, and how they must be handled.
 

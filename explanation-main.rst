@@ -10,3 +10,5 @@ The following explanation oriented topics discuss and clarify key topics relatin
    :maxdepth: 2
 
    snap-confinement-snapd-connection
+   security
+

@@ -58,16 +58,18 @@ This documentation provides information on some key concepts and processes speci
    How-to <how-to-main>
 
 .. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   Explanation <explanation-main>
+   
+.. toctree::
    :maxdepth: 2
    :hidden:
 
    Reference <configuration-values>
 
-.. toctree::
-   :maxdepth: 1
-   :hidden:
 
-   Explanation <explanation-main>
 
 Having trouble? We would like to help!
 --------------------------------------
