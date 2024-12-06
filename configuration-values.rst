@@ -1,7 +1,7 @@
 Dedicated Snap Store configuration
 ==================================
 
-When using your Dedicated Snap Store, your main resource will be the documentation found in the `IoT App Store documentation <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
+When using your Dedicated Snap Store, your main resource will be the documentation found in the `IoT App Store documentation <https://ubuntu.com/core/services/guide/dedicated-snap-store-intro>`_.
 This section provides links to some key pages in the documentation, as well as information specific to your Dedicated Snap Store.
 
 Store architecture
@@ -11,7 +11,7 @@ A Snap Store is a repository for hosting and publishing snaps so that they can b
 
 There are several Snap Store instances that will be relevant to you. To understand these instances, and the relationship between them, please read:
 
-- `Snap Store vs Dedicated Snap Store <https://ubuntu.com/core/services/guide/snap-store-vs-iot-app-store>`_
+- `Snap Store vs Dedicated Snap Store <https://ubuntu.com/core/services/guide/snap-store-vs-dedicated-snap-stores>`_
 - `Base Stores and Device View Stores <https://ubuntu.com/core/services/guide/base-stores-and-device-view-stores>`_
 
 Your Base Snap Store is:  ``{{CUSTOMER_STORE_NAME}}`` (``{{CUSTOMER_STORE_ID}}``)

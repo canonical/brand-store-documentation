@@ -43,7 +43,7 @@ This documentation provides information on some key concepts and processes speci
 
       Discussion and clarification of key topics, like :doc:`Snap confinement <snap-confinement-snapd-connection>`.
 
-.. note:: For general use of the Dedicated Snap Store, see the `main documentation source <https://ubuntu.com/core/services/guide/iot-app-store-intro>`_.
+.. note:: For general use of the Dedicated Snap Store, see the `main documentation source <https://ubuntu.com/core/services/guide/dedicated-snap-store-intro>`_.
 
 .. toctree::
    :maxdepth: 1
