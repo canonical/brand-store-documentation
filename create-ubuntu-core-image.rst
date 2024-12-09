@@ -3,7 +3,7 @@ Create an Ubuntu Core image
 
 .. only:: html
 
-    .. note:: :doc:`configuration-values` contains information relating to the specific configuration of your Brand Store.
+    .. note:: :doc:`configuration-values` contains information relating to the specific configuration of your Dedicated Snap Store.
 
 To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
@@ -23,7 +23,7 @@ For this particular case, validating the initial store setup, let's use the ``pc
 
 .. important::
     
-    Gadget snaps for Ubuntu Core 24 should be built on the corresponding LTS classic release (Ubuntu 24.04) using ``snapcraft`` 8.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself.
+    Gadget snaps for Ubuntu Core 22 or later should be built on the corresponding LTS classic release (e.g. Ubuntu 24.04 LTS) using ``snapcraft`` 8.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself.
 
 .. term::
     :input: sudo snap install snapcraft --classic --channel=8.x/stable
@@ -93,13 +93,13 @@ Now register the snap name in your Base Snap Store and push the initial revision
 
 .. note::
 
-    The Brand Account must be a **Publisher** under `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/>`_ to register and publish the gadget snap.
+    The Brand Account must be a **Publisher** under `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/>`_ to register and publish the gadget snap. However, as previously mentioned, once the gadget snap has been registered, publishing the snap should be left to collaborators. Also please ensure that when registering your gadget snap, you set the visibility of your gadget snap to Public. This only affects visibility of the snap to authorized devices and/or developers, it does not make the snap visible to the outside world. You can check the visibility of your snaps at https://snapcraft.io/snaps. 
 
-Log into the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the **Reviewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID }}/>`_ and **Approve** the gadget revision. All gadget uploads require manual review.
+Log into the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the **Reviewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID }}/>`_ and **Approve** the gadget revision.
 
 .. note::
 
-    One other important capability of the Reviewer role is the ability to grant "self-serve" interface connections for snaps published in the Brand Store. See `Self-serve Snap Interfaces <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_ for more details.
+    One other important capability of the Reviewer role is the ability to grant "self-serve" interface connections for snaps published in the Dedicated Snap Store. See `Self-serve Snap Interfaces <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_ for more details.
 
 Once the revision is approved, use snapcraft to release it in the stable channel:
 
@@ -194,7 +194,7 @@ Once a valid model key is available, create and sign the model assertion for you
 
     The timestamp for model assertion MUST be after the date of the model signing key being registered.
 
-Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the Admin role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `View and manage snaps <https://snapcraft.io/admin>`_ page. Use the “Include snap” dialog to ensure that all snaps listed in the model assertion but published in the Global store (like pc-kernel in this case) get included in your Brand Store. The core, core18, core20, core22, core24 and snapd packages are included automatically and cannot be removed.
+Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the Admin role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `View and manage snaps <https://snapcraft.io/admin>`_ page. Use the “Include snap” dialog to ensure that all snaps listed in the model assertion but published in the Global Snap Store (like pc-kernel in this case) get included in your Dedicated Snap Store. The core, core18, core20, core22, core24 and snapd snaps are included automatically and cannot be removed.
 
 .. image:: /.sphinx/images/core-22-add-snap.png
 

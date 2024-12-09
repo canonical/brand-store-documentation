@@ -7,7 +7,7 @@
 How-to guides
 =============
 
-These guides cover key operations and common tasks and problems in the Brand Store.
+These guides cover key operations and common tasks and problems in the Dedicated Snap Store.
 
 .. toctree::
     :maxdepth: 2
