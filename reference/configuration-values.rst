@@ -1,7 +1,7 @@
 Dedicated Snap Store configuration
 ==================================
 
-When using your Dedicated Snap Store, your main resource will be the documentation found in the `IoT App Store documentation <https://ubuntu.com/core/services/guide/dedicated-snap-store-intro>`_.
+When using your Dedicated Snap Store, your main resource will be the documentation found in the `Dedicated Snap Store documentation <https://ubuntu.com/core/services/guide/dedicated-snap-store-intro>`_.
 This section provides links to some key pages in the documentation, as well as information specific to your Dedicated Snap Store.
 
 Store architecture

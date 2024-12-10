@@ -7,4 +7,3 @@ _build
 __pycache__
 .idea/
 *.pdf
-.pubdocs/

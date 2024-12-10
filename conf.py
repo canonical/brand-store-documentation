@@ -68,6 +68,7 @@ exclude_patterns = [
     '.DS_Store',
     '.sphinx',
     'doc-cheat-sheet*',
+    '.pubdocs'
 ]
 exclude_patterns.extend(custom_excludes)
 

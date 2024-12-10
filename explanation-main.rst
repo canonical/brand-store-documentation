@@ -8,7 +8,7 @@ The following explanation oriented topics discuss and clarify key topics relatin
 
 .. toctree::
    :maxdepth: 2
+   :glob:
 
-   snap-confinement-snapd-connection
-   security
+   explanation/*
 

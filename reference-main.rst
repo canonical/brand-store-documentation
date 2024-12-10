@@ -3,14 +3,15 @@
 
     Ensure this document is removed from `custom_excludes` in `custom_conf.py` before use.
 
-..
-    Reference
-    =========
 
-    These Reference documents detail configuration values and other supporting information about the Dedicated Snap Store.
+Reference
+=========
 
-    .. toctree::
-       :maxdepth: 2
-       :hidden:
+These Reference documents detail configuration values and other supporting information about the Dedicated Snap Store.
 
-       configuration-values
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :glob:
+
+   reference/*

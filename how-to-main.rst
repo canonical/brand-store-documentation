@@ -11,10 +11,9 @@ These guides cover key operations and common tasks and problems in the Dedicated
 
 .. toctree::
     :maxdepth: 2
+    :glob:
 
-    controlling-updates
-    how-to-configure-serial-vault
-    how-to-dmidecode-to-read-system-sn
+    how-to/*
 
 ..  You may want to add a brief explanation of any main How-to guide, and direct them towards specific ones, depending on the relevance
     they have for users.
