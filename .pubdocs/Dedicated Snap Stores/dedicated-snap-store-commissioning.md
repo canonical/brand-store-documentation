@@ -1,6 +1,11 @@
 (dedicated-snap-store-commissioning)=
 # Commissioning
 
+<!-- 
+Status: Document is unfocused, and not compliant to a specific Diataxis quadrant
+Rewrite: Rework into how-to
+ -->
+
 Commissioning a Dedicated Snap Store occurs in four steps:
 
 ## 1. Create a Dedicated Snap Store

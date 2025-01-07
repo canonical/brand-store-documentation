@@ -1,6 +1,11 @@
 (custom-image)=
 # Custom image creation
 
+<!-- 
+Status: Document is unfocused, and not compliant to a specific Diataxis quadrant
+Rewrite: Rework into explanation or how-to
+ -->
+
 With a [Dedicated Snap Store](https://ubuntu.com/internet-of-things/appstore) to host your snaps, it becomes easy for you to [create custom Ubuntu system images](https://ubuntu.com/core/docs/custom-images) for your certified devices.
 
 ## Model-driven image creation

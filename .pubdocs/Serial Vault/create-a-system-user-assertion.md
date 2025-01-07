@@ -1,6 +1,10 @@
 (create-a-system-user-assertion)=
 # Create a system-user assertion
 
+```{note}
+This feature has been deprecated. Please see the [updated system-user assertion functionality](https://ubuntu.com/core/docs/system-user#heading--creating).
+```
+
 A [system-user assertion](https://ubuntu.com/core/docs/reference/assertions/system-user) allows you to create a user on an unmanaged Ubuntu Core system. The system-user assertion can be pre-populated into an image, or it can be auto-imported from a USB drive. More about the [system user configuration](https://ubuntu.com/core/docs/system-user) can be found in the Ubuntu Core docs.
 
 Through the System-User menu in the Serial Vault you can create a system-user assertion for your brand and model as follows:
@@ -13,7 +17,7 @@ Through the System-User menu in the Serial Vault you can create a system-user as
 6. Select the model of the device this user is being created from the Model combo box.
 7. Set date and time in UTC since this assertion is valid in Since (UTC) field. This date must be after the date on which the key used to sign the system user assertion was registered.
 
-![system user assertion form|690x420](upload://gIio4kLDyBDiNo7n7JOKg2K5r4R.png) 
+![system user assertion form|690x420](images/create-system-user-assertion.png) 
 
 After pressing **Create**, the generated assertion is displayed. Click **Download** to save it to a local file.
 

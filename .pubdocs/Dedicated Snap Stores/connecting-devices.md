@@ -2,7 +2,8 @@
 # Connecting new devices
 
 <!-- 
-Document is unfocused and does not fit into a Diataxis quadrant
+Status: Document is unfocused and does not fit into a Diataxis quadrant
+Rewrite: Rework into explanation
  -->
 
 Ubuntu Core devices are onboarded to their owner’s Dedicated Snap Store in a secure manner. Secure onboarding prevents unauthorised access to private software and services. It also establishes a secure communication link between devices and their cloud backend.
