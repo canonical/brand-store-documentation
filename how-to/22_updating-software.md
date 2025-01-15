@@ -1,5 +1,5 @@
 (updating-software)=
-# Updating software
+# Update software
 
 By default, devices connected to an App Store can check for updates every six hours. Should a software update be available within this interval, connected devices update automatically, meaning software is always secure. This update frequency can be modified to schedule updates at a time convenient to the user of the device (for instance, updating during scheduled downtime periods for devices in a factory).
 
@@ -13,7 +13,8 @@ Our technology implements delta updates. This means that whenever there is a new
 
 Software updates are not necessarily applied to devices when they are fetched automatically. You can determine what specific software revisions get applied to your fleet. Decoupling software updates from installation allows time for testing and validating new revisions before they are applied. The Snap Store Proxy provides a way to override revisions of specific snaps for all connected devices, and allows you to execute updates in an environment with limited or no network access.
 
-![The ‘Releases’ dashboard from snapcraft.io](https://assets.ubuntu.com/v1/cd144400-cd1444003e77879515eaf0b4bacc0eca97e3abab.png)
+![The ‘Releases’ dashboard from snapcraft.io](/images/updating-software.png)
+
 *The ‘Releases’ dashboard from snapcraft.io*
 
 Channels define which release of a snap is installed and tracked for updates. A channel consists of, and is subdivided into, tracks, risk-levels and branches:

@@ -5,9 +5,9 @@ When you build an image, you provide a Model Assertion that defines the devices 
 
 Note: Both the Serial Vault Model configuration and the Model Assertion (created later) must use the same Model name.
 
-Log in to the [Serial Vault](https://serial-vault-admin.canonical.com/) with the Administrator account. Select the Models section at the top, click the ![plus icon|69x50, 50%](upload://tGkdd69CxHPqepc1a3RvdzNpVbA.png) button to create a new model.
+Log in to the [Serial Vault](https://serial-vault-admin.canonical.com/) with the Administrator account. Select the Models section at the top, click the ![plus icon|69x50, 50%](/images/plus-icon.png){.test h=1em} button to create a new model.
 
-![new model|690x537, 100%](upload://kUAC1hfd3FCa0NxMFulhZSd1QD1.png) 
+![new model|690x537, 100%](/images/register-new-device-model-name1.png) 
 
 The Brand field is pre-populated with your Brand account ID and is uneditable.
 
@@ -19,6 +19,6 @@ For System-User Assertion Key, select a key that will be used for system-user ge
 
 The API Key field can be left blank. Its value is generated after the form is submitted. The API Key is used in the creation of a gadget snap that can be included in a factory image. The generated API Key can be retrieved from the edit model menu by pressing the pencil icon as shown below.
 
-![models|690x280](upload://2TsdAWXy7ZWZr4NFYfwnU0A6nLJ.png) 
+![models|690x280](/images/register-new-device-model-name2.png) 
 
-![edit model|637x616, 75%](upload://7eT6g0dxSpc4Msli5M25rBW4EFY.png)
+![edit model|637x616, 75%](/images/register-new-device-model-name3.png)

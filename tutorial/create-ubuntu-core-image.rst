@@ -3,7 +3,7 @@ Create an Ubuntu Core image
 
 .. only:: html
 
-    .. note:: :doc:`configuration-values` contains information relating to the specific configuration of your Dedicated Snap Store.
+    .. note:: :doc:`/reference/configuration-values` contains information relating to the specific configuration of your Dedicated Snap Store.
 
 To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
@@ -21,17 +21,10 @@ and see follow the `instructions on gadget building <https://ubuntu.com/core/doc
 
 For this particular case, validating the initial store setup, let's use the ``pc-amd64-gadget``. This gadget enables the device to request store credentials from the Serial Vault, as configured above.
 
-.. important::
-    
-    Gadget snaps for Ubuntu Core 22 or later should be built on the corresponding LTS classic release (e.g. Ubuntu 24.04 LTS) using ``snapcraft`` 8.x or later. You should also ensure that the build-packages needed to build the gadget snap are already installed, so that you're not required to use sudo when building the snap itself.
 
 .. term::
-    :input: sudo snap install snapcraft --classic --channel=8.x/stable
-    
-    ...
+    :input: sudo snap install snapcraft --classic
 
-    :input: snapcraft version
-    snapcraft 8.3.1
 
 .. note::
 
@@ -47,27 +40,27 @@ For this particular case, validating the initial store setup, let's use the ``pc
 
 .. ISSUE IN DOCUMENT:  https://docs.google.com/document/d/11z7iKogO7FDouJBfYgh9hROK41xDeaPy0ruS2_flyL0/edit?disco=AAAAxWHTvf4
 
-Update the "name" field in the ``snapcraft.yaml`` to "``{{CUSTOMER_STORE_PREFIX}}``-pc". Update the value of the ``MODEL_APIKEY`` environment variable in the snapcraft.yaml to the value generated during the Serial Vault setup above. Feel free to also adjust the "version", "summary" and "description" to be more meaningful in your context.
+Update the ``name`` field in the `snapcraft.yaml` to ``<CUSTOMER-STORE-PREFIX>-pc``. Update the value of the ``MODEL_APIKEY`` environment variable in the ``snapcraft.yaml`` to the value generated during the Serial Vault setup above.  Feel free to also adjust the ``version``, ``summary`` and ``description`` to be more meaningful in your context.
 
 
 
-Build the snap, using the model **API Key** generated during the Serial Vault setup above:
+Build the snap:
 
 .. term::
     :input: sudo snapcraft
 
     ...
-    Snapped {{CUSTOMER_STORE_PREFIX}}-pc_24-0.1_amd64.snap
+    Snapped {{CUSTOMER_STORE_PREFIX}}-pc_{{CUSTOMER_UBUNTU_CORE_VERSION}}_amd64.snap
 
 .. only:: html
 
     .. note::
 
-        The sample “product_serial” is loosely generated (``date -Is``) in this gadget (in ``snap/hooks/prepare-device``). In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See :doc:`how-to-dmidecode-to-read-system-sn` for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
+        The sample “product_serial” is loosely generated (``date -Is``) in this gadget (in ``snap/hooks/prepare-device``). In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See :doc:`/how-to/13_dmidecode-to-read-system-sn` for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
 
 .. only:: latex
 
-    .. include:: how-to-dmidecode-to-read-system-sn.rst
+    .. include:: ../how-to/13_dmidecode-to-read-system-sn.rst
 
 Now register the snap name in your Base Snap Store and push the initial revision:
 
@@ -83,7 +76,7 @@ Now register the snap name in your Base Snap Store and push the initial revision
     Registering {{CUSTOMER_STORE_PREFIX}}-pc.
     Congrats! You are now the publisher of '{{CUSTOMER_STORE_PREFIX}}-pc'.
 
-    :input: snapcraft push {{CUSTOMER_STORE_PREFIX}}-pc_24-0.1_amd64.snap
+    :input: snapcraft push {{CUSTOMER_STORE_PREFIX}}-pc_{{CUSTOMER_UBUNTU_CORE_VERSION}}_amd64.snap
     The Store automatic review failed.
     A human will soon review your snap, but if you can't wait please write in the snapcraft forum asking for the manual review explicitly.
 
@@ -111,7 +104,7 @@ Once the revision is approved, use snapcraft to release it in the stable channel
 
     :input: snapcraft release {{CUSTOMER_STORE_PREFIX}}-pc 1 stable
     Track    Arch    Channel    Version    Revision
-    latest   all     stable     24-0.1     1
+    latest   all     stable     {{CUSTOMER_UBUNTU_CORE_VERSION}}     1
                      candidate  ^          ^
                      beta       ^          ^
                      edge       ^          ^
@@ -148,7 +141,7 @@ Once a valid model key is available, create and sign the model assertion for you
           "type": "gadget"
         },
         {
-          "default-channel": "24/stable",
+          "default-channel": "{{CUSTOMER_UBUNTU_CORE_VERSION}}/stable",
           "id": "pYVQrBcKmBa0mZ4CCN7ExT6jH8rY1hza",
           "name": "pc-kernel",
           "type": "kernel"
@@ -156,6 +149,12 @@ Once a valid model key is available, create and sign the model assertion for you
         {
           "default-channel": "latest/stable",
           "id": "amcUKQILKXHHTlmSa7NMdnXSx02dNeeT",
+          "name": "core22",
+          "type": "base"
+        },
+        {
+          "default-channel": "latest/stable",
+          "id": "dwTAh7MZZ01zyriOZErqd1JynQLiOGvM",
           "name": "core24",
           "type": "base"
         },

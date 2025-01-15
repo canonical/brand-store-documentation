@@ -1,5 +1,5 @@
 (username-changes)=
-# Username changes
+# Change usernames
 
 Any account owner can edit their store username in the Account details tab located at: https://dashboard.snapcraft.io/dev/account/. Here is a screenshot of this page:
 

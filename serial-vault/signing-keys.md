@@ -11,7 +11,7 @@ The steps needed with local key generation and registration are:
 
 1. Generating the key(s)
 2. Registering the key with the Dedicated Snap Store
-    * See [Register a signing key with limited roles](#heading--key-roles) on constraining a key for only certain assertion types
+    * See [Register a signing key with limited roles](#key-roles) on constraining a key for only certain assertion types
 3. Exporting the key as ASCII-armored
 4. Uploading the ASCII-armored key file to the Serial Vault
 
@@ -25,7 +25,8 @@ Although one key can be used for each of these three purposes, it is recommended
 
 Signing keys that are to be uploaded to the Serial Vault need to be passwordless (i.e. keeping a blank password when generating the key). Using a key that has a password results in an error when uploading the signing key.
 
-<h2 id='heading--key-roles'>Register a signing key with limited roles</h2>
+(key-roles)=
+## Register a signing key with limited roles
 
 Role-scoped keys are signing keys that are limited to be able to sign only specific assertion types. These limitations can be set when first registering the key with the Dedicated Snap Store. For example, a key can be registered for only signing serial assertions, and can be further constrained to the serial assertions for only certain models. This improves security as it limits the potential impact of a leaked key.
 

@@ -1,5 +1,5 @@
-Controlling updates
-===================
+Control updates
+===============
 
 One important consideration when deploying devices running Ubuntu Core is determining how to control updates, in particular when those updates are for snaps from other publishers (e.g. Canonical). There are three general approaches to controlling and/or gating snap updates on Ubuntu Core:
 

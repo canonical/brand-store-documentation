@@ -10,9 +10,9 @@ Dedicated Snap Stores are private application repositories hosted and managed by
 |Content|Curated by Canonical|Curated by owner|
 |Hosting|Hosted and managed by Canonical|Hosted and managed by Canonical|
 |Security|Security monitoring by Canonical|Security monitoring by Canonical|
-|OTA (over-the-air updates)| ![](https://assets.ubuntu.com/v1/b8c1e568-white_check_mark.png)| ![](https://assets.ubuntu.com/v1/b8c1e568-white_check_mark.png)|
-|Refresh control|| ![](https://assets.ubuntu.com/v1/b8c1e568-white_check_mark.png)|
-|Account delegation|| ![](https://assets.ubuntu.com/v1/b8c1e568-white_check_mark.png)|
-|Proxy to connect with restricted network access|| ![](https://assets.ubuntu.com/v1/b8c1e568-white_check_mark.png)|
-|Custom dashboard and API access|| ![](https://assets.ubuntu.com/v1/b8c1e568-white_check_mark.png)|
-|Substores|| ![](https://assets.ubuntu.com/v1/b8c1e568-white_check_mark.png)|
+|OTA (over-the-air updates)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
+|Refresh control|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
+|Account delegation|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
+|Proxy to connect with restricted network access|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
+|Custom dashboard and API access|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
+|Substores|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|

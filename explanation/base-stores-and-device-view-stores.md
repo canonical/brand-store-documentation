@@ -1,6 +1,11 @@
 (base-stores-and-device-view-stores)=
 # Base Stores and Device View Stores
 
+<!-- 
+Status: Document is unfocused and does not fit into a Diataxis quadrant
+Rewrite: Rework into explanation
+ -->
+
 Base Stores and Device View Stores are stores that exist within the Snap Store and are provided by Canonical. To explain them more clearly, we have broken down the concepts here:
 
 In the Base (Snap) Store:
@@ -18,7 +23,7 @@ There are a few points to note about Base Stores and Device View Stores. Firstly
 
 Additionally, for image builds, developers can use their SSO credentials to download snaps from the dedicated Snap Store (please see the Switching to a Developer Account section).The authentication method used by devices is described below.
 
-![Illustration of the App Store architecture, demonstrating use of a combination of public and private snaps](images/store-architecture.png)
+![Illustration of the App Store architecture, demonstrating use of a combination of public and private snaps](/images/store-architecture.png)
 
 *A standard store configuration using a Base and Device store*
 

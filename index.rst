@@ -24,7 +24,7 @@ Canonical Dedicated Snap Store
 .. grid:: 1 1 2 2
    :reverse:
 
-   .. grid-item:: :doc:`Reference <reference-main>`
+   .. grid-item:: :doc:`Reference <reference/configuration-values>`
 
       Important information for store configuration.
 
@@ -44,20 +44,29 @@ Canonical Dedicated Snap Store
    :maxdepth: 2
    :hidden:
 
-   How-to <how-to-main>
+   How-to <how-to-main>   
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   Reference <reference/configuration-values>
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
    Explanation <explanation-main>
-   
+
+
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :glob:
+   :caption: Services
 
-   Reference <reference-main>
-
+   serial-vault-overview
+   more-services/*
 
 
 Having trouble? We would like to help!

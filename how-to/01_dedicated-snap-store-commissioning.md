@@ -1,5 +1,5 @@
 (dedicated-snap-store-commissioning)=
-# Commissioning
+# Commission a store
 
 <!-- 
 Status: Document is unfocused, and not compliant to a specific Diataxis quadrant

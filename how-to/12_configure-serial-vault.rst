@@ -1,4 +1,4 @@
-Configuring Serial Vault
+Configure Serial Vault
 ------------------------
 
 .. configure-serial-vault-start

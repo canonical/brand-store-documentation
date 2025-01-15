@@ -36,7 +36,8 @@ extensions.extend(custom_extensions)
 # Additional MyST syntax
 myst_enable_extensions = [
     'substitution',
-    'deflist'
+    'deflist',
+    'attrs_inline'
 ]
 
 # Used for related links
@@ -68,7 +69,6 @@ exclude_patterns = [
     '.DS_Store',
     '.sphinx',
     'doc-cheat-sheet*',
-    '.pubdocs'
 ]
 exclude_patterns.extend(custom_excludes)
 

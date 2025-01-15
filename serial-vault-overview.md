@@ -1,7 +1,8 @@
 (serial-vault-overview)=
-# Overview
+# Serial Vault
 
-![Illustration of the App Store architecture, demonstrating use of a combination of public and private snaps](upload://HU0eXVWodCb86LcbxjAJmr0XhK.png)
+![Illustration of the App Store architecture, demonstrating use of a combination of public and private snaps](/images/serial-vault-overview.png)
+
 *The serial vault serves an important function in the management of a dedicated Dedicated Snap Store*
 
 
@@ -22,3 +23,11 @@ The main assertions that are handled by the Serial Vault are:
 All of these are used by the device, Serial Vault and dedicated Snap Store to verify and manage the access of a device.
 
 In this section, we will cover a basic overview of the Serial Vault and how it is used.
+
+```{toctree}
+:glob:
+:hidden:
+
+serial-vault/*
+
+```

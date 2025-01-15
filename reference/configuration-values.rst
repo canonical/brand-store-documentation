@@ -148,8 +148,8 @@ Alternatively, Landscape Server can run on-premises or in public clouds. The `La
 Serial Vault
 ------------
 
-Serial Vault has been provisioned with an account for ``{{CUSTOMER_ADMIN_EMAIL}}``, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Dedicated Snap Store, as described in :doc:`how-to-configure-serial-vault`. 
+Serial Vault has been provisioned with an account for ``{{CUSTOMER_ADMIN_EMAIL}}``, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Dedicated Snap Store, as described in :doc:`/how-to/12_configure-serial-vault`. 
 
 .. only:: html
     
-    To configure Serial Vault, see :doc:`how-to-configure-serial-vault`.
+    To configure Serial Vault, see :doc:`/how-to/12_configure-serial-vault`.

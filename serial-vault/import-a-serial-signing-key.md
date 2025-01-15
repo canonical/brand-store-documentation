@@ -1,11 +1,11 @@
 (import-a-serial-signing-key)=
 # Import a serial signing key
 
-### Uploading the key to the Serial Vault
+## Uploading the key to the Serial Vault
 
-The ASCII-armored file can be uploaded to the Serial Vault. To import the serial signing key, Log in to the Serial Vault with the Administrator account. Select the Signing Keys section at the top, and click the ![plus icon|69x50, 50%](upload://tGkdd69CxHPqepc1a3RvdzNpVbA.png)  button to import a signing key. Note that the Serial Vault cannot be logged in via the Brand Account.
+The ASCII-armored file can be uploaded to the Serial Vault. To import the serial signing key, Log in to the Serial Vault with the Administrator account. Select the Signing Keys section at the top, and click the ![plus icon|69x50, 50%](/images/plus-icon.png){.test h=1em}  button to import a signing key. Note that the Serial Vault cannot be logged in via the Brand Account.
 
-![import signing key|690x316](upload://jP4latuZDSetjEGzeXWEJUdMfAW.png) 
+![import signing key|690x316](/images/import-signing-key.png) 
 
 Enter ```serial``` in the Key Name field as shown in the screenshot above.
 
