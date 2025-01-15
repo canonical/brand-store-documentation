@@ -2,7 +2,7 @@
 # Create a system-user assertion
 
 ```{note}
-This feature has been deprecated. Please see the [updated system-user assertion functionality](https://ubuntu.com/core/docs/system-user#heading--creating).
+This feature has been deprecated. Please see the [updated system-user assertion functionality](https://ubuntu.com/core/docs/system-user).
 ```
 
 A [system-user assertion](https://ubuntu.com/core/docs/reference/assertions/system-user) allows you to create a user on an unmanaged Ubuntu Core system. The system-user assertion can be pre-populated into an image, or it can be auto-imported from a USB drive. More about the [system user configuration](https://ubuntu.com/core/docs/system-user) can be found in the Ubuntu Core docs.

@@ -8,9 +8,9 @@
 
 The Serial Vault is a Canonical-hosted multi-tenant web portal offered to customers. Customers may choose to set up their own dedicated Serial Vault service.
 
-The main purpose of the Serial Vault is to provide a signed Serial Assertion to devices, which allows them to authenticate against a dedicated Snap Store. The Serial Vault also enables other functions, such as [remodelling](https://ubuntu.com/core/docs/uc20/remodelling) support.
+The main purpose of the Serial Vault is to provide a signed Serial Assertion to devices, which allows them to authenticate against a dedicated Snap Store. The Serial Vault also enables other functions, such as [remodeling](https://ubuntu.com/core/docs/uc20/remodelling) support.
 
-The Serial Vault provides a user interface and an API to enable a device to receive digitally signed documents([assertions](https://ubuntu.com/core/docs/reference/assertions)) that are used for authentication and authorization. An authenticated device can have access to restricted snaps from a dedicated Snap Store, providing a customised experience to the device owners.
+The Serial Vault provides a user interface and an API to enable a device to receive digitally signed documents([assertions](https://ubuntu.com/core/docs/reference/assertions)) that are used for authentication and authorization. An authenticated device can have access to restricted snaps from a dedicated Snap Store, providing a customized experience to the device owners.
 
 The main assertions that are handled by the Serial Vault are:
 

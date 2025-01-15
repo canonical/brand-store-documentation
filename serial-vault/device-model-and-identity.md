@@ -1,7 +1,7 @@
 (device-model-and-identity)=
 # Device model and identity
 
-The Serial Vault needs to be configured with the details of the models and signing keys that will be authorised to use the functionality for an account.
+The Serial Vault needs to be configured with the details of the models and signing keys that will be authorized to use the functionality for an account.
 ![model relationship|689x561, 75%](/images/device-model-and-identity.png) 
 
 The diagram above shows how the different entities relate to each other. The account, model and signing keys all belong to the same Brand, which is the account-id of the Brand in the [store](https://dashboard.snapcraft.io/dev/account/). The ID is shared across the entities, though they may be referred to differently for each entity e.g. brand-id on the model and authority-id on the signing-key.

@@ -12,7 +12,7 @@ A Dedicated Snap Store permits the use of privileged snapd interfaces, the hosti
 Dedicated Snap Store namespace for snap registration. It can function in offline environments and allows full control over snaps available to
 devices associated with the store.
 
-A Dedicated Snap Store provides an optimised, private, and secure distribution mechanism for software distribution via snap packages. This includes
+A Dedicated Snap Store provides an optimized, private, and secure distribution mechanism for software distribution via snap packages. This includes
 an extensive permission model which provides control over the confinement rules governing snaps published in the Dedicated Snap Store.
 
 The use cases for a Dedicated Snap Store are broad, from IoT devices in the field to cloud and desktop machines. This includes IoT companies, ODMs &

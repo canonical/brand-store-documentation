@@ -7,7 +7,7 @@ The workshops blend conceptual discussion with hands-on labs. They may be delive
 
 ## Introduction to Ubuntu Core
 
-This workshop dives into Ubuntu Core and sheds light on the OS architecture. Canonical engineers demonstrate the effective use of Ubuntu Core. We show you how to create images customised to work on any board. We walk you through the disk layout, device recovery and update mechanisms. And we also showcase advanced capabilities like bootloader integration, secure boot and full disk encryption.
+This workshop dives into Ubuntu Core and sheds light on the OS architecture. Canonical engineers demonstrate the effective use of Ubuntu Core. We show you how to create images customized to work on any board. We walk you through the disk layout, device recovery and update mechanisms. And we also showcase advanced capabilities like bootloader integration, secure boot and full disk encryption.
 
 ## Snapcraft 101
 

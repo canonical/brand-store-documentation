@@ -7,7 +7,7 @@ For example, a dedicated Snap Store is administered by an account that is grante
 
 Ubuntu SSO accounts can be assigned SSH and GPG keys. Store [assertions](https://snapcraft.io/docs/assertions) should be signed by keys registered to an account. Ubuntu SSO accounts also authenticate users to launchpad.net, forum.snapcraft.io, and many more sites and services.
 
-Anyone can create an Ubuntu SSO account at https://login.ubuntu.com. Each account requires a dedicated email address. You can then see additional account data here: https://dashboard.snapcraft.io/dev/account/
+Anyone can create an Ubuntu SSO account at https://login.ubuntu.com. Each account requires a dedicated email address. You can then see additional account data on the [Snapcraft dashboard](https://dashboard.snapcraft.io/dev/account/).
 
 Here are a few points to note regarding Ubuntu SSO accounts:
 

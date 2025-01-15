@@ -12,7 +12,7 @@ Secrets required for a functioning Dedicated Snap Store
   - It is **strongly recommended** that the Ubuntu SSO account is used only for Brand activities and that its use is strictly limited and controlled. It is recommended that the Brand account is only assigned the “Publisher” role.
 - Signing keys
   
-  - Used to sign `assertions <https://ubuntu.com/core/docs/reference/assertions>`_, which are digitally signed documents used for authentication and authorisation throughout the snap ecosystem.
+  - Used to sign `assertions <https://ubuntu.com/core/docs/reference/assertions>`_, which are digitally signed documents used for authentication and authorization throughout the snap ecosystem.
   - It is **recommended** to use a separate signing key for each type of assertion.
   - It is **recommended** to use `role-scoped keys <https://ubuntu.com/core/services/guide/signing-keys#heading--key-roles>`_, which are limited to signing only specific assertion types and optionally only specific models.
 - Other account credentials

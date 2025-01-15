@@ -12,14 +12,14 @@ Deploying these capabilities at scale typically requires large upfront investmen
 ![Illustration of common factors to be considered when bringing an IoT product to market](https://assets.ubuntu.com/v1/eb79a8ba-5b010931dbb1e5285b3232bde2c3c212a75fa4d9_2_690x423.png)
 *Illustration of common factors to be considered when bringing an IoT product to market*
 
-Our IoT Professional Services bring agility to enterprise IoT projects. Through our offerings, enterprises embrace a lean methodology for IoT product commercialisation. Innovative companies can leverage our IoT portfolio to bring the first version of a product to market quickly, carry out product discovery and gather initial customer feedback, without committing more resources to scaling their product.
+Our IoT Professional Services bring agility to enterprise IoT projects. Through our offerings, enterprises embrace a lean methodology for IoT product commercialization. Innovative companies can leverage our IoT portfolio to bring the first version of a product to market quickly, carry out product discovery and gather initial customer feedback, without committing more resources to scaling their product.
 
 (getting-started)=
 ## What do we offer?
 
 |||
 |---|---|
-|Ubuntu Core|A container operating system built specifically for IoT and devices, optimised for high security, performance and reliability|
+|Ubuntu Core|A container operating system built specifically for IoT and devices, optimized for high security, performance and reliability|
 |Hardware certification and enablement|Pre-certified hardware available, or hardware certification and enablement packages for any board|
 | IoT app embedding| Porting of up to 3 IoT applications to [snaps](http://snapcraft.io/docs/getting-started)|
 |Hosted cloud infrastructure|Dedicated Snap Store for up to 1,000 devices|
@@ -51,7 +51,7 @@ Essential for devices with personal information in regulated industries:
 * Minimal performance impact
 * TPM integration with the current CA (x86 only)
 
-[Find out more about fuld disk encryption (FDE)](https://ubuntu.com/core/features/full-disk-encryption)
+[Find out more about full disk encryption (FDE)](https://ubuntu.com/core/features/full-disk-encryption)
 
 ### FIPS certification
 
@@ -65,7 +65,7 @@ Allows your devices to meet Federal information processing requirements:
 
 Reduce the number of reboots by live patching the running kernel against critical vulnerabilities. Requires specific certified kernel and x86 architecture.
 
-* Maximise service availability
+* Maximize service availability
 * Fixes are applied automatically, without restarting your system
 * Reduces downtime, keeping systems both secure and compliant
 

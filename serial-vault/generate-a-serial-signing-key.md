@@ -6,8 +6,8 @@ To proceed, you need to generate a signing key as the Brand Account. This will b
 * This key must be generated and registered as the Brand Account
 * This key must be passwordless
 
-As a note, generating the key takes some time. Moving the mouse or typing can help to speed up the process, as does installing the rng-tools Debian package beforehand.
-
+As a note, generating the key takes some time. Moving the mouse or typing can help to speed up the process, as does installing the `rng-tools` Debian package beforehand.
+`
 In this next step, do not enter a passphrase for this key when prompted. This special key is used exclusively for providing devices access to the store and must be passwordless. When prompted in the terminal, or if a pop-up displays, do not enter text as a Passphrase and do not enter text to Confirm it. If you do, this key does not function to sign Serial Assertions.
 
 ```bash
@@ -43,4 +43,4 @@ Export the serial key as an armored file so that it can be safely uploaded to th
 ```text
 $ gpg --homedir ~/.snap/gnupg --armor --export-secret-key serial > serial.asc
 ```
-You should now have a serial.asc file registered that can be imported to the Serial Vault.
+You should now have a `serial.asc` file registered that can be imported to the Serial Vault.

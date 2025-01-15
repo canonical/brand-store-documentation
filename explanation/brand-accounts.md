@@ -7,7 +7,7 @@ The Brand account:
 
 * Generates, registers and holds the signing keys for the Brand infrastructure.
 * Signs Model Assertions used to build images that point at dedicated Snap Stores.
-* May register [kernel](https://snapcraft.io/docs/kernel-snap) and [gadget](https://ubuntu.com/core/docs/gadget-snaps) snap names. Kernel and gadget snaps are special snaps that can only be published by a Brand Account. For that, the Brand Account must be given Publisher Role in the Base store. See the Ubuntu Core documentation for more information on [types of snaps](https://ubuntu.com/core/docs/snaps-in-ubuntu-core#heading--types-of-snap).
+* May register [kernel](https://snapcraft.io/docs/the-kernel-snap) and [gadget](https://ubuntu.com/core/docs/gadget-snaps) snap names. Kernel and gadget snaps are special snaps that can only be published by a Brand Account. For that, the Brand Account must be given Publisher Role in the Base store. See the Ubuntu Core documentation for more information on [types of snaps](https://ubuntu.com/core/docs/snaps-in-ubuntu-core).
 
 The use of the Brand Account and its credentials should be strictly limited. Canonical recommends that the Brand Account is assigned Roles that are truly needed. The Brand Account should not be a store Administrator, Reviewer or Viewer.
 

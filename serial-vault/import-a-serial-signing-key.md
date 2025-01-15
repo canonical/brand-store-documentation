@@ -11,7 +11,7 @@ Enter ```serial``` in the Key Name field as shown in the screenshot above.
 
 In the Signing Authority field, select the account ID of the Brand Account. This is the same value as the ```developer-id``` displayed by ```snapcraft whoami``` when you are logged into snapcraft as the Brand Account.
 
-Click **Choose File**, and browse to and select the serial.asc file on your local system as created above.
+Click **Choose File**, and browse to and select the `serial.asc` file on your local system as created above.
 
 Click **Save** to complete the upload.
 

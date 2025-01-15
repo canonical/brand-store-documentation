@@ -4,7 +4,7 @@
 Explanation
 ===========
 
-A Dedicated Snap Store is a custom application store tailored to software distribution across fleets of devices. This store allows you to create, publish and distribute software on one centralised platform, with reliable over-the-air updates to your devices in a secure and validated way. Dedicated Snap Stores are adopted by a large number of enterprises around the world, with a variety of IoT use cases. It is the private, enterprise equivalent of the global Snap Store.
+A Dedicated Snap Store is a custom application store tailored to software distribution across fleets of devices. This store allows you to create, publish and distribute software on one centralized platform, with reliable over-the-air updates to your devices in a secure and validated way. Dedicated Snap Stores are adopted by a large number of enterprises around the world, with a variety of IoT use cases. It is the private, enterprise equivalent of the global Snap Store.
 
 .. figure:: images/introduction.png
    

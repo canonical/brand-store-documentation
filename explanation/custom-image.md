@@ -20,7 +20,7 @@ Model assertions are signed by a private key. This signature attests user or bus
 
 ## Build tool
 
-Ubuntu-image is the build tool for creating Ubuntu Core images. It is freely available for [download in the snapstore](https://snapcraft.io/ubuntu-image). Ubuntu-image takes a model assertion as input. The tool parses the metadata into model assertions, fetches the required snaps and assembles the output image.
+Ubuntu-image is the build tool for creating Ubuntu Core images. It is freely available for [download in the Snap Store](https://snapcraft.io/ubuntu-image). Ubuntu-image takes a model assertion as input. The tool parses the metadata into model assertions, fetches the required snaps and assembles the output image.
 
 ## Helpful resources
 
