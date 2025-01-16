@@ -151,7 +151,7 @@ Once a valid model key is available, create and sign the model assertion for you
           "id": "amcUKQILKXHHTlmSa7NMdnXSx02dNeeT",
           "name": "core22",
           "type": "base"
-        },{% endif %}{% if '24' in CUSTOMER_UBUNTU_CORE_VERSION %}
+        },{% endif %}{% if '24' or 'NULL' in CUSTOMER_UBUNTU_CORE_VERSION %}
         {
           "default-channel": "latest/stable",
           "id": "dwTAh7MZZ01zyriOZErqd1JynQLiOGvM",
