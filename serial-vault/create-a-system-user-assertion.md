@@ -14,7 +14,7 @@ Through the System-User menu in the Serial Vault you can create a system-user as
 3. Enter the desired login name of the system user in the Username field.
 4. Enter the system user password in the Password field.
 5. Enter the complete name of the user in the Full Name field.
-6. Select the model of the device this user is being created from the Model combo box.
+6. Select the model of the device this user is being created for from the Model combo box.
 7. Set date and time in UTC since this assertion is valid in Since (UTC) field. This date must be after the date on which the key used to sign the system user assertion was registered.
 
 ![system user assertion form|690x420](/images/create-system-user-assertion.png) 

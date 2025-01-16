@@ -11,9 +11,9 @@ Log in to the [Serial Vault](https://serial-vault-admin.canonical.com/) with the
 
 The Brand field is pre-populated with your Brand account ID and is uneditable.
 
-Enter the desired model name in the Model field. The name you enter here must be the same as used on your Model Assertions that you will create
+Enter the desired model name in the Model field. The name you enter here must be the same as used on your Model Assertions that you will create.
 
-For Serial Assertion Key, select the reference for an already uploaded serial key
+For Serial Assertion Key, select the reference for an already uploaded serial key.
 
 For System-User Assertion Key, select a key that will be used for system-user generation. In production, you should create and use a dedicated key for the system-user.
 

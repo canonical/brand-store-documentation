@@ -15,7 +15,7 @@ In the Base (Snap) Store:
 
 The Device View (Snap) Stores are visible to connected devices:
 
-* They can “include” access to all the snaps in the Base store, thus providing access to its snaps
+* They can include access to selected snaps in the Base store
 * They can also include public snaps from the [global Snap Store](http://snapcraft.io/store).
 * Thus, you can curate a specific set of Brand and public snaps for each of your device types (known as device models)
 

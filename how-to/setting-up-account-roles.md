@@ -31,28 +31,28 @@ A Device View store should have at least a Viewer account. This is needed when b
 
 ```{tab-item} Administrator
 
-The administrator role in the App Store has the highest level of permissions granted. Administrator permissions include the abilities to:
+The administrator role in the Dedicated Snap Store has the highest level of permissions granted. Administrator permissions include the abilities to:
 
-* Grant other Ubuntu SSO accounts roles in the App Store
+* Grant other Ubuntu SSO accounts roles in the Dedicated Snap Store
 * Allow members of a team to craft snaps, create snap development teams, review snap revisions, and build images
 * Manage snap inclusion (which snaps your devices see - see the section titled *Snap inclusion* to find out more)
 ```
 
 ```{tab-item} Reviewer
 
-The reviewer role in the App Store is linked to the snap review process that a company may choose to implement. Reviewers approve software changes made to snaps before they can be published to the Store, if the administrator has enabled the requirement for reviews in the Store.
+The reviewer role in the Dedicated Snap Store is linked to the snap review process that a company may choose to implement. Reviewers approve software changes made to snaps before they can be published to the Store, if the administrator has enabled the requirement for reviews in the Store.
 ```
 
 ```{tab-item} Viewer
 
-The viewer role in the App Store has the fewest permissions granted. Viewers can see and download snaps from their Dedicated Snap Store. Downloaded snaps can be used to build images or perform testing.
+The viewer role in the Dedicated Snap Store has the fewest permissions granted. Viewers can see and download snaps from their Dedicated Snap Store. Downloaded snaps can be used to build images or perform testing.
 
-Devices connecting to the Dedicated Snap Store do not require a store account with viewer permissions. To find out more about that see connecting new devices.
+Devices connecting to the Dedicated Snap Store do not require a store account with viewer permissions. To find out more about that see :doc:`/how-to/20_connecting-devices.md`.
 ```
 
 ```{tab-item} Publisher
 
-As the name suggests, the publisher role in the App Store is linked to publishing snaps to the Store. The publisher role gives the abilities to:
+As the name suggests, the publisher role in the Dedicated Snap Store is linked to publishing snaps to the Store. The publisher role gives the abilities to:
 
 * Register snap names in the Store
 * Upload and release specific snap revisions

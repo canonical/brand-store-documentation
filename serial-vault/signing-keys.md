@@ -38,7 +38,7 @@ A key can be scoped to a single or a combination of the following assertion type
 * System-user
 * Preseed
 
-For the serial, model, and preseed assertion types, keys can be further be constrained on model names matching a certain regular expression, e.g. `foo-.*`
+For the serial, model, and preseed assertion types, keys can be further constrained on model names matching a certain regular expression, e.g. `foo-.*`
 
 ```{note}
 If role-scoped keys are in use, it is recommended to limit the roles of all available keys for increased security.

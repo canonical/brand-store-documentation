@@ -40,7 +40,7 @@ For this particular case, validating the initial store setup, let's use the ``pc
 
 .. ISSUE IN DOCUMENT:  https://docs.google.com/document/d/11z7iKogO7FDouJBfYgh9hROK41xDeaPy0ruS2_flyL0/edit?disco=AAAAxWHTvf4
 
-Update the ``name`` field in the `snapcraft.yaml` to ``<CUSTOMER-STORE-PREFIX>-pc``. Update the value of the ``MODEL_APIKEY`` environment variable in the ``snapcraft.yaml`` to the value generated during the Serial Vault setup above.  Feel free to also adjust the ``version``, ``summary`` and ``description`` to be more meaningful in your context.
+Update the ``name`` field in the `snapcraft.yaml` to ``{{CUSTOMER_STORE_PREFIX}}-pc``. Update the value of the ``MODEL_APIKEY`` environment variable in the ``snapcraft.yaml`` to the value generated during the Serial Vault setup above.  Feel free to also adjust the ``version``, ``summary`` and ``description`` to be more meaningful in your context.
 
 
 

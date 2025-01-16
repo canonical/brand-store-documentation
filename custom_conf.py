@@ -108,6 +108,7 @@ linkcheck_ignore = [
     'https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/',
     'https://github.com/canonical/hsm-assertion-signing-reference',
     'http://support.canonical.com/',
+    'https://snapcraft.io/docs/channels',
     
 ]
 

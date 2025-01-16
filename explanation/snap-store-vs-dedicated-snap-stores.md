@@ -1,7 +1,7 @@
 (snap-store-vs-dedicated-snap-stores)=
 # Global Snap Store vs Dedicated Snap Stores
 
-Dedicated Snap Stores are private application repositories hosted and managed by Canonical. Access to Dedicated Snap Stores is restricted to the repository owner’s team, customers, users and business partners. In contrast, the Snap Store is global and public to all. Here is a list demonstrating some of the key differences in features between the Snap Store and Dedicated Snap Stores.
+Dedicated Snap Stores are private application repositories hosted and managed by Canonical. Access to Dedicated Snap Stores is restricted to the repository owner’s team, customers, users and business partners. In contrast, the Snap Store is global and public to all. Here is a table outlining some of the key differences in features between the Snap Store and Dedicated Snap Stores:
 
 ||Global Snap Store|Dedicated Snap Store|
 | --- | --- | --- |
