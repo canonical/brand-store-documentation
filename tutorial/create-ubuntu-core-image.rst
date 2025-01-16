@@ -145,19 +145,19 @@ Once a valid model key is available, create and sign the model assertion for you
           "id": "pYVQrBcKmBa0mZ4CCN7ExT6jH8rY1hza",
           "name": "pc-kernel",
           "type": "kernel"
-        },
+        },{% if '22' in CUSTOMER_UBUNTU_CORE_VERSION %}
         {
           "default-channel": "latest/stable",
           "id": "amcUKQILKXHHTlmSa7NMdnXSx02dNeeT",
           "name": "core22",
           "type": "base"
-        },
+        },{% endif %}{% if '24' in CUSTOMER_UBUNTU_CORE_VERSION %}
         {
           "default-channel": "latest/stable",
           "id": "dwTAh7MZZ01zyriOZErqd1JynQLiOGvM",
           "name": "core24",
           "type": "base"
-        },
+        },{% endif %}
         {
           "default-channel": "latest/stable",
           "id": "PMrrV4ml8uWuEUDBT8dSGnKUYbevVhc4",
