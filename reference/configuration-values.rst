@@ -1,7 +1,7 @@
 Dedicated Snap Store configuration
 ==================================
 
-When using your Dedicated Snap Store, your main resource will be the documentation found in the `IoT App Store documentation <https://ubuntu.com/core/services/guide/dedicated-snap-store-intro>`_.
+When using your Dedicated Snap Store, your main resource will be the documentation found in the `Dedicated Snap Store documentation <https://ubuntu.com/core/services/guide/dedicated-snap-store-intro>`_.
 This section provides links to some key pages in the documentation, as well as information specific to your Dedicated Snap Store.
 
 Store architecture
@@ -27,7 +27,7 @@ All stores (including your Device View Snap Store) always include the snapd snap
 
 .. note::
 
-   If and when your organisation decides to create additional models, please ensure that you first request and use a new Device View Store for each new model. This can be done by opening a support ticket via your support portal. Using a single Device View Store per model allows for better isolation between your various models and ensures that potential changes to the inclusion rules for one model don't impact other models which may already be in use in production.
+   If and when your organization decides to create additional models, please ensure that you first request and use a new Device View Store for each new model. This can be done by opening a support ticket via your support portal. Using a single Device View Store per model allows for better isolation between your various models and ensures that potential changes to the inclusion rules for one model don't impact other models which may already be in use in production.
 
 Accounts and roles
 ------------------
@@ -148,8 +148,8 @@ Alternatively, Landscape Server can run on-premises or in public clouds. The `La
 Serial Vault
 ------------
 
-Serial Vault has been provisioned with an account for ``{{CUSTOMER_ADMIN_EMAIL}}``, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Dedicated Snap Store, as described in :doc:`how-to-configure-serial-vault`. 
+Serial Vault has been provisioned with an account for ``{{CUSTOMER_ADMIN_EMAIL}}``, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Dedicated Snap Store, as described in :doc:`/how-to/12_configure-serial-vault`. 
 
 .. only:: html
     
-    To configure Serial Vault, see :doc:`how-to-configure-serial-vault`.
+    To configure Serial Vault, see :doc:`/how-to/12_configure-serial-vault`.

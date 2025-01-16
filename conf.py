@@ -36,7 +36,8 @@ extensions.extend(custom_extensions)
 # Additional MyST syntax
 myst_enable_extensions = [
     'substitution',
-    'deflist'
+    'deflist',
+    'attrs_inline'
 ]
 
 # Used for related links

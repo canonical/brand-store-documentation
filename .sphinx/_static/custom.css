@@ -220,3 +220,7 @@ div[class*=" highlight-"], div[class^="highlight-"] {
     padding-left: .5rem;
     padding-right: .5rem;
 }
+
+.sd-card-header {
+    color: var(--color-content-foreground)
+}
