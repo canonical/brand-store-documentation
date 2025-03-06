@@ -1,5 +1,4 @@
-#canonical-sphinx[full]
-../../../_test/canonical-sphinx/canonical_sphinx-0.0.post222+g1abec6d.d20250306-py3-none-any.whl[full]
+canonical-sphinx[full]
 sphinx-autobuild
 sphinxcontrib-svg2pdfconverter[CairoSVG]
 sphinx-last-updated-by-git
