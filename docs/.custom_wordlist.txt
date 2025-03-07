@@ -1,5 +1,6 @@
 # Leave a blank line at the end of this file to support concatenation
 amd
+analytics
 APIKEY
 curation
 customized
@@ -110,3 +111,4 @@ preseed
 sha
 uneditable
 unmanaged
+transactional
