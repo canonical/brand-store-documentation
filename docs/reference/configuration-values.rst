@@ -129,6 +129,17 @@ Support Portal
 
 Dedicated Snap Store customers are also provided access to our Support Portal which can be used to create support cases, including `requests for super privileged interface connections <https://snapcraft.io/docs/super-privileged-interfaces>`_. The support portal can be accessed by signing into the `Support Portal Dashboard <https://support-portal.canonical.com/dashboard>`_ using the account mentioned at the beginning of this section. 
 
+Interface connection cases
+**************************
+
+Please provide the following basic information when submitting an snap interface connection request support case:
+
+* Snap Name
+* Snap ID
+* Snap Interface (e.g. network-control)
+* [Optional] Required Snap Interface slots
+* Description of why this interface is needed.
+
 Landscape
 ---------
 
