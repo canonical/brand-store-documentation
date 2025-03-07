@@ -19,9 +19,6 @@ REQPDFPACKS     = latexmk fonts-freefont-otf texlive-latex-recommended texlive-l
 CONFIRM_SUDO    ?= N
 VALE_CONFIG     = $(SPHINXDIR)/vale.ini
 
-# Project specific
-TEMPLATE        = templates/acme-alpha.yaml
-
 # Put it first so that "make" without argument is like "make help".
 help:
 	@echo "\n" \
