@@ -1,6 +1,8 @@
 Workflow
 ********
 
+This repostiory builds public documentation for the Dedicated Snap Store, and private documentation configured for specific customers. It is recommended to build customer specific onboarding documentation locally, as building through RTD requires additional configuration.
+
 Generating documentation locally
 ================================
 
@@ -47,7 +49,7 @@ These instructions assume that you have the proper permissions under the GitHub 
 Updating existing documentation
 ===============================
 
-Updating existing documentation for Dedicated Snap Store customers requires editing the reStructuredText source code in the GitHub repository and then downloading the generated PDF from ReadTheDocs. It is assumed that only Field Engineering will be making documentation updates, and so documentation for the Store team is not explicitly provided. If necessary, a Store team member can follow the Field Engineering steps listed below.
+Updating existing documentation for Dedicated Snap Store customers requires editing the reStructuredText source code in the GitHub repository and then downloading the generated PDF from ReadTheDocs.
 
 Field Engineering
 -----------------
@@ -65,6 +67,8 @@ Creating a new documentation page
 =================================
 
 To create a new documentation page, create a new ``*.rst`` document in the root directory of the Git repository and add the new document to the ``toctree`` at https://github.com/canonical/brand-store-documentation/blob/main/index.rst.
+
+The PDF is generated with a separate index file, so any additional pages will need to be added to the main ``docs/index.rst`` file, and the ``docs/pdf-index.rst`` file if you wish for the page to be included in the onboarding guide.
 
 Adding a new template variable
 ==============================
