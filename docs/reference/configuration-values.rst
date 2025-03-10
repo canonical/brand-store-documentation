@@ -132,7 +132,7 @@ Dedicated Snap Store customers are also provided access to our Support Portal wh
 Interface connection cases
 **************************
 
-Please provide the following basic information when submitting an snap interface connection request support case:
+Please provide the following basic information when submitting a snap interface connection request support case:
 
 * Snap Name
 * Snap ID
