@@ -137,6 +137,7 @@ Please provide the following basic information when submitting a snap interface 
 * Snap Name
 * Snap ID
 * Snap Interface (e.g. network-control)
+* ID of any other snaps involved
 * [Optional] Required Snap Interface slots
 * Description of why this interface is needed.
 
