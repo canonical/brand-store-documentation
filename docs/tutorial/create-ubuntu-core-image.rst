@@ -5,6 +5,13 @@ Create an Ubuntu Core image
 
     .. note:: :doc:`/reference/configuration-values` contains information relating to the specific configuration of your Dedicated Snap Store.
 
+{% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
+.. warning:: 
+
+  Example values are provided for store configuration in this document. If you are a Dedicated Snap Store customer, you will be provided with a set of documentation with the details of your store.
+
+{% endif %}
+
 To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
 .. note::

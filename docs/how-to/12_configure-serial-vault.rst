@@ -3,6 +3,13 @@ Configure Serial Vault
 
 .. configure-serial-vault-start
 
+{% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
+.. warning:: 
+
+  Example values are provided for store configuration in this document. If you are a Dedicated Snap Store customer, you will be provided with a set of documentation with the details of your store.
+
+{% endif %}
+
 To get started with the `Serial Vault <https://serial-vault-admin.canonical.com/>`_ (SV admin account required), read the following pages. You can click the next button in the bottom right corner to move from one to the next.
 
 - `Serial Vault Overview <https://ubuntu.com/core/services/guide/serial-vault-overview>`_

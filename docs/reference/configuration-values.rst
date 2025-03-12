@@ -1,6 +1,13 @@
 Dedicated Snap Store configuration
 ==================================
 
+{% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
+.. warning:: 
+
+  Example values are provided for store configuration in this document. If you are a Dedicated Snap Store customer, you will be provided with a set of documentation with the details of your store.
+
+{% endif %}
+
 When using your Dedicated Snap Store, your main resource will be the documentation found in the `Dedicated Snap Store documentation <https://ubuntu.com/core/services/guide/dedicated-snap-store-intro>`_.
 This section provides links to some key pages in the documentation, as well as information specific to your Dedicated Snap Store.
 
