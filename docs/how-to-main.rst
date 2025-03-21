@@ -20,7 +20,16 @@ There are many key concepts related to a Dedicated Snap Store, including the bas
     :glob:
     :hidden:
 
-    how-to/*
+    how-to/dedicated-snap-store-commissioning
+    how-to/controlling-updates
+    how-to/configure-serial-vault
+    how-to/dmidecode-to-read-system-sn
+    how-to/connecting-devices
+    how-to/managing-an-app-store
+    how-to/updating-software
+    how-to/snap-inclusion
+    how-to/setting-up-account-roles
+    how-to/username-changes
 
 ..  You may want to add a brief explanation of any main How-to guide, and direct them towards specific ones, depending on the relevance
     they have for users.
