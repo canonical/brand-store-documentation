@@ -1,4 +1,3 @@
-(connecting-devices)=
 # Connect new devices
 
 <!-- 

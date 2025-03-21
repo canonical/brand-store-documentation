@@ -63,7 +63,7 @@ Build the snap:
 
     .. note::
 
-        The sample “product_serial” is loosely generated (``date -Is``) in this gadget (in ``snap/hooks/prepare-device``). In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See `https://documentation.ubuntu.com/dedicated-snap-store/how-to/dmidecode-to-read-system-sn/`_ for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
+        The sample “product_serial” is loosely generated (``date -Is``) in this gadget (in ``snap/hooks/prepare-device``). In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See `the dmidecode guidance <https://documentation.ubuntu.com/dedicated-snap-store/how-to/dmidecode-to-read-system-sn/>`_ for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
 
 .. only:: latex
 
