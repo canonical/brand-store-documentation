@@ -8,7 +8,7 @@ Dedicated Snap Store configuration
 
 {% endif %}
 
-When using your Dedicated Snap Store, your main resource will be the documentation found in the `Dedicated Snap Store documentation <https://ubuntu.com/core/services/guide/dedicated-snap-store-intro>`_.
+When using your Dedicated Snap Store, your main resource will be the documentation found in the :doc:`Dedicated Snap Store documentation </index>`.
 This section provides links to some key pages in the documentation, as well as information specific to your Dedicated Snap Store.
 
 Store architecture
@@ -18,8 +18,8 @@ A Snap Store is a repository for hosting and publishing snaps so that they can b
 
 There are several Snap Store instances that will be relevant to you. To understand these instances, and the relationship between them, please read:
 
-- `Snap Store vs Dedicated Snap Store <https://ubuntu.com/core/services/guide/snap-store-vs-dedicated-snap-stores>`_
-- `Base Stores and Device View Stores <https://ubuntu.com/core/services/guide/base-stores-and-device-view-stores>`_
+- `Global Snap Store vs Dedicated Snap Store <https://canonical-brand-store-acme-alpha.readthedocs-hosted.com/explanation/snap-store-vs-dedicated-snap-stores/>`_
+- `Base Stores and Device View Stores <https://canonical-brand-store-acme-alpha.readthedocs-hosted.com/explanation/base-stores-and-device-view-stores/>`_
 
 Your Base Snap Store is:  ``{{CUSTOMER_STORE_NAME}}`` (``{{CUSTOMER_STORE_ID}}``)
 
@@ -41,14 +41,13 @@ Accounts and roles
 
 Ubuntu SSO accounts underpin developer interactions with the various Stores. To understand accounts and roles, please read:
 
-* `Ubuntu SSO Accounts <https://ubuntu.com/core/services/guide/ubuntu-sso-accounts>`__
+* :doc:`Ubuntu SSO Accounts </explanation/ubuntu-sso-accounts>`
 * Users and Roles:
-    * `Administrator <https://ubuntu.com/core/services/guide/administrator-role>`__
-    * `Reviewer <https://ubuntu.com/core/services/guide/reviewer-role>`__
-    * `Viewer <https://ubuntu.com/core/services/guide/viewer-role>`__
-    * `Publisher <https://ubuntu.com/core/services/guide/publisher-role>`__
-    * `Collaborator <https://ubuntu.com/core/services/guide/collaborator-role>`__
-* `Setting up Account Roles <https://ubuntu.com/core/services/guide/setting-up-account-roles>`__
+    * :ref:`Administrator <account-roles>`
+    * :ref:`Reviewer <account-roles>`
+    * :ref:`Viewer <account-roles>`
+    * :ref:`Publisher <account-roles>`
+    * :ref:`Collaborator <account-roles>`
 
 Your store has been provisioned with the following data:
 
@@ -110,7 +109,7 @@ Brand keys
 
 Ubuntu Core relies on a number of signed documents called `assertions <https://snapcraft.io/docs/assertions>`_, of which there are multiple types. Some of these assertions are signed by Canonical, and some must be signed by keys controlled by the Brand Account. This section discusses some best practices that you are strongly suggested to follow.
 
-1. Please be sure to review the `signing keys sub-section <https://ubuntu.com/core/services/guide/signing-keys>`_ on key roles. Use of key roles is a best practice which helps to limit the type of assertions each key can be used to sign. This is meant to limit your exposure if a key were to be compromised. Use of key roles also means that you must no longer register your keys using snapcraft register-key. This will now be handled by the Snap Store admins as part of the key role assignment. And finally, please note that key roles can only be assigned to new keys, they cannot be added to keys after registration.
+1. Please be sure to review the `signing keys sub-section <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys/>`_ on key roles. Use of key roles is a best practice which helps to limit the type of assertions each key can be used to sign. This is meant to limit your exposure if a key were to be compromised. Use of key roles also means that you must no longer register your keys using snapcraft register-key. This will now be handled by the Snap Store admins as part of the key role assignment. And finally, please note that key roles can only be assigned to new keys, they cannot be added to keys after registration.
 
 2. Limit access to brand keys. It's strongly advised that you consider using a PKI system or key vault to protect your brand keys, and limit access to them. Hardware cryptotokens are another possibility, although they may be more challenging to use than PKI systems in practice.
 
