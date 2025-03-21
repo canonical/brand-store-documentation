@@ -95,7 +95,7 @@ ogp_image = "https://assets.ubuntu.com/v1/253da317-image-document-ubuntudocs.svg
 
 # TODO: To customise the favicon, uncomment and update as needed.
 
-html_favicon = '.sphinx/_static/favicon.png'
+#html_favicon = '.sphinx/_static/favicon.png'
 
 
 # Dictionary of values to pass into the Sphinx context for all pages:
@@ -216,7 +216,10 @@ linkcheck_ignore = [
 
 # A regex list of URLs where anchors are ignored by 'make linkcheck'
 
-linkcheck_anchors_ignore_for_url = [r"https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys"]
+linkcheck_anchors_ignore_for_url = [
+    r"https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys",
+    r"https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/"
+]
 
 # give linkcheck multiple tries on failure
 # linkcheck_timeout = 30
@@ -232,7 +235,9 @@ linkcheck_retries = 3
 # NOTE: By default, the following MyST extensions are enabled:
 #       substitution, deflist, linkify
 
-# myst_enable_extensions = set()
+myst_enable_extensions = {
+    "attrs_inline",
+}
 
 
 # Custom Sphinx extensions; see
@@ -267,9 +272,9 @@ exclude_patterns = []
 
 # Adds custom CSS files, located under 'html_static_path'
 
-html_css_files = [
-    "css/pdf.css",
-]
+# html_css_files = [
+#     "css/pdf.css",
+# ]
 
 
 # Adds custom JavaScript files, located under 'html_static_path'

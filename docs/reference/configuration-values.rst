@@ -8,7 +8,7 @@ Dedicated Snap Store configuration
 
 {% endif %}
 
-When using your Dedicated Snap Store, your main resource will be the documentation found in the :doc:`Dedicated Snap Store documentation </index>`.
+When using your Dedicated Snap Store, your main resource will be the documentation found in the `Dedicated Snap Store documentation <https://documentation.ubuntu.com/dedicated-snap-store/>`_.
 This section provides links to some key pages in the documentation, as well as information specific to your Dedicated Snap Store.
 
 Store architecture
@@ -18,8 +18,8 @@ A Snap Store is a repository for hosting and publishing snaps so that they can b
 
 There are several Snap Store instances that will be relevant to you. To understand these instances, and the relationship between them, please read:
 
-- `Global Snap Store vs Dedicated Snap Store <https://canonical-brand-store-acme-alpha.readthedocs-hosted.com/explanation/snap-store-vs-dedicated-snap-stores/>`_
-- `Base Stores and Device View Stores <https://canonical-brand-store-acme-alpha.readthedocs-hosted.com/explanation/base-stores-and-device-view-stores/>`_
+- `Global Snap Store vs Dedicated Snap Store <https://documentation.ubuntu.com/dedicated-snap-store/explanation/snap-store-vs-dedicated-snap-stores/>`_
+- `Base Stores and Device View Stores <https://documentation.ubuntu.com/dedicated-snap-store/explanation/base-stores-and-device-view-stores/>`_
 
 Your Base Snap Store is:  ``{{CUSTOMER_STORE_NAME}}`` (``{{CUSTOMER_STORE_ID}}``)
 
@@ -41,13 +41,13 @@ Accounts and roles
 
 Ubuntu SSO accounts underpin developer interactions with the various Stores. To understand accounts and roles, please read:
 
-* :doc:`Ubuntu SSO Accounts </explanation/ubuntu-sso-accounts>`
+* `Ubuntu SSO Accounts <https://documentation.ubuntu.com/dedicated-snap-store/explanation/ubuntu-sso-accounts/>`_
 * Users and Roles:
-    * :ref:`Administrator <account-roles>`
-    * :ref:`Reviewer <account-roles>`
-    * :ref:`Viewer <account-roles>`
-    * :ref:`Publisher <account-roles>`
-    * :ref:`Collaborator <account-roles>`
+    * `Administrator <https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles>`_
+    * `Reviewer <https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles>`_
+    * `Viewer <https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles>`_
+    * `Publisher <https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles>`_
+    * `Collaborator <https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles>`_
 
 Your store has been provisioned with the following data:
 
@@ -166,8 +166,8 @@ Alternatively, Landscape Server can run on-premises or in public clouds. The `La
 Serial Vault
 ------------
 
-Serial Vault has been provisioned with an account for ``{{CUSTOMER_ADMIN_EMAIL}}``, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Dedicated Snap Store, as described in :doc:`/how-to/12_configure-serial-vault`. 
+Serial Vault has been provisioned with an account for ``{{CUSTOMER_ADMIN_EMAIL}}``, allowing this account to log into the Serial Vault for administrative purposes, including making configurations required for device authentication against a Dedicated Snap Store, as described in :doc:`/how-to/configure-serial-vault`. 
 
 .. only:: html
     
-    To configure Serial Vault, see :doc:`/how-to/12_configure-serial-vault`.
+    To configure Serial Vault, see :doc:`/how-to/configure-serial-vault`.

@@ -11,7 +11,7 @@ PDF Canonical Dedicated Snap Store
 
     home
     reference/configuration-values
-    how-to/12_configure-serial-vault
+    how-to/configure-serial-vault
     tutorial/create-ubuntu-core-image
     explanation/snap-confinement-snapd-connection
-    how-to/11_controlling-updates
+    how-to/controlling-updates
