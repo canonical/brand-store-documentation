@@ -216,7 +216,10 @@ linkcheck_ignore = [
 
 # A regex list of URLs where anchors are ignored by 'make linkcheck'
 
-linkcheck_anchors_ignore_for_url = [r"https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys"]
+linkcheck_anchors_ignore_for_url = [
+    r"https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys",
+    r"https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/"
+]
 
 # give linkcheck multiple tries on failure
 # linkcheck_timeout = 30
