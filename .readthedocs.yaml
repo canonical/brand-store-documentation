@@ -22,7 +22,6 @@ build:
       then
         exit 183;
       fi
-    - env
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
