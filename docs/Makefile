@@ -18,6 +18,7 @@ METRICSDIR      = $(SOURCEDIR)/.sphinx/metrics
 REQPDFPACKS     = latexmk fonts-freefont-otf texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-font-utils texlive-lang-cjk texlive-xetex plantuml xindy tex-gyre dvipng
 CONFIRM_SUDO    ?= N
 VALE_CONFIG     = $(SPHINXDIR)/vale.ini
+TEMPLATE        = NONE
 
 # Put it first so that "make" without argument is like "make help".
 help:

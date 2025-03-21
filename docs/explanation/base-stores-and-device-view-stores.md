@@ -27,4 +27,4 @@ Additionally, for image builds, developers can use their SSO credentials to down
 
 *A standard store configuration using a Base and Device store*
 
-Snap stores are represented by the cylinders, with the Device Snap Store is represented by the cylinder with Acme in the top-right. Acme _view store 1_ has been configured to include snaps from the Global snap store and the [Serial Vault](https://discourse.ubuntu.com/t/serial-vault-user-guide/19757) is used by the company’s devices to authenticate and thereby gain access to private snaps.
+Snap stores are represented by the cylinders, with the Device Snap Store is represented by the cylinder with Acme in the top-right. Acme _view store 1_ has been configured to include snaps from the Global snap store and the [Serial Vault](https://canonical-serial-vault.readthedocs-hosted.com/) is used by the company’s devices to authenticate and thereby gain access to private snaps.

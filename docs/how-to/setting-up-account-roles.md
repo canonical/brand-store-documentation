@@ -25,7 +25,8 @@ The Device View store does not require Publishers or Reviewers since it does not
 
 A Device View store should have at least a Viewer account. This is needed when building images that point to the Device View store. A viewer account can download snaps from the store for inclusion into the image.
 
-`````{dropdown} Available roles
+(account-roles)=
+# Account roles
 
 ````{tab-set}
 
@@ -47,7 +48,7 @@ The reviewer role in the Dedicated Snap Store is linked to the snap review proce
 
 The viewer role in the Dedicated Snap Store has the fewest permissions granted. Viewers can see and download snaps from their Dedicated Snap Store. Downloaded snaps can be used to build images or perform testing.
 
-Devices connecting to the Dedicated Snap Store do not require a store account with viewer permissions. To find out more about that see :doc:`/how-to/20_connecting-devices.md`.
+Devices connecting to the Dedicated Snap Store do not require a store account with viewer permissions. To find out more about that see [Connecting Devices](#connecting-devices).
 ```
 
 ```{tab-item} Publisher
@@ -71,4 +72,3 @@ In the Dedicated Snap Store or the [Snap Store](https://snapcraft.io), a collabo
 The snap publisher can use the [snaps dashboard](https://dashboard.snapcraft.io/snaps) to manage collaborators assigned to a snap.
 ```
 ````
-`````

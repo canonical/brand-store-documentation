@@ -3,7 +3,7 @@
 
 Store roles and privileges can be granted to an Ubuntu SSO account.
 
-For example, a dedicated Snap Store is administered by an account that is granted the [Administrator Role](https://ubuntu.com/core/services/guide/administrator-role). New snap names are registered by accounts with the [Publisher Role](https://ubuntu.com/core/services/guide/publisher-role). A developer can upload snaps to a private Store with the Publisher role, or as a [Collaborator](https://ubuntu.com/core/services/guide/collaborator-role) on a specific snap.
+For example, a dedicated Snap Store is administered by an account that is granted the [Administrator Role](project:#setting-up-account-roles). New snap names are registered by accounts with the [Publisher Role](project:#setting-up-account-roles). A developer can upload snaps to a private Store with the Publisher role, or as a [Collaborator](project:#setting-up-account-roles) on a specific snap.
 
 Ubuntu SSO accounts can be assigned SSH and GPG keys. Store [assertions](https://snapcraft.io/docs/assertions) should be signed by keys registered to an account. Ubuntu SSO accounts also authenticate users to [Launchpad](https://launchpad.net), the [Snapcraft forum](https://forum.snapcraft.io), and many more sites and services.
 

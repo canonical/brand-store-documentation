@@ -32,7 +32,7 @@ Canonical Dedicated Snap Store
 
       Discussion and clarification of key topics, like :doc:`Snap confinement <explanation/snap-confinement-snapd-connection>`.
 
-.. note:: For general use of the Dedicated Snap Store, see the `main documentation source <https://ubuntu.com/core/services/guide/dedicated-snap-store-intro>`_.
+.. note:: For general use of the Dedicated Snap Store, see the `main documentation source <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/dedicated-snap-store-intro>`_.
 
 .. toctree::
    :maxdepth: 1
@@ -57,16 +57,6 @@ Canonical Dedicated Snap Store
    :hidden:
 
    Explanation <explanation-main>
-
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-   :glob:
-   :caption: Services
-
-   serial-vault-overview
-   more-services/*
 
 
 Having trouble? We would like to help!
