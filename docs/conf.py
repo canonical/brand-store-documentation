@@ -157,6 +157,8 @@ html_context = {
     'github_issues': 'enabled',
 }
 
+notfound_urls_prefix = "/dedicated-snap-store"
+
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
 #
 # TODO: If your documentation is hosted on https://docs.ubuntu.com/,
