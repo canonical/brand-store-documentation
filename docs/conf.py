@@ -157,6 +157,8 @@ html_context = {
     'github_issues': 'enabled',
 }
 
+html_baseurl = "https://documentation.ubuntu.com/dedicated-snap-store/"
+
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
 #
 # TODO: If your documentation is hosted on https://docs.ubuntu.com/,
@@ -264,6 +266,7 @@ extensions = [
     "sphinx_last_updated_by_git",
     "rstjinja",
     "better-term",
+    "sphinx_sitemap",
 ]
 
 # Excludes files or directories from processing
