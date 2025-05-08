@@ -174,7 +174,7 @@ slug = 'dedicated-snap-store'
 
 html_static_path = [".sphinx/_static"]
 templates_path = [".sphinx/_templates"]
-# html_extra_path = ["sitemap.xml"]
+html_extra_path = ["sitemap.xml"]
 
 
 #############
