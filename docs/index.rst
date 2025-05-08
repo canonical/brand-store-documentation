@@ -32,8 +32,6 @@ Canonical Dedicated Snap Store
 
       Discussion and clarification of key topics, like :doc:`Snap confinement <explanation/snap-confinement-snapd-connection>`.
 
-.. note:: For general use of the Dedicated Snap Store, see the `main documentation source <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/dedicated-snap-store-intro>`_.
-
 .. toctree::
    :maxdepth: 1
    :hidden:

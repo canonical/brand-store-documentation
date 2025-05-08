@@ -8,7 +8,7 @@ Secrets required for a functioning Dedicated Snap Store
 
 - Brand account credentials
   
-  - Grants roles and privileges to the dedicated Snap Store, and is itself derived from a nominated `Ubuntu One SSO account <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/ubuntu-sso-accounts>`_.
+  - Grants roles and privileges to the dedicated Snap Store, and is itself derived from a nominated `Ubuntu One SSO account <https://documentation.ubuntu.com/dedicated-snap-store/explanation/ubuntu-sso-accounts/>`_.
   - It is **strongly recommended** that the Ubuntu SSO account is used only for Brand activities and that its use is strictly limited and controlled. It is recommended that the Brand account is only assigned the “Publisher” role.
 - Signing keys
   

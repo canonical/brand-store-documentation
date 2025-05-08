@@ -157,6 +157,11 @@ html_context = {
     'github_issues': 'enabled',
 }
 
+
+# Sitemap support
+html_baseurl = "https://documentation.ubuntu.com/dedicated-snap-store/"
+sitemap_url_scheme = "{link}"
+
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
 #
 # TODO: If your documentation is hosted on https://docs.ubuntu.com/,
@@ -169,6 +174,7 @@ slug = 'dedicated-snap-store'
 
 html_static_path = [".sphinx/_static"]
 templates_path = [".sphinx/_templates"]
+# html_extra_path = ["sitemap.xml"]
 
 
 #############
@@ -264,6 +270,7 @@ extensions = [
     "sphinx_last_updated_by_git",
     "rstjinja",
     "better-term",
+    "sphinx_sitemap",
 ]
 
 # Excludes files or directories from processing
