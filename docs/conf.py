@@ -191,7 +191,37 @@ html_extra_path = ["sitemap.xml"]
 #       the sphinx_reredirects extension will be disabled.
 
 redirects = {
-    "test": "https://documentation.ubuntu.com/dedicated-snap-store/"
+    "dedicated-snap-store-intro": "https://documentation.ubuntu.com/dedicated-snap-store/explanation-main/",
+    "snap-store-vs-dedicated-snap-stores": "https://documentation.ubuntu.com/dedicated-snap-store/explanation/snap-store-vs-dedicated-snap-stores/",
+    "getting-started-dedicated-snap-store": "https://documentation.ubuntu.com/dedicated-snap-store/how-to-main/",
+    "dedicated-snap-store-commissioning": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/dedicated-snap-store-commissioning/",
+    "base-stores-and-device-view-stores": "https://documentation.ubuntu.com/dedicated-snap-store/explanation/base-stores-and-device-view-stores/",
+    "custom-image": "https://documentation.ubuntu.com/dedicated-snap-store/explanation/custom-image/",
+    "connecting-devices": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/connecting-devices/",
+    "managing-an-app-store": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/managing-an-app-store/",
+    "updating-software": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/updating-software/",
+    "snap-inclusion": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/snap-inclusion/",
+    "ubuntu-sso-accounts": "https://documentation.ubuntu.com/dedicated-snap-store/explanation/ubuntu-sso-accounts/",
+    "administrator-role": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles",
+    "reviewer-role": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles",
+    "viewer-role": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles",
+    "publisher-role": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles",
+    "collaborator-role": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles",
+    "setting-up-account-roles": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles",
+    "username-changes": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/username-changes/",
+    "technical-support": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/technical-support/",
+    "training": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/training/",
+    "advanced-options": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/iot-services/",
+    "serial-vault-overview": "https://canonical-serial-vault.readthedocs-hosted.com/",
+    "signing-keys": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys/",
+    "device-model-and-identity": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/device-model-and-identity/",
+    "environment-setup": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/environment-setup/",
+    "generate-a-serial-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/generate-a-serial-signing-key/",
+    "import-a-serial-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/import-a-serial-signing-key/",
+    "register-a-new-device-model-name": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/register-a-new-device-model-name/",
+    "generate-a-model-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/generate-a-model-signing-key/",
+    "check-the-signing-log": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/check-the-signing-log/",
+    "create-a-system-user-assertion": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/create-a-system-user-assertion/"
 }
 
 
