@@ -190,7 +190,9 @@ html_extra_path = ["sitemap.xml"]
 # NOTE: If undefined, set to None, or empty,
 #       the sphinx_reredirects extension will be disabled.
 
-redirects = {}
+redirects = {
+    "test": "https://documentation.ubuntu.com/dedicated-snap-store/"
+}
 
 
 ###########################
