@@ -7,16 +7,13 @@
 }
 
 dialog.cookie-policy {
-    background-color: #fff;
+    background-color: var(--color-code-background);
+    color: var(--color-code-foreground);
     height: auto;
     max-height: 80vh;
     max-width: 40rem;
     padding: 0, 1rem 0 1rem;
     width: auto;
-}
-
-.p-modal {
-    color: #000000;
 }
 
 header.p-modal__header {
@@ -36,17 +33,12 @@ header.p-modal__header::after {
 
 h2#cookie-policy-title.p-modal__title {
     align-self: flex-end;
-    color: #000000;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 275;
     line-height: 2rem;
     margin: 0 0 1.05rem 0;
     padding: 0.45rem 0 0 0;
-}
-
-div#cookie-policy-content {
-    color: #000000;
 }
 
 .cookie-policy p {
@@ -58,6 +50,7 @@ div#cookie-policy-content {
 
 .cookie-policy p a {
     text-decoration: none;
+    color: var(--color-link);
 }
 .cookie-policy button {
     border-style: solid;
