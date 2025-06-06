@@ -1,7 +1,6 @@
 /* Cookie policy styling WILL BE REMOVED when implementation of new theme with vanilla is implemented */
 .cookie-policy {
     overflow: auto;
-    position: absolute;
     top: 40%;
     z-index: 50;
     position: fixed;
