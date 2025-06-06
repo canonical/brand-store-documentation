@@ -176,6 +176,15 @@ html_static_path = [".sphinx/_static"]
 templates_path = [".sphinx/_templates"]
 html_extra_path = ["sitemap.xml"]
 
+# Add CSS files (located in .sphinx/_static/)
+html_css_files = [
+	'cookie-banner.css'
+]
+
+# Add JavaScript files (located in .sphinx/_static/)
+html_js_files = [
+	'js/bundle.js',
+]
 
 #############
 # Redirects #
@@ -308,18 +317,6 @@ extensions = [
 # Excludes files or directories from processing
 
 exclude_patterns = []
-
-# Adds custom CSS files, located under 'html_static_path'
-
-# html_css_files = [
-#     "css/pdf.css",
-# ]
-
-
-# Adds custom JavaScript files, located under 'html_static_path'
-
-# html_js_files = []
-
 
 # Specifies a reST snippet to be appended to each .rst file
 
