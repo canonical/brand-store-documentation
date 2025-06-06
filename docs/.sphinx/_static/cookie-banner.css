@@ -4,6 +4,7 @@
     position: absolute;
     top: 40%;
     z-index: 50;
+    position: fixed;
 }
 
 dialog.cookie-policy {
