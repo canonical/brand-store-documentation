@@ -200,6 +200,7 @@ html_js_files = [
 #       the sphinx_reredirects extension will be disabled.
 
 redirects = {
+    "iot-app-store-intro": "https://documentation.ubuntu.com/dedicated-snap-store/explanation-main/",
     "dedicated-snap-store-intro": "https://documentation.ubuntu.com/dedicated-snap-store/explanation-main/",
     "snap-store-vs-dedicated-snap-stores": "https://documentation.ubuntu.com/dedicated-snap-store/explanation/snap-store-vs-dedicated-snap-stores/",
     "getting-started-dedicated-snap-store": "https://documentation.ubuntu.com/dedicated-snap-store/how-to-main/",
