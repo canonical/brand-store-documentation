@@ -10,9 +10,9 @@ Dedicated Snap Stores are private application repositories hosted and managed by
 |Content|Curated by Canonical|Curated by owner|
 |Hosting|Hosted and managed by Canonical|Hosted and managed by Canonical|
 |Security|Security monitoring by Canonical|Security monitoring by Canonical|
-|OTA (over-the-air updates)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
-|Refresh control|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
-|Account delegation|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
-|Proxy to connect with restricted network access|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
-|Custom dashboard and API access|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
-|Substores|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg)|
+|OTA (over-the-air updates)| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg){alt="Yes"}| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg){alt="Yes"}|
+|Refresh control|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg){alt="No"}| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg){alt="Yes"}|
+|Account delegation|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg){alt="No"}| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg){alt="Yes"}|
+|Proxy to connect with restricted network access|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg){alt="No"}| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg){alt="Yes"}|
+|Custom dashboard and API access|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg){alt="No"}| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg){alt="Yes"}|
+|Substores|![No](https://assets.ubuntu.com/v1/557b45a3-cross-orange.svg){alt="No"}| ![Yes](https://assets.ubuntu.com/v1/09cd2bdb-checkbox.svg){alt="Yes"}|
