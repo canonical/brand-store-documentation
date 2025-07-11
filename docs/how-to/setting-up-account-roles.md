@@ -1,4 +1,3 @@
-(setting-up-account-roles)=
 # Set up account roles
 
 When setting up account roles, the Administrator should add appropriate accounts with roles to your Base store, where all snaps are registered and published. Here is a look at the [dashboard](https://snapcraft.io/admin) screen an Administrator uses to add Ubuntu SSO accounts to a specific Snap Store with various roles.
