@@ -29,7 +29,7 @@ and see follow the `instructions on gadget building <https://ubuntu.com/core/doc
 For this particular case, validating the initial store setup, let's use the ``pc-amd64-gadget``. This gadget enables the device to request store credentials from the Serial Vault, as configured above.
 
 
-.. term::
+.. terminal::
     :input: sudo snap install snapcraft --classic
 
 
@@ -37,7 +37,7 @@ For this particular case, validating the initial store setup, let's use the ``pc
 
     As the gadget snap provides a means to provision static snap configuration for the seeded snaps in an image, multiple gadget snaps may be required for different models. Please see the `gadget specification <https://ubuntu.com/core/docs/gadget-snaps>`_ for more details on how to provide default snap and/or system configuration for your models. It's also possible to use a single gadget for multiple devices if there are no configuration differences. If you do this, please be aware that you'll need to ensure that the models in the Serial Vault are associated with the same **API KEY**.
 
-.. term::
+.. terminal::
     :scroll:
     :input: sudo apt update
 
@@ -53,7 +53,7 @@ Update the ``name`` field in the `snapcraft.yaml` to ``{{CUSTOMER_STORE_PREFIX}}
 
 Build the snap:
 
-.. term::
+.. terminal::
     :input: sudo snapcraft
 
     ...
@@ -71,7 +71,7 @@ Build the snap:
 
 Now register the snap name in your Base Snap Store and push the initial revision:
 
-.. term::
+.. terminal::
     :input: snapcraft whoami
 
     email:        {{CUSTOMER_BRAND_EMAIL}}
@@ -103,7 +103,7 @@ Log into the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the *
 
 Once the revision is approved, use snapcraft to release it in the stable channel:
 
-.. term::
+.. terminal::
     :input: snapcraft whoami
 
     email:        {{CUSTOMER_BRAND_EMAIL}}
@@ -127,7 +127,7 @@ One final step before you can build a custom Ubuntu Core image is creation of a 
 Example model assertions can be found `here <https://github.com/snapcore/models>`_. This tutorial provides an example model assertion below.
 Once a valid model key is available, create and sign the model assertion for your test Ubuntu Core image:
 
-.. term::
+.. terminal::
     :input: cat << EOF > {{CUSTOMER_MODEL_NAME}}-model.json
 
     {
@@ -217,7 +217,7 @@ The account used must have the **Viewer** role on the ``{{CUSTOMER_DEVICEVIEW_NA
 
 Set up authentication for downloading snaps from the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store:
 
-.. term::
+.. terminal::
     :input: snapcraft whoami
 
     email:        {{CUSTOMER_VIEWER_EMAIL}}
@@ -239,7 +239,7 @@ This section describes the details of Ubuntu Core image building against the ``{
 
 Ensure a Linux LTS environment and tool for building images are both available:
 
-.. term::
+.. terminal::
     :input: sudo snap install ubuntu-image --classic
     
     ...
@@ -251,7 +251,7 @@ In order for ubuntu-image to able to access snaps from your private store, you n
 
 The Ubuntu Core image is built in the one line instruction by using the above developer account credential:
 
-.. term::
+.. terminal::
     :input: UBUNTU_STORE_AUTH=$(cat store.auth) ubuntu-image snap {{CUSTOMER_MODEL_NAME}}-model.assert
 
     ...
@@ -263,7 +263,7 @@ To launch and test your newly generated Ubuntu Core image, follow the steps here
 
 .. note:: The following shows the expected output for a Ubuntu Core 24 image.
 
-.. term::
+.. terminal::
     :user: {{UBUNTU_SSO_USER_NAME}}
     :host: ubuntu_core_24
 

@@ -161,6 +161,13 @@ html_context = {
 # Sitemap support
 html_baseurl = "https://documentation.ubuntu.com/dedicated-snap-store/"
 sitemap_url_scheme = "{link}"
+sitemap_show_lastmod = True
+
+sitemap_excludes = [
+    "genindex/",
+    "404/",
+    "search/",
+]
 
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
 #
@@ -174,7 +181,7 @@ slug = 'dedicated-snap-store'
 
 html_static_path = [".sphinx/_static"]
 templates_path = [".sphinx/_templates"]
-html_extra_path = ["sitemap.xml"]
+# html_extra_path = []
 
 # Add CSS files (located in .sphinx/_static/)
 html_css_files = [
@@ -258,6 +265,7 @@ linkcheck_ignore = [
     'https://github.com/canonical/hsm-assertion-signing-reference',
     'http://support.canonical.com/',
     'https://snapcraft.io/docs/channels',
+    'https://support-portal.canonical.com/*',
     
 ]
 
@@ -311,7 +319,6 @@ extensions = [
     "sphinxcontrib.cairosvgconverter",
     "sphinx_last_updated_by_git",
     "rstjinja",
-    "better-term",
     "sphinx_sitemap",
 ]
 
