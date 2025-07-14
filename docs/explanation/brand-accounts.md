@@ -11,4 +11,4 @@ The Brand account:
 
 The use of the Brand Account and its credentials should be strictly limited. Canonical recommends that the Brand Account is assigned Roles that are truly needed. The Brand Account should not be a store Administrator, Reviewer or Viewer.
 
-When the Brand Account generates keys, they are stored on the local disk in ( ~/.snap/gnupg). This account must be secured by the company using it. It is highly recommended that all accounts, and specifically the Brand and Administrator accounts [enable multi-factor authentication on their SSO accounts](https://help.ubuntu.com/community/SSO/FAQs/2FA).
+When the Brand Account generates keys, they are stored on the local disk in ( ~/.snap/gnupg). This account must be secured by the company using it. It is highly recommended that all accounts, and specifically the Brand and Administrator accounts enable multi-factor authentication on their SSO accounts.
