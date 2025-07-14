@@ -265,6 +265,7 @@ linkcheck_ignore = [
     'https://github.com/canonical/hsm-assertion-signing-reference',
     'http://support.canonical.com/',
     'https://snapcraft.io/docs/channels',
+    'https://support-portal.canonical.com/*',
     
 ]
 
