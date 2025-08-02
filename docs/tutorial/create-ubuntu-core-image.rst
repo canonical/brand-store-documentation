@@ -3,30 +3,43 @@ Create an Ubuntu Core image
 
 .. only:: html
 
-    .. note:: :doc:`/reference/configuration-values` contains information relating to the specific configuration of your Dedicated Snap Store.
+    .. note:: :doc:`/reference/configuration-values` contains information
+        relating to the specific configuration of your Dedicated Snap Store.
 
 {% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
 .. warning:: 
 
-  Example values are provided for store configuration in this document. If you are a Dedicated Snap Store customer, you will be provided with a set of documentation with the details of your store.
+  Example values are provided for store configuration in this document. If
+    you are a Dedicated Snap Store customer, you will be provided with a set of
+    documentation with the details of your store.
 
 {% endif %}
 
-To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
+To validate that the store was provisioned correctly, and that you are able to
+access it, we recommend creating and booting an Ubuntu Core image on amd64.
 
 .. note::
 
-    You may need to initialise LXD with `lxd init --auto` before proceeding with some of the following steps.
+    You may need to initialise LXD with `lxd init --auto` before proceeding with
+    some of the following steps.
 
 Creating the gadget snap
 ------------------------
 
-The first step in building an Ubuntu Core image that can communicate with your store is to build a gadget snap. Gadget snaps do many things, but for our purposes here, the important functionality is generating a serial number and using that serial number, along with a pre-shared API key, to get credentials to talk to the store. You can also use the gadget snap to set default configuration values for application snaps.
+The first step in building an Ubuntu Core image that can communicate with
+your store is to build a gadget snap. Gadget snaps do many things, but for our
+purposes here, the important functionality is generating a serial number and
+using that serial number, along with a pre-shared API key, to get credentials to
+talk to the store. You can also use the gadget snap to set default configuration
+values for application snaps.
 
-To build a custom gadget snap, we start by selecting a suitable candidate from the `Canonical supported gadgets <https://snapcraft.io/docs/the-gadget-snap>`_
+To build a custom gadget snap, we start by selecting a suitable candidate from
+the `Canonical supported gadgets <https://snapcraft.io/docs/the-gadget-snap>`_
 and see follow the `instructions on gadget building <https://ubuntu.com/core/docs/gadget-building>`_.
 
-For this particular case, validating the initial store setup, let's use the ``pc-amd64-gadget``. This gadget enables the device to request store credentials from the Serial Vault, as configured above.
+For this particular case, validating the initial store setup, let's use the
+``pc-amd64-gadget``. This gadget enables the device to request store credentials
+from the Serial Vault, as configured above.
 
 
 .. terminal::
@@ -35,7 +48,14 @@ For this particular case, validating the initial store setup, let's use the ``pc
 
 .. note::
 
-    As the gadget snap provides a means to provision static snap configuration for the seeded snaps in an image, multiple gadget snaps may be required for different models. Please see the `gadget specification <https://ubuntu.com/core/docs/gadget-snaps>`_ for more details on how to provide default snap and/or system configuration for your models. It's also possible to use a single gadget for multiple devices if there are no configuration differences. If you do this, please be aware that you'll need to ensure that the models in the Serial Vault are associated with the same **API KEY**.
+    As the gadget snap provides a means to provision static snap
+    configuration for the seeded snaps in an image, multiple gadget snaps may
+    be required for different models. Please see the `gadget specification <https://ubuntu.com/core/docs/gadget-snaps>`_
+    for more details on how to provide default snap and/or system configuration
+    for your models. It's also possible to use a single gadget for multiple
+    devices if there are no configuration differences. If you do this, please
+    be aware that you'll need to ensure that the models in the Serial Vault are
+    associated with the same **API KEY**.
 
 .. terminal::
     :scroll:
@@ -47,9 +67,11 @@ For this particular case, validating the initial store setup, let's use the ``pc
 
 .. ISSUE IN DOCUMENT:  https://docs.google.com/document/d/11z7iKogO7FDouJBfYgh9hROK41xDeaPy0ruS2_flyL0/edit?disco=AAAAxWHTvf4
 
-Update the ``name`` field in the `snapcraft.yaml` to ``{{CUSTOMER_STORE_PREFIX}}-pc``. Update the value of the ``MODEL_APIKEY`` environment variable in the ``snapcraft.yaml`` to the value generated during the Serial Vault setup above.  Feel free to also adjust the ``version``, ``summary`` and ``description`` to be more meaningful in your context.
-
-
+Update the ``name`` field in the `snapcraft.yaml` to
+``{{CUSTOMER_STORE_PREFIX}}-pc``. Update the value of the ``MODEL_APIKEY``
+environment variable in the ``snapcraft.yaml`` to the value generated during the
+Serial Vault setup above.  Feel free to also adjust the ``version``, ``summary``
+and ``description`` to be more meaningful in your context.
 
 Build the snap:
 
@@ -63,13 +85,20 @@ Build the snap:
 
     .. note::
 
-        The sample “product_serial” is loosely generated (``date -Is``) in this gadget (in ``snap/hooks/prepare-device``). In production the serial number should be derived from a value inserted during the factory process, or from a unique hardware identifier, for uniqueness and traceability. See `the dmidecode guidance <https://documentation.ubuntu.com/dedicated-snap-store/how-to/dmidecode-to-read-system-sn/>`_ for an example of how to modify the gadget to use dmidecode (x86 only) to read the serial number from the DMI table.
+        The sample “product_serial” is loosely generated (``date -Is``)
+        in this gadget (in ``snap/hooks/prepare-device``). In
+        production the serial number should be derived from a value inserted
+        during the factory process, or from a unique hardware identifier,
+        for uniqueness and traceability. See `the dmidecode guidance <https://documentation.ubuntu.com/dedicated-snap-store/how-to/dmidecode-to-read-system-sn/>`_
+        for an example of how to modify the gadget to use dmidecode (x86 only)
+        to read the serial number from the DMI table.
 
 .. only:: latex
 
     .. include:: ../how-to/dmidecode-to-read-system-sn.rst
 
-Now register the snap name in your Base Snap Store and push the initial revision:
+Now register the snap name in your Base Snap Store and push the initial
+revision:
 
 .. terminal::
     :input: snapcraft whoami
@@ -93,15 +122,30 @@ Now register the snap name in your Base Snap Store and push the initial revision
 
 .. note::
 
-    The Brand Account must be a **Publisher** under `Manage Users and their roles <https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/>`_ to register and publish the gadget snap. However, as previously mentioned, once the gadget snap has been registered, publishing the snap should be left to collaborators. Also please ensure that when registering your gadget snap, you set the visibility of your gadget snap to Public. This only affects visibility of the snap to authorized devices and/or developers, it does not make the snap visible to the outside world. You can check the visibility of your snaps at https://snapcraft.io/snaps. 
+    The Brand Account must be a **Publisher** under `Manage Users and their roles
+    <https://dashboard.snapcraft.io/dev/store/{{CUSTOMER_STORE_ID}}/permissions/>`_
+    to register and publish the gadget snap. However, as previously mentioned,
+    once the gadget snap has been registered, publishing the snap should be left to
+    collaborators. Also please ensure that when registering your gadget snap, you
+    set the visibility of your gadget snap to Public. This only affects visibility
+    of the snap to authorized devices and/or developers, it does not make the snap
+    visible to the outside world. You can check the visibility of your snaps at
+    https://snapcraft.io/snaps.
 
-Log into the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the **Reviewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID }}/>`_ and **Approve** the gadget revision.
+Log into the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the
+**Reviewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the
+`reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID}}/>`_
+and **Approve** the gadget revision.
 
 .. note::
 
-    One other important capability of the Reviewer role is the ability to grant "self-serve" interface connections for snaps published in the Dedicated Snap Store. See `Self-serve Snap Interfaces <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_ for more details.
+    One other important capability of the Reviewer role is the
+    ability to grant "self-serve" interface connections for snaps
+    published in the Dedicated Snap Store. See `Self-serve Snap Interfaces <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_
+    for more details.
 
-Once the revision is approved, use snapcraft to release it in the stable channel:
+Once the revision is approved, use snapcraft to release it in the stable
+channel:
 
 .. terminal::
     :input: snapcraft whoami
@@ -117,15 +161,22 @@ Once the revision is approved, use snapcraft to release it in the stable channel
                      edge       ^          ^
     The 'stable' channel is now open.
 
-The gadget snap is now available for installation from the ``{{CUSTOMER_STORE_NAME}}`` store, and for inclusion in images.
+The gadget snap is now available for installation from the
+``{{CUSTOMER_STORE_NAME}}`` store, and for inclusion in images.
 
 Creating the model assertion
 ----------------------------
 
-One final step before you can build a custom Ubuntu Core image is creation of a signed model assertion, which provides image related metadata which ubuntu-image uses to customize the image. In order to sign the model assertion, a brand model key must be created and registered using the brand account. For details on how to create and register a model key, please refer to `Sign a model assertion <https://ubuntu.com/core/docs/sign-model-assertion>`_.
+One final step before you can build a custom Ubuntu Core image is creation of a
+signed model assertion, which provides image related metadata which ubuntu-image
+uses to customize the image. In order to sign the model assertion, a brand model
+key must be created and registered using the brand account. For details on how
+to create and register a model key, please refer to `Sign a model assertion <https://ubuntu.com/core/docs/sign-model-assertion>`_.
 
-Example model assertions can be found `here <https://github.com/snapcore/models>`_. This tutorial provides an example model assertion below.
-Once a valid model key is available, create and sign the model assertion for your test Ubuntu Core image:
+Example model assertions can be found `here <https://github.com/snapcore/models>`_.
+This tutorial provides an example model assertion below. Once a valid model
+key is available, create and sign the model assertion for your test Ubuntu Core
+image:
 
 .. terminal::
     :input: cat << EOF > {{CUSTOMER_MODEL_NAME}}-model.json
@@ -198,24 +249,41 @@ Once a valid model key is available, create and sign the model assertion for you
 
 .. note::
 
-    The timestamp for model assertion MUST be after the date of the model signing key being registered.
+    The timestamp for model assertion MUST be after the date of the model
+signing key being registered.
 
-Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the Admin role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `View and manage snaps <https://snapcraft.io/admin>`_ page. Use the “Include snap” dialog to ensure that all snaps listed in the model assertion but published in the Global Snap Store (like pc-kernel in this case) get included in your Dedicated Snap Store. The core, core18, core20, core22, core24 and snapd snaps are included automatically and cannot be removed.
+Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has
+the Admin role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), access the `View
+and manage snaps <https://snapcraft.io/admin>`_ page. Use the “Include snap”
+dialog to ensure that all snaps listed in the model assertion but published
+in the Global Snap Store (like pc-kernel in this case) get included in your
+Dedicated Snap Store. The core, core18, core20, core22, core24 and snapd snaps
+are included automatically and cannot be removed.
 
 .. image:: /images/core-22-add-snap.png
 
-Access the snap page https://dashboard.snapcraft.io/snaps/<prefix>-pc to get the snap-id and fill the fields ``<CUSTOMER_SNAP_IDS>`` and ``<CUSTOMER_REQUIRED_SNAPS>``.
+Access the snap page https://dashboard.snapcraft.io/snaps/<prefix>-pc
+to get the snap-id and fill the fields ``<CUSTOMER_SNAP_IDS>`` and
+``<CUSTOMER_REQUIRED_SNAPS>``.
 
 .. image:: /images/core-22-snap-id.png
 
 Switching to a developer account
 --------------------------------
 
-Now that the model has been signed by the **Brand Account**, there is no need to continue to use such powerful credentials. We recommend switching to a developer account to seed images.
+Now that the model has been signed by the **Brand Account**, there is no need to
+continue to use such powerful credentials. We recommend switching to a developer
+account to seed images.
 
-The account used must have the **Viewer** role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store. Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the Admin role on the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), go to "Manage Users and their roles" to add a developer account and then set it as **Viewer**. You may also give ``{{CUSTOMER_ADMIN_EMAIL}}`` the **Viewer** role.
+The account used must have the **Viewer** role on the
+``{{CUSTOMER_DEVICEVIEW_NAME}}`` store. Log in to the web dashboard
+as ``{{CUSTOMER_ADMIN_EMAIL}}`` (because it has the Admin role on the
+``{{CUSTOMER_DEVICEVIEW_NAME}}`` store), go to "Manage Users and their roles"
+to add a developer account and then set it as **Viewer**. You may also give
+``{{CUSTOMER_ADMIN_EMAIL}}`` the **Viewer** role.
 
-Set up authentication for downloading snaps from the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store:
+Set up authentication for downloading snaps from the
+``{{CUSTOMER_DEVICEVIEW_NAME}}`` store:
 
 .. terminal::
     :input: snapcraft whoami
@@ -230,12 +298,15 @@ Set up authentication for downloading snaps from the ``{{CUSTOMER_DEVICEVIEW_NAM
 
 .. note::
 
-    Exported credentials have a default expiration of 12 months, so (a) treat them with care, and (b) note that they may need to be refreshed sometime in the future.
+    Exported credentials have a default expiration of 12 months, so (a) treat
+    them with care, and (b) note that they may need to be refreshed sometime in
+    the future.
 
 Creating the image
 ------------------
 
-This section describes the details of Ubuntu Core image building against the ``{{CUSTOMER_DEVICEVIEW_NAME}}`` store.
+This section describes the details of Ubuntu Core image building against the
+``{{CUSTOMER_DEVICEVIEW_NAME}}`` store.
 
 Ensure a Linux LTS environment and tool for building images are both available:
 
@@ -244,12 +315,17 @@ Ensure a Linux LTS environment and tool for building images are both available:
     
     ...
 
-In order for ubuntu-image to able to access snaps from your private store, you need to provide your developer credentials using one of the following environment variables:
+In order for ubuntu-image to able to access snaps from your private store,
+you need to provide your developer credentials using one of the following
+environment variables:
 
-* ``UBUNTU_STORE_AUTH`` - this must be set to the actual contents of the file (e.g. store.auth) containing your exported developer credentials.
-* ``UBUNTU_STORE_AUTH_DATA_FILENAME`` - this must be set to the path of the file containing your exported developer credentials.
+* ``UBUNTU_STORE_AUTH`` - this must be set to the actual contents of the file
+    (e.g. store.auth) containing your exported developer credentials.
+* ``UBUNTU_STORE_AUTH_DATA_FILENAME`` - this must be set to the path of the file
+    containing your exported developer credentials.
 
-The Ubuntu Core image is built in the one line instruction by using the above developer account credential:
+The Ubuntu Core image is built in the one line instruction by using the above
+developer account credential:
 
 .. terminal::
     :input: UBUNTU_STORE_AUTH=$(cat store.auth) ubuntu-image snap {{CUSTOMER_MODEL_NAME}}-model.assert
@@ -259,7 +335,11 @@ The Ubuntu Core image is built in the one line instruction by using the above de
 Launching and verifying the image
 ---------------------------------
 
-To launch and test your newly generated Ubuntu Core image, follow the steps here: `Ubuntu Core: Testing with QEMU <https://ubuntu.com/core/docs/testing-with-qemu>`_. Once the image is booted and installed, you can log in then verify if the seeded snaps are installed, the {{CUSTOMER_MODEL_NAME}}  model is correct and a serial assertion was obtained:
+To launch and test your newly generated Ubuntu Core image,
+follow the steps here: `Ubuntu Core: Testing with QEMU <https://ubuntu.com/core/docs/testing-with-qemu>`_.
+Once the image is booted and installed, you can log in then verify if the seeded
+snaps are installed, the {{CUSTOMER_MODEL_NAME}}  model is correct and a serial
+assertion was obtained:
 
 .. note:: The following shows the expected output for a Ubuntu Core 24 image.
 

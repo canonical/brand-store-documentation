@@ -1,12 +1,16 @@
 Dedicated Snap Store Documentation
 ==================================
 
-This reopistory contains documentation for Canonical's Dedicated Snap Store, previously known as the IoT App Store, or the Brand Store.
-It allows the documentation to be templated with customer specific account details, and is intended for paying customers.
+This reopistory contains documentation for Canonical's Dedicated Snap Store,
+previously known as the IoT App Store, or the Brand Store.
+It allows the documentation to be templated with customer specific account
+details, and is intended for paying customers.
 
-This set of documentation is based on the `Canonical Sphinx Docs Starter Pack <https://github.com/canonical/sphinx-docs-starter-pack>`_. See that project for general instructions.
+This set of documentation is based on the `Canonical Sphinx Docs Starter Pack <https://github.com/canonical/sphinx-docs-starter-pack>`_.
+See that project for general instructions.
 
-See ``WORKFLOW.rst`` for instructions on adding or updating a domain for a specific Dedicated Snap Store.
+See ``WORKFLOW.rst`` for instructions on adding or updating a domain for a
+specific Dedicated Snap Store.
 
 
 Historical links

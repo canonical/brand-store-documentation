@@ -4,7 +4,8 @@
 PDF Canonical Dedicated Snap Store
 **********************************
 
-.. note anything in the following docs linking out to a website needs to link to the URL
+.. note anything in the following docs linking out to a website needs to link to
+    the URL
 
 .. toctree::
     :hidden:
