@@ -1,10 +1,8 @@
 Dedicated Snap Store Documentation
 ==================================
 
-This reopistory contains documentation for Canonical's Dedicated Snap Store,
-previously known as the IoT App Store, or the Brand Store.
-It allows the documentation to be templated with customer specific account
-details, and is intended for paying customers.
+This repository contains documentation for Dedicated Snap Stores. It allows the
+documentation to be templated with customer specific account details.
 
 This set of documentation is based on the `Canonical Sphinx Docs Starter Pack <https://github.com/canonical/sphinx-docs-starter-pack>`_.
 See that project for general instructions.
