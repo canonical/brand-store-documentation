@@ -23,19 +23,18 @@ Documentation can be generated locally using the template files. Simply set the
 	prompted to use ``sudo make pdf-prep-force`` to install the required packages if
 	they are not found on your system.
 
-
-For new customers
+New customers
 =================
 
 Setting up the Dedicated Snap Store documentation for a new customer involves
 the Store team creating and configuring a new project on ReadTheDocs and Field
 Engineering filling in a template containing customer-specific values.
 
-Store Team
-----------
-
 These instructions assume that you have the proper permissions under the GitHub
 and ReadTheDocs projects.
+
+Store Team
+----------
 
 1. Create a new project on Read The Docs under the Canonical organization.
 #. Go to https://readthedocs.com/organizations/canonical/, click the project,
@@ -61,9 +60,6 @@ and ReadTheDocs projects.
 
 Field Engineering
 -----------------
-
-These instructions assume that you have the proper permissions under the GitHub
-project.
 
 1. Create a copy of ``templates/TEMPLATE.yaml`` and rename it to create a file
 	for a specific customer.
