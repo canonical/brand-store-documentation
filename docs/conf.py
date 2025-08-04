@@ -74,7 +74,7 @@ copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 # NOTE: The Open Graph Protocol (OGP) enhances page display in a social graph
 #       and is used by social media platforms; see https://ogp.me/
 
-ogp_site_url = "https://canonical-canonical-brand-store.readthedocs-hosted.com/"
+ogp_site_url = "https://documentation.ubuntu.com/dedicated-snap-store/"
 
 
 # Preview name of the documentation website
@@ -121,15 +121,15 @@ html_context = {
     #
     # NOTE: If set, adding ':discourse: 123' to an .rst file
     #       will add a link to Discourse topic 123 at the bottom of the page.
-    "discourse": "https://discourse.ubuntu.com",
+    #"discourse": "https://discourse.ubuntu.com",
     # Your Mattermost channel URL
     #
     # TODO: Change to your Mattermost channel URL or leave empty.
-    "mattermost": "https://chat.canonical.com/canonical/channels/documentation",
+    #"mattermost": "https://chat.canonical.com/canonical/channels/documentation",
     # Your Matrix channel URL
     #
     # TODO: Change to your Matrix channel URL or leave empty.
-    "matrix": "https://matrix.to/#/#documentation:ubuntu.com",
+    #"matrix": "https://matrix.to/#/#documentation:ubuntu.com",
     # Your documentation GitHub repository URL
     #
     # TODO: Change to your documentation GitHub repository URL or leave empty.
@@ -179,8 +179,8 @@ slug = 'dedicated-snap-store'
 
 # Template and asset locations
 
-html_static_path = [".sphinx/_static"]
-templates_path = [".sphinx/_templates"]
+html_static_path = ["_static"]
+templates_path = ["_templates"]
 # html_extra_path = []
 
 # Add CSS files (located in .sphinx/_static/)
