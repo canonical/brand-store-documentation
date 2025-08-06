@@ -24,15 +24,8 @@ gadget's ``snapcraft.yaml`` file as a ``stage-package``:
           - dmidecode
     ...
 
-Also, in ``snapcraft.yaml``, you will need to plug the snapd
-``hardware-observe`` interface to allow ``dmidecode`` access to access the
-correct file(s) in sysfs.
-
-.. note::
-
-    ``hardware-observe`` is a "self-serve
-		interface"; see `Self-serve Snap Interfaces <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_
-		for more details.
+Also, in ``snapcraft.yaml``, you will need to plug the `hardware-observe <https://snapcraft.io/docs/hardware-observe-interface>`_
+interface to allow ``dmidecode`` access to access the correct file(s) in sysfs:
 
 .. code:: yaml
 
@@ -42,7 +35,7 @@ correct file(s) in sysfs.
     ...
 
 The actual command to read the serial number will also need to be updated in the
-snap/hooks/prepare-device file:
+``snap/hooks/prepare-device`` hook:
 
 .. code:: yaml
 
@@ -50,8 +43,7 @@ snap/hooks/prepare-device file:
           product_serial=\$(dmidecode -s system-serial-number)
     ...
 
-Finally, to let the hardware-observe interface automatically
-connect on first boot, you'll need to go to the `dashboard
-<https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/>`_,
-click on the “Review capabilities” link, and set the radio button next to
-hardware-observe to “Enabled”.
+Finally, to let the hardware-observe interface automatically connect on first
+boot, you'll need to go to the `dashboard <https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/>`_,
+click on the "Review capabilities" link, and set the radio button next to
+hardware-observe to "Enabled".
