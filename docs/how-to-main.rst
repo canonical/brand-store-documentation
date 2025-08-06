@@ -46,6 +46,7 @@ a high level in this guide.
     how-to/snap-inclusion
     how-to/setting-up-account-roles
     how-to/username-changes
+    how-to/support-tickets
 
 ..  You may want to add a brief explanation of any main How-to guide, and direct
     them towards specific ones, depending on the relevance they have for users.
