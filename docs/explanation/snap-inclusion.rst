@@ -1,7 +1,7 @@
 .. _snap-inclusion:
 
 Snap inclusion
-=============
+==============
 
 Snap inclusion and exclusion are terms used with the Dedicated Snap Store to
 describe which applications can be seen by the connected devices.
