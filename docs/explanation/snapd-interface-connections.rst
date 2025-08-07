@@ -1,5 +1,5 @@
-Snap confinement & snapd interface connections
-==============================================
+Snapd interface connections
+===========================
 
 Snaps declare plugs for specific snapd `interfaces <https://snapcraft.io/docs/supported-interfaces>`_
 in order to gain access to hardware, shared system resources, and other system
