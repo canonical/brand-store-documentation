@@ -1,13 +1,16 @@
-(snap-inclusion)=
-# Include snaps
+.. _snap-inclusion:
+
+Snap inclusion
+=============
 
 Snap inclusion and exclusion are terms used with the Dedicated Snap Store to
 describe which applications can be seen by the connected devices.
 
-![Illustration of the App Store architecture, demonstrating use of a combination of public and private snaps](/images/snap-inclusion.png)
+.. figure:: /images/snap-inclusion.png
+	:alt: Illustration of the App Store architecture, demonstrating use of a combination of public and private snaps
 
-*Illustration of the App Store architecture, demonstrating use of a combination
-of public and private snaps*
+	Illustration of the App Store architecture, demonstrating use of a combination
+	of public and private snaps
 
 For a set of devices to see snaps, the administrator must 'include' them in via
 the dashboard of the Dedicated Snap Store. They can decide whether to include
