@@ -8,7 +8,7 @@ How-to guides
 
 `Snapcraft.io <http://snapcraft.io>`_ plays a key part of the journey of
 using the Snap Store. Most aspects of the ongoing design and development
-of core technologies are open and tracked publicly. The `Snapcraft forum <https://forum.snapcraft.io/>`
+of core technologies are open and tracked publicly. The `Snapcraft forum <https://forum.snapcraft.io/>`_
 is robust and monitored by responsible engineers. Our team is responsive and
 always receptive to discuss potential bugs, issues or feedback.
 
