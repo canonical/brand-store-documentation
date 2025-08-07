@@ -3,6 +3,8 @@
 Creating serial numbers
 =======================
 
+.. creating-serial-numbers-start
+
 {% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
 .. warning:: 
 

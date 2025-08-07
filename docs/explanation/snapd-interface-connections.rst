@@ -21,16 +21,7 @@ a. Some interfaces, such as `network <https://snapcraft.io/docs/network-interfac
    super-privileged interfaces (e.g. `snapd-control <https://snapcraft.io/docs/snapd-control-interface>`_
    or `system-files <https://snapcraft.io/docs/system-files-interface>`_).
    Please work with your Field Engineer when you create your first such ticket,
-   so as to ensure you provide all the required details. At minimum, you should
-   ensure that you provide:
-
-   - snap name and snap ID
-   - store ID the snap is published in
-   - interface being requested
-   - a brief explanation why the interface is needed and its intended usage
-  
-If the interface slot being plugged is provided via the gadget snap, please
-include the name and snap ID of the gadget snap as well.
+   so as to ensure you provide all the required details. See :doc:`/how-to/support-tickets`.
 
 As there's some manual review required for these tickets, please file them as
 early as possible, as requests to expedite these requests are generally frowned
