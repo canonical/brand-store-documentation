@@ -1,3 +1,5 @@
+.. _dmidecode:
+
 Getting device-unique serial numbers
 ------------------------------------
 
