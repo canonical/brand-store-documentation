@@ -9,7 +9,7 @@ Stores require various secrets which must be carefully handled to ensure a
 secure Store.
 
 Required secrets
--------------------------------------------------------
+----------------
 
 - Account credentials
 
@@ -36,14 +36,14 @@ by Canonical, while others are controlled by the customer. It is critical you
 protect these secrets.
 
 Secrets stored by Canonical
-*******************
+***************************
 
 - Serial assertion signing keys
 
   - Should be generated in the Serial Vault UI.
 
 Secrets stored by you
-*************
+*********************
 
 - Account credentials
 
