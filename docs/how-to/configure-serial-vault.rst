@@ -1,3 +1,5 @@
+.. _serial-vault:
+
 Configure Serial Vault
 ======================
 

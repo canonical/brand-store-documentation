@@ -18,6 +18,17 @@ Create an Ubuntu Core image
 To validate that the store was provisioned correctly and that you are able to
 access it, we recommend creating and booting an Ubuntu Core image for amd64.
 
+Setup the Serial Vault
+----------------------
+
+In order for a device to be able to connect to your Dedicated Snap Store, it
+must provide a secret to the Serial Vault. This secret is called the model API
+key, and this key corresponds to a particular model name. The model name should
+be an informative string like "acme-gateway-prod". For this tutorial, we are
+using the model name ``{{CUSTOMER_MODEL_NAME}}``. You should :ref:`configure the Serial Vault <serial-vault>`
+adding that model name, and make note of the API key. We will add that to the
+gadget snap in the next section.
+
 Creating the gadget snap
 ------------------------
 
