@@ -32,7 +32,7 @@ control of updates and software distribution. These concepts will be covered to
 a high level in this guide.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :glob:
     :hidden:
 

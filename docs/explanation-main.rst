@@ -29,7 +29,7 @@ curation, you have an endless number of applications to craft, test and use.
 * `Dedicated Snap Store Datasheet <https://assets.ubuntu.com/v1/d6d1d3fc-IoT+App+Store+Datasheet+v3.pdf>`_
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
    :hidden:
 
