@@ -1,3 +1,5 @@
+.. _setting-roles:
+
 Set up account roles
 ====================
 
