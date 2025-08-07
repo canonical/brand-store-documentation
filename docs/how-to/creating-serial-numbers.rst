@@ -1,5 +1,5 @@
-Use dmidecode to read system serial number
-------------------------------------------
+Getting device-unique serial numbers
+------------------------------------
 
 {% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
 .. warning:: 
