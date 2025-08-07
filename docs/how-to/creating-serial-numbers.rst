@@ -1,7 +1,7 @@
 .. _dmidecode:
 
-Getting device-unique serial numbers
-------------------------------------
+Creating serial numbers
+=======================
 
 {% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
 .. warning:: 
