@@ -261,22 +261,22 @@ and a serial assertion was obtained:
     :user: {{UBUNTU_SSO_USER_NAME}}
     :host: localhost
 
-	Welcome to Ubuntu {{CUSTOMER_UBUNTU_CORE_VERSION}} (GNU/Linux <kernel version> x86_64)
-	... 
-	Please see 'snap --help' for app installation and updates.
-	...
+    Welcome to Ubuntu {{CUSTOMER_UBUNTU_CORE_VERSION}} (GNU/Linux <kernel version> x86_64)
+    ... 
+    Please see 'snap --help' for app installation and updates.
+    ...
 
     :input: snap list
-    Name                    Version                          Rev    Tracking       Publisher    Notes
-    console-conf            24.04.1+git45g5f9fae19+gd81a15d  40     24/stable      canonical✓   -
-    core24                  20240528                         423    latest/stable  canonical✓   base
-    pc-kernel               6.8.0-40.40                      1938   24/stable      canonical✓   kernel
-    snapd                   2.63                             21759  latest/stable  canonical✓   snapd
+    Name          Version      Rev    Tracking       Publisher    Notes
+    console-conf  24.04.1      40     24/stable      canonical✓   -
+    core24        20240528     423    latest/stable  canonical✓   base
+    pc-kernel     6.8.0-40.40  1938   24/stable      canonical✓   kernel
+    snapd         2.63         21759  latest/stable  canonical✓   snapd
 
-	:input: snap changes
-	ID   Status  Spawn               Ready               Summary
-	1    Done    today at 07:15 UTC  today at 07:16 UTC  Initialize system state
-	2    Done    today at 07:16 UTC  today at 07:16 UTC  Initialize device
+    :input: snap changes
+    ID   Status  Spawn               Ready               Summary
+    1    Done    today at 07:15 UTC  today at 07:16 UTC  Initialize system state
+    2    Done    today at 07:16 UTC  today at 07:16 UTC  Initialize device
 
     :input: snap model --assertion
     type: model
