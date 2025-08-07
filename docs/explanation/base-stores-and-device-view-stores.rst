@@ -1,8 +1,8 @@
 Base stores and Device View stores
 ==================================
 
-A Dedicated Snap Store is the union of a base store and at least one device
-view store. The Base store is where the collection of snaps reside, whereas the
+A Dedicated Snap Store is the union of a Base store and at least one Device
+View store. The Base store is where the collection of snaps reside, whereas the
 Device View stores are curated windows into a specific Base store.
 
 .. _base-stores:

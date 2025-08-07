@@ -90,8 +90,8 @@ Keys are used for signing a variety of documents called `assertions <https://sna
 Some of these assertions are signed by Canonical, and some must be signed by
 keys registered to the Brand account.
 
-Limit access to brand keys. It's strongly advised that you consider using a
-PKI system or key vault to protect your brand keys, and limit access to them.
+Limit access to Brand keys. It's strongly advised that you consider using a
+PKI system or key vault to protect your Brand keys, and limit access to them.
 Hardware cryptotokens are another possibility, although they may be more
 challenging to use than PKI systems in practice.
 
@@ -108,7 +108,7 @@ Ubuntu Pro Dashboard
 
 Dedicated Snap Store customers are provided an Ubuntu Pro account to
 enable access to ESM updates during snap builds (enabled by use of the
-`SNAPCRAFT_UA_TOKEN` environment variable). This is accomplished by adding your
+``SNAPCRAFT_UA_TOKEN`` environment variable). This is accomplished by adding your
 Pro token to CI/CD systems used to build your snaps. This token can be accessed
 by signing into the `Ubuntu Pro Dashboard <http://ubuntu.com/pro/dashboard>`_
 using the account mentioned at the beginning of this section.

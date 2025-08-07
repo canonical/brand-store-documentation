@@ -22,7 +22,7 @@ connection request support case:
 
 	I would like to request the auto-connection of the interface <interface name>
 	for the snap <snap name>, ID <snap ID>. This snap should auto-connect when
-	installed from the store {{CUSTOMER_DEVICE_VIEW_STORE_NAME}}.
+	installed from the store {{CUSTOMER_DEVICEVIEW_NAME}}.
 
 	This snap should auto-connect to the slot <slot name> provided by the snap
 	<snap name>, ID <snap ID> provided by the store {{CUSTOMER_STORE_NAME}}.
@@ -33,12 +33,12 @@ Key roles
 ---------
 
 The usage of `key roles <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys/>`_
-is a best practices which limits the types of assertions any registered key
+is a best practice which limits the types of assertions any registered key
 can be used to sign. This helps to limit exposure in case a key were to become
 compromised.
 
 Importantly, in order to give a key a specific role you must *refrain from
-registering the key with* `snapcraft register-key`. Instead, this process is
+registering the key with* ``snapcraft register-key``. Instead, this process is
 handled by the Snap Store team.
 
 This process requires exporting part of the key and supplying it in the support

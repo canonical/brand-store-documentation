@@ -23,7 +23,7 @@ To update permissions for already added accounts, select or deselect the
 corresponding tick boxes.
 
 Ensure you have reviewed the `roles <https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles>`_
-and have covered the appropriate permissions for each account. You should ensure thee following roles are set for each store:
+and have covered the appropriate permissions for each account. You should ensure the following roles are set for each store:
 
 * Base Store
 

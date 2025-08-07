@@ -9,7 +9,7 @@ A Dedicated Snap Store is a dedicated, private Snap Store which facilitates
 the publication of private snaps and curation of public snaps for Ubuntu Core
 devices associated with the Dedicated Snap Store.
 
-A Dedicated Snap Store permits the use of privileged snapd interfaces, the
+A Dedicated Snap Store permits the use of privileged snapd interfaces and
 hosting of gadget and kernel snaps, while providing a Dedicated Snap Store
 namespace for snap registration. It can function in offline environments and
 allows full control over snaps available to devices associated with the store.

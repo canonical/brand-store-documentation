@@ -12,13 +12,14 @@ Creating serial numbers
 
 {% endif %}
 
-One possible approach to populating the serial number (vs. using the ``date``
+One possible approach to populating the serial number (versus using the ``date``
 command) is to use the ``dmidecode`` tool to read the system serial number from
 the DMI table. In order to do this, you would need to add ``dmidecode`` to that
 gadget's ``snapcraft.yaml`` file as a ``stage-package``:
 
 .. code:: yaml
 
+    ...
     parts:
       prepare-device:
         plugin: nil
@@ -31,6 +32,7 @@ interface to allow ``dmidecode`` access to access the correct file(s) in sysfs:
 
 .. code:: yaml
 
+    ...
     hooks:
       prepare-device:
         plugs: [hardware-observe]

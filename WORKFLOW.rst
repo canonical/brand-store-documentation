@@ -1,7 +1,7 @@
 Workflow
 ********
 
-This repostiory builds public documentation for the Dedicated Snap Store, and
+This repository builds public documentation for the Dedicated Snap Store, and
 private documentation configured for specific customers. It is recommended to
 build customer specific onboarding documentation locally, as building through
 RTD requires additional configuration.

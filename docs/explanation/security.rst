@@ -64,14 +64,16 @@ By Canonical
 - Serial assertion signing keys are stored in the `Serial Vault <https://canonical-serial-vault.readthedocs-hosted.com/>`_
   The private keys cannot be accessed once generated or uploaded to the Serial
   Vault.
+- Other registered keys are stored on Canonical infrastructure and cannot be
+  accessed.
 
 By you
 ******
 
 - Account credentials should be stored and transmitted in a secure manner, for
-  example by using a shared credential manager. Access to account credentials
-  should only by given to individuals on an "as-needed" basis, and account
-  credentials should be rotated regularly.
+  example by using a shared credential manager.
+- Access to account credentials should only by given to individuals on an
+  "as-needed" basis, and account credentials should be rotated regularly.
 - Multi-factor authentication should be used for all Ubuntu One SSO accounts.
 - Private keys should never be shared.
 
