@@ -129,8 +129,6 @@ For examples on some common support tickets, refer to how to :ref:`file support 
 
 .. _landscape:
 
-.. _landscape:
-
 Landscape
 ---------
 

@@ -33,8 +33,8 @@ Canonical Dedicated Snap Store
 
    .. grid-item:: :doc:`Explanation <explanation-main>`
 
-      Discussion and clarification of key topics, like :doc:`Snap confinement
-      <explanation/snap-confinement-snapd-connection>`.
+      Discussion and clarification of key topics, like :doc:`Snapd interface connections
+      <explanation/snapd-interface-connections>`.
 
 .. toctree::
    :maxdepth: 1
