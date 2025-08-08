@@ -1,7 +1,7 @@
 .. _dmidecode:
 
-Creating serial numbers
-=======================
+Create serial numbers
+=====================
 
 .. creating-serial-numbers-start
 

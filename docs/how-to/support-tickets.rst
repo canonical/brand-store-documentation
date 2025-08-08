@@ -1,7 +1,7 @@
 .. _support-tickets:
 
-Filing support tickets
-======================
+File a support ticket
+=====================
 
 .. support-tickets-start
 

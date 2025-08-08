@@ -1,5 +1,5 @@
 (managing-an-app-store)=
-# Manage a Dedicated Snap Store
+# Managing a Dedicated Snap Store
 
 Once connected to a Dedicated Snap Store, devices access a catalog of snaps
 curated by the Brand. Connected devices check for updates of these apps
@@ -20,7 +20,7 @@ fleet of devices. Brands have full control over the versions of all snaps
 available through their Device View stores.
 
 ## Monitoring and analytics
-![metrics|690x343](/images/managing-an-app-store2.png)
+![Store metrics dashboard](/images/managing-an-app-store2.png)
 
 *Dashboard and graph available in the Store showing weekly active users for a
 specific snap, with details about which architectures are using that snap*

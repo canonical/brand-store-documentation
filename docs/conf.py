@@ -110,7 +110,7 @@ html_context = {
     # TODO: If there's no such website,
     #       remove the {{ product_page }} link from the page header template
     #       (usually .sphinx/_templates/header.html; also, see README.rst).
-    "product_page": "documentation.ubuntu.com",
+    "product_page": "ubuntu.com/internet-of-things/appstore",
     # Product tag image; the orange part of your logo, shown in the page header
     #
     # TODO: To add a tag image, uncomment and update as needed.
@@ -121,7 +121,7 @@ html_context = {
     #
     # NOTE: If set, adding ':discourse: 123' to an .rst file
     #       will add a link to Discourse topic 123 at the bottom of the page.
-    #"discourse": "https://discourse.ubuntu.com",
+    "discourse": "https://discourse.ubuntu.com/c/project/iot/99",
     # Your Mattermost channel URL
     #
     # TODO: Change to your Mattermost channel URL or leave empty.
@@ -157,6 +157,9 @@ html_context = {
     'github_issues': 'enabled',
 }
 
+html_theme_options = {
+    'source_edit_link': 'https://github.com/canonical/brand-store-documentation',
+}
 
 # Sitemap support
 html_baseurl = "https://documentation.ubuntu.com/dedicated-snap-store/"
@@ -207,25 +210,25 @@ html_js_files = [
 #       the sphinx_reredirects extension will be disabled.
 
 redirects = {
-    "iot-app-store-intro": "https://documentation.ubuntu.com/dedicated-snap-store/explanation-main/",
-    "dedicated-snap-store-intro": "https://documentation.ubuntu.com/dedicated-snap-store/explanation-main/",
-    "snap-store-vs-dedicated-snap-stores": "https://documentation.ubuntu.com/dedicated-snap-store/explanation/snap-store-vs-dedicated-snap-stores/",
-    "getting-started-dedicated-snap-store": "https://documentation.ubuntu.com/dedicated-snap-store/how-to-main/",
-    "dedicated-snap-store-commissioning": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/dedicated-snap-store-commissioning/",
-    "base-stores-and-device-view-stores": "https://documentation.ubuntu.com/dedicated-snap-store/explanation/base-stores-and-device-view-stores/",
-    "custom-image": "https://documentation.ubuntu.com/dedicated-snap-store/explanation/custom-image/",
-    "connecting-devices": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/connecting-devices/",
-    "managing-an-app-store": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/managing-an-app-store/",
-    "updating-software": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/updating-software/",
-    "snap-inclusion": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/snap-inclusion/",
-    "ubuntu-sso-accounts": "https://documentation.ubuntu.com/dedicated-snap-store/explanation/ubuntu-sso-accounts/",
-    "administrator-role": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles",
-    "reviewer-role": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles",
-    "viewer-role": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles",
-    "publisher-role": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles",
-    "collaborator-role": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles/#account-roles",
-    "setting-up-account-roles": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles",
-    "username-changes": "https://documentation.ubuntu.com/dedicated-snap-store/how-to/username-changes/",
+    "iot-app-store-intro": "explanation-main/",
+    "dedicated-snap-store-intro": "explanation-main/",
+    "snap-store-vs-dedicated-snap-stores": "explanation/snap-store-vs-dedicated-snap-stores/",
+    "getting-started-dedicated-snap-store": "how-to-main/",
+    "dedicated-snap-store-commissioning": "how-to/dedicated-snap-store-commissioning/",
+    "base-stores-and-device-view-stores": "explanation/base-stores-and-device-view-stores/",
+    "custom-image": "explanation/custom-image/",
+    "connecting-devices": "how-to/connecting-devices/",
+    "managing-an-app-store": "how-to/managing-an-app-store/",
+    "updating-software": "how-to/updating-software/",
+    "snap-inclusion": "how-to/snap-inclusion/",
+    "ubuntu-sso-accounts": "explanation/ubuntu-sso-accounts/",
+    "administrator-role": "how-to/setting-up-account-roles/#account-roles",
+    "reviewer-role": "how-to/setting-up-account-roles/#account-roles",
+    "viewer-role": "how-to/setting-up-account-roles/#account-roles",
+    "publisher-role": "how-to/setting-up-account-roles/#account-roles",
+    "collaborator-role": "how-to/setting-up-account-roles/#account-roles",
+    "setting-up-account-roles": "how-to/setting-up-account-roles",
+    "username-changes": "how-to/username-changes/",
     "technical-support": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/technical-support/",
     "training": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/training/",
     "advanced-options": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/iot-services/",
@@ -238,7 +241,20 @@ redirects = {
     "register-a-new-device-model-name": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/register-a-new-device-model-name/",
     "generate-a-model-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/generate-a-model-signing-key/",
     "check-the-signing-log": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/check-the-signing-log/",
-    "create-a-system-user-assertion": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/create-a-system-user-assertion/"
+    "create-a-system-user-assertion": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/create-a-system-user-assertion/",
+    "explanation/custom-image/": "/",
+    "explanation/snap-confinement-snapd-connection/": "/",
+    "explanation/snap-store-vs-dedicated-snap-stores/": "/",
+    "explanation/ubuntu-sso-accounts/": "/",
+    "how-to/connecting-devices/": "explanation/connecting-devices/",
+    "how-to/controlling-updates/": "explanation/controlling-updates/",
+    "how-to/dedicated-snap-store-commissioning/": "/",
+    "how-to/dmidecode-to-read-system-sn/": "explanation/creating-serial-numbers/",
+    "how-to/managing-an-app-store/": "explanation/managing-an-app-store/",
+    "how-to/setting-up-account-roles/": "explanation/setting-up-account-roles/",
+    "how-to/snap-inclusion/": "explanation/snap-inclusion/",
+    "how-to/updating-software/": "/",
+    "how-to/username-changes/": "/",
 }
 
 
@@ -278,7 +294,7 @@ linkcheck_anchors_ignore_for_url = [
 ]
 
 # give linkcheck multiple tries on failure
-# linkcheck_timeout = 30
+linkcheck_timeout = 90
 linkcheck_retries = 3
 
 ########################

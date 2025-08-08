@@ -77,7 +77,7 @@ Field Engineering
 -----------------
 
 1. On the webpage corresponding to the part of the documentation you wish to
-	edit, scroll to the bottom and click "Edit this page on GitHub". Alternatively,
+	edit, click the pen icon next to the "Give feedback" button. Alternatively,
 	clone the repository from GitHub, make the changes, and manually create a pull
 	request.
 #. Make the necessary changes.
