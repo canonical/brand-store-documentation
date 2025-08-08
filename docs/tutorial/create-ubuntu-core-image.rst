@@ -159,7 +159,7 @@ a model key, please refer to `Sign a model assertion <https://ubuntu.com/core/do
 
 The below creates a JSON file which can be signed to create a model assertion.
 
-Access the `snap page <https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc>`_
+Access the `snap page <https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/>`_
 to get the ``{{CUSTOMER_STORE_PREFIX}}``-pc snap's snap ID and fill the
 ``<CUSTOMER_SNAP_IDS>`` field.
 
