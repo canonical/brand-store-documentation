@@ -1,49 +1,80 @@
 Dedicated Snap Store security
 =============================
 
-Dedicated Snap Stores are designed to ensure the secure distribution of software defined as snaps. To facilitate this distribution, a Dedicated Snap Store requires a few key pieces of information which are stored in different locations depending on the intended use of the information. This document exists to outline the various secrets which must be carefully handled to secure a Dedicated Snap Store, where those secrets live, and how they must be handled.
+Dedicated Snap Stores are designed to ensure the secure distribution of
+software defined as snaps. To facilitate this distribution, a Dedicated Snap
+Store requires a few key pieces of information which are stored in different
+locations depending on the intended use of the information. Dedicated Snap
+Stores require various secrets which must be carefully handled to ensure a
+secure Store.
 
-Secrets required for a functioning Dedicated Snap Store
--------------------------------------------------------
+Required secrets
+----------------
 
-- Brand account credentials
-  
-  - Grants roles and privileges to the dedicated Snap Store, and is itself derived from a nominated `Ubuntu One SSO account <https://documentation.ubuntu.com/dedicated-snap-store/explanation/ubuntu-sso-accounts/>`_.
-  - It is **strongly recommended** that the Ubuntu SSO account is used only for Brand activities and that its use is strictly limited and controlled. It is recommended that the Brand account is only assigned the “Publisher” role.
+- Account credentials
+
+  - Specifically, the :ref:`Brand account <brand-accounts>` credentials
+
+    - The Brand account should only have the Publisher role in a Dedicated Snap Store.
+    - Brand account access should be strictly limited.
+
+  - Other Ubuntu One SSO accounts can be granted privileged access to Dedicated Snap Stores
+
+    - Such as publishing new names or reviewing recently uploaded snaps
 - Signing keys
   
-  - Used to sign `assertions <https://ubuntu.com/core/docs/reference/assertions>`_, which are digitally signed documents used for authentication and authorization throughout the snap ecosystem.
-  - It is **recommended** to use a separate signing key for each type of assertion.
-  - It is **recommended** to use `role-scoped keys <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys/#register-a-signing-key-with-limited-roles>`_, which are limited to signing only specific assertion types and optionally only specific models.
-- Other account credentials
+  - Used to sign `assertions <https://ubuntu.com/core/docs/reference/assertions>`_.
+  - A separate key should be used for signing for each type of assertion.
+  - Each key should have an `assigned role <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys/#register-a-signing-key-with-limited-roles>`_
+    to limit the scope of its use.
   
-  - Provides the use of roles to delegate control over various aspects of the snap lifecycle to specific Ubuntu One SSO accounts. For example, an account with the Reviewer role can review new snap uploads before they are eligible for publishing, but does not have the ability to publish snaps. Each SSO account can have multiple roles associated with it.
-
 Location of secrets
 -------------------
 
-Stored by Canonical
-*******************
+Safeguarding secrets is critical. Some secrets will be controlled and protected
+by Canonical, while others are controlled by the customer. It is critical you
+protect these secrets.
 
-- Serial Vault keys, used for signing specific assertions.
+Secrets stored by Canonical
+***************************
 
-Stored by you
-*************
+- Serial assertion signing keys
 
-- Brand account credentials
-- Other account credentials
-- Other snapcraft keys
+  - Should be generated in the Serial Vault UI.
+
+Secrets stored by you
+*********************
+
+- Account credentials
+
+  - Most importantly, the Brand account credentials
+- Registered keys
+
+  - Including those used to sign model and system-user assertions
 
 How secrets are handled
 -----------------------
 
+Canonical has specific practices for handling secrets. Additionally, there are
+some general recommendations for you.
+
 By Canonical
 ************
 
-- Canonical retains encrypted signing keys in the `Serial Vault <https://canonical-serial-vault.readthedocs-hosted.com/>`_ for signing specific assertions. The private keys cannot be accessed once generated or uploaded to the Serial Vault.
+- Serial assertion signing keys are stored in the `Serial Vault <https://canonical-serial-vault.readthedocs-hosted.com/>`_
+  The private keys cannot be accessed once generated or uploaded to the Serial
+  Vault.
+- Other registered keys are stored on Canonical infrastructure and cannot be
+  accessed.
 
 By you
 ******
 
-- Account credentials should be stored and transmitted in a secure manner, for example by using a shared credential manager. Access to account credentials should only by given to individuals on an "as-needed" basis, and account credentials should be rotated regularly.
+- Account credentials should be stored and transmitted in a secure manner, for
+  example by using a shared credential manager.
+- Access to account credentials should only by given to individuals on an
+  "as-needed" basis, and account credentials should be rotated regularly.
+- Multi-factor authentication should be used for all Ubuntu One SSO accounts.
 - Private keys should never be shared.
+
+  - You may wish to generate keys on a dedicated hardware security module.

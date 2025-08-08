@@ -7,7 +7,8 @@ Canonical Dedicated Snap Store
 
 .. important::
 
-   **To see the configuration values for your store**, see the :doc:`Reference <reference/configuration-values>` section.
+   **To see the configuration values for your store**, see the :doc:`Reference
+   <reference/configuration-values>` section.
 
 .. rubric:: :h2:`In this documentation`
 
@@ -15,7 +16,9 @@ Canonical Dedicated Snap Store
    
    .. grid-item:: :doc:`Tutorial <tutorial/create-ubuntu-core-image>`
 
-      To validate that the store was provisioned correctly, and that you are able to access it, we recommend creating and booting an Ubuntu Core image on amd64.
+      To validate that the store was provisioned correctly, and that you are
+      able to access it, we recommend creating and booting an Ubuntu Core image on
+      amd64.
 
    .. grid-item:: :doc:`How-to guides <how-to-main>`
 
@@ -30,7 +33,8 @@ Canonical Dedicated Snap Store
 
    .. grid-item:: :doc:`Explanation <explanation-main>`
 
-      Discussion and clarification of key topics, like :doc:`Snap confinement <explanation/snap-confinement-snapd-connection>`.
+      Discussion and clarification of key topics, like :doc:`Snapd interface connections
+      <explanation/snapd-interface-connections>`.
 
 .. toctree::
    :maxdepth: 1
@@ -60,5 +64,5 @@ Canonical Dedicated Snap Store
 Having trouble? We would like to help!
 --------------------------------------
 
-* Please submit a `support ticket <https://portal.support.canonical.com>`_ for additional support.
-
+* Please submit a `support ticket <https://portal.support.canonical.com>`_ for
+  additional support.

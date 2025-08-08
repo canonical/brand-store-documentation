@@ -1,28 +1,41 @@
+.. _serial-vault:
+
 Configure Serial Vault
-------------------------
+======================
+
+..
+	TODO: will also need documentation for the Model Service
 
 .. configure-serial-vault-start
 
 {% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
 .. warning:: 
 
-  Example values are provided for store configuration in this document. If you are a Dedicated Snap Store customer, you will be provided with a set of documentation with the details of your store.
+  Example values are provided for store configuration in this document. If
+	you are a Dedicated Snap Store customer, you will be provided with a set of
+	documentation with the details of your store.
 
 {% endif %}
 
-To get started with the `Serial Vault <https://serial-vault-admin.canonical.com/>`_ (SV admin account required), read the following pages. You can click the next button in the bottom right corner to move from one to the next.
+When following the instructions for configuring your Serial Vault, keep in mind the following information:
 
-- `Serial Vault Overview <https://canonical-serial-vault.readthedocs-hosted.com/>`_
-- `Device Model and Identity <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/device-model-and-identity>`_
+* Your model name is: ``{{CUSTOMER_MODEL_NAME}}``,
+* Your Brand account email is: ``{{CUSTOMER_BRAND_EMAIL}}``, and
+* your Brand account ID is: ``{{CUSTOMER_BRAND_ACCOUNT_ID}}``
 
-To configure your serial vault, follow the instructions at the links below, using ``{{CUSTOMER_MODEL_NAME}}`` as the model name, ``{{CUSTOMER_BRAND_EMAIL}}`` as the brand email, and ``{{CUSTOMER_BRAND_ACCOUNT_ID}}`` as the brand ID:
+.. warning::
 
-- `Environment Setup <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/environment-setup>`_
-- `Generate a Serial Signing Key <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/generate-a-serial-signing-key>`_
-- `Register a New Device Model Name <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/register-a-new-device-model-name>`_
-- `Generate a Model Signing Key <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/generate-a-model-signing-key>`_
-- `Check the Signing Log <https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/check-the-signing-log>`_
+	It is **strongly recommended** that instead of generating and registering the
+	serial assertion signing key **locally**, the Serial Vault be used to generate
+	and register the key instead.
 
-.. note::
+	This enhances key security by ensuring it is never stored on a local,
+	potentially compromised device and instead is created and stored within
+	Canonical's infrastructure.
 
-    Although it's possible to generate a local serial signing key and upload it to the Serial Vault, a more secure practice is to use the Serial Vault's key generation facility instead. Using this approach reduces the attack surface as the private key is not accessible externally.
+To get started with the `Serial Vault <https://serial-vault-admin.canonical.com/>`_
+follow the how-to guides available for `its <https://canonical-serial-vault.readthedocs-hosted.com>`_
+documentation.
+
+The explanation section provides some useful context for what a lot of the terms
+you'll encounter when working with your Dedicated Snap Store mean.
