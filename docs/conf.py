@@ -255,6 +255,14 @@ redirects = {
     "how-to/snap-inclusion/": "explanation/snap-inclusion/",
     "how-to/updating-software/": "/",
     "how-to/username-changes/": "/",
+    "snap-store-vs-iot-app-store": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store",
+    "setting-up-account-roles/how-to/setting-up-account-roles": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/",
+    "ubuntu-sso-accounts/explanation/ubuntu-sso-accounts": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+    "administrator-role/how-to/setting-up-account-roles/": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+    "reviewer-role/how-to/setting-up-account-roles/": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+    "viewer-role/how-to/setting-up-account-roles/": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+    "publisher-role/how-to/setting-up-account-roles/": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+    "collaborator-role/how-to/setting-up-account-roles/": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles"
 }
 
 
