@@ -213,6 +213,7 @@ redirects = {
     "iot-app-store-intro": "/dedicated-snap-store/explanation-main/",
     "dedicated-snap-store-intro": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store/",
     "snap-store-vs-iot-app-store": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store",
+    "snap-store-vs-dedicated-snap-stores": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store",
     "getting-started-dedicated-snap-store": "/dedicated-snap-store/how-to-main/",
     "dedicated-snap-store-commissioning": "/dedicated-snap-store/how-to/dedicated-snap-store-commissioning/",
     "base-stores-and-device-view-stores": "/dedicated-snap-store/explanation/base-stores-and-device-view-stores/",
