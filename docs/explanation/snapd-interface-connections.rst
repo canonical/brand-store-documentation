@@ -17,12 +17,11 @@ a. Some interfaces, such as `network <https://snapcraft.io/docs/network-interfac
    if they are not the **Publisher** of or    a **Collaborator** on the snap
    in question.
 
-#. A store support portal ticket can be created to request auto-connection for
-   super-privileged interfaces (e.g. `snapd-control <https://snapcraft.io/docs/snapd-control-interface>`_
+#. A store support portal ticket can be created to request
+   auto-connection for super-privileged interfaces (e.g. `snapd-control <https://snapcraft.io/docs/snapd-control-interface>`_
    or `system-files <https://snapcraft.io/docs/system-files-interface>`_).
-   Please work with your Field Engineer when you create your first such ticket,
-   so as to ensure you provide all the required details. See :doc:`/how-to/support-tickets`.
+   Work with your Field Engineer when you create your first such ticket, so as
+   to ensure you provide all the required details. See :doc:`/how-to/support-tickets`.
 
-As there's some manual review required for these tickets, please file them as
-early as possible, as requests to expedite these requests are generally frowned
-upon.
+As there's some manual review required for these tickets, file them as early as
+possible, as requests to expedite these requests are generally frowned upon.

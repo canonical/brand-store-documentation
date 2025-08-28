@@ -26,7 +26,7 @@ Setting up interfaces to automatically connect is important for ensuring smooth
 snap functionality in production, and is one of the most common requests you
 will make.
 
-Please provide the following information when submitting a snap interface
+Provide the following information when submitting a snap interface
 connection request support case:
 
 ::

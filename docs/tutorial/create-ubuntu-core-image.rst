@@ -105,10 +105,10 @@ Register the gadget snap name in your Base store and push the initial revision:
 
     :input: snapcraft push {{CUSTOMER_STORE_PREFIX}}-pc_{{CUSTOMER_UBUNTU_CORE_VERSION}}_amd64.snap
     The Store automatic review failed.
-    A human will soon review your snap, but if you can't wait please write in
+    A human will soon review your snap, but if you can't wait write in
     the snapcraft forum asking for the manual review explicitly.
 
-    If you need to disable confinement, please consider using devmode, but
+    If you need to disable confinement, consider using devmode, but
     note that devmode revision will only be allowed to be released in edge and beta
     channels.
     Please check the errors and some hints below:
@@ -155,7 +155,7 @@ The final step before you can build a custom Ubuntu Core image is creating a
 which provides image related metadata ubuntu-image uses to build the image. In
 order to create the model assertion, a key registered to the Brand account must
 sign the JSON for the model assertion. For details on how to create and register
-a model key, please refer to `Sign a model assertion <https://ubuntu.com/core/docs/sign-model-assertion>`_.
+a model key, refer to `Sign a model assertion <https://ubuntu.com/core/docs/sign-model-assertion>`_.
 
 The below creates a JSON file which can be signed to create a model assertion.
 
@@ -236,7 +236,7 @@ Creating the image
 ------------------
 
 These are example instructions specific to your particular Dedicated
-Snap Store. To see more general instructions, please refer to the
+Snap Store. To see more general instructions, refer to the
 `Build your first image <https://documentation.ubuntu.com/core/tutorials/build-your-first-image>`_
 and `Image creation <https://documentation.ubuntu.com/core/how-to-guides/image-creation>`_
 public documentation.
