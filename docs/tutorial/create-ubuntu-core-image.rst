@@ -84,7 +84,7 @@ for how to modify the gadget to use dmidecode (x86_64 only) to read a serial
 number from the DMI table.
 
 Ensure that the Brand account is a :ref:`Publisher <setting-roles>` in your :ref:`Base store <base-stores>`
-and `login to the Brand account <https://documentation.ubuntu.com/snapcraft/stable/how-to/publishing/authenticate/>`_.
+and `log in to the Brand account <https://documentation.ubuntu.com/snapcraft/stable/how-to/publishing/authenticate/>`_.
 
 Register the gadget snap name in your Base store and push the initial revision:
 
@@ -119,11 +119,11 @@ to the gadget snap and logout of the Brand account. A good choice for such an
 account would be one with the **Viewer** role in the ``{{CUSTOMER_STORE_NAME}}``
 and ``{{CUSTOMER_DEVICEVIEW_NAME}}`` stores.
 
-Log into the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}``, the **Reviewer**
+Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}``, the **Reviewer**
 for the ``{{CUSTOMER_STORE_NAME}}`` store, and access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID}}/>`_
 to approve the gadget revision.
 
-Login to the account you made a **Collaborator** on the gadget snap. Once the
+Log in to the account you made a **Collaborator** on the gadget snap. Once the
 revision is approved, you can use snapcraft to release it in the stable channel
 as a **Collaborator**:
 
