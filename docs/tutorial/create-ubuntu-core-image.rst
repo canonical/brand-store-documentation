@@ -7,7 +7,7 @@ Create an Ubuntu Core image
         relating to the specific configuration for your Dedicated Snap Store.
 
 {% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
-.. warning:: 
+.. warning::
 
   Example values are provided for store configuration in this document. If
     you are a Dedicated Snap Store customer, you will be provided with a set of
@@ -55,18 +55,17 @@ For this specific case of validating the initial store setup, let's use the
     :host: localhost
 
     :input: sudo apt update
-
     :input: sudo apt install -y git
-
     :input: git clone -b {{CUSTOMER_UBUNTU_CORE_VERSION}} https://github.com/canonical/pc-gadget {{CUSTOMER_STORE_PREFIX}}
-
     :input: cd {{CUSTOMER_STORE_PREFIX}}
 
-Update the ``name`` field in the ``snapcraft.yaml`` to
-``{{CUSTOMER_STORE_PREFIX}}-pc``. Update the value of the ``MODEL_APIKEY``
-environment variable in the ``snapcraft.yaml`` to the value generated during the
-Serial Vault setup above.  Feel free to also adjust the ``version``, ``summary``
-and ``description`` to be more meaningful in your context.
+* Update the ``name`` field in the ``snapcraft.yaml`` to ``{{CUSTOMER_STORE_PREFIX}}-pc``.
+
+* Update the value of the ``MODEL_APIKEY`` environment variable in the
+  ``snapcraft.yaml`` to the value generated during the Serial Vault setup above.
+
+Feel free to also adjust the ``version``, ``summary`` and ``description`` to be
+more meaningful in your context.
 
 Build the snap:
 
@@ -211,10 +210,10 @@ to get the ``{{CUSTOMER_STORE_PREFIX}}``-pc snap's snap ID and fill the
           "type": "snapd"
         },
         {
+          "default-channel": "{{CUSTOMER_UBUNTU_CORE_VERSION}}/stable",
+          "id": "ASctKBEHzVt3f1pbZLoekCvcigRjtuqw",
           "name": "console-conf",
           "type": "app",
-          "default-channel": "24/stable",
-          "id": "ASctKBEHzVt3f1pbZLoekCvcigRjtuqw",
           "presence": "optional"
         }
       ],
@@ -274,7 +273,7 @@ and a serial assertion was obtained:
     :host: localhost
 
     Welcome to Ubuntu {{CUSTOMER_UBUNTU_CORE_VERSION}} (GNU/Linux <kernel version> x86_64)
-    ... 
+    ...
     Please see 'snap --help' for app installation and updates.
     ...
 
@@ -296,7 +295,7 @@ and a serial assertion was obtained:
     series: 16
     brand-id: {{CUSTOMER_BRAND_ACCOUNT_ID}}
     model: {{CUSTOMER_MODEL_NAME}}
-    ... 
+    ...
 
     :input: snap model --serial --assertion
     type: serial
