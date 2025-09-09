@@ -114,7 +114,7 @@ to the gadget snap and logout of the Brand account. A good choice for such an
 account would be one with the **Viewer** role in the ``{{CUSTOMER_STORE_NAME}}``
 and ``{{CUSTOMER_DEVICEVIEW_NAME}}`` stores.
 
-Log in to the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}``, the **Reviewer**
+Log into the web dashboard as ``{{CUSTOMER_ADMIN_EMAIL}}``, the **Reviewer**
 for the ``{{CUSTOMER_STORE_NAME}}`` store, and access the `reviews page <https://dashboard.snapcraft.io/reviewer/{{ CUSTOMER_STORE_ID}}/>`_
 to approve the gadget revision.
 
