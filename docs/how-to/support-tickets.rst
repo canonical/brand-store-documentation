@@ -8,7 +8,7 @@ File a support ticket
 {% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
 .. warning:: 
 
-  Example values are provided for store configuration in this document. If
+	Example values are provided for store configuration in this document. If
 	you are a Dedicated Snap Store customer, you will be provided with a set of
 	documentation with the details of your store.
 
@@ -26,7 +26,7 @@ Setting up interfaces to automatically connect is important for ensuring smooth
 snap functionality in production, and is one of the most common requests you
 will make.
 
-Please provide the following information when submitting a snap interface
+Provide the following information when submitting a snap interface
 connection request support case:
 
 ::

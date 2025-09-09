@@ -4,9 +4,9 @@ Dedicated Snap Store configuration
 {% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
 .. warning:: 
 
-  Example values are provided for store configuration in this document. If
-  you are a Dedicated Snap Store customer, you will be provided with a set of
-  documentation with the details of your store.
+    Example values are provided for store configuration in this document. If
+    you are a Dedicated Snap Store customer, you will be provided with a set of
+    documentation with the details of your store.
 
 {% endif %}
 
@@ -32,7 +32,7 @@ Accounts and roles
 ------------------
 
 Ubuntu SSO accounts underpin developer interactions with the various Stores. To
-understand accounts and roles, please read:
+understand accounts and roles, read:
 
 * `Ubuntu SSO Accounts <https://documentation.ubuntu.com/dedicated-snap-store/explanation/ubuntu-sso-accounts/>`_
 * `Setting up account roles <https://documentation.ubuntu.com/dedicated-snap-store/how-to/setting-up-account-roles>`_
@@ -140,8 +140,7 @@ Landscape is made available to you through a software-as-a-service (SaaS) model,
 hosted and managed by Canonical, or as a self-hosted option. Refer to the `Landscape documentation <https://documentation.ubuntu.com/landscape/explanation/landscape/about-landscape/>`_
 for more.
 
-Please contact customersuccess@canonical.com to request a Landscape SaaS
-account.
+Contact customersuccess@canonical.com to request a Landscape SaaS account.
 
 Serial Vault
 ------------
@@ -151,5 +150,5 @@ for providing your devices with a `serial assertion <https://documentation.ubunt
 which is used for connecting to a Device View store. The Serial Vault can be
 accessed by the administrator, {{CUSTOMER_ADMIN_EMAIL}}.
 
-To get started with the Serial Vault, please refer to the
+To get started with the Serial Vault, refer to the
 :doc:`/how-to/configure-serial-vault`.

@@ -17,8 +17,8 @@ to controlling snap updates on Ubuntu Core:
 * **Device Agent**
    This method involves use of a device agent, which is a dedicated service that
    takes full control of updates on an Ubuntu Core system by use of snapd's
-   `REST API <https://snapcraft.io/docs/snapd-api>`_. For more details, please
-   see the `snapd-control interface <https://snapcraft.io/docs/snapd-control-interface>`_.
+   `REST API <https://snapcraft.io/docs/snapd-api>`_.
+   For more details, see the `snapd-control interface <https://snapcraft.io/docs/snapd-control-interface>`_.
    You may either create your own custom device agent (or use another one
    available in a store), or use :ref:`Landscape <landscape>` to fulfill the
    device management role.
