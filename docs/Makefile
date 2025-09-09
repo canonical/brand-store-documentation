@@ -5,7 +5,7 @@
 # You can set these variables from the command line, and also
 # from the environment for the first two.
 SPHINXDIR       = .sphinx
-SPHINXOPTS      ?= -c . -d $(SPHINXDIR)/.doctrees -j auto
+SPHINXOPTS      ?= -c $(SOURCEDIR) -d $(SPHINXDIR)/.doctrees -j auto
 SPHINXBUILD     ?= $(VENVDIR)/bin/sphinx-build
 SOURCEDIR       = .
 BUILDDIR        = _build
@@ -58,7 +58,7 @@ $(VENVDIR):
 	@echo "... setting up virtualenv"
 	python3 -m venv $(VENVDIR) || { echo "You must install python3-venv before you can build the documentation."; exit 1; }
 	. $(VENV); pip install $(PIPOPTS) --require-virtualenv \
-	    --upgrade -r requirements.txt \
+	    --upgrade -r $(SOURCEDIR)/requirements.txt \
             --log $(VENVDIR)/pip_install.log
 	@test ! -f $(VENVDIR)/pip_list.txt || \
             mv $(VENVDIR)/pip_list.txt $(VENVDIR)/pip_list.txt.bak
@@ -176,7 +176,7 @@ allmetrics: html
 	@$(METRICSDIR)/build_metrics.py $(BUILDDIR)
 
 update: install
-	@. $(VENV); .sphinx/update_sp.py
+	@. $(VENV); $(SPHINXDIR)/update_sp.py
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
