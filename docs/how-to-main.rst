@@ -8,7 +8,7 @@ How-to guides
 
 These guides will help you to work with your Dedicated Snap Store. If you do not
 have a Dedicated Snap Store, and you are interested in purchasing one,
-`please reach out to our team <https://ubuntu.com/internet-of-things/appstore#get-in-touch>`_.
+`please reach out to our team <https://ubuntu.com/internet-of-things/appstore>`_.
 
 
 .. list-table::
