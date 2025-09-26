@@ -12,18 +12,31 @@ updates to your devices in a secure and validated way. Dedicated Snap Stores are
 adopted by a large number of enterprises around the world, with a variety of IoT
 use cases. It is the private, enterprise equivalent of the global Snap Store.
 
-.. figure:: images/introduction.png
-   
-   Illustration of Dedicated Snap Store architecture demonstrating use of a
-   combination of public and private snaps
+The following documents provide more information on Dedicated Snap Stores,
+including information on interfaces and general store security.
 
-A Dedicated Snap Store is suited for managing software on huge numbers of
-distributed devices. You can cherry pick the combination of applications you
-want your devices to use, including software published in the global Snap Store
-and custom software from your private Dedicated Snap Store. Using software
-curation, you have an endless number of applications to craft, test and use.
+.. list-table::
+
+    * - :doc:`explanation/base-stores-and-device-view-stores`
+      - What are the differences between base stores and device view stores?
+    * - :doc:`explanation/brand-accounts`
+      - What is a brand account?
+    * - :doc:`explanation/connecting-devices`
+      - How does my device connect to my Dedicated Snap Store?
+    * - :doc:`explanation/controlling-updates`
+      - Are there different ways to control updates on devices connected to my store?
+    * - :doc:`explanation/managing-an-app-store`
+      - What snaps can I include, and can I monitor devices?
+    * - :doc:`explanation/security`
+      - What credentials does my store contain, and how are they managed?
+    * - :doc:`explanation/snap-inclusion`
+      - Can I decide what snaps are available in my store?
+    * - :doc:`explanation/snapd-interface-connections`
+      - What snapd interfaces are available to me when publishing to a Dedicated Snap Store?
 
 .. rubric:: Helpful resources
+
+For more information, please see the following:
 
 * `Dedicated Snap Stores <https://ubuntu.com/internet-of-things/appstore>`_
 * `Dedicated Snap Store Datasheet <https://assets.ubuntu.com/v1/d6d1d3fc-IoT+App+Store+Datasheet+v3.pdf>`_

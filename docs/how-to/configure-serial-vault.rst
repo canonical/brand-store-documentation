@@ -33,9 +33,5 @@ When following the instructions for configuring your Serial Vault, keep in mind 
 	potentially compromised device and instead is created and stored within
 	Canonical's infrastructure.
 
-To get started with the `Serial Vault <https://serial-vault-admin.canonical.com/>`_
-follow the how-to guides available for `its <https://canonical-serial-vault.readthedocs-hosted.com>`_
-documentation.
-
-The explanation section provides some useful context for what a lot of the terms
-you'll encounter when working with your Dedicated Snap Store mean.
+Please refer to the `Serial Vault documentation <https://canonical-serial-vault.readthedocs-hosted.com>`_ 
+for more information.

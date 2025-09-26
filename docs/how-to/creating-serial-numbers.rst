@@ -3,16 +3,12 @@
 Create serial numbers
 =====================
 
+You may need to generate serial numbers for your devices, for use with a
+Dedicated Snap Store. In production a serial number should
+be derived from a value inserted during the factory process or from a unique
+hardware identifier for uniqueness and traceability.
+
 .. creating-serial-numbers-start
-
-{% if 'admin@acme.com' in CUSTOMER_ADMIN_EMAIL %}
-.. warning:: 
-
-	Example values are provided for store configuration in this document. If
-	you are a Dedicated Snap Store customer, you will be provided with a set of
-	documentation with the details of your store.
-
-{% endif %}
 
 One possible approach to populating the serial number (versus using the ``date``
 command) is to use the ``dmidecode`` tool to read the system serial number from
@@ -50,6 +46,6 @@ The actual command to read the serial number will also need to be updated in the
     ...
 
 Finally, to let the hardware-observe interface automatically connect on first
-boot, you'll need to go to the `dashboard <https://dashboard.snapcraft.io/snaps/{{CUSTOMER_STORE_PREFIX}}-pc/>`_,
+boot, you'll need to go to the `dashboard <https://dashboard.snapcraft.io/snaps/>`_,
 click on the "Review capabilities" link, and set the radio button next to
 hardware-observe to "Enabled".
