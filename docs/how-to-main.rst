@@ -6,30 +6,26 @@
 How-to guides
 =============
 
-`Snapcraft.io <http://snapcraft.io>`_ plays a key part of the journey of
-using the Snap Store. Most aspects of the ongoing design and development
-of core technologies are open and tracked publicly. The `Snapcraft forum <https://forum.snapcraft.io/>`_
-is robust and monitored by responsible engineers. Our team is responsive and
-always receptive to discuss potential bugs, issues or feedback.
+These guides will help you to work with your Dedicated Snap Store. If you do not
+have a Dedicated Snap Store, and you are interested in purchasing one,
+`please reach out to our team <https://ubuntu.com/internet-of-things/appstore>`_.
 
-.. figure:: https://assets.ubuntu.com/v1/d22c1230-snap-store-iot-devices.png
 
-Once a customer has expressed interest in using a Dedicated Snap Store and
-established a commercial engagement with us, our team initiates a process to
-set up a private store. The first step is gathering customer email addresses
-to enable secure store registration. Once the store has been created by our
-engineering team, the customer will receive credentials to log into the store
-and begin setup. At that point, it is largely down to the customer to decide
-how they want to use their private store with their devices. They can then
-assign permissions to other users to start configuring or operating the store.
-Our engineers can provide training, documentation and support at every step of
-the way.
+.. list-table::
 
-There are many key concepts related to a Dedicated Snap Store, including the
-base store and device view store, account roles and the Serial Vault. All these
-features enable authenticated access by your devices to your Store and fine
-control of updates and software distribution. These concepts will be covered to
-a high level in this guide.
+    * - :doc:`Configure Serial Vault <how-to/configure-serial-vault>`
+      - Guidance on configuration of your Serial Vault.
+    * - :doc:`Set up account roles <how-to/setting-up-account-roles>`
+      - How to scope permissions for access to your Dedicated Snap Store.
+    * - :doc:`Create serial numbers <how-to/creating-serial-numbers>`
+      - Step by step instructions for generating unique serial numbers for your devices.
+    * - :doc:`Support tickets <how-to/support-tickets>`
+      - Getting more support, and what you need to provide when lodging common requests.
+
+For guidance on use of your Dedicated Snap Store, and some of the functionality
+it provides, please see our :doc:`Tutorial <tutorial/create-ubuntu-core-image>`,
+where we walk through the creation of an Ubuntu Core with snaps you register to
+your own store. 
 
 .. toctree::
     :maxdepth: 1
