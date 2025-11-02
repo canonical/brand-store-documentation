@@ -162,7 +162,7 @@ html_theme_options = {
 }
 
 # Sitemap support
-html_baseurl = "https://documentation.ubuntu.com/dedicated-snap-store/"
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
 sitemap_url_scheme = "{link}"
 sitemap_show_lastmod = True
 
