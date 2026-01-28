@@ -1,8 +1,8 @@
 .. meta::
     :description: Documentation for the Canonical Dedicated Snap Store using the Diátaxis framework, covering tutorials, how-to guides, reference materials, and explanations for managing private snap repositories.
 
-Canonical Dedicated Snap Store
-==============================
+Dedicated Snap Store
+====================
 
 .. include:: home.rst
    :start-after: landing-page-start
