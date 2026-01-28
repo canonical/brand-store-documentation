@@ -1,3 +1,6 @@
+.. meta::
+    :description: Explanation of Dedicated Snap Store concepts and architecture, including custom application stores for software distribution across device fleets with secure over-the-air updates.
+
 ..  This page is intended to serve as the main navigation page for Explanation
     documents. See https://diataxis.fr/explanation/ for more information, or
     contact secondskoll (or the TA team) on Mattermost.
@@ -47,4 +50,3 @@ For more information, please see the following:
    :hidden:
 
    explanation/*
-

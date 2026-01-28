@@ -113,3 +113,6 @@ uneditable
 unmanaged
 transactional
 endif
+Canonical's
+walkthrough
+html

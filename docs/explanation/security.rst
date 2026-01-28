@@ -1,3 +1,6 @@
+.. meta::
+    :description: Security considerations and best practices for managing secrets, signing keys, and account credentials in a Dedicated Snap Store environment.
+
 Dedicated Snap Store security
 =============================
 

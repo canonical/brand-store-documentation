@@ -1,7 +1,11 @@
-..  This page is intended to serve as the main navigation page for How-to
-    guides. See https://diataxis.fr/how-to-guides/ for more information, or
-    contact secondskoll (or the TA team) on Mattermost. Ensure this document is
-    removed from `custom_excludes` in `custom_conf.py` before use.
+.. meta::
+    :description: Step-by-step guides for configuring and managing a Dedicated Snap Store, including store commissioning, device connectivity, software updates, and account roles.
+
+..  This page is intended to serve as the main navigation page for How-to guides. See https://diataxis.fr/how-to-guides/ for more
+    information, or contact secondskoll (or the TA team) on Mattermost. 
+
+    Ensure this document is removed from `custom_excludes` in `custom_conf.py` before use.
+
 
 How-to guides
 =============
@@ -34,5 +38,5 @@ your own store.
 
     how-to/*
 
-..  You may want to add a brief explanation of any main How-to guide, and direct
-    them towards specific ones, depending on the relevance they have for users.
+..  You may want to add a brief explanation of any main How-to guide, and direct them towards specific ones, depending on the relevance
+    they have for users.

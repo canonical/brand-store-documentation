@@ -1,3 +1,6 @@
+.. meta::
+    :description: Configuration details and reference information for your Dedicated Snap Store, including store architecture, accounts, roles, and links to key documentation.
+    
 Dedicated Snap Store configuration
 ==================================
 

@@ -243,6 +243,8 @@ redirects = {
     "generate-a-model-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/generate-a-model-signing-key/",
     "check-the-signing-log": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/check-the-signing-log/",
     "create-a-system-user-assertion": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/create-a-system-user-assertion/",
+    "how-to-main": "how-to",
+    "explanation-main": "explanation",
     "explanation/custom-image/": "/dedicated-snap-store/",
     "explanation/snap-confinement-snapd-connection/": "/dedicated-snap-store/",
     "explanation/snap-store-vs-dedicated-snap-stores/": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store/",
@@ -258,8 +260,6 @@ redirects = {
     "how-to/username-changes/": "/dedicated-snap-store/",
 }
 
-
-###########################
 # Link checker exceptions #
 ###########################
 
@@ -333,10 +333,25 @@ myst_enable_extensions = {
 
 extensions = [
     "canonical_sphinx",
+    "notfound.extension",
+    "sphinx_design",
+    "sphinx_reredirects",
+    "sphinx_tabs.tabs",
+    "sphinxcontrib.jquery",
+    "sphinxext.opengraph",
+    "sphinx_config_options",
+    "sphinx_contributor_listing",
+    "sphinx_filtered_toctree",
+    "sphinx_related_links",
+    "sphinx_roles",
+    "sphinx_terminal",
+    "sphinx_ubuntu_images",
+    "sphinx_youtube_links",
     "sphinxcontrib.cairosvgconverter",
     "sphinx_last_updated_by_git",
-    "rstjinja",
+    "sphinx.ext.intersphinx",
     "sphinx_sitemap",
+    "rstjinja",
 ]
 
 # Excludes files or directories from processing

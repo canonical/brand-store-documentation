@@ -1,4 +1,6 @@
 :orphan:
+.. meta::
+    :description: A Dedicated Snap Store is a private, secure application repository that facilitates the publication of private snaps and curation of public snaps for Ubuntu Core devices.
 
 Overview
 ========

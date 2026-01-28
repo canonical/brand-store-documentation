@@ -1,5 +1,7 @@
-.. _serial-vault:
+.. meta::
+    :description: Step-by-step instructions for configuring the Serial Vault, including environment setup, generating signing keys, and registering device models.
 
+.. _serial-vault:
 Configure Serial Vault
 ======================
 
