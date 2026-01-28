@@ -2,6 +2,7 @@
 amd
 analytics
 APIKEY
+Canonical's
 curation
 customized
 DEVICEVIEW
@@ -15,6 +16,7 @@ favicon
 github
 gpg
 gpio
+html
 https
 img
 init

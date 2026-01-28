@@ -57,8 +57,10 @@ or Base store can see the snaps available in that store.
 
 .. TODO: Serial Vault going the way of the dinosaurs; replace with Model Service language.
 
-Snap stores are represented by the cylinders, with the Device View store is
-represented by the cylinder with Acme in the top-right. Acme \_view store 1\_
-has been configured to include snaps from the Global snap store and the `Serial Vault <https://canonical-serial-vault.readthedocs-hosted.com/>`_
+Snap stores are represented by the cylinders. The Base store is represented by
+the cylinder labelled "Acme" in the top right, the Device View store is labelled "Acme
+view store 1" in the centre.
+The Device View store, "Acme view store 1" has been configured to include snaps from the Global Snap
+Store and the Base Store. Devices connected to the Device View store are provided with signed assertions from the `Serial Vault <https://canonical-serial-vault.readthedocs-hosted.com/>`_ for authentication and authorization for access to any restricted snaps available from the Device View store.
 is used by the company’s devices to authenticate and thereby gain access to
 private snaps.
