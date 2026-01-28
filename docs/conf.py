@@ -74,7 +74,7 @@ copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 # NOTE: The Open Graph Protocol (OGP) enhances page display in a social graph
 #       and is used by social media platforms; see https://ogp.me/
 
-ogp_site_url = "https://documentation.ubuntu.com/dedicated-snap-store/"
+ogp_site_url = "https://ubuntu.com/internet-of-things/appstore/docs"
 
 
 # Preview name of the documentation website
@@ -177,7 +177,7 @@ sitemap_excludes = [
 # TODO: If your documentation is hosted on https://docs.ubuntu.com/,
 #       uncomment and update as needed.
 
-slug = 'dedicated-snap-store'
+slug = 'internet-of-things/appstore/docs'
 
 
 # Template and asset locations
@@ -194,6 +194,7 @@ html_css_files = [
 # Add JavaScript files (located in .sphinx/_static/)
 html_js_files = [
 	'js/bundle.js',
+    'js/url_overwrite.js',
 ]
 
 #############
