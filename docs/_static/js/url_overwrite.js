@@ -1,7 +1,7 @@
 // overwrite links.js
 
 // Replace oldDomain with newDomain
-const oldDomain = 'https://canonical-brand-store.readthedocs-hosted.com/';
+const oldDomain = 'canonical-brand-store.readthedocs-hosted.com';
 const newDomain = 'ubuntu.com/internet-of-things/appstore/docs';
 
 // // Logging for debugging purposes
