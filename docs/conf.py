@@ -32,7 +32,7 @@ logger = logging.getLogger()
 # TODO: Update with the official name of your project or product
 
 html_title = full_title = project = 'Dedicated Snap Store'
-author = "Canonical"
+author = "Canonical Ltd."
 
 # Sidebar documentation title; best kept reasonably short
 #
