@@ -32,8 +32,8 @@ Dedicated Snap Store
        :doc:`Explanation: Controlling updates <explanation/controlling-updates>` •
        :doc:`Explanation: Snapd interface connections <explanation/snapd-interface-connections>`
    * - Architecture & Concepts
-     - :doc:`Explanation: Base Stores and Device View Stores <explanation/base-stores-and-device-view-stores>`
-       :doc:`Explanation: Brand accounts <explanation/brand-accounts>` •
+     - :doc:`Explanation: Base Stores and Device View Stores <explanation/base-stores-and-device-view-stores>` •
+       :doc:`Explanation: Brand accounts <explanation/brand-accounts>`
 
 .. toctree::
    :maxdepth: 1
