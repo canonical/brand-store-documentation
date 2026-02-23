@@ -82,3 +82,58 @@ Having trouble? We would like to help!
 
 * Please submit a `support ticket <https://portal.support.canonical.com>`_ for
   additional support.
+
+
+.. raw:: html
+
+   <h1>Dynamic Greeting</h1>
+
+   <form id="url-form" method="GET">
+      <input type="text" name="username" placeholder="Enter your name..." required>
+      <button type="submit">Update Page</button>
+   </form>
+
+   <hr>
+
+   <div id="output-area">
+      <p>Hello, <span id="display-name">Guest</span>!</p>
+   </div>
+
+   <script>
+      // 1. Grab the URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const userName = urlParams.get('username');
+
+      // 2. If the 'username' parameter exists, update the DOM
+      if (userName) {
+         document.getElementById('display-name').innerText = userName;
+      }
+   </script>
+
+
+Test
+----
+
+.. url-form::
+
+   name: Your name
+   host: Your host name
+
+Results
+-------
+
+Hello :url:`name`! Your job is :url:`job`.
+
+.. parsed-literal::
+
+   What about :url:`name` in regular text?
+
+.. code::
+
+   What about :url:`name` in code?
+
+.. terminal::
+
+   echo "Hello {{name}} Your job is {{job}}."
+
+

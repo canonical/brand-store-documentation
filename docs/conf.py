@@ -195,6 +195,7 @@ html_css_files = [
 html_js_files = [
 	'js/bundle.js',
     'js/url_overwrite.js',
+    'js/dynamic_params.js',
 ]
 
 #############
