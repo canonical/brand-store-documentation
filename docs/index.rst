@@ -4,6 +4,12 @@
 Dedicated Snap Store
 ====================
 
+.. attention::
+
+   The Dedicated Snap Store is a paid product. Please
+   `contact us <https://ubuntu.com/internet-of-things/contact-us?product=appstore>`_
+   for information on pricing.
+
 .. include:: home.rst
    :start-after: landing-page-start
    :end-before: landing-page-end
@@ -40,23 +46,8 @@ Dedicated Snap Store
    :hidden:
 
    Tutorial <tutorial/create-ubuntu-core-image>
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
    How-to <how-to>   
-
-.. toctree::
-   :maxdepth: 2
-   :hidden:
-
    Reference <reference/configuration-values>
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
    Explanation <explanation>
 
 .. rubric:: :h2:`How this documentation is organised`

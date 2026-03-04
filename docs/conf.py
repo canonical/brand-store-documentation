@@ -162,7 +162,7 @@ html_theme_options = {
 }
 
 # Sitemap support
-html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
+html_baseurl = "https://ubuntu.com/internet-of-things/appstore/docs/"
 sitemap_url_scheme = "{link}"
 sitemap_show_lastmod = True
 
@@ -171,6 +171,8 @@ sitemap_excludes = [
     "404/",
     "search/",
 ]
+
+sitemap_filename = "doc-sitemap.xml"
 
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
 #
