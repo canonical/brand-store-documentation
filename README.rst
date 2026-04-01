@@ -1,6 +1,9 @@
 Dedicated Snap Store Documentation
 ==================================
 
+Product page: https://ubuntu.com/internet-of-things/appstore
+Documentation: https://ubuntu.com/internet-of-things/appstore/docs/
+
 This repository contains documentation for Dedicated Snap Stores. It allows the
 documentation to be templated with customer specific account details.
 
