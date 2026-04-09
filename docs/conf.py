@@ -283,6 +283,7 @@ linkcheck_ignore = [
     'http://support.canonical.com/',
     'https://snapcraft.io/docs/channels',
     'https://support-portal.canonical.com/*',
+    'https://api.snapcraft.io/v1/'
     
 ]
 

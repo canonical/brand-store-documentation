@@ -39,7 +39,7 @@ gadget snap to set default configuration values for `the system <https://snapcra
 and application snaps.
 
 To build a custom gadget snap, we start by selecting a suitable candidate from
-the `Canonical supported gadgets <https://snapcraft.io/docs/the-gadget-snap#p-3322-example-gadget-snaps>`_.
+the `Canonical supported gadgets <https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#example-gadget-snaps>`_.
 For detailed instructions, see `here <https://ubuntu.com/core/docs/gadget-building>`_.
 
 For this specific case of validating the initial store setup, let's use the

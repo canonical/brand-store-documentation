@@ -146,7 +146,7 @@ for more.
 Contact customersuccess@canonical.com to request a Landscape SaaS account.
 
 Model Service
-------------
+-------------
 
 The Model Service is responsible for providing your devices with a `serial assertion <https://documentation.ubuntu.com/core/reference/assertions/serial>`_,
 which is used for connecting to a Device View store. The Model Service can be
