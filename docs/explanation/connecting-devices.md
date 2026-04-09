@@ -12,7 +12,7 @@ devices and their cloud backend.
 Secure device onboarding is a four stage process that starts with a request for
 serial keys, proceeds with device initialization from the cloud, and ends with
 device authentication and authorization. The first two stages are handled by the
-Serial Vault which is a service that issues credentials to devices.
+Model Service which is a service that issues credentials to devices.
 
 ![Secure device onboarding four stage process Illustration|690x419](https://assets.ubuntu.com/v1/29944474-19c88fc1e15e2058793f9d8be18ba042603eb2c7_2_690x419.png)
 
@@ -20,9 +20,9 @@ Serial Vault which is a service that issues credentials to devices.
 
 The secure onboarding process starts at first boot. When turned on for the
 first time, an Ubuntu Core device uses its private key, its serial number, and
-its owner’s ID to send a request for a serial assertion to a specified Serial
-Vault, which is hosted by Canonical. The Serial Vault processes the request,
-and, if the device’s public key is stored in the Serial Vault, a [serial assertion](https://documentation.ubuntu.com/core/reference/assertions/serial/)
+its owner’s ID to send a request for a serial assertion to a specified Model
+Service, which is hosted by Canonical. The Model Service processes the request,
+and, if the device’s public key is stored in the Model Service, a [serial assertion](https://documentation.ubuntu.com/core/reference/assertions/serial/)
 is issued as response to the request. The serial assertion issued by the Serial
 Vault is then stored on the device.
 
@@ -35,4 +35,4 @@ Dedicated Snap Store authenticates the keys and authorizes the device.
 
 ## Helpful information
 
-* [Authentication through the Serial Vault](https://ubuntu.com/core/docs/dedicated-snap-stores)
+* [Authentication through the Model Service](https://ubuntu.com/core/docs/dedicated-snap-stores)

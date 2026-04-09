@@ -43,7 +43,7 @@ Secrets stored by Canonical
 
 - Serial assertion signing keys
 
-  - Should be generated in the Serial Vault UI.
+  - Should be generated in the Model Service.
 
 Secrets stored by you
 *********************
@@ -64,9 +64,9 @@ some general recommendations for you.
 By Canonical
 ************
 
-- Serial assertion signing keys are stored in the `Serial Vault <https://canonical-serial-vault.readthedocs-hosted.com/>`_
-  The private keys cannot be accessed once generated or uploaded to the Serial
-  Vault.
+- Serial assertion signing keys are stored in the Model Service
+  The private keys cannot be accessed once generated or uploaded to the Model
+  Service.
 - Other registered keys are stored on Canonical infrastructure and cannot be
   accessed.
 
