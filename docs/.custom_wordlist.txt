@@ -118,3 +118,9 @@ endif
 Canonical's
 walkthrough
 html
+Dedicated Snap Store
+Base
+Device View
+Canonical
+Serial Vault
+Support Portal
