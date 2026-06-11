@@ -17,8 +17,8 @@ have a Dedicated Snap Store, and you are interested in purchasing one,
 
 .. list-table::
 
-    * - :doc:`Configure Serial Vault <how-to/configure-serial-vault>`
-      - Guidance on configuration of your Serial Vault.
+    * - :doc:`Configure Model Service <how-to/configure-model-service>`
+      - Guidance on configuration of your Model Service.
     * - :doc:`Set up account roles <how-to/setting-up-account-roles>`
       - How to scope permissions for access to your Dedicated Snap Store.
     * - :doc:`Create serial numbers <how-to/creating-serial-numbers>`

@@ -145,13 +145,12 @@ for more.
 
 Contact customersuccess@canonical.com to request a Landscape SaaS account.
 
-Serial Vault
-------------
+Model Service
+-------------
 
-The `Serial Vault <https://serial-vault-admin.canonical.com>`_ is responsible
-for providing your devices with a `serial assertion <https://documentation.ubuntu.com/core/reference/assertions/serial>`_,
-which is used for connecting to a Device View store. The Serial Vault can be
+The Model Service is responsible for providing your devices with a `serial assertion <https://documentation.ubuntu.com/core/reference/assertions/serial>`_,
+which is used for connecting to a Device View store. The Model Service can be
 accessed by the administrator, {{CUSTOMER_ADMIN_EMAIL}}.
 
-To get started with the Serial Vault, refer to the
-:doc:`/how-to/configure-serial-vault`.
+To get started with the Model Service, refer to the
+:doc:`/how-to/configure-model-service`.

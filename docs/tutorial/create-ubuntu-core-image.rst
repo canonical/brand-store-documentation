@@ -18,14 +18,14 @@ Create an Ubuntu Core image
 To validate that the store was provisioned correctly and that you are able to
 access it, we recommend creating and booting an Ubuntu Core image for amd64.
 
-Setup the Serial Vault
-----------------------
+Setup the Model Service
+-----------------------
 
 In order for a device to be able to connect to your Dedicated Snap Store, it
-must provide a secret to the Serial Vault. This secret is called the model API
+must provide a secret to the Model Service. This secret is called the model API
 key, and this key corresponds to a particular model name. The model name should
 be an informative string like "acme-gateway-prod". For this tutorial, we are
-using the model name ``{{CUSTOMER_MODEL_NAME}}``. You should :ref:`configure the Serial Vault <serial-vault>`
+using the model name ``{{CUSTOMER_MODEL_NAME}}``. You should :ref:`configure the Model Service <model-service>`
 adding that model name, and make note of the API key. We will add that to the
 gadget snap in the next section.
 
@@ -34,12 +34,12 @@ Creating the gadget snap
 
 The important functionality in a gadget snap is generating a serial number and
 using that serial number and a pre-shared API key to get credentials from the
-Serial Vault to authenticate with the Device View store. You can also use the
+Model Service to authenticate with the Device View store. You can also use the
 gadget snap to set default configuration values for `the system <https://snapcraft.io/docs/set-system-options>`_
 and application snaps.
 
 To build a custom gadget snap, we start by selecting a suitable candidate from
-the `Canonical supported gadgets <https://snapcraft.io/docs/the-gadget-snap#p-3322-example-gadget-snaps>`_.
+the `Canonical supported gadgets <https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#example-gadget-snaps>`_.
 For detailed instructions, see `here <https://ubuntu.com/core/docs/gadget-building>`_.
 
 For this specific case of validating the initial store setup, let's use the
@@ -60,7 +60,7 @@ For this specific case of validating the initial store setup, let's use the
 * Update the ``name`` field in the ``snapcraft.yaml`` to ``{{CUSTOMER_STORE_PREFIX}}-pc``.
 
 * Update the value of the ``MODEL_APIKEY`` environment variable in the
-  ``snapcraft.yaml`` to the value generated during the Serial Vault setup above.
+  ``snapcraft.yaml`` to the value generated during the Model Service setup above.
 
 Feel free to also adjust the ``version``, ``summary`` and ``description`` to be
 more meaningful in your context.
@@ -219,6 +219,12 @@ to get the ``{{CUSTOMER_STORE_PREFIX}}``-pc snap's snap ID and fill the
           "id": "dwTAh7MZZ01zyriOZErqd1JynQLiOGvM",
           "name": "core24",
           "type": "base"
+        },{% endif %}{% if '26' or 'NULL' in CUSTOMER_UBUNTU_CORE_VERSION %}
+        {
+          "default-channel": "latest/stable",
+          "id": "cUqM61hRuZAJYmIS898Ux66VY61gBbZf",
+          "name": "core26",
+          "type": "base"
         },{% endif %}
         {
           "default-channel": "latest/stable",
@@ -243,10 +249,8 @@ to get the ``{{CUSTOMER_STORE_PREFIX}}``-pc snap's snap ID and fill the
     :host: localhost
     :dir: ~/{{CUSTOMER_STORE_PREFIX}}
 
-    snapcraft list-keys
-
+    snapcraft keys
         Name          SHA3-384 fingerprint
-    *   serial        <fingerprint>
     *   model         <fingerprint>
 
 .. terminal::
