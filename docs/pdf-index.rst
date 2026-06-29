@@ -1,8 +1,8 @@
 :orphan:
 
-**********************************
-PDF Canonical Dedicated Snap Store
-**********************************
+******************************
+Dedicated Snap Store PDF index
+******************************
 
 .. note anything in the following docs linking out to a website needs to link to
     the URL

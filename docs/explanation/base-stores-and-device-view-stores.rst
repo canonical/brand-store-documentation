@@ -55,8 +55,6 @@ or Base store can see the snaps available in that store.
 
 *A standard store configuration using a Base and Device store*
 
-.. TODO: Serial Vault going the way of the dinosaurs; replace with Model Service language.
-
 Snap stores are represented by the cylinders. The Base store is represented by
 the cylinder labelled "Acme" in the top right, the Device View store is labelled "Acme
 view store 1" in the centre.
