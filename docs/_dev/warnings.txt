@@ -1,2 +1,0 @@
-WARNING: (broken) iot-app-store-intro/index.html redirects to explanation-main but /project/branch/brand-store-documentation/docs/_build/explanation-main does not exist!
-WARNING: (broken) getting-started-dedicated-snap-store/index.html redirects to how-to-main but /project/branch/brand-store-documentation/docs/_build/how-to-main does not exist!
