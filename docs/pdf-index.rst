@@ -14,6 +14,6 @@ PDF Canonical Dedicated Snap Store
     reference/configuration-values
     explanation/snapd-interface-connections
     explanation/controlling-updates
-    how-to/support-tickets
+    how-to/support-ticket
     how-to/configure-serial-vault
     tutorial/create-ubuntu-core-image
