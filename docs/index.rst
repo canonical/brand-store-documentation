@@ -26,20 +26,20 @@ Dedicated Snap Store
    :widths: 25 75
 
    * - Getting Started
-     - :doc:`Tutorial: Create an Ubuntu Core image <tutorial/create-ubuntu-core-image>` •
-       :doc:`How-to: Configure Serial Vault <how-to/configure-serial-vault>` •
-       :doc:`Reference: Configuration values <reference/configuration-values>`
+     - :doc:`Create an Ubuntu Core image <tutorial/create-ubuntu-core-image>` •
+       :doc:`Configure Serial Vault <how-to/configure-serial-vault>` •
+       :doc:`Configuration values <reference/configuration-values>`
    * - Security and Access Control
-     - :doc:`Explanation: Dedicated Snap Store security <explanation/security>` •
-       :doc:`How-to: Setting up account roles <how-to/setting-up-account-roles>` •
-       :doc:`Explanation: Brand accounts <explanation/brand-accounts>`
+     - :doc:`Dedicated Snap Store security <explanation/security>` •
+       :doc:`Setting up account roles <how-to/setting-up-account-roles>` •
+       :doc:`Brand accounts <explanation/brand-accounts>`
    * - Software controls
-     - :doc:`Explanation: Connecting devices <explanation/connecting-devices>` •
-       :doc:`Explanation: Controlling updates <explanation/controlling-updates>` •
-       :doc:`Explanation: Snapd interface connections <explanation/snapd-interface-connections>`
+     - :doc:`Connecting devices <explanation/connecting-devices>` •
+       :doc:`Controlling updates <explanation/controlling-updates>` •
+       :doc:`Snapd interface connections <explanation/snapd-interface-connections>`
    * - Architecture & Concepts
-     - :doc:`Explanation: Base Stores and Device View Stores <explanation/base-stores-and-device-view-stores>` •
-       :doc:`Explanation: Brand accounts <explanation/brand-accounts>`
+     - :doc:`Base Stores and Device View Stores <explanation/base-stores-and-device-view-stores>` •
+       :doc:`Brand accounts <explanation/brand-accounts>`
 
 .. toctree::
    :maxdepth: 1
