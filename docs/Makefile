@@ -130,11 +130,11 @@ lint-md: pymarkdownlnt-install
 	exit $$status;
 
 vale-install: install
-	@. $(VENV); test -f $(VALE_CONFIG) || python3 $(SPHINXDIR)/get_vale_conf.py
-	@echo '.Name=="Canonical.400-Enforce-inclusive-terms"' > $(SPHINXDIR)/styles/woke.filter
-	@echo '.Name!="Canonical.500-Repeated-words" and .Name!="Canonical.000-US-spellcheck"' > $(SPHINXDIR)/styles/error.filter
-	@echo '.Name=="Canonical.000-US-spellcheck"' > $(SPHINXDIR)/styles/spelling.filter
-	@. $(VENV); find $(VALEDIR)/vale_bin -size 195c -exec vale --version \;
+	@. $(DOCS_VENV); test -f $(VALE_CONFIG) || python3 $(DEV_DIR)/get_vale_conf.py
+	@echo '.Name=="Canonical.400-Enforce-inclusive-terms"' > $(DEV_DIR)/styles/woke.filter
+	@echo '.Level=="error" and .Name!="Canonical.500-Repeated-words" and .Name!="Canonical.000-US-spellcheck"' > $(DEV_DIR)/styles/error.filter
+	@echo '.Name=="Canonical.000-US-spellcheck"' > $(DEV_DIR)/styles/spelling.filter
+	@. $(DOCS_VENV); find $(VALE_DIR)/vale_bin -size 195c -exec vale --version \;
 
 woke: vale-install
 	@cat $(DOCS_VOCAB)/accept.txt > $(DOCS_VOCAB)/accept_backup.txt
