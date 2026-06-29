@@ -8,7 +8,7 @@ must be connected to corresponding slots defined by core, application, or gadget
 snaps. There are three ways that these automatic connections can happen:
 
 a. Some interfaces, such as `network <https://snapcraft.io/docs/network-interface>`_,
-   auto-connect (i.e. there's no action necessary to trigger automatic
+   auto-connect (there's no action necessary to trigger automatic
    connection).
 
 #. Some interfaces are classified as "`self-serve <https://dashboard.snapcraft.io/docs/brandstores/self-serve-interfaces.html>`_".
@@ -18,7 +18,7 @@ a. Some interfaces, such as `network <https://snapcraft.io/docs/network-interfac
    in question.
 
 #. A store support portal ticket can be created to request
-   auto-connection for super-privileged interfaces (e.g. `snapd-control <https://snapcraft.io/docs/snapd-control-interface>`_
+   auto-connection for super-privileged interfaces (for example, `snapd-control <https://snapcraft.io/docs/snapd-control-interface>`_
    or `system-files <https://snapcraft.io/docs/system-files-interface>`_).
    Work with your Field Engineer when you create your first such ticket, so as
    to ensure you provide all the required details. See :doc:`/how-to/support-tickets`.

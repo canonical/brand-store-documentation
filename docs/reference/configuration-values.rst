@@ -29,7 +29,7 @@ Your Device View store is: ``{{CUSTOMER_DEVICEVIEW_NAME}}`` (``{{CUSTOMER_DEVICE
 Your Device View store is configured to automatically include all snaps from ``{{STORES_WITH_WHOLESALE_INCLUSION}}``
 
 All stores (including your Device View store) always include the snapd snap and
-the LTS core snaps (i.e. core18, core20, core22, core24).
+the LTS core snaps (core18, core20, core22, core24).
 
 Accounts and roles
 ------------------
@@ -76,7 +76,7 @@ Brand account
 
 The Brand account was set up for your Dedicated Snap Store at the time of store
 creation. The Brand account defines the Brand scope of authority, and it must
-be used for certain functions You can find those functions :ref:`here <brand-accounts>`.
+be used for certain functions You can find those functions in the :ref:`brand accounts <brand-accounts>` section.
 
 Your Brand account is: ``{{CUSTOMER_BRAND_EMAIL}}`` (account-id: ``{{CUSTOMER_BRAND_ACCOUNT_ID}}``)
 
@@ -106,7 +106,7 @@ Dedicated Snap Store.
 
 Access has been granted to the SSO account: {{CUSTOMER_PRO_EMAIL}}
 
-Ubuntu Pro Dashboard
+Ubuntu Pro dashboard
 ********************
 
 Dedicated Snap Store customers are provided an Ubuntu Pro account to

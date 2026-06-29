@@ -39,8 +39,8 @@ gadget snap to set default configuration values for `the system <https://snapcra
 and application snaps.
 
 To build a custom gadget snap, we start by selecting a suitable candidate from
-the `Canonical supported gadgets <https://snapcraft.io/docs/the-gadget-snap#p-3322-example-gadget-snaps>`_.
-For detailed instructions, see `here <https://ubuntu.com/core/docs/gadget-building>`_.
+the `Canonical supported gadgets <https://snapcraft.io/docs/reference/development/yaml-schemas/the-gadget-snap/#example-gadget-snaps>`_.
+For detailed instructions, see `gadget building <https://ubuntu.com/core/docs/gadget-building>`_ in the Ubuntu Core documentation.
 
 For this specific case of validating the initial store setup, let's use the
 :guilabel:`64-bit PC Gadget Snap`.
@@ -279,7 +279,7 @@ Store, you need to provide credentials for a **Viewer** account in the ${{CUSTOM
 store using one of the following environment variables:
 
 * ``UBUNTU_STORE_AUTH`` - this must be set to the actual contents of the file
-  (e.g. store.auth) containing your exported developer credentials.
+  (for example, ``store.auth``) containing your exported developer credentials.
 
 * ``UBUNTU_STORE_AUTH_DATA_FILENAME`` - this must be set to the path of the file
   containing your exported developer credentials.
