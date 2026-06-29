@@ -128,7 +128,7 @@ Canonical support will setup one contact point for the support account.
 Currently the Technical support contact set for the Dedicated Snap Store is
 {{CUSTOMER_PRO_EMAIL}}.
 
-For examples on some common support tickets, refer to :doc:`/how-to/support-ticket`.
+For examples on some common support tickets, refer to :doc:`/how-to/support-tickets`.
 
 .. _landscape:
 

@@ -23,7 +23,7 @@ have a Dedicated Snap Store, and you are interested in purchasing one,
       - How to scope permissions for access to your Dedicated Snap Store.
     * - :doc:`Create serial numbers <how-to/creating-serial-numbers>`
       - Step by step instructions for generating unique serial numbers for your devices.
-    * - :doc:`Support tickets <how-to/support-ticket>`
+    * - :doc:`Support tickets <how-to/support-tickets>`
       - Getting more support, and what you need to provide when lodging common requests.
 
 For guidance on use of your Dedicated Snap Store, and some of the functionality

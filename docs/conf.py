@@ -3,6 +3,7 @@ import ast
 import logging
 import os
 from os import environ
+import textwrap
 import yaml
 import sys
 
@@ -200,65 +201,86 @@ html_js_files = [
 # Redirects #
 #############
 
-# To set up redirects: https://documatt.gitlab.io/sphinx-reredirects/usage.html
-# For example: 'explanation/old-name.html': '../how-to/prettify.html',
+# Add redirects to the 'redirects.txt' file
+# https://sphinxext-rediraffe.readthedocs.io/en/latest/
 
 # To set up redirects in the Read the Docs project dashboard:
 # https://docs.readthedocs.io/en/stable/guides/redirects.html
 
-# NOTE: If undefined, set to None, or empty,
-#       the sphinx_reredirects extension will be disabled.
+rediraffe_redirects = "redirects.txt"
 
-redirects = {
-    "iot-app-store-intro": "/dedicated-snap-store/explanation-main/",
-    "dedicated-snap-store-intro": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store/",
-    "snap-store-vs-iot-app-store": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store",
-    "snap-store-vs-dedicated-snap-stores": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store",
-    "getting-started-dedicated-snap-store": "/dedicated-snap-store/how-to-main/",
-    "dedicated-snap-store-commissioning": "/dedicated-snap-store/how-to/dedicated-snap-store-commissioning/",
-    "base-stores-and-device-view-stores": "/dedicated-snap-store/explanation/base-stores-and-device-view-stores/",
-    "custom-image": "/dedicated-snap-store/explanation/custom-image/",
-    "connecting-devices": "/dedicated-snap-store/how-to/connecting-devices/",
-    "managing-an-app-store": "/dedicated-snap-store/how-to/managing-an-app-store/",
-    "updating-software": "/dedicated-snap-store/how-to/updating-software/",
-    "snap-inclusion": "/dedicated-snap-store/how-to/snap-inclusion/",
-    "ubuntu-sso-accounts": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
-    "administrator-role": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
-    "reviewer-role": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
-    "viewer-role": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
-    "publisher-role": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
-    "collaborator-role": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
-    "setting-up-account-roles": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
-    "username-changes": "/dedicated-snap-store/how-to/username-changes/",
-    "technical-support": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/technical-support/",
-    "training": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/training/",
-    "advanced-options": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/iot-services/",
-    "serial-vault-overview": "https://canonical-serial-vault.readthedocs-hosted.com/",
-    "signing-keys": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys/",
-    "device-model-and-identity": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/device-model-and-identity/",
-    "environment-setup": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/environment-setup/",
-    "generate-a-serial-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/generate-a-serial-signing-key/",
-    "import-a-serial-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/import-a-serial-signing-key/",
-    "register-a-new-device-model-name": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/register-a-new-device-model-name/",
-    "generate-a-model-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/generate-a-model-signing-key/",
-    "check-the-signing-log": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/check-the-signing-log/",
-    "create-a-system-user-assertion": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/create-a-system-user-assertion/",
-    "how-to-main": "how-to",
-    "explanation-main": "explanation",
-    "explanation/custom-image/": "/dedicated-snap-store/",
-    "explanation/snap-confinement-snapd-connection/": "/dedicated-snap-store/",
-    "explanation/snap-store-vs-dedicated-snap-stores/": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store/",
-    "explanation/ubuntu-sso-accounts/": "/dedicated-snap-store/",
-    "how-to/connecting-devices/": "/dedicated-snap-store/explanation/connecting-devices/",
-    "how-to/controlling-updates/": "/dedicated-snap-store/explanation/controlling-updates/",
-    "how-to/dedicated-snap-store-commissioning/": "/dedicated-snap-store/",
-    "how-to/dmidecode-to-read-system-sn/": "/dedicated-snap-store/explanation/creating-serial-numbers/",
-    "how-to/managing-an-app-store/": "/dedicated-snap-store/explanation/managing-an-app-store/",
-    "how-to/setting-up-account-roles/": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
-    "how-to/snap-inclusion/": "/dedicated-snap-store/explanation/snap-inclusion/",
-    "how-to/updating-software/": "/dedicated-snap-store/",
-    "how-to/username-changes/": "/dedicated-snap-store/",
-}
+# Strips '/index.html' from destination URLs when building with 'dirhtml'
+rediraffe_dir_only = True
+
+# redirects = {
+#     "iot-app-store-intro": "/dedicated-snap-store/explanation-main/",
+#     "dedicated-snap-store-intro": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store/",
+#     "snap-store-vs-iot-app-store": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store",
+#     "snap-store-vs-dedicated-snap-stores": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store",
+#     "getting-started-dedicated-snap-store": "/dedicated-snap-store/how-to-main/",
+#     "dedicated-snap-store-commissioning": "/dedicated-snap-store/how-to/dedicated-snap-store-commissioning/",
+#     "base-stores-and-device-view-stores": "/dedicated-snap-store/explanation/base-stores-and-device-view-stores/",
+#     "custom-image": "/dedicated-snap-store/explanation/custom-image/",
+#     "connecting-devices": "/dedicated-snap-store/how-to/connecting-devices/",
+#     "managing-an-app-store": "/dedicated-snap-store/how-to/managing-an-app-store/",
+#     "updating-software": "/dedicated-snap-store/how-to/updating-software/",
+#     "snap-inclusion": "/dedicated-snap-store/how-to/snap-inclusion/",
+#     "ubuntu-sso-accounts": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+#     "administrator-role": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+#     "reviewer-role": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+#     "viewer-role": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+#     "publisher-role": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+#     "collaborator-role": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+#     "setting-up-account-roles": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+#     "username-changes": "/dedicated-snap-store/how-to/username-changes/",
+#     "technical-support": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/technical-support/",
+#     "training": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/training/",
+#     "advanced-options": "https://canonical-serial-vault.readthedocs-hosted.com/more-services/iot-services/",
+#     "serial-vault-overview": "https://canonical-serial-vault.readthedocs-hosted.com/",
+#     "signing-keys": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/signing-keys/",
+#     "device-model-and-identity": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/device-model-and-identity/",
+#     "environment-setup": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/environment-setup/",
+#     "generate-a-serial-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/generate-a-serial-signing-key/",
+#     "import-a-serial-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/import-a-serial-signing-key/",
+#     "register-a-new-device-model-name": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/register-a-new-device-model-name/",
+#     "generate-a-model-signing-key": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/generate-a-model-signing-key/",
+#     "check-the-signing-log": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/check-the-signing-log/",
+#     "create-a-system-user-assertion": "https://canonical-serial-vault.readthedocs-hosted.com/serial-vault/create-a-system-user-assertion/",
+#     "how-to-main": "how-to",
+#     "explanation-main": "explanation",
+#     "explanation/custom-image/": "/dedicated-snap-store/",
+#     "explanation/snap-confinement-snapd-connection/": "/dedicated-snap-store/",
+#     "explanation/snap-store-vs-dedicated-snap-stores/": "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store/",
+#     "explanation/ubuntu-sso-accounts/": "/dedicated-snap-store/",
+#     "how-to/connecting-devices/": "/dedicated-snap-store/explanation/connecting-devices/",
+#     "how-to/controlling-updates/": "/dedicated-snap-store/explanation/controlling-updates/",
+#     "how-to/dedicated-snap-store-commissioning/": "/dedicated-snap-store/",
+#     "how-to/dmidecode-to-read-system-sn/": "/dedicated-snap-store/explanation/creating-serial-numbers/",
+#     "how-to/managing-an-app-store/": "/dedicated-snap-store/explanation/managing-an-app-store/",
+#     "how-to/setting-up-account-roles/": "https://documentation.ubuntu.com/core/explanation/stores/brand-accounts/#roles",
+#     "how-to/snap-inclusion/": "/dedicated-snap-store/explanation/snap-inclusion/",
+#     "how-to/updating-software/": "/dedicated-snap-store/",
+#     "how-to/username-changes/": "/dedicated-snap-store/",
+# }
+
+############################
+# sphinx-llm configuration #
+############################
+
+# This description is included in llms.txt to provide some initial context for your
+# product docs.
+# TODO: Add a description in the form "This is the documentation for <product name>,
+# <first sentence of home page>".
+llms_txt_description = textwrap.dedent(
+    """\
+    This is the documentation for the Dedicated Snap Store, a private, customizable
+    app store for distributing and managing snaps for devices and products.
+    """
+)
+
+# The base URL for references built by sphinx-markdown-builder.
+if os.environ.get("READTHEDOCS"):
+    markdown_http_base = html_baseurl
 
 # Link checker exceptions #
 ###########################
@@ -335,6 +357,7 @@ extensions = [
     "canonical_sphinx",
     "notfound.extension",
     "sphinx_design",
+    "sphinx_rerediraffe",
     "sphinx_reredirects",
     "sphinx_tabs.tabs",
     "sphinxcontrib.jquery",
@@ -342,6 +365,7 @@ extensions = [
     "sphinx_config_options",
     "sphinx_contributor_listing",
     "sphinx_filtered_toctree",
+    "sphinx_llm.txt",
     "sphinx_related_links",
     "sphinx_roles",
     "sphinx_terminal",
@@ -356,7 +380,11 @@ extensions = [
 
 # Excludes files or directories from processing
 
-exclude_patterns = []
+exclude_patterns = [
+    "_build",
+    "_dev",
+    ".venv",
+]
 
 # Specifies a reST snippet to be appended to each .rst file
 

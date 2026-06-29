@@ -6,11 +6,11 @@
 # The old path must be a file that doesn"t exist in the source. The current path must be
 # a file that does exist in the source.
 
-"iot-app-store-intro" "explanation-main/"
+"iot-app-store-intro" "explanation/"
 "dedicated-snap-store-intro" "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store/"
 "snap-store-vs-iot-app-store" "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store"
 "snap-store-vs-dedicated-snap-stores" "https://documentation.ubuntu.com/core/explanation/stores/dedicated-snap-store"
-"getting-started-dedicated-snap-store" "how-to-main/"
+"getting-started-dedicated-snap-store" "how-to/"
 "dedicated-snap-store-commissioning" "how-to/dedicated-snap-store-commissioning/"
 "base-stores-and-device-view-stores" "explanation/base-stores-and-device-view-stores/"
 "custom-image" "explanation/custom-image/"
@@ -54,4 +54,3 @@
 "how-to/snap-inclusion/" "explanation/snap-inclusion/"
 "how-to/updating-software/" "/"
 "how-to/username-changes/" "/"
-"how-to/support-tickets/" "how-to/support-ticket/"
